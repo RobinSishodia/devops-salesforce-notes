@@ -24,7 +24,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Pull posts from Hashnode
+      - name: Install dependencies
+        run: pip install markdownify
+
+      - name: Pull posts from Hashnode RSS
         env:
           HASHNODE_HOST: sishodiarobin.hashnode.dev
         run: python scripts/sync_hashnode.py
