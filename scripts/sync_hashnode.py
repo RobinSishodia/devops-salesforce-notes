@@ -11,6 +11,8 @@ Only uses the Python standard library, so no pip install is required.
 import json
 import os
 import re
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -47,18 +49,37 @@ query Posts($host: String!, $after: String) {
 """
 
 
-def gql(variables):
+HEADERS = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "User-Agent": (
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+    ),
+}
+
+
+def gql(variables, attempts=4):
     body = json.dumps({"query": QUERY, "variables": variables}).encode()
-    req = urllib.request.Request(
-        API,
-        data=body,
-        headers={"Content-Type": "application/json", "User-Agent": "hashnode-github-sync"},
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = json.load(resp)
-    if data.get("errors"):
-        raise RuntimeError(data["errors"])
-    return data["data"]["publication"]
+    last = None
+    for i in range(attempts):
+        req = urllib.request.Request(API, data=body, headers=HEADERS)
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                raw = resp.read().decode("utf-8", "replace")
+                status = resp.status
+        except urllib.error.HTTPError as e:
+            raw, status = e.read().decode("utf-8", "replace"), e.code
+        try:
+            data = json.loads(raw)
+            if data.get("errors"):
+                raise RuntimeError(data["errors"])
+            return data["data"]["publication"]
+        except json.JSONDecodeError:
+            last = f"HTTP {status}, non-JSON response: {raw[:300]!r}"
+            print(f"Attempt {i + 1} failed: {last}")
+            time.sleep(5 * (i + 1))
+    raise RuntimeError(last)
 
 
 def fetch_all():
