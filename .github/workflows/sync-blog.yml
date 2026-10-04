@@ -1,0 +1,42 @@
+name: Sync Hashnode blog
+
+on:
+  schedule:
+    - cron: "30 18 * * *"   # daily at 00:00 IST
+  workflow_dispatch:        # run manually from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-blog
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pull posts from Hashnode
+        env:
+          HASHNODE_HOST: sishodiarobin.hashnode.dev
+        run: python scripts/sync_hashnode.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A posts README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(blog): sync posts from Hashnode"
+            git push
+          fi
