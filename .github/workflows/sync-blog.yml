@@ -1,9 +1,15 @@
 name: Sync Hashnode blog
 
+# Hashnode's bot protection blocks GitHub-hosted runners from reading the blog,
+# so a fresh copy of the RSS feed is committed to feed/rss.xml after each new
+# post. This workflow converts it to Markdown and updates the README index.
 on:
-  schedule:
-    - cron: "30 18 * * *"   # daily at 00:00 IST
-  workflow_dispatch:        # run manually from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - "feed/rss.xml"
+      - "scripts/sync_hashnode.py"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -27,9 +33,10 @@ jobs:
       - name: Install dependencies
         run: pip install markdownify
 
-      - name: Pull posts from Hashnode RSS
+      - name: Convert feed to Markdown posts
         env:
           HASHNODE_HOST: sishodiarobin.hashnode.dev
+          FEED_FILE: feed/rss.xml
         run: python scripts/sync_hashnode.py
 
       - name: Commit changes
@@ -40,6 +47,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore(blog): sync posts from Hashnode"
+            git commit -m "chore(blog): sync posts from Hashnode feed"
             git push
           fi
