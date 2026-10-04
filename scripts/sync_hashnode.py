@@ -4,7 +4,8 @@
 Hashnode's GraphQL API became a paid (Pro) feature in 2026, so this script
 uses the blog's free public RSS feed instead:
 
-- Reads <blog>/rss.xml (full post content is in <content:encoded>)
+- Reads the feed from FEED_FILE (a committed copy of <blog>/rss.xml) or,
+  if that isn't set, downloads it (full post content is in <content:encoded>)
 - Converts each post's HTML to Markdown and writes posts/<YYYY-MM-DD>-<slug>.md
 - Rebuilds README.md from every file in posts/, so older posts that drop
   out of the feed are kept
@@ -170,10 +171,10 @@ Hands-on articles on **Salesforce Administration**, **AWS**, **DevOps** (Docker,
 
 ## ⚙️ How this repo works
 
-Posts are written on Hashnode. A scheduled **GitHub Actions** workflow ([`sync-blog.yml`](.github/workflows/sync-blog.yml)) runs daily and:
+Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](.github/workflows/sync-blog.yml)) runs whenever the feed file is updated and:
 
-1. Reads the blog's RSS feed with [`scripts/sync_hashnode.py`](scripts/sync_hashnode.py)
-2. Converts each post from HTML to Markdown and saves it in [`posts/`](posts/)
+1. Converts a committed copy of the blog RSS feed ([`feed/rss.xml`](feed/rss.xml)) with [`scripts/sync_hashnode.py`](scripts/sync_hashnode.py)
+2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
 ## 📚 All posts ({len(entries)})
@@ -189,7 +190,16 @@ Posts are written on Hashnode. A scheduled **GitHub Actions** workflow ([`sync-b
 
 def main():
     POSTS_DIR.mkdir(exist_ok=True)
-    posts = parse_feed(fetch(FEED))
+    feed_file = os.environ.get("FEED_FILE")
+    if feed_file:
+        if not Path(feed_file).exists():
+            print(f"{feed_file} not found yet; nothing to sync.")
+            return
+        print(f"Reading feed from {feed_file}")
+        xml = Path(feed_file).read_text(encoding="utf-8")
+    else:
+        xml = fetch(FEED)
+    posts = parse_feed(xml)
     changed = sum(write_post(p) for p in posts)
     write_readme()
     print(f"Feed had {len(posts)} posts; {changed} new or updated.")
