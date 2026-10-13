@@ -1,4 +1,498 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 04 Oct 2026 20:45:01 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More]]></title><description><![CDATA["Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the security model, which works in layers. Once you know th]]></description><link>https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 04 Oct 2026 20:22:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>"Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the <strong>security model</strong>, which works in layers. Once you know the layers, troubleshooting becomes a checklist.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 13 Oct 2026 22:25:11 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)]]></title><description><![CDATA[Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.
+
+The ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 22:00:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb5a0a21-2efe-429d-a1da-6e43dd949dff.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.</em></p>
+<hr />
+<h2>The 4 Flow Types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Use it when</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Screen Flow</strong></td>
+<td>A user needs to click and type</td>
+<td>Guided forms, wizards, Lightning pages</td>
+</tr>
+<tr>
+<td><strong>Record-Triggered Flow</strong></td>
+<td>A record is created, updated or deleted</td>
+<td>Update a field, create a task</td>
+</tr>
+<tr>
+<td><strong>Scheduled-Triggered Flow</strong></td>
+<td>Something must run at a set time</td>
+<td>Daily or weekly batch jobs</td>
+</tr>
+<tr>
+<td><strong>Autolaunched Flow</strong></td>
+<td>Another process calls it</td>
+<td>Called from flows, Apex, buttons</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Record-Triggered Flow?</h3>
+<p>It runs automatically when a record is created, updated or deleted. Entry conditions decide when it actually fires.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add entry conditions so it only runs when needed.</p>
+</blockquote>
+<h3>2. Before-save vs After-save?</h3>
+<p><strong>Before-save</strong> updates the same record that triggered the flow, fast, with no extra DML. <strong>After-save</strong> handles related records, emails and other actions.</p>
+<blockquote>
+<p><strong>Tip:</strong> Same record = before. Anything else = after.</p>
+</blockquote>
+<h3>3. Flow vs Workflow Rules and Process Builder?</h3>
+<p>Workflow Rules and Process Builder are retired, with support ending on Dec 31, 2025. Flow is the single automation tool going forward.</p>
+<blockquote>
+<p><strong>Tip:</strong> Say you would migrate old automation to Flow.</p>
+</blockquote>
+<h3>4. Flow or Apex?</h3>
+<p>Start with clicks, not code. Use Apex when logic is very complex, needs heavy bulk processing, or Flow cannot do it.</p>
+<blockquote>
+<p><strong>Tip:</strong> "Declarative first" is the safe answer.</p>
+</blockquote>
+<h3>5. What are the data elements?</h3>
+<p>Get, Create, Update and Delete Records. Get Records reads data into variables you can reuse.</p>
+<blockquote>
+<p><strong>Tip:</strong> One well-filtered Get Records beats many.</p>
+</blockquote>
+<h3>6. Why never put DML in a loop?</h3>
+<p>Governor limits cap queries and DML per transaction. Collect records in a collection variable, then do <strong>one</strong> DML after the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add a Fault path and test with Debug.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"When an Opportunity becomes Closed Won, create a follow-up Task and update the Account. How?"</strong></p>
+<ol>
+<li><p>Build a <strong>Record-Triggered Flow</strong> on Opportunity, run <strong>after save</strong></p>
+</li>
+<li><p>Entry condition: <strong>Stage = Closed Won</strong> and Stage <strong>is changed</strong></p>
+</li>
+<li><p><strong>Create Records</strong>: a Task for the Account owner</p>
+</li>
+<li><p><strong>Update Records</strong>: the Account, add a <strong>Fault path</strong>, then test with <strong>Debug</strong></p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Screen</strong> = user input</p>
+</li>
+<li><p><strong>Record-Triggered</strong> = on create, update, delete</p>
+</li>
+<li><p><strong>Scheduled</strong> = runs at a set time</p>
+</li>
+<li><p><strong>Autolaunched</strong> = called by others</p>
+</li>
+<li><p><strong>Before-save</strong> = fast, same record</p>
+</li>
+<li><p><strong>No DML in loops</strong></p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Flow first, Apex only when needed</p>
+</li>
+<li><p>Choose before-save or after-save on purpose</p>
+</li>
+<li><p>Use entry conditions to limit runs</p>
+</li>
+<li><p>Always add Fault paths and test with Debug</p>
+</li>
+</ul>
+<hr />
+<p><strong>Which Flow type do you use most? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 8 done, 22 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)]]></title><description><![CDATA[Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on four doors, and every question is really asking ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 13:33:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3deb4392-f75a-4e09-ab55-b0d29d266241.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on four doors, and every question is really asking "which lock is this?"</em></p>
+<p>This is the quick <strong>cheat sheet</strong> version. For the long, step-by-step walkthrough, read my earlier post: <a href="https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more">The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More</a>.</p>
+<hr />
+<h2>The Big Picture: 4 Layers of Access</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Question it answers</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Org level</strong></td>
+<td>Can this person log in at all?</td>
+<td>Password policies, login hours, login IP ranges, MFA</td>
+</tr>
+<tr>
+<td><strong>Object level</strong></td>
+<td>Can they see or edit this <em>type</em> of data?</td>
+<td>Profiles, Permission Sets</td>
+</tr>
+<tr>
+<td><strong>Field level</strong></td>
+<td>Can they see this <em>column</em>?</td>
+<td>Field-Level Security (FLS)</td>
+</tr>
+<tr>
+<td><strong>Record level</strong></td>
+<td>Can they see this <em>row</em>?</td>
+<td>OWD, Role Hierarchy, Sharing Rules, Manual Sharing</td>
+</tr>
+</tbody></table>
+<p><strong>Golden rule:</strong> Object and field access decide <em>what kind</em> of data you can touch. Record access decides <em>which rows</em> you can touch. You need both.</p>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Profile?</h3>
+<p>A profile controls what a user can do: which objects and fields they can access, which apps and tabs they see, and system permissions. Every user has exactly <strong>one</strong> profile.</p>
+<blockquote>
+<p><strong>Tip:</strong> Say "profile = baseline permissions". It sets up your next answer about permission sets.</p>
+</blockquote>
+<h3>2. What is a Permission Set, and how is it different from a Profile?</h3>
+<p>A permission set <strong>adds</strong> access on top of a profile. A user can have many permission sets, but only one profile. Permission sets can only grant access, never take it away.</p>
+<blockquote>
+<p><strong>Tip:</strong> Mention best practice: keep profiles minimal and grant extra access through permission sets (and Permission Set Groups to bundle them).</p>
+</blockquote>
+<h3>3. What is OWD (Organization-Wide Defaults)?</h3>
+<p>OWD sets the <strong>baseline record access</strong> for each object. It is the most restrictive level in the system, and every other tool (roles, sharing rules) can only <strong>open access up</strong> from there.</p>
+<p>Common settings: <strong>Private</strong>, <strong>Public Read Only</strong>, <strong>Public Read/Write</strong>, <strong>Controlled by Parent</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Always say "start restrictive, then open up".</p>
+</blockquote>
+<h3>4. What is the Role Hierarchy?</h3>
+<p>Roles control <strong>record visibility upward</strong>. A manager can see the records owned by people below them in the hierarchy. Roles do <strong>not</strong> give object permissions; that is the profile's job.</p>
+<blockquote>
+<p><strong>Tip:</strong> The classic trap question: <em>"Profile vs Role?"</em> Profile = what you can <strong>do</strong>. Role = which records you can <strong>see</strong>.</p>
+</blockquote>
+<h3>5. What are Sharing Rules?</h3>
+<p>Sharing rules open access to records for groups of users when OWD is restrictive. They can be based on <strong>record owner</strong> or on <strong>record criteria</strong> (for example, Region = West).</p>
+<blockquote>
+<p><strong>Tip:</strong> Remember sharing rules only <strong>extend</strong> access. They can never restrict it.</p>
+</blockquote>
+<h3>6. What is Field-Level Security?</h3>
+<p>FLS controls whether a user can see or edit a specific field, set through profiles or permission sets. Hidden fields disappear from page layouts, reports and list views.</p>
+<blockquote>
+<p><strong>Tip:</strong> A page layout alone does not secure a field. FLS does.</p>
+</blockquote>
+<h3>7. What is Manual Sharing?</h3>
+<p>The record owner (or a user with full access) can share an individual record with a specific user or group. It is useful for one-off exceptions.</p>
+<blockquote>
+<p><strong>Tip:</strong> Manual sharing is lost if the record owner changes, so don't build a process around it.</p>
+</blockquote>
+<h3>8. If two settings conflict, which one wins?</h3>
+<p>Access in Salesforce is <strong>additive</strong>: the <strong>most permissive</strong> result wins. Two permission sources never cancel each other out.</p>
+<hr />
+<h2>Scenario Question (Very Common!)</h2>
+<p><strong>"Sales reps should only see their own accounts. Managers should see their team's accounts. How do you set that up?"</strong></p>
+<ol>
+<li><p>Set <strong>Account OWD = Private</strong></p>
+</li>
+<li><p>Build the <strong>Role Hierarchy</strong> with managers above reps</p>
+</li>
+<li><p>Keep <strong>Grant Access Using Hierarchies</strong> enabled</p>
+</li>
+<li><p>If one team needs to see another team's accounts, add a <strong>Sharing Rule</strong></p>
+</li>
+</ol>
+<p>Result: reps see their own records, managers see their whole team's, no extra code needed.</p>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Profile</strong> = baseline permissions (one per user)</p>
+</li>
+<li><p><strong>Permission Set</strong> = extra permissions (many per user)</p>
+</li>
+<li><p><strong>OWD</strong> = the most restrictive baseline for records</p>
+</li>
+<li><p><strong>Role Hierarchy</strong> = upward record visibility</p>
+</li>
+<li><p><strong>Sharing Rules</strong> = open access to groups</p>
+</li>
+<li><p><strong>FLS</strong> = field-level visibility</p>
+</li>
+<li><p><strong>Most permissive wins</strong></p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Answer in layers: org, object, field, record</p>
+</li>
+<li><p>Use a real example for every answer</p>
+</li>
+<li><p>Always separate "what you can do" (profile) from "what you can see" (role)</p>
+</li>
+<li><p>Keep it simple, and explain <em>why</em> each tool exists</p>
+</li>
+</ul>
+<hr />
+<p><strong>Which part of the Salesforce security model confused you the most when you were learning it? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 7 done, 23 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups]]></title><description><![CDATA[A Virtual Private Cloud (VPC) is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at fi]]></description><link>https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</guid><category><![CDATA[AWS]]></category><category><![CDATA[networking]]></category><category><![CDATA[vpc]]></category><category><![CDATA[Cloud]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:58:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fbe0394d-2e2e-4c5d-83ee-badaeb008838.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A <strong>Virtual Private Cloud (VPC)</strong> is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at first, so here is the explanation I wish I'd had.</p>
+<h2>The VPC and its CIDR block</h2>
+<p>When you create a VPC, you give it an IP range in <strong>CIDR</strong> notation, for example:</p>
+<pre><code>10.0.0.0/16   →   65,536 addresses (10.0.0.0 – 10.0.255.255)
+</code></pre>
+<p>A VPC lives in <strong>one region</strong> but spans all of that region's Availability Zones.</p>
+<h2>Subnets</h2>
+<p>A <strong>subnet</strong> is a slice of the VPC's range in <strong>one Availability Zone</strong>:</p>
+<pre><code>10.0.1.0/24   public subnet   (AZ a)
+10.0.2.0/24   public subnet   (AZ b)
+10.0.11.0/24  private subnet  (AZ a)
+10.0.12.0/24  private subnet  (AZ b)
+</code></pre>
+<p>AWS reserves 5 addresses in every subnet, so a <code>/24</code> gives you 251 usable IPs.</p>
+<p><strong>Public vs private</strong> isn't a setting. It depends on the subnet's <strong>route table</strong>.</p>
+<h2>Internet Gateway</h2>
+<p>An <strong>Internet Gateway (IGW)</strong> connects the VPC to the internet. A subnet is <strong>public</strong> when its route table sends internet traffic to the IGW:</p>
+<pre><code>Destination     Target
+10.0.0.0/16     local
+0.0.0.0/0       igw-xxxx
+</code></pre>
+<p>Instances in it also need a public IP to be reachable.</p>
+<h2>NAT Gateway</h2>
+<p>Instances in <strong>private</strong> subnets often still need to reach the internet (to download updates, for example) without being reachable <em>from</em> it. A <strong>NAT Gateway</strong> sits in a public subnet and handles that:</p>
+<pre><code>Private subnet route table
+Destination     Target
+10.0.0.0/16     local
+0.0.0.0/0       nat-xxxx
+</code></pre>
+<p>NAT Gateways are charged per hour plus per GB processed, so they're often one of the bigger networking costs. For high availability, use one per AZ.</p>
+<h2>Route tables</h2>
+<p>Every subnet is associated with one <strong>route table</strong>. The <code>local</code> route (VPC CIDR → local) is always there, so everything inside the VPC can talk to everything else unless security rules block it.</p>
+<h2>Security groups vs network ACLs</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Security Group</th>
+<th>Network ACL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Applies to</td>
+<td>Network interfaces (instances)</td>
+<td>Subnets</td>
+</tr>
+<tr>
+<td>Rules</td>
+<td>Allow only</td>
+<td>Allow and deny</td>
+</tr>
+<tr>
+<td>State</td>
+<td><strong>Stateful</strong> (return traffic allowed automatically)</td>
+<td><strong>Stateless</strong> (must allow return traffic explicitly)</td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td>All rules together</td>
+<td>In number order, first match wins</td>
+</tr>
+</tbody></table>
+<p>In practice, <strong>security groups do most of the work</strong>. A common pattern is referencing one security group from another, for example: "the database security group allows port 5432 only from the app security group."</p>
+<h2>A classic three-tier layout</h2>
+<pre><code>Internet
+   │
+Internet Gateway
+   │
+Public subnets   →  Load balancer, NAT Gateway
+   │
+Private subnets  →  App servers (EC2 / ECS)
+   │
+Private subnets  →  Database (RDS)
+</code></pre>
+<p>Only the load balancer is exposed. App servers and databases stay private.</p>
+<h2>Other pieces you'll meet</h2>
+<ul>
+<li><strong>VPC endpoints</strong> – reach services like S3 or DynamoDB privately, without a NAT Gateway (and often more cheaply)</li>
+<li><strong>VPC peering / Transit Gateway</strong> – connect VPCs together</li>
+<li><strong>VPC Flow Logs</strong> – record traffic metadata for troubleshooting and security</li>
+</ul>
+<h2>Troubleshooting connectivity</h2>
+<p>When something can't connect, check in this order:</p>
+<ol>
+<li>Route table of the source subnet</li>
+<li>Security group on the destination (inbound) and source (outbound)</li>
+<li>Network ACLs on both subnets (remember return traffic)</li>
+<li>Public IP / Elastic IP if internet access is involved</li>
+<li>VPC Flow Logs to see whether traffic was accepted or rejected</li>
+</ol>
+<p>Once you can draw your VPC on paper, most networking problems become much easier to solve.</p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full]]></title><description><![CDATA[A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process sav]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Testing]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:55:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a390ec75-d149-40f3-92ab-70bff4950d11.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process saves a lot of pain.</p>
+<h2>The four types at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Copies metadata</th>
+<th>Copies data</th>
+<th>Storage (data / files)</th>
+<th>Refresh interval</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Developer</strong></td>
+<td>Yes</td>
+<td>No</td>
+<td>200 MB / 200 MB</td>
+<td>1 day</td>
+</tr>
+<tr>
+<td><strong>Developer Pro</strong></td>
+<td>Yes</td>
+<td>No</td>
+<td>1 GB / 1 GB</td>
+<td>1 day</td>
+</tr>
+<tr>
+<td><strong>Partial Copy</strong></td>
+<td>Yes</td>
+<td>Sample (via template)</td>
+<td>5 GB / same as prod</td>
+<td>5 days</td>
+</tr>
+<tr>
+<td><strong>Full</strong></td>
+<td>Yes</td>
+<td>All (or selected objects)</td>
+<td>Same as production</td>
+<td>29 days</td>
+</tr>
+</tbody></table>
+<p>All sandboxes copy your <strong>metadata</strong> (objects, fields, flows, Apex, layouts and so on). The difference is how much <strong>data</strong> comes with it and how often you can refresh. Which types and how many you get depends on your edition and any add-ons.</p>
+<h2>Developer sandbox</h2>
+<p>Small and quick to refresh. Ideal for:</p>
+<ul>
+<li>An individual admin or developer building a feature</li>
+<li>Trying out a new flow or configuration</li>
+<li>Learning and experimenting</li>
+</ul>
+<p>You create the test data you need yourself.</p>
+<h2>Developer Pro sandbox</h2>
+<p>The same idea with more storage. Useful when:</p>
+<ul>
+<li>You need larger test data sets</li>
+<li>You're doing integration development</li>
+<li>Several people share the environment</li>
+</ul>
+<h2>Partial Copy sandbox</h2>
+<p>Includes a <strong>sample of production data</strong> chosen by a <strong>sandbox template</strong> (you pick objects; Salesforce copies up to 10,000 records per object). Good for:</p>
+<ul>
+<li>QA and integration testing with realistic data</li>
+<li>Testing reports, sharing and automation against real-looking records</li>
+</ul>
+<h2>Full sandbox</h2>
+<p>A complete replica of production, including all data (or the objects you select). Use it for:</p>
+<ul>
+<li><strong>User acceptance testing (UAT)</strong></li>
+<li><strong>Performance and load testing</strong></li>
+<li><strong>Staging</strong>: the final check before a production release</li>
+<li>Training on real-world data</li>
+</ul>
+<p>The 29-day refresh interval means you need to plan when you refresh it.</p>
+<h2>A typical setup</h2>
+<pre><code>Developer sandboxes  →  Developer Pro / Partial (QA)  →  Full (UAT/Staging)  →  Production
+</code></pre>
+<p>Each person builds in their own Developer sandbox, changes are combined and tested in QA, business users sign off in UAT, and then you deploy to production.</p>
+<h2>Tips</h2>
+<ul>
+<li><strong>Mask sensitive data.</strong> Production data in sandboxes is still personal data. Use <strong>Data Mask</strong> or scripts to anonymise it.</li>
+<li><strong>Check email deliverability.</strong> New sandboxes default to "System email only" so you don't email real customers. Keep it that way unless you need to test emails.</li>
+<li><strong>Re-run post-refresh steps.</strong> Use a <strong>SandboxPostCopy</strong> Apex class to automate tasks such as updating integration endpoints and creating test users.</li>
+<li><strong>Mind the user emails.</strong> Sandbox users' emails get <code>.invalid</code> appended so they can't receive mail by accident. Fix only the ones you need.</li>
+<li><strong>Know the difference from scratch orgs.</strong> Scratch orgs are short-lived, source-driven orgs created from a definition file, which suits CI pipelines. Sandboxes are copies of production, which suits integration testing and UAT.</li>
+</ul>
+<p>Choosing the right sandbox for each stage keeps development fast and testing realistic, without risking production.</p>
+]]></content:encoded></item><item><title><![CDATA[Dockerfile Best Practices: Smaller, Faster and Safer Images]]></title><description><![CDATA[Writing a Dockerfile that works is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me.
+1. ]]></description><link>https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</guid><category><![CDATA[Docker]]></category><category><![CDATA[containers]]></category><category><![CDATA[Devops]]></category><category><![CDATA[best practices]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:47:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/44a6e4c1-f2f0-4211-92b2-e42fc15d29e8.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Writing a Dockerfile that <em>works</em> is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me.</p>
+<h2>1. Start from a small, specific base image</h2>
+<pre><code class="language-dockerfile"># Avoid
+FROM node:latest
+
+# Prefer
+FROM node:20-alpine
+</code></pre>
+<ul>
+<li><strong>Pin a version.</strong> <code>latest</code> changes under you and makes builds unreproducible.</li>
+<li><strong>Use slim or alpine variants</strong> when your app supports them. Smaller images pull faster and have fewer packages to patch.</li>
+<li>For compiled languages, consider <strong>distroless</strong> or <code>scratch</code> for the final image.</li>
+</ul>
+<h2>2. Order instructions for layer caching</h2>
+<p>Docker caches each layer. If a layer changes, every layer after it is rebuilt. Put things that change rarely first:</p>
+<pre><code class="language-dockerfile">WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev
+COPY . .
+</code></pre>
+<p>Now changing your source code doesn't re-run <code>npm ci</code>. Dependencies are only reinstalled when <code>package.json</code> changes.</p>
+<h2>3. Use multi-stage builds</h2>
+<p>Build tools don't belong in production images. A multi-stage build compiles in one stage and copies only the output into a clean final stage:</p>
+<pre><code class="language-dockerfile"># Build stage
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# Runtime stage
+FROM node:20-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY package*.json ./
+RUN npm ci --omit=dev
+COPY --from=build /app/dist ./dist
+USER node
+EXPOSE 3000
+CMD ["node", "dist/server.js"]
+</code></pre>
+<p>The final image contains no dev dependencies, compilers or source files it doesn't need.</p>
+<h2>4. Add a .dockerignore</h2>
+<p>Without it, <code>COPY . .</code> sends everything to the build context, including <code>node_modules</code>, <code>.git</code> and possibly secrets.</p>
+<pre><code>node_modules
+.git
+.env
+*.log
+dist
+</code></pre>
+<p>This speeds up builds and keeps sensitive files out of the image.</p>
+<h2>5. Don't run as root</h2>
+<p>Containers run as root by default. If an attacker breaks out of your app, root makes it worse. Many official images include a non-root user (<code>node</code> in Node images). Otherwise create one:</p>
+<pre><code class="language-dockerfile">RUN addgroup -S app &amp;&amp; adduser -S app -G app
+USER app
+</code></pre>
+<h2>6. Combine and clean up RUN steps</h2>
+<p>Each <code>RUN</code> creates a layer. Clean up in the <strong>same</strong> layer you create files in, or the files still take space:</p>
+<pre><code class="language-dockerfile">RUN apt-get update \
+    &amp;&amp; apt-get install -y --no-install-recommends curl \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+</code></pre>
+<h2>7. Never bake secrets into images</h2>
+<p>Anything in an image layer can be extracted, even if a later layer deletes it. Pass secrets at runtime (environment variables from a secrets manager, mounted files) or use BuildKit's <code>--mount=type=secret</code> for build-time secrets.</p>
+<h2>8. Prefer exec-form CMD and ENTRYPOINT</h2>
+<pre><code class="language-dockerfile">CMD ["node", "server.js"]   # exec form: receives signals properly
+CMD node server.js          # shell form: wraps in /bin/sh
+</code></pre>
+<p>The exec form lets your process receive <code>SIGTERM</code> directly, so containers stop cleanly.</p>
+<h2>9. Add a HEALTHCHECK (when not using an orchestrator's probes)</h2>
+<pre><code class="language-dockerfile">HEALTHCHECK --interval=30s --timeout=3s \
+  CMD wget -qO- http://localhost:3000/health || exit 1
+</code></pre>
+<p>On Kubernetes you'd use liveness and readiness probes instead.</p>
+<h2>10. Scan your images</h2>
+<p>Tools like <strong>Trivy</strong>, <strong>Docker Scout</strong> or <strong>Snyk</strong> find known vulnerabilities in base images and dependencies. Run them in CI so problems are caught before deployment.</p>
+<h2>Quick checklist</h2>
+<ul>
+<li> Pinned, minimal base image</li>
+<li> Dependencies copied and installed before source code</li>
+<li> Multi-stage build</li>
+<li> <code>.dockerignore</code> in place</li>
+<li> Non-root <code>USER</code></li>
+<li> No secrets in layers</li>
+<li> Image scanned in CI</li>
+</ul>
+<p>Small changes, but together they often cut image size by more than half and make builds noticeably faster.</p>
+]]></content:encoded></item><item><title><![CDATA[The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More]]></title><description><![CDATA["Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the security model, which works in layers. Once you know th]]></description><link>https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 04 Oct 2026 20:22:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>"Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the <strong>security model</strong>, which works in layers. Once you know the layers, troubleshooting becomes a checklist.</p>
 <h2>Layer 1: Org-level access</h2>
 <p>Who can log in at all, and when.</p>
 <ul>
@@ -1513,654 +2007,4 @@ example()
 <p>Whether you're automating builds, tests, or deployments, shared libraries enable you to focus on innovation while maintaining consistency. Start leveraging Jenkins Shared Libraries today and take your DevOps workflows to new heights!</p>
 <hr />
 <p><strong>Ready to optimize your Jenkins pipelines?</strong> Dive into Jenkins documentation or explore real-world examples to get started.</p>
-]]></content:encoded></item><item><title><![CDATA[💻Mastering Kubernetes Troubleshooting: 30 Essential Commands for Day-to-Day Operations 🚀]]></title><description><![CDATA[Kubernetes, the powerful container orchestration platform, is the backbone of modern cloud-native applications. However, its complexity can be overwhelming when troubleshooting issues. Whether you're dealing with pod failures, network issues, or scal...]]></description><link>https://sishodiarobin.hashnode.dev/mastering-kubernetes-troubleshooting-30-essential-commands-for-day-to-day-operations</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/mastering-kubernetes-troubleshooting-30-essential-commands-for-day-to-day-operations</guid><category><![CDATA[#Kubernetes 🚀 #DevOps 🛠️ #CloudComputing ☁️ #Troubleshooting 💡 #Automation 🤖 #TechTips 📚 #CI/CD 🚧 #OpenSource ❤️ #ContainerOrchestration 📦 #InfrastructureAsCode 🖥️ #K8sInsights 🔍 #TechInnovation 🌟 #ITOperations ⚙️ #ClusterManagement 🌐 #LearnDevOps 📖]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Dec 2024 18:19:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733422485727/a0b240c8-5d78-48de-baef-5e05406894ed.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Kubernetes, the powerful container orchestration platform, is the backbone of modern cloud-native applications. However, its complexity can be overwhelming when troubleshooting issues. Whether you're dealing with pod failures, network issues, or scaling challenges, knowing the right commands is crucial to keep your cluster running smoothly.</p>
-<p>This article highlights <strong>30 essential Kubernetes troubleshooting commands</strong> every DevOps engineer and administrator should master to streamline daily operations.</p>
-<hr />
-<h3 id="heading-1-cluster-information-and-health-checks"><strong>1. Cluster Information and Health Checks</strong></h3>
-<p>Start by ensuring the health and status of your Kubernetes cluster.</p>
-<ol>
-<li><p><strong>Get cluster information</strong></p>
-<pre><code class="lang-plaintext"> kubectl cluster-info
-</code></pre>
-<p> Displays essential details about your cluster, including the API server and endpoints.</p>
-</li>
-<li><p><strong>Check cluster nodes</strong></p>
-<pre><code class="lang-plaintext"> kubectl get nodes
-</code></pre>
-<p> Lists all nodes in the cluster and their statuses.</p>
-</li>
-<li><p><strong>Detailed node status</strong></p>
-<pre><code class="lang-plaintext"> kubectl describe node &lt;node-name&gt;
-</code></pre>
-<p> Provides detailed information about a specific node, including resource allocation and issues.</p>
-</li>
-<li><p><strong>Check cluster events</strong></p>
-<pre><code class="lang-plaintext"> kubectl get events --sort-by='.metadata.creationTimestamp'
-</code></pre>
-<p> View the latest cluster-wide events for identifying potential problems.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-2-pod-management-and-debugging"><strong>2. Pod Management and Debugging</strong></h3>
-<ol start="5">
-<li><p><strong>List all pods</strong></p>
-<pre><code class="lang-plaintext"> kubectl get pods -A
-</code></pre>
-<p> Displays pods across all namespaces to identify issues at a glance.</p>
-</li>
-<li><p><strong>Detailed pod information</strong></p>
-<pre><code class="lang-plaintext"> kubectl describe pod &lt;pod-name&gt;
-</code></pre>
-<p> Offers a detailed breakdown of a pod’s configuration and current state.</p>
-</li>
-<li><p><strong>View pod logs</strong></p>
-<pre><code class="lang-plaintext"> kubectl logs &lt;pod-name&gt;
-</code></pre>
-<p> Access logs to debug application-level issues.</p>
-</li>
-<li><p><strong>Stream pod logs</strong></p>
-<pre><code class="lang-plaintext"> kubectl logs -f &lt;pod-name&gt;
-</code></pre>
-<p> Continuously stream logs for real-time monitoring.</p>
-</li>
-<li><p><strong>Execute commands in a pod</strong></p>
-<pre><code class="lang-plaintext"> kubectl exec -it &lt;pod-name&gt; -- /bin/bash
-</code></pre>
-<p> Access the shell of a running container for troubleshooting.</p>
-</li>
-<li><p><strong>Check pod resource usage</strong></p>
-</li>
-</ol>
-<pre><code class="lang-plaintext">kubectl top pod &lt;pod-name&gt;
-</code></pre>
-<p>Displays CPU and memory usage for a pod.</p>
-<hr />
-<h3 id="heading-3-network-and-connectivity"><strong>3. Network and Connectivity</strong></h3>
-<ol start="11">
-<li><strong>Inspect services</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get svc
-</code></pre>
-<p>Lists all services to ensure proper exposure and routing of applications.</p>
-<ol start="12">
-<li><strong>Debug service issues</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl describe svc &lt;service-name&gt;
-</code></pre>
-<p>Provides details about a specific service, including associated endpoints.</p>
-<ol start="13">
-<li><strong>Test DNS resolution</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl exec -it &lt;pod-name&gt; -- nslookup &lt;service-name&gt;
-</code></pre>
-<p>Check if DNS resolution is working within the cluster.</p>
-<ol start="14">
-<li><strong>Inspect network policies</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get networkpolicy
-</code></pre>
-<p>Ensures proper access control between pods and services.</p>
-<ol start="15">
-<li><strong>Trace service endpoints</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get endpoints &lt;service-name&gt;
-</code></pre>
-<p>Validates the service is mapping to the correct pods.</p>
-<hr />
-<h3 id="heading-4-deployment-and-replica-management"><strong>4. Deployment and Replica Management</strong></h3>
-<ol start="16">
-<li><strong>List deployments</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get deployments
-</code></pre>
-<p>Ensures deployments are running as expected.</p>
-<ol start="17">
-<li><strong>Inspect deployment status</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl describe deployment &lt;deployment-name&gt;
-</code></pre>
-<p>Provides details about replica counts and issues during updates.</p>
-<ol start="18">
-<li><strong>Scale a deployment</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl scale deployment &lt;deployment-name&gt; --replicas=&lt;number&gt;
-</code></pre>
-<p>Adjust the number of replicas to handle workload demands.</p>
-<ol start="19">
-<li><strong>Rollback a deployment</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl rollout undo deployment &lt;deployment-name&gt;
-</code></pre>
-<p>Reverts to the previous stable deployment state.</p>
-<ol start="20">
-<li><strong>Check rollout status</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl rollout status deployment &lt;deployment-name&gt;
-</code></pre>
-<p>Ensures the deployment update is proceeding as expected.</p>
-<hr />
-<h3 id="heading-5-persistent-volumes-and-storage"><strong>5. Persistent Volumes and Storage</strong></h3>
-<ol start="21">
-<li><strong>List persistent volumes</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get pv
-</code></pre>
-<p>View the status of persistent volumes in the cluster.</p>
-<ol start="22">
-<li><strong>Inspect persistent volume claims</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get pvc
-</code></pre>
-<p>Verifies if pods are correctly bound to storage.</p>
-<ol start="23">
-<li><strong>Describe a persistent volume</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl describe pv &lt;pv-name&gt;
-</code></pre>
-<p>Provides details about storage capacity and access modes.</p>
-<hr />
-<h3 id="heading-6-resource-monitoring-and-usage"><strong>6. Resource Monitoring and Usage</strong></h3>
-<ol start="24">
-<li><strong>Check resource usage by node</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl top node
-</code></pre>
-<p>Displays CPU and memory usage across all nodes.</p>
-<ol start="25">
-<li><strong>Check pod resource limits</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl describe pod &lt;pod-name&gt; | grep -i "limits"
-</code></pre>
-<p>Validates resource limits defined for pods.</p>
-<ol start="26">
-<li><strong>Monitor resource quotas</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get resourcequotas
-</code></pre>
-<p>Ensures namespaces are within resource allocation limits.</p>
-<hr />
-<h3 id="heading-7-configuration-and-secrets"><strong>7. Configuration and Secrets</strong></h3>
-<ol start="27">
-<li><strong>List config maps</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get configmaps
-</code></pre>
-<p>Lists all ConfigMaps in the current namespace.</p>
-<ol start="28">
-<li><strong>Inspect secrets</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl get secrets
-</code></pre>
-<p>Ensures secure information is properly configured and accessible.</p>
-<hr />
-<h3 id="heading-8-miscellaneous-utilities"><strong>8. Miscellaneous Utilities</strong></h3>
-<ol start="29">
-<li><strong>Dry-run a deployment</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl apply -f &lt;file-name.yaml&gt; --dry-run=client
-</code></pre>
-<p>Tests changes without applying them to the cluster.</p>
-<ol start="30">
-<li><strong>Delete a problematic resource</strong></li>
-</ol>
-<pre><code class="lang-plaintext">kubectl delete pod &lt;pod-name&gt;
-</code></pre>
-<p>Removes malfunctioning pods to free up resources.</p>
-<hr />
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<p>Troubleshooting Kubernetes effectively involves understanding its architecture and mastering key commands. The 30 commands we've discussed cover many scenarios, helping you diagnose and fix issues efficiently.</p>
-<p>As you get more comfortable with these commands, you'll notice a significant improvement in managing complex Kubernetes environments. Keep this list handy, practice often, and enhance your DevOps workflow!</p>
-<p><strong>What are your favorite Kubernetes troubleshooting commands? Share them in the comments!</strong> 🚀</p>
-]]></content:encoded></item><item><title><![CDATA[How AWS Lambda Eases Application Deployment with Serverless DevOps]]></title><description><![CDATA[Exploring Serverless DevOps: How to Deploy Applications with AWS Lambda
-In today's fast-paced world of application development, the need for agility and efficiency is greater than ever. Serverless computing has become a game-changer in this space. AW...]]></description><link>https://sishodiarobin.hashnode.dev/how-aws-lambda-eases-application-deployment-with-serverless-devops</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/how-aws-lambda-eases-application-deployment-with-serverless-devops</guid><category><![CDATA[#Serverless #DevOps #AWSLambda #CloudComputing #Automation #SoftwareDevelopment #TechInnovation #CICD #Scalability]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 04 Dec 2024 18:17:26 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733336058695/64f48916-8dd2-4f62-9060-a034d69c8a92.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<h3 id="heading-exploring-serverless-devops-how-to-deploy-applications-with-aws-lambda">Exploring Serverless DevOps: How to Deploy Applications with AWS Lambda</h3>
-<p>In today's fast-paced world of application development, the need for agility and efficiency is greater than ever. Serverless computing has become a game-changer in this space. AWS Lambda, a leader in serverless technology, allows developers to create and deploy applications without the hassle of managing servers. By merging serverless computing with DevOps practices, we unlock new opportunities, making software delivery quicker, more affordable, and easily scalable.</p>
-<p>In this article, we'll dive into how AWS Lambda is transforming application deployment and how it fits perfectly with DevOps principles.</p>
-<hr />
-<h4 id="heading-what-is-aws-lambda"><strong>What is AWS Lambda?</strong></h4>
-<p>AWS Lambda is a serverless computing service that lets developers run code in response to events without the need to set up or manage infrastructure. Lambda functions are activated by events like HTTP requests, data changes, or scheduled tasks.</p>
-<p>Key features of AWS Lambda include:</p>
-<ul>
-<li><p><strong>Event-Driven:</strong> Functions run in response to specific triggers.</p>
-</li>
-<li><p><strong>Scalable:</strong> Automatically adjusts to meet demand, ensuring high availability.</p>
-</li>
-<li><p><strong>Cost-Effective:</strong> Charges are based on execution time, so you only pay for what you use.</p>
-</li>
-</ul>
-<hr />
-<h4 id="heading-serverless-devops-why-combine-the-two"><strong>Serverless DevOps: Why Combine the Two?</strong></h4>
-<p>In the world of traditional DevOps, the focus is on automating infrastructure and processes. Serverless DevOps takes this concept further by removing the need to manage infrastructure altogether. Here's why bringing AWS Lambda into your DevOps strategy can be transformative:</p>
-<ol>
-<li><p><strong>Reduced Operational Overhead:</strong><br /> With Lambda, developers can concentrate on coding while AWS takes care of scaling, patching, and server management.</p>
-</li>
-<li><p><strong>Faster Deployment Cycles:</strong><br /> The lightweight nature of Lambda functions enables quicker iterations, speeding up the time-to-market.</p>
-</li>
-<li><p><strong>Improved Resilience:</strong><br /> Lambda automatically scales and distributes workloads, minimizing the risk of downtime.</p>
-</li>
-<li><p><strong>Cost Efficiency:</strong><br /> Serverless architectures cut costs by eliminating the need to maintain idle servers.</p>
-</li>
-<li><p><strong>Seamless CI/CD Integration:</strong><br /> AWS Lambda works smoothly with CI/CD pipelines for automated testing, deployment, and monitoring.</p>
-</li>
-</ol>
-<hr />
-<h4 id="heading-deploying-applications-with-aws-lambda-in-a-devops-workflow"><strong>Deploying Applications with AWS Lambda in a DevOps Workflow</strong></h4>
-<p>Here's a straightforward workflow for deploying applications using AWS Lambda with DevOps practices:</p>
-<ol>
-<li><p><strong>Code Development and Version Control:</strong></p>
-<ul>
-<li><p>Develop your Lambda function using supported languages such as Python, Node.js, or Java.</p>
-</li>
-<li><p>Manage your codebase with version control systems like Git.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Automated Testing:</strong></p>
-<ul>
-<li><p>Develop unit and integration tests for your Lambda functions.</p>
-</li>
-<li><p>Automate testing with tools like AWS CodeBuild or Jenkins.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Build and Package:</strong></p>
-<ul>
-<li>Package your Lambda function code and its dependencies using tools like AWS SAM (Serverless Application Model) or the Serverless Framework.</li>
-</ul>
-</li>
-<li><p><strong>Continuous Integration:</strong></p>
-<ul>
-<li>Employ CI tools like GitLab CI/CD, AWS CodePipeline, or CircleCI to automatically validate code changes.</li>
-</ul>
-</li>
-<li><p><strong>Deploy to AWS Lambda:</strong></p>
-<ul>
-<li>Deploy the packaged application using AWS CLI, SAM CLI, or Infrastructure as Code (IaC) tools like Terraform.</li>
-</ul>
-</li>
-<li><p><strong>Monitoring and Logging:</strong></p>
-<ul>
-<li>Utilize AWS CloudWatch to monitor Lambda function performance and collect logs for debugging and analysis.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h4 id="heading-best-practices-for-serverless-devops-with-aws-lambda"><strong>Best Practices for Serverless DevOps with AWS Lambda</strong></h4>
-<ol>
-<li><p><strong>Adopt Infrastructure as Code (IaC):</strong><br /> Use IaC tools to manage Lambda deployments, ensuring they are consistent and scalable.</p>
-</li>
-<li><p><strong>Optimize Cold Starts:</strong><br /> Reduce delays by using provisioned concurrency for important functions.</p>
-</li>
-<li><p><strong>Implement Security Best Practices:</strong></p>
-<ul>
-<li><p>Assign IAM roles with the least privilege needed.</p>
-</li>
-<li><p>Protect sensitive data with AWS KMS encryption.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Embrace Observability:</strong><br /> Use AWS X-Ray for tracing and CloudWatch for real-time insights into your Lambda applications.</p>
-</li>
-<li><p><strong>Event-Driven Architecture:</strong><br /> Design your applications to fully utilize AWS services like S3, DynamoDB, and API Gateway as event sources.</p>
-</li>
-</ol>
-<hr />
-<h4 id="heading-real-world-use-cases-of-serverless-devops"><strong>Real-World Use Cases of Serverless DevOps</strong></h4>
-<ol>
-<li><p><strong>Scalable Web Applications:</strong><br /> Create RESTful APIs with AWS Lambda and API Gateway to handle high traffic smoothly.</p>
-</li>
-<li><p><strong>Data Processing Pipelines:</strong><br /> Utilize Lambda to handle large datasets in real-time, triggered by S3 events or Kinesis streams.</p>
-</li>
-<li><p><strong>Chatbots and Alexa Skills:</strong><br /> Develop smart, event-driven applications using Lambda's easy integration with AWS AI services.</p>
-</li>
-<li><p><strong>Automated Incident Response:</strong><br /> Set up automatic actions based on CloudWatch alarms, like adjusting resources or alerting teams.</p>
-</li>
-</ol>
-<hr />
-<h4 id="heading-challenges-and-mitigation-strategies"><strong>Challenges and Mitigation Strategies</strong></h4>
-<ol>
-<li><p><strong>Cold Start Latency:</strong><br /> To minimize delays for functions that are called often, consider using provisioned concurrency.</p>
-</li>
-<li><p><strong>Vendor Lock-In:</strong><br /> Design your applications so that the business logic is separate from specific cloud services, making it easier to switch providers if needed.</p>
-</li>
-<li><p><strong>Debugging Complexity:</strong><br /> Simplify debugging in distributed serverless setups by using tools like AWS X-Ray and structured logging.</p>
-</li>
-</ol>
-<hr />
-<h4 id="heading-conclusion"><strong>Conclusion</strong></h4>
-<p>Serverless DevOps with AWS Lambda brings together the benefits of serverless computing—scalability and cost-efficiency—with the automation and speed of DevOps practices. By integrating AWS Lambda into your DevOps processes, you can concentrate on delivering top-notch applications while simplifying operations.</p>
-<p>Whether you're growing a startup or fine-tuning enterprise workloads, serverless DevOps offers a smart way to build modern, efficient, and robust applications. Begin using AWS Lambda today and step into the future of application deployment.</p>
-<hr />
-<p><strong>Ready to Go Serverless?</strong><br />Explore the AWS Lambda documentation and discover how serverless DevOps can revolutionize your development processes!</p>
-<hr />
-]]></content:encoded></item><item><title><![CDATA[GitLab CI/CD Pipelines: Automate Everything and Streamline Your DevOps Workflows]]></title><description><![CDATA[GitLab CI/CD Pipelines: Automate Everything
-In the fast-paced world of DevOps, automation is essential for achieving efficiency, consistency, and speed. GitLab CI/CD pipelines provide a powerful framework to automate the whole software delivery proce...]]></description><link>https://sishodiarobin.hashnode.dev/gitlab-cicd-pipelines-automate-everything-and-streamline-your-devops-workflows</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/gitlab-cicd-pipelines-automate-everything-and-streamline-your-devops-workflows</guid><category><![CDATA[#GitLab #CICD #DevOps #Automation #SoftwareDevelopment #TechBlog #Productivity #BuildTestDeploy]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 03 Dec 2024 18:23:14 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/ZV_64LdGoao/upload/f1f476bc78faf6d1253ad81d1238cd29.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<h3 id="heading-gitlab-cicd-pipelines-automate-everything">GitLab CI/CD Pipelines: Automate Everything</h3>
-<p>In the fast-paced world of DevOps, automation is essential for achieving efficiency, consistency, and speed. GitLab CI/CD pipelines provide a powerful framework to automate the whole software delivery process, allowing teams to build, test, and deploy applications with minimal manual effort. This article delves into how GitLab CI/CD pipelines can help you simplify workflows, enhance collaboration, and ultimately speed up delivery cycles.</p>
-<hr />
-<h4 id="heading-what-is-gitlab-cicd"><strong>What is GitLab CI/CD?</strong></h4>
-<p>GitLab CI/CD (Continuous Integration and Continuous Deployment) is a crucial part of GitLab, a comprehensive DevOps platform that brings together source code management and automation tools in one place. With GitLab CI/CD, developers can streamline the entire lifecycle of their applications, from integrating and testing code to deploying it.</p>
-<p>Key components of GitLab CI/CD include:</p>
-<ol>
-<li><p><strong>Continuous Integration (CI):</strong> This automates the process of merging code changes into a shared repository and running automated tests to maintain the integrity of the codebase.</p>
-</li>
-<li><p><strong>Continuous Deployment (CD):</strong> This automates the release of software updates to production or other environments, requiring minimal manual intervention.</p>
-</li>
-</ol>
-<hr />
-<h4 id="heading-how-gitlab-cicd-pipelines-work"><strong>How GitLab CI/CD Pipelines Work</strong></h4>
-<p>A GitLab CI/CD pipeline is a set of automated steps defined in a YAML configuration file (<code>.gitlab-ci.yml</code>). Here's a simple breakdown of how it works:</p>
-<ol>
-<li><p><strong>Pipeline Triggers:</strong></p>
-<ul>
-<li><p>Pipelines start automatically when developers push changes to a GitLab repository or open merge requests.</p>
-</li>
-<li><p>They can also be started manually or scheduled to run at specific times.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Stages and Jobs:</strong></p>
-<ul>
-<li><p>A pipeline is divided into stages like <em>build</em>, <em>test</em>, and <em>deploy</em>.</p>
-</li>
-<li><p>Each stage has jobs, which are tasks that run one after another or at the same time, depending on their dependencies.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Runners:</strong></p>
-<ul>
-<li>Jobs are run by runners, which are lightweight agents installed on servers or virtual machines.</li>
-</ul>
-</li>
-<li><p><strong>Artifact Management:</strong></p>
-<ul>
-<li>Pipelines can save intermediate results, known as artifacts, which can be shared between jobs or stages.</li>
-</ul>
-</li>
-<li><p><strong>Environment Integration:</strong></p>
-<ul>
-<li>GitLab allows pipelines to deploy applications to different environments, such as Kubernetes, AWS, or on-premises servers.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h4 id="heading-key-benefits-of-gitlab-cicd-pipelines"><strong>Key Benefits of GitLab CI/CD Pipelines</strong></h4>
-<ol>
-<li><p><strong>Automation at Every Step:</strong></p>
-<ul>
-<li>GitLab pipelines take care of everything from building code to running tests and deploying updates, removing the need for repetitive manual work and speeding up feedback and delivery.</li>
-</ul>
-</li>
-<li><p><strong>Improved Collaboration:</strong></p>
-<ul>
-<li>By combining source code management with CI/CD, GitLab encourages teamwork among developers, operations, and other stakeholders.</li>
-</ul>
-</li>
-<li><p><strong>Scalability:</strong></p>
-<ul>
-<li>Pipelines are designed to manage projects of any size, growing with your team and the complexity of your projects.</li>
-</ul>
-</li>
-<li><p><strong>Quality Assurance:</strong></p>
-<ul>
-<li>Automated testing makes sure that only verified changes go live, lowering the chance of bugs in production.</li>
-</ul>
-</li>
-<li><p><strong>Customizability:</strong></p>
-<ul>
-<li>With GitLab’s <code>.gitlab-ci.yml</code>, developers can create custom workflows, scripts, and dependencies that fit their project needs.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h4 id="heading-best-practices-for-gitlab-cicd-pipelines"><strong>Best Practices for GitLab CI/CD Pipelines</strong></h4>
-<p>To fully leverage GitLab CI/CD pipelines, keep these best practices in mind:</p>
-<ol>
-<li><p><strong>Modular Pipelines:</strong></p>
-<ul>
-<li>Divide pipelines into smaller, reusable stages to enhance maintainability.</li>
-</ul>
-</li>
-<li><p><strong>Parallel Execution:</strong></p>
-<ul>
-<li>Utilize parallel jobs to accelerate pipeline execution and minimize bottlenecks.</li>
-</ul>
-</li>
-<li><p><strong>Use Caching:</strong></p>
-<ul>
-<li>Cache dependencies and artifacts to prevent unnecessary downloads and boost pipeline efficiency.</li>
-</ul>
-</li>
-<li><p><strong>Test Coverage:</strong></p>
-<ul>
-<li>Incorporate thorough unit, integration, and end-to-end tests to maintain high-quality code.</li>
-</ul>
-</li>
-<li><p><strong>Environment-Specific Configurations:</strong></p>
-<ul>
-<li>Employ GitLab's variables and secrets to securely handle environment-specific configurations.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h4 id="heading-real-world-applications"><strong>Real-World Applications</strong></h4>
-<p>GitLab CI/CD pipelines are widely used in various industries to automate essential tasks such as:</p>
-<ul>
-<li><p>Building Docker images and pushing them to registries.</p>
-</li>
-<li><p>Deploying applications to Kubernetes clusters.</p>
-</li>
-<li><p>Running automated security scans to ensure compliance.</p>
-</li>
-<li><p>Managing infrastructure as code (IaC) with tools like Terraform.</p>
-</li>
-</ul>
-<p>For instance, an e-commerce company can leverage GitLab CI/CD to streamline its entire software delivery process:</p>
-<ol>
-<li><p>Automatically triggering builds when developers push updates to the main branch.</p>
-</li>
-<li><p>Running tests for checkout, payment, and product listing functionalities.</p>
-</li>
-<li><p>Seamlessly deploying the application to both staging and production environments.</p>
-</li>
-</ol>
-<hr />
-<h4 id="heading-conclusion"><strong>Conclusion</strong></h4>
-<p>GitLab CI/CD pipelines truly capture the essence of automation, enabling DevOps teams to deliver software more quickly, reliably, and with greater quality. By embracing GitLab CI/CD, you can save time, minimize errors, and encourage a culture of continuous improvement and innovation.</p>
-<p>Whether you're a startup aiming for quick iterations or an enterprise handling complex deployments, GitLab CI/CD pipelines provide the tools and flexibility to automate your processes. So, why wait? Begin creating smarter pipelines and elevate your DevOps efforts to new heights.</p>
-<hr />
-<p><strong>Ready to Automate?</strong><br />Explore the GitLab documentation and discover its capabilities today. Remember, the journey to automation starts with just one pipeline.</p>
-<hr />
-]]></content:encoded></item><item><title><![CDATA[The Ultimate Guide to Easy EC2 Connectivity: SSH Access and Secure Communication]]></title><description><![CDATA[In the ever-evolving world of cloud computing, Amazon Web Services (AWS) stands out as a leader, offering a broad array of services that help organizations easily build, deploy, and manage scalable applications. Among these services, Amazon Elastic C...]]></description><link>https://sishodiarobin.hashnode.dev/the-ultimate-guide-to-easy-ec2-connectivity-ssh-access-and-secure-communication</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/the-ultimate-guide-to-easy-ec2-connectivity-ssh-access-and-secure-communication</guid><category><![CDATA[#AWS #EC2 #CloudComputing #DevOps #CloudSecurity #Technology #CloudInfrastructure #TechTips #SSH #SecureCommunication #ITAutomation #CloudEngineering]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Dec 2024 17:38:18 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1732943268257/f63754c0-1668-4d8f-b579-e7aab152145c.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the ever-evolving world of cloud computing, Amazon Web Services (AWS) stands out as a leader, offering a broad array of services that help organizations easily build, deploy, and manage scalable applications. Among these services, <strong>Amazon Elastic Compute Cloud (EC2)</strong> is widely used, providing flexible compute capacity in the cloud. Whether you're managing a small web app or a large enterprise system, connecting to and communicating with your EC2 instances is essential. One of the most secure and popular methods for this connection is through <strong>SSH (Secure Shell)</strong>.</p>
-<p>This article is designed to guide you through understanding how SSH access works for EC2 instances, outlining the key steps involved, and sharing best practices for secure communication.</p>
-<h3 id="heading-what-is-ssh-access">What is SSH Access?</h3>
-<p><strong>SSH (Secure Shell)</strong> is a secure way to communicate over a network, allowing you to run commands and transfer files safely between a client and a server. For EC2 instances on AWS, SSH is the secure link that lets you connect to the virtual machines. It's a favorite tool for system administrators and DevOps engineers to manage, configure, and troubleshoot EC2 instances.</p>
-<h3 id="heading-key-components-of-ssh-for-ec2-access">Key Components of SSH for EC2 Access</h3>
-<p>Before we explore how to connect to your EC2 instance using SSH, let's understand the main components involved:</p>
-<ul>
-<li><p><strong>EC2 Instance</strong>: This is the virtual server you've set up on AWS to host your applications. EC2 instances can run different operating systems like Linux, Windows, or macOS, but SSH is primarily used for Linux-based instances.</p>
-</li>
-<li><p><strong>Private Key (PEM file)</strong>: AWS uses a key pair system for SSH authentication. When you create an EC2 instance, you need to create or choose a key pair. The private key (.pem file) is your proof of identity to access the instance.</p>
-</li>
-<li><p><strong>Public IP Address (Elastic IP or Public IP)</strong>: Each EC2 instance has a public IP address that makes it accessible over the internet. To connect via SSH, you'll need the public IP address of your instance.</p>
-</li>
-</ul>
-<h3 id="heading-steps-to-connect-to-ec2-using-ssh">Steps to Connect to EC2 Using SSH</h3>
-<p>To begin accessing your EC2 instance through SSH, follow these steps:</p>
-<h4 id="heading-1-launch-an-ec2-instance">1. <strong>Launch an EC2 Instance</strong></h4>
-<p>If you haven't done so already, start by creating an EC2 instance from the AWS Management Console. Choose the operating system you prefer (usually a Linux distribution like Ubuntu, Amazon Linux, or CentOS) and set up your instance according to your requirements.</p>
-<h4 id="heading-2-create-or-select-a-key-pair">2. <strong>Create or Select a Key Pair</strong></h4>
-<p>When you launch an EC2 instance, you'll need to create a key pair or select an existing one. This key pair includes a public key and a private key:</p>
-<ul>
-<li><p><strong>Public Key</strong>: AWS keeps this on the instance for SSH authentication.</p>
-</li>
-<li><p><strong>Private Key</strong>: You download the private key file (.pem) when you create the key pair. Keep it secure, as AWS can't recreate it for you later.</p>
-</li>
-</ul>
-<p>If you lose the private key, you won't be able to access the EC2 instance via SSH.</p>
-<h4 id="heading-3-modify-security-group-settings">3. <strong>Modify Security Group Settings</strong></h4>
-<p>Your EC2 instance's security group functions as a virtual firewall, managing incoming and outgoing traffic. To enable SSH access, you must configure the security group to allow inbound traffic on port 22 (the standard port for SSH).</p>
-<p>To do this:</p>
-<ul>
-<li><p>Go to the <strong>Security Groups</strong> section in the AWS Console.</p>
-</li>
-<li><p>Locate the security group linked to your EC2 instance.</p>
-</li>
-<li><p>Edit the inbound rules to permit SSH (port 22) from your IP address or IP range (e.g., <code>0.0.0.0/0</code> to allow all IPs, though it's safer to restrict it to your IP).</p>
-</li>
-</ul>
-<h4 id="heading-4-access-the-instance-using-ssh">4. <strong>Access the Instance Using SSH</strong></h4>
-<p>After launching your instance and configuring the security group, you're ready to connect using SSH. Here's how:</p>
-<ul>
-<li><p>Open a terminal (or use an SSH client like PuTTY if you're on Windows).</p>
-</li>
-<li><p>Go to the directory where your <code>.pem</code> private key file is located.</p>
-</li>
-<li><p>Ensure the private key file has the right permissions by executing the following command:</p>
-</li>
-<li><pre><code class="lang-plaintext">  chmod 400 your-key-name.pem
-</code></pre>
-</li>
-<li><p>To connect to your EC2 instance, enter the following SSH command:</p>
-<pre><code class="lang-plaintext">  ssh -i your-key-name.pem ec2-user@your-ec2-public-ip
-</code></pre>
-<ul>
-<li><p>Replace <code>your-key-name.pem</code> with the name of your PEM file.</p>
-</li>
-<li><p>Replace <code>ec2-user</code> with the correct username (for Amazon Linux, it's usually <code>ec2-user</code>; for Ubuntu, it's <code>ubuntu</code>).</p>
-</li>
-<li><p>Replace <code>your-ec2-public-ip</code> with the actual public IP of your EC2 instance.</p>
-</li>
-</ul>
-</li>
-</ul>
-<p>    If everything is configured correctly, you should now be connected to your EC2 instance via SSH. You can start running commands, managing your application, or handling any administrative tasks.</p>
-<h3 id="heading-common-ssh-connection-issues">Common SSH Connection Issues</h3>
-<p>Connecting to an EC2 instance via SSH is usually simple, but sometimes you might face a few common problems:</p>
-<ol>
-<li><p><strong>Permission Denied (publickey)</strong>: This error shows up when the private key you're using doesn't match the public key on the EC2 instance. Double-check that you're using the right private key for your EC2 instance and that the key file's permissions are set to <code>400</code> (only you can read it).</p>
-</li>
-<li><p><strong>Connection Timed Out</strong>: This issue often arises if the security group isn't set up correctly or if the EC2 instance doesn't have a public IP. Make sure port 22 is open in the security group and that the EC2 instance has an Elastic IP or public IP.</p>
-</li>
-<li><p><strong>Wrong Username</strong>: The default username depends on the Linux distribution you're using. For Amazon Linux, it's <code>ec2-user</code>; for Ubuntu, it's <code>ubuntu</code>; and for CentOS, it's <code>centos</code>. Make sure you're using the right username when you connect.</p>
-</li>
-</ol>
-<h3 id="heading-best-practices-for-securing-ssh-access">Best Practices for Securing SSH Access</h3>
-<p>While SSH is inherently secure, it's crucial to follow some best practices to keep your connection protected:</p>
-<ul>
-<li><p><strong>Use Key-Based Authentication</strong>: Instead of passwords, always opt for the key pair method to enhance security.</p>
-</li>
-<li><p><strong>Restrict SSH Access by IP Address</strong>: Limit SSH access to specific IP addresses, like those from your office or home, instead of allowing access from any IP (<code>0.0.0.0/0</code>).</p>
-</li>
-<li><p><strong>Use an SSH Bastion Host</strong>: For multiple EC2 instances, set up a Bastion Host (or jump server) to securely manage SSH access to your private EC2 instances.</p>
-</li>
-<li><p><strong>Enable Multi-Factor Authentication (MFA)</strong>: Combine AWS IAM roles and policies with MFA for an extra security layer.</p>
-</li>
-<li><p><strong>Regularly Rotate Keys</strong>: Frequently update SSH keys and remove any that are no longer in use to minimize the risk of unauthorized access.</p>
-</li>
-</ul>
-<h3 id="heading-conclusion">Conclusion</h3>
-<p>SSH offers a straightforward and secure method to access your EC2 instances and manage your cloud infrastructure. Whether you're doing routine maintenance, troubleshooting, or deploying applications, SSH is essential for working with EC2 instances. By following the steps mentioned above and sticking to security best practices, you can keep your EC2 instances both accessible and secure, allowing you to concentrate on delivering applications and services smoothly.</p>
-<p>As you continue to work with AWS EC2, remember to keep up with the latest security practices and tools to ensure your cloud infrastructure remains efficient and protected.</p>
-]]></content:encoded></item><item><title><![CDATA[Building a Solid Networking Foundation: The Ultimate Beginner's Guide🌐💻🔌]]></title><description><![CDATA[Embarking on Your Journey into Computer Networking: A Beginner's Guide
-In our digital age, computer networking is crucial for connecting devices and allowing communication across great distances. Whether you're just starting out in this field or a pr...]]></description><link>https://sishodiarobin.hashnode.dev/building-a-solid-networking-foundation-the-ultimate-beginners-guide</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-solid-networking-foundation-the-ultimate-beginners-guide</guid><category><![CDATA[#ComputerNetworking #NetworkingBasics #ITInfrastructure #NetworkingDevices #OSIModel #TCPIP #LAN #WAN #NetworkSecurity #NetworkProtocols #VirtualNetworking #NetworkingTools #TechEducation #BeginnerGuide #TechSkills #NetworkSetup #Networking101 #CyberSecurity #HandsOnLearning #TechCommunity #TechCareer #NetworkManagement #DataCommunication]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 29 Nov 2024 22:51:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1732919556725/718137b9-25bf-4c23-93bf-8f75f5afec9f.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<h3 id="heading-embarking-on-your-journey-into-computer-networking-a-beginners-guide"><strong>Embarking on Your Journey into Computer Networking: A Beginner's Guide</strong></h3>
-<p>In our digital age, computer networking is crucial for connecting devices and allowing communication across great distances. Whether you're just starting out in this field or a professional wanting to grasp the basics, this guide will walk you through the key components of computer networking and help you get started.</p>
-<h3 id="heading-what-is-computer-networking">What is Computer Networking?</h3>
-<p>Simply put, computer networking involves linking multiple computers, devices, or systems so they can share resources like data, printers, and internet connections. A network lets these devices talk to each other and work together smoothly.</p>
-<p>Computer networks are the foundation of today's communication, supporting everything from the internet to internal networks in businesses, homes, and schools. Networking makes collaboration easier, boosts productivity, and gives access to information and services.</p>
-<h3 id="heading-key-components-of-computer-networking">Key Components of Computer Networking</h3>
-<p>To dive into computer networking, it's important to get familiar with the basic parts that form a network:</p>
-<ol>
-<li><p><strong>Devices:</strong></p>
-<ul>
-<li><p><strong>Client Devices</strong>: These are the endpoints in a network, like computers, laptops, mobile devices, and printers.</p>
-</li>
-<li><p><strong>Server Devices</strong>: These offer resources, data, or services to clients. Examples include web servers, file servers, and database servers.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Networking Hardware:</strong></p>
-<ul>
-<li><p><strong>Routers</strong>: These devices connect different networks and manage traffic between them.</p>
-</li>
-<li><p><strong>Switches</strong>: Switches link devices within a local network (LAN) and enable them to communicate with each other.</p>
-</li>
-<li><p><strong>Modems</strong>: Modems allow internet access by changing digital signals from a computer into analog signals that can travel over telephone lines or cable systems.</p>
-</li>
-<li><p><strong>Cables and Wireless Connections</strong>: Physical cables (Ethernet cables) or wireless connections (Wi-Fi) help devices communicate with each other.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Protocols:</strong></p>
-<ul>
-<li><p><strong>TCP/IP (Transmission Control Protocol/Internet Protocol)</strong>: These are the core protocols that run the internet and most other networks. They set the rules for how data is sent and routed across networks.</p>
-</li>
-<li><p><strong>HTTP/HTTPS</strong>: These protocols are used for communication between web servers and browsers, making web page requests and transfers possible.</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="heading-types-of-networks">Types of Networks</h3>
-<p>Networking can be divided into different types based on the area they cover and the number of devices they connect. Here are the most common network types:</p>
-<ol>
-<li><p><strong>LAN (Local Area Network):</strong></p>
-<ul>
-<li>A LAN links devices within a small area, like a home, office, or building. It allows devices to share resources such as printers, files, and internet connections.</li>
-</ul>
-</li>
-<li><p><strong>WAN (Wide Area Network):</strong></p>
-<ul>
-<li>A WAN covers a large geographic area, connecting multiple offices or cities. The internet is the most well-known example of a WAN.</li>
-</ul>
-</li>
-<li><p><strong>MAN (Metropolitan Area Network):</strong></p>
-<ul>
-<li>A MAN covers a larger area than a LAN but is smaller than a WAN, usually spanning a city or a large campus.</li>
-</ul>
-</li>
-<li><p><strong>PAN (Personal Area Network):</strong></p>
-<ul>
-<li>A PAN connects personal devices within a small range, about 10 meters, like a smartphone connecting to a laptop via Bluetooth.</li>
-</ul>
-</li>
-</ol>
-<h3 id="heading-steps-to-begin-your-journey-in-computer-networking">Steps to Begin Your Journey in Computer Networking</h3>
-<ol>
-<li><p><strong>Learn the Basics of Networking:</strong></p>
-<ul>
-<li>Begin by grasping essential networking concepts like IP addresses, subnets, and protocols, and understand how data moves through a network. Discover how devices connect, how they communicate, and the functions of various network devices.</li>
-</ul>
-</li>
-<li><p><strong>Understand the OSI Model:</strong></p>
-<ul>
-<li>The <strong>OSI (Open Systems Interconnection)</strong> model is a framework that outlines how network protocols work together across seven layers. These layers—Physical, Data Link, Network, Transport, Session, Presentation, and Application—help standardize networking tasks and troubleshooting.</li>
-</ul>
-</li>
-<li><p><strong>Get Familiar with Networking Devices and Tools:</strong></p>
-<ul>
-<li>Learn to set up and configure devices such as routers, switches, and modems. Get to know network tools like <strong>ping</strong>, <strong>traceroute</strong>, and <strong>ipconfig</strong>, which are essential for diagnosing and resolving network issues.</li>
-</ul>
-</li>
-<li><p><strong>Practice Networking in a Lab Environment:</strong></p>
-<ul>
-<li>Try setting up a small network at home or use virtual environments to mimic networking setups. Practice configuring routers and switches, assigning IP addresses, and using different network protocols. Tools like <strong>Cisco Packet Tracer</strong> or <strong>GNS3</strong> let you practice networking without needing physical equipment.</li>
-</ul>
-</li>
-<li><p><strong>Learn About Networking Security:</strong></p>
-<ul>
-<li>As you dive into computer networking, remember the critical role of network security. Get to know basic security concepts such as firewalls, encryption, VPNs (Virtual Private Networks), and the importance of safeguarding your network from threats and unauthorized access.</li>
-</ul>
-</li>
-<li><p><strong>Take Online Courses and Tutorials:</strong></p>
-<ul>
-<li>Explore online platforms offering free or paid networking courses, like <strong>Udemy</strong>, <strong>Coursera</strong>, or <strong>LinkedIn Learning</strong>. These courses provide structured lessons from beginner to advanced levels, helping you grasp complex concepts more easily.</li>
-</ul>
-</li>
-<li><p><strong>Get Hands-On Experience:</strong></p>
-<ul>
-<li>In any technical field, hands-on experience is key to mastering networking. Engage in internships, set up your own small home network, or volunteer to manage a network for a local organization to enhance your practical skills.</li>
-</ul>
-</li>
-</ol>
-<h3 id="heading-conclusion">Conclusion</h3>
-<p>Beginning your journey in computer networking might seem daunting at first, but by taking small, consistent steps, you can build a strong foundation in this essential technology field. Start with the basics, get to know networking devices and protocols, and keep practicing to gain hands-on experience. Networking skills are highly valuable in today's tech-driven world and can open doors to diverse career paths in IT, cybersecurity, systems administration, and beyond.</p>
-<p>The world of computer networking is vast, with endless opportunities to learn as technology evolves. So, stay curious, keep exploring, and enjoy the adventure of expanding your networking expertise!</p>
 ]]></content:encoded></item></channel></rss>
