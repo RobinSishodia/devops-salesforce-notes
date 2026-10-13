@@ -13,10 +13,15 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (20)
+## 📚 All posts (25)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-10-13 | [Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)](https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30) | `Salesforce` `Salesforce Admin` | [Markdown](posts/2026-10-13-salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30.md) |
+| 2026-10-13 | [Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)](https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30) | `Salesforce` `Salesforce Admin` `flow` | [Markdown](posts/2026-10-13-salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30.md) |
+| 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
+| 2026-10-06 | [Dockerfile Best Practices: Smaller, Faster and Safer Images](https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images) | `Docker` `containers` `Devops` `best practices` | [Markdown](posts/2026-10-06-dockerfile-best-practices-smaller-faster-and-safer-images.md) |
+| 2026-10-06 | [AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups](https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups) | `AWS` `networking` `vpc` `Cloud` | [Markdown](posts/2026-10-06-aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups.md) |
 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 | 2026-10-03 | [AWS IAM Explained: Users, Groups, Roles and Policies for Beginners](https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners) | `AWS` `IAM` `cloud security` `Devops` | [Markdown](posts/2026-10-03-aws-iam-explained-users-groups-roles-and-policies-for-beginners.md) |
 | 2026-10-02 | [From Operations to Salesforce and DevOps: How I Switched Careers](https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers) | `Career` `Devops` `Salesforce` `AWS` | [Markdown](posts/2026-10-02-from-operations-to-salesforce-and-devops-how-i-switched-careers.md) |
