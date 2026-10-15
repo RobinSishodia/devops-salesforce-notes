@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 13 Oct 2026 22:25:11 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)]]></title><description><![CDATA[Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Oct 2026 19:12:35 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)]]></title><description><![CDATA[Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?
+
+The 4 Relations]]></description><link>https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:08:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?</em></p>
+<hr />
+<h2>The 4 Relationship Types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Lookup</strong></td>
+<td>A loose link between two objects</td>
+<td>Optional, the child keeps its own owner</td>
+</tr>
+<tr>
+<td><strong>Master-Detail</strong></td>
+<td>A tight parent-child bond</td>
+<td>Cascade delete, roll-ups, shared access</td>
+</tr>
+<tr>
+<td><strong>Junction object</strong></td>
+<td>Links two objects many-to-many</td>
+<td>Two master-detail fields</td>
+</tr>
+<tr>
+<td><strong>Hierarchical</strong></td>
+<td>Records link to the same object</td>
+<td>Parent Account, user manager</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. Standard vs Custom objects?</h3>
+<p>Standard objects ship with Salesforce, such as Account, Contact and Opportunity. Custom objects are built by you, and their API names end in <code>__c</code>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Custom objects and fields always end in <code>__c</code>.</p>
+</blockquote>
+<h3>2. Lookup vs Master-Detail?</h3>
+<p>A <strong>Lookup</strong> is optional and loosely coupled. A <strong>Master-Detail</strong> is required: the child inherits the parent's owner and sharing.</p>
+<blockquote>
+<p><strong>Tip:</strong> Ask: can the child exist without the parent?</p>
+</blockquote>
+<h3>3. What is a Junction object?</h3>
+<p>A custom object with <strong>two master-detail fields</strong> that creates a many-to-many link, like Student to Course through Enrollment.</p>
+<blockquote>
+<p><strong>Tip:</strong> The first master-detail sets the owner and sharing.</p>
+</blockquote>
+<h3>4. What is a Roll-up Summary field?</h3>
+<p>It lives on the master record and calculates <strong>COUNT, SUM, MIN or MAX</strong> over its detail records. It is only available with master-detail.</p>
+<blockquote>
+<p><strong>Tip:</strong> Need it on a lookup? Use a Flow instead.</p>
+</blockquote>
+<h3>5. Can you convert between them?</h3>
+<p><strong>Lookup to Master-Detail</strong> works only if every child record already has a parent. <strong>Master-Detail to Lookup</strong> works only if the parent has no roll-up summary fields.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fill in blank lookups before converting.</p>
+</blockquote>
+<h3>6. What happens if the parent is deleted?</h3>
+<p>With <strong>Master-Detail</strong> the children are deleted too (cascade). With a <strong>Lookup</strong> the children stay, unless you restrict the delete.</p>
+<blockquote>
+<p><strong>Tip:</strong> Restricting delete protects child data.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A school tracks Students and Courses, and each student can take many courses. How do you model it?"</strong></p>
+<ol>
+<li><p>Create custom objects <strong>Student</strong> and <strong>Course</strong></p>
+</li>
+<li><p>Create a junction object called <strong>Enrollment</strong></p>
+</li>
+<li><p>Add <strong>two master-detail fields</strong>: one to Student, one to Course</p>
+</li>
+<li><p>Add a <strong>roll-up summary</strong> on Course to count Enrollments</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Lookup</strong> = optional, independent</p>
+</li>
+<li><p><strong>Master-Detail</strong> = required, cascade delete</p>
+</li>
+<li><p><strong>Junction</strong> = two master-details</p>
+</li>
+<li><p><strong>Roll-up</strong> = master-detail only</p>
+</li>
+<li><p><strong>Max 2</strong> master-detail fields per object</p>
+</li>
+<li><p><strong>Custom</strong> API names end in <code>__c</code></p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Start with: can the child exist alone?</p>
+</li>
+<li><p>Use master-detail for tight ownership</p>
+</li>
+<li><p>Use a junction object for many-to-many</p>
+</li>
+<li><p>Plan relationships before you build</p>
+</li>
+</ul>
+<hr />
+<p><strong>Lookup or Master-Detail: which do you pick first? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 9 done, 21 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)]]></title><description><![CDATA[Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.
 
 The ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 22:00:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb5a0a21-2efe-429d-a1da-6e43dd949dff.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.</em></p>
 <hr />
@@ -1895,116 +2004,4 @@ resource "kubernetes_deployment" "nginx" {
 <h3 id="heading-takeaway"><strong>Takeaway</strong></h3>
 <p>Getting a good grasp of Git commands and strategies is crucial for developers and project managers who want to deliver projects that are efficient, well-organized, and collaborative. By learning these commands and following best practices, you can create smooth workflows and keep your codebase in top shape.</p>
 <p>💡 <strong>What Git command do you find yourself using the most? We'd love to hear about your experiences in the comments!</strong></p>
-]]></content:encoded></item><item><title><![CDATA[Enhance DevOps Efficiency with Jenkins Shared Libraries]]></title><description><![CDATA[In the dynamic world of DevOps, automation is the backbone of efficient and repeatable processes. Jenkins, a leading open-source automation server, has long been a favorite among DevOps practitioners. But as pipelines grow in complexity and teams sca...]]></description><link>https://sishodiarobin.hashnode.dev/enhance-devops-efficiency-with-jenkins-shared-libraries</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/enhance-devops-efficiency-with-jenkins-shared-libraries</guid><category><![CDATA[#DevOps #Jenkins #CI/CD #PipelineAutomation #SharedLibraries #Automation #SoftwareDevelopment #TechLearning #CloudComputing #InfrastructureAsCode #DevOpsTools #ContinuousIntegration #ContinuousDelivery #CodingBestPractices #TechInsights #EfficiencyInDevOps #TeamCollaboration #ITInnovation #BuildBetterPipelines]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Dec 2024 18:12:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733507714792/addd7e30-8445-4ea0-9228-d6661be65d3c.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the dynamic world of DevOps, automation is the backbone of efficient and repeatable processes. <strong>Jenkins</strong>, a leading open-source automation server, has long been a favorite among DevOps practitioners. But as pipelines grow in complexity and teams scale, managing repetitive tasks and ensuring consistency across pipelines becomes challenging. Enter <strong>Jenkins Shared Libraries</strong>—a feature designed to centralize, standardize, and optimize your Jenkins pipelines.</p>
-<p>This article explores how Jenkins Shared Libraries can streamline DevOps workflows, improve maintainability, and enhance collaboration across teams.</p>
-<hr />
-<h3 id="heading-what-are-jenkins-shared-libraries"><strong>What are Jenkins Shared Libraries?</strong></h3>
-<p>Jenkins Shared Libraries provide a way to share pipeline code and configurations across multiple Jenkins pipelines. Instead of duplicating Groovy scripts for similar tasks, you can create reusable, version-controlled libraries that act as building blocks for your pipelines.</p>
-<p><strong>Key Features of Jenkins Shared Libraries:</strong></p>
-<ol>
-<li><p><strong>Centralized Codebase:</strong> Store shared scripts in a Git repository for easy access and version control.</p>
-</li>
-<li><p><strong>Modularity:</strong> Create reusable methods and steps to standardize pipeline tasks.</p>
-</li>
-<li><p><strong>Improved Maintainability:</strong> Update shared functionality in one place, and all pipelines using the library automatically benefit.</p>
-</li>
-<li><p><strong>Custom DSL Support:</strong> Define your own domain-specific language (DSL) for pipelines to make them more readable and easier to use.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-benefits-of-jenkins-shared-libraries-in-devops"><strong>Benefits of Jenkins Shared Libraries in DevOps</strong></h3>
-<ol>
-<li><p><strong>Standardization Across Pipelines:</strong><br /> Shared libraries ensure uniformity in pipeline steps, reducing inconsistencies and human errors. Teams can adhere to best practices by using pre-defined steps for tasks like code quality checks, testing, or deployment.</p>
-</li>
-<li><p><strong>Reduced Redundancy:</strong><br /> By reusing common functions, you eliminate the need to duplicate code across pipelines, making them more concise and easier to maintain.</p>
-</li>
-<li><p><strong>Version Control for Pipelines:</strong><br /> Store shared libraries in a Git repository to track changes and maintain historical versions. You can lock pipelines to specific versions of the library to avoid breaking changes.</p>
-</li>
-<li><p><strong>Enhanced Collaboration:</strong><br /> DevOps teams can work together to build and improve shared libraries, fostering a culture of collaboration and innovation.</p>
-</li>
-<li><p><strong>Scalability:</strong><br /> As organizations grow, managing numerous pipelines becomes a breeze with reusable, modular libraries.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-how-to-use-jenkins-shared-libraries"><strong>How to Use Jenkins Shared Libraries</strong></h3>
-<h4 id="heading-1-create-a-shared-library"><strong>1. Create a Shared Library</strong></h4>
-<ul>
-<li><p>Set up a Git repository to store the library.</p>
-</li>
-<li><p>Define the library structure:</p>
-</li>
-</ul>
-<pre><code class="lang-plaintext">(root)  
-└── vars/  
-    ├── example.groovy  
-    └── anotherStep.groovy  
-└── src/  
-    └── org/  
-        └── example/  
-            └── Helper.groovy
-</code></pre>
-<ul>
-<li><p>Use <code>vars</code> for pipeline steps (e.g., <code>example.groovy</code> can be called directly in pipelines).</p>
-</li>
-<li><p>Use <code>src</code> for utility classes that support more complex logic.</p>
-</li>
-</ul>
-<h4 id="heading-2-integrate-the-library-with-jenkins"><strong>2. Integrate the Library with Jenkins</strong></h4>
-<ul>
-<li><p>In Jenkins, go to <strong>Manage Jenkins</strong> &gt; <strong>Configure System</strong> &gt; <strong>Global Pipeline Libraries.</strong></p>
-</li>
-<li><p>Add your library by providing a name, the source code repository URL, and versioning details.</p>
-</li>
-</ul>
-<h4 id="heading-3-use-the-library-in-pipelines"><strong>3. Use the Library in Pipelines</strong></h4>
-<ul>
-<li>Import the library in your pipeline scripts:</li>
-</ul>
-<pre><code class="lang-plaintext">@Library('my-shared-library') _
-
-example()
-</code></pre>
-<p>Here, <code>example()</code> is a step defined in <code>example.groovy</code> within the <code>vars</code> folder of your shared library.</p>
-<hr />
-<h3 id="heading-best-practices-for-jenkins-shared-libraries"><strong>Best Practices for Jenkins Shared Libraries</strong></h3>
-<ol>
-<li><p><strong>Adopt Clear Naming Conventions:</strong><br /> Use descriptive names for methods, classes, and files to enhance readability.</p>
-</li>
-<li><p><strong>Version Your Libraries:</strong><br /> Tag releases and allow pipelines to specify the version they depend on to avoid disruptions from changes.</p>
-</li>
-<li><p><strong>Write Comprehensive Documentation:</strong><br /> Document library methods and their usage to help team members quickly understand and utilize them.</p>
-</li>
-<li><p><strong>Implement Testing for Libraries:</strong><br /> Use tools like <strong>Spock</strong> or <strong>JenkinsPipelineUnit</strong> to write automated tests for your library functions.</p>
-</li>
-<li><p><strong>Secure Your Libraries:</strong><br /> Limit access to the library repository to ensure that only authorized contributors can make changes.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-real-world-use-cases"><strong>Real-World Use Cases</strong></h3>
-<ol>
-<li><p><strong>Automated Code Quality Checks:</strong><br /> Centralize steps for static code analysis using tools like SonarQube or Checkstyle.</p>
-</li>
-<li><p><strong>Deployment Automation:</strong><br /> Create reusable deployment scripts that can be tailored to multiple environments (e.g., staging, production).</p>
-</li>
-<li><p><strong>Monitoring and Alerts:</strong><br /> Integrate common monitoring steps into pipelines to log performance metrics or trigger alerts for failures.</p>
-</li>
-<li><p><strong>Compliance Validation:</strong><br /> Implement standardized steps to ensure that code adheres to security and compliance guidelines.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-challenges-and-how-to-overcome-them"><strong>Challenges and How to Overcome Them</strong></h3>
-<ol>
-<li><p><strong>Complex Debugging:</strong><br /> Shared libraries can add an abstraction layer, making debugging more challenging. Mitigate this by adding verbose logging and writing unit tests.</p>
-</li>
-<li><p><strong>Change Management:</strong><br /> Updates to libraries can affect multiple pipelines. Use semantic versioning and communicate changes to your team effectively.</p>
-</li>
-<li><p><strong>Learning Curve:</strong><br /> Teams new to Jenkins or Groovy may face an initial learning curve. Provide training and maintain clear documentation to ease adoption.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<p>Jenkins Shared Libraries are a powerful tool for DevOps teams seeking to standardize, simplify, and scale their CI/CD pipelines. By creating modular, reusable components, you can reduce redundancy, improve maintainability, and foster collaboration across teams.</p>
-<p>Whether you're automating builds, tests, or deployments, shared libraries enable you to focus on innovation while maintaining consistency. Start leveraging Jenkins Shared Libraries today and take your DevOps workflows to new heights!</p>
-<hr />
-<p><strong>Ready to optimize your Jenkins pipelines?</strong> Dive into Jenkins documentation or explore real-world examples to get started.</p>
 ]]></content:encoded></item></channel></rss>
