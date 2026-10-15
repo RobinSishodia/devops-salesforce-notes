@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Oct 2026 19:12:35 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)]]></title><description><![CDATA[Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Oct 2026 19:38:22 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)]]></title><description><![CDATA[Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.
+
+The 4 Report Formats
+
+
+
+Forma]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Reports & Dashboards]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:34:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fb51ec5-3bd6-4a7e-8d49-266df22d7b91.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.</em></p>
+<hr />
+<h2>The 4 Report Formats</h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Tabular</strong></td>
+<td>A simple list of records</td>
+<td>No grouping, no dashboard charts</td>
+</tr>
+<tr>
+<td><strong>Summary</strong></td>
+<td>Rows grouped by a field</td>
+<td>Up to 3 groupings, subtotals</td>
+</tr>
+<tr>
+<td><strong>Matrix</strong></td>
+<td>Grouped by rows and columns</td>
+<td>Up to 2 row and 2 column groups</td>
+</tr>
+<tr>
+<td><strong>Joined</strong></td>
+<td>Blocks from different report types</td>
+<td>Up to 5 blocks in one report</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Report Type?</h3>
+<p>It decides which objects and fields a report can use. Standard report types exist, and you can build <strong>custom report types</strong> with related objects.</p>
+<blockquote>
+<p><strong>Tip:</strong> "With" shows parents that have children, "with or without" shows all parents.</p>
+</blockquote>
+<h3>2. Summary vs Matrix report?</h3>
+<p>A <strong>Summary</strong> report groups rows by up to 3 fields. A <strong>Matrix</strong> report groups by both rows and columns, so you can compare two dimensions at once.</p>
+<blockquote>
+<p><strong>Tip:</strong> Need a cross-tab like region by quarter? Use a matrix.</p>
+</blockquote>
+<h3>3. Report vs Dashboard?</h3>
+<p>A <strong>report</strong> lists filtered records. A <strong>dashboard</strong> shows up to 20 components, each built from a source report.</p>
+<blockquote>
+<p><strong>Tip:</strong> Every component needs a source report.</p>
+</blockquote>
+<h3>4. Running user vs dynamic dashboard?</h3>
+<p>A normal dashboard shows data as seen by its <strong>running user</strong>. A <strong>dynamic dashboard</strong> runs as whoever is viewing it.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use dynamic when each viewer should see only their own data.</p>
+</blockquote>
+<h3>5. What is a Bucket field?</h3>
+<p>It groups report values into categories you define, with <strong>no formula or custom field</strong> needed.</p>
+<blockquote>
+<p><strong>Tip:</strong> For example, group deal amounts into Small, Medium and Large.</p>
+</blockquote>
+<h3>6. What is a Cross filter?</h3>
+<p>It filters records by related records, like <strong>Accounts with or without Opportunities</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Great for finding accounts with no activity.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A sales manager wants open pipeline by stage as a dashboard, emailed weekly. How do you do it?"</strong></p>
+<ol>
+<li><p>Build a <strong>Summary report</strong> on Opportunities, open only</p>
+</li>
+<li><p><strong>Group</strong> the report by Stage and add a chart</p>
+</li>
+<li><p>Add it to a <strong>dashboard</strong> as a component</p>
+</li>
+<li><p><strong>Subscribe</strong> the manager for a weekly email</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Tabular</strong> = simple list</p>
+</li>
+<li><p><strong>Summary</strong> = up to 3 groupings</p>
+</li>
+<li><p><strong>Matrix</strong> = rows and columns</p>
+</li>
+<li><p><strong>Joined</strong> = up to 5 blocks</p>
+</li>
+<li><p><strong>Dashboard</strong> = up to 20 components</p>
+</li>
+<li><p><strong>Bucket</strong> = group without a formula</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Choose the report type first</p>
+</li>
+<li><p>Summary to group, matrix to compare</p>
+</li>
+<li><p>Dashboards display reports</p>
+</li>
+<li><p>Check the running user</p>
+</li>
+</ul>
+<hr />
+<p><strong>Summary or Matrix: which do you build most? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 10 done, 20 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)]]></title><description><![CDATA[Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?
 
 The 4 Relations]]></description><link>https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:08:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?</em></p>
 <hr />
@@ -1857,151 +1970,4 @@ resource "kubernetes_deployment" "nginx" {
 <h3><strong>Conclusion</strong></h3>
 <p>Using Terraform with Kubernetes offers a strong method for managing today's infrastructure. Terraform's Infrastructure as Code (IaC) features simplify setting up Kubernetes clusters, and Kubernetes handles container orchestration for scalable and reliable applications. Together, they create a solid base for effective DevOps processes.</p>
 <p>💡 <strong>Question for you</strong>: How are you using Terraform and Kubernetes in your projects? Share your thoughts in the comments!</p>
-]]></content:encoded></item><item><title><![CDATA[Unlocking the Power of Version Control: Essential Git Commands and Strategies for Successful Project Management]]></title><description><![CDATA[In the software development and project management world, version control is a must-have tool. It allows teams to work together smoothly, keep track of changes, and manage code efficiently, helping projects stay organized and on schedule. Whether you...]]></description><link>https://sishodiarobin.hashnode.dev/unlocking-the-power-of-version-control-essential-git-commands-and-strategies-for-successful-project-management</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/unlocking-the-power-of-version-control-essential-git-commands-and-strategies-for-successful-project-management</guid><category><![CDATA[#Git #VersionControl #DevOps #CI/CD #ProjectManagement #TechLearning #Collaboration #CodingBestPractices #SoftwareDevelopment #TechTips #GitCommands #TechCareer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Dec 2024 18:56:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733597561934/8059f2ec-d07f-4c0a-a9e4-9f3ff44e144b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the software development and project management world, <strong>version control</strong> is a must-have tool. It allows teams to work together smoothly, keep track of changes, and manage code efficiently, helping projects stay organized and on schedule. Whether you're just starting out or have years of experience, getting the hang of version control is essential for managing projects successfully.</p>
-<hr />
-<h3 id="heading-what-is-version-control"><strong>What is Version Control?</strong></h3>
-<p>Version control systems (VCS) like <strong>Git</strong> help developers manage changes to their code over time. They allow teams to work on different features at the same time, track changes, and go back to earlier versions if necessary. It's like having a time machine for your code, making sure no work is ever lost.</p>
-<hr />
-<h3 id="heading-essential-git-commands-for-version-control"><strong>Essential Git Commands for Version Control</strong></h3>
-<p>Here’s a comprehensive list of Git commands to help you navigate version control efficiently:</p>
-<h4 id="heading-1-repository-management"><strong>1. Repository Management</strong></h4>
-<ul>
-<li><p><strong>Initialize a Repository</strong>: Start tracking a project with Git.</p>
-<pre><code class="lang-plaintext">  git init
-</code></pre>
-</li>
-<li><p><strong>Clone a Repository</strong>: Download an existing repository from a remote source.</p>
-<pre><code class="lang-plaintext">  git clone &lt;repository-url&gt;
-</code></pre>
-</li>
-<li><p><strong>Check Repository Status</strong>: See the current state of the working directory.</p>
-<pre><code class="lang-plaintext">  git status
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-2-staging-and-committing-changes"><strong>2. Staging and Committing Changes</strong></h4>
-<ul>
-<li><p><strong>Stage Changes</strong>: Add files to the staging area before committing.</p>
-<pre><code class="lang-plaintext">  egit add &lt;file&gt;  
-  git add .          # Stage all changes
-</code></pre>
-</li>
-<li><p><strong>Unstage Files</strong>: Remove files from the staging area.</p>
-<pre><code class="lang-plaintext">  git reset &lt;file&gt;
-</code></pre>
-</li>
-<li><p><strong>Commit Changes</strong>: Save a snapshot of your changes to the repository.</p>
-<pre><code class="lang-plaintext">  git commit -m "Your commit message"
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-3-branching-and-merging"><strong>3. Branching and Merging</strong></h4>
-<ul>
-<li><p><strong>Create a Branch</strong>: Start a new branch for features or fixes.</p>
-<pre><code class="lang-plaintext">  git branch &lt;branch-name&gt;
-</code></pre>
-</li>
-<li><p><strong>Switch Branches</strong>: Move between branches in the repository.</p>
-<pre><code class="lang-plaintext">  git checkout &lt;branch-name&gt;
-</code></pre>
-</li>
-<li><p><strong>Merge Branches</strong>: Integrate changes from one branch into another.</p>
-<pre><code class="lang-plaintext">  git merge &lt;branch-name&gt;
-</code></pre>
-</li>
-<li><p><strong>Delete a Branch</strong>: Remove branches no longer in use.</p>
-<pre><code class="lang-plaintext">  git branch -d &lt;branch-name&gt;
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-4-collaboration"><strong>4. Collaboration</strong></h4>
-<ul>
-<li><p><strong>Push Changes</strong>: Send commits from the local repository to the remote one.</p>
-<pre><code class="lang-plaintext">  git push origin &lt;branch-name&gt;
-</code></pre>
-</li>
-<li><p><strong>Pull Updates</strong>: Fetch and integrate changes from the remote repository.</p>
-<pre><code class="lang-plaintext">  git pull origin &lt;branch-name&gt;
-</code></pre>
-</li>
-<li><p><strong>Fetch Updates</strong>: Retrieve changes from the remote repository without merging them.</p>
-<pre><code class="lang-plaintext">  git fetch
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-5-viewing-history"><strong>5. Viewing History</strong></h4>
-<ul>
-<li><p><strong>View Commit History</strong>: Display the log of commits.</p>
-<pre><code class="lang-plaintext">  git log
-</code></pre>
-</li>
-<li><p><strong>View Changes</strong>: Show differences between commits or the working directory.</p>
-<pre><code class="lang-plaintext">  git diff
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-6-undoing-changes"><strong>6. Undoing Changes</strong></h4>
-<ul>
-<li><p><strong>Revert a Commit</strong>: Undo a commit by creating a new commit.</p>
-<pre><code class="lang-plaintext">  git revert &lt;commit-hash&gt;
-</code></pre>
-</li>
-<li><p><strong>Reset to a Previous Commit</strong>: Move the branch pointer back to an earlier commit.</p>
-<pre><code class="lang-plaintext">  egit reset --hard &lt;commit-hash&gt;
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-7-tagging"><strong>7. Tagging</strong></h4>
-<ul>
-<li><p><strong>Create a Tag</strong>: Mark a specific point in history.</p>
-<pre><code class="lang-plaintext">  git tag &lt;tag-name&gt;
-</code></pre>
-</li>
-<li><p><strong>Push Tags</strong>: Send tags to the remote repository.</p>
-<pre><code class="lang-plaintext">  git push origin --tags
-</code></pre>
-</li>
-</ul>
-<h4 id="heading-8-git-configuration"><strong>8. Git Configuration</strong></h4>
-<ul>
-<li><p><strong>Set Up User Info</strong>: Configure username and email for commits.</p>
-<pre><code class="lang-plaintext">  git config --global user.name "Your Name"
-  git config --global user.email "your.email@example.com"
-</code></pre>
-</li>
-<li><p><strong>View Configuration</strong>: Check Git configuration details.</p>
-<pre><code class="lang-plaintext">  git config --list
-</code></pre>
-</li>
-</ul>
-<hr />
-<h3 id="heading-strategies-for-effective-version-control"><strong>Strategies for Effective Version Control</strong></h3>
-<ol>
-<li><p><strong>Adopt a Branching Strategy</strong>:<br /> Use branches to work on features, fix bugs, or try new ideas without disturbing the main codebase. Popular strategies include <strong>Git Flow</strong> and <strong>Feature Branching</strong>.</p>
-</li>
-<li><p><strong>Write Clear Commit Messages</strong>:<br /> Clear messages help everyone understand the changes made. For instance, instead of saying “Fixed bug,” try “Fixed bug causing login failure.”</p>
-</li>
-<li><p><strong>Review Code Regularly</strong>:<br /> Regular code reviews help maintain quality and ensure changes meet project goals. Use pull requests to discuss proposed updates.</p>
-</li>
-<li><p><strong>Keep the Repository Clean</strong>:<br /> Don’t commit unnecessary files. Use <code>.gitignore</code> to keep out files like logs or system configurations.</p>
-</li>
-<li><p><strong>Automate with CI/CD</strong>:<br /> Connect Git with CI/CD tools like <strong>Jenkins</strong>, <strong>GitHub Actions</strong>, or <strong>GitLab CI</strong> to automate testing and deployment.</p>
-</li>
-</ol>
-<hr />
-<h3 id="heading-benefits-of-version-control-in-project-management"><strong>Benefits of Version Control in Project Management</strong></h3>
-<ul>
-<li><p><strong>Collaboration</strong>: Allows team members to work together on the same project at the same time without running into conflicts.</p>
-</li>
-<li><p><strong>Accountability</strong>: Keeps a record of who made changes and when, promoting transparency.</p>
-</li>
-<li><p><strong>Flexibility</strong>: Makes it easy to try out new ideas without impacting the main project.</p>
-</li>
-<li><p><strong>Recovery</strong>: Offers the ability to go back to earlier versions, protecting against errors.</p>
-</li>
-</ul>
-<hr />
-<h3 id="heading-takeaway"><strong>Takeaway</strong></h3>
-<p>Getting a good grasp of Git commands and strategies is crucial for developers and project managers who want to deliver projects that are efficient, well-organized, and collaborative. By learning these commands and following best practices, you can create smooth workflows and keep your codebase in top shape.</p>
-<p>💡 <strong>What Git command do you find yourself using the most? We'd love to hear about your experiences in the comments!</strong></p>
 ]]></content:encoded></item></channel></rss>
