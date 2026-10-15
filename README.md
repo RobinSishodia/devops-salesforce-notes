@@ -13,10 +13,11 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (25)
+## 📚 All posts (26)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-10-15 | [Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)](https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30) | `Salesforce` `Salesforce Admin` | [Markdown](posts/2026-10-15-lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30.md) |
 | 2026-10-13 | [Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)](https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30) | `Salesforce` `Salesforce Admin` | [Markdown](posts/2026-10-13-salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30.md) |
 | 2026-10-13 | [Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)](https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30) | `Salesforce` `Salesforce Admin` `flow` | [Markdown](posts/2026-10-13-salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30.md) |
 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
