@@ -13,10 +13,11 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (26)
+## 📚 All posts (27)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-10-15 | [Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)](https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30) | `Salesforce` `Salesforce Admin` `Reports  Dashboards` | [Markdown](posts/2026-10-15-salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30.md) |
 | 2026-10-15 | [Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)](https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30) | `Salesforce` `Salesforce Admin` | [Markdown](posts/2026-10-15-lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30.md) |
 | 2026-10-13 | [Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)](https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30) | `Salesforce` `Salesforce Admin` | [Markdown](posts/2026-10-13-salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30.md) |
 | 2026-10-13 | [Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)](https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30) | `Salesforce` `Salesforce Admin` `flow` | [Markdown](posts/2026-10-13-salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30.md) |
