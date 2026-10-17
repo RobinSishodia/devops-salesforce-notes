@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Oct 2026 13:57:54 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)]]></title><description><![CDATA[Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Oct 2026 23:02:01 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)]]></title><description><![CDATA[One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.
+
+The 4 Building Blocks
+
+
+
+Block
+What it ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[record types]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 23:00:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/60506fb3-c59b-48de-8457-eb20f9402e04.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Record Type</strong></td>
+<td>Splits one object into variants</td>
+<td>Own picklists and process</td>
+</tr>
+<tr>
+<td><strong>Page Layout</strong></td>
+<td>Fields, buttons, related lists</td>
+<td>Assigned by profile</td>
+</tr>
+<tr>
+<td><strong>Picklist Values</strong></td>
+<td>Limited per record type</td>
+<td>Hide the ones not needed</td>
+</tr>
+<tr>
+<td><strong>Assignment</strong></td>
+<td>Profile plus record type</td>
+<td>Picks the layout shown</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Record Type?</h3>
+<p>It lets one object serve different teams, each with its own <strong>picklist values, page layouts and business process</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use it when processes differ.</p>
+</blockquote>
+<h3>2. What is a Page Layout?</h3>
+<p>It controls which <strong>fields, buttons, sections and related lists</strong> a user sees on a record.</p>
+<blockquote>
+<p><strong>Tip:</strong> Layouts shape the screen, not security.</p>
+</blockquote>
+<h3>3. How is a layout assigned?</h3>
+<p>By <strong>profile and record type together</strong>. Each pair gets one page layout.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check the assignment matrix.</p>
+</blockquote>
+<h3>4. How do users get a record type?</h3>
+<p>Through their <strong>profile or a permission set</strong>. Without access, they cannot pick it.</p>
+<blockquote>
+<p><strong>Tip:</strong> Permission sets add types without editing the profile.</p>
+</blockquote>
+<h3>5. Layout vs field-level security?</h3>
+<p>A layout only <strong>hides a field on the page</strong>. Field-level security blocks access everywhere, including reports and the API.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use FLS to truly protect data.</p>
+</blockquote>
+<h3>6. Page Layout vs Lightning Page?</h3>
+<p>Page layouts set <strong>fields and related lists</strong>. Lightning record pages set the <strong>overall page, components and dynamic forms</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name both, then say which you use.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Support handles Billing and Technical cases with different fields. How do you do it?"</strong></p>
+<ol>
+<li><p><strong>Create</strong> two Case record types</p>
+</li>
+<li><p><strong>Limit</strong> the Status values for each type</p>
+</li>
+<li><p><strong>Build</strong> one page layout for each type</p>
+</li>
+<li><p><strong>Assign</strong> by profile and record type</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Record type</strong> = variant of an object</p>
+</li>
+<li><p><strong>Layout</strong> = fields and related lists</p>
+</li>
+<li><p><strong>Picklist</strong> = values per type</p>
+</li>
+<li><p><strong>Access</strong> = profile or permission set</p>
+</li>
+<li><p><strong>FLS</strong> = real field security</p>
+</li>
+<li><p><strong>Lightning page</strong> = overall page</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Add types only when processes differ</p>
+</li>
+<li><p>Keep layouts simple and few</p>
+</li>
+<li><p>Never rely on layouts for security</p>
+</li>
+<li><p>Test as a real user</p>
+</li>
+</ul>
+<hr />
+<p><strong>Which object would you split first? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 13 done, 17 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)]]></title><description><![CDATA[Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.
 
 The 4 Buil]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Approval Process]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 13:55:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.</em></p>
 <hr />
@@ -1829,117 +1943,4 @@ kubectl get secrets
 <p>Using these tools for IaC not only boosts efficiency but also guarantees a dependable and consistent infrastructure. Begin exploring Terraform and Ansible to bring your infrastructure management into the modern age!</p>
 <hr />
 <p><em>What are your favorite ways to use Terraform or Ansible? I'd love to hear your thoughts in the comments!</em></p>
-]]></content:encoded></item><item><title><![CDATA[Advanced Git Commands and Best Practices for Efficient Version Control]]></title><description><![CDATA[In today's software development world, version control systems are absolutely essential. Git, a distributed version control system, has become the favorite tool for developers everywhere. It offers powerful features to manage code changes, work toget...]]></description><link>https://sishodiarobin.hashnode.dev/advanced-git-commands-and-best-practices-for-efficient-version-control</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/advanced-git-commands-and-best-practices-for-efficient-version-control</guid><category><![CDATA[#Git #VersionControl #DevOps #SoftwareDevelopment #BestPractices #AdvancedGit #CodingTips #GitCommands #TechBlog #DevLife #DeveloperTools]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 11 Dec 2024 02:13:11 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733881037034/770e97e0-d2fe-42b5-a6e0-99f67cc434cd.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In today's software development world, version control systems are absolutely essential. Git, a distributed version control system, has become the favorite tool for developers everywhere. It offers powerful features to manage code changes, work together smoothly, and keep projects intact. This article will cover the best practices for using Git and look into some advanced commands to enhance your workflow.</p>
-<h3 id="heading-why-version-control-matters"><strong>Why Version Control Matters</strong></h3>
-<p>Version control systems like Git let developers:</p>
-<ul>
-<li><p>Keep track of code changes over time.</p>
-</li>
-<li><p>Work seamlessly with team members.</p>
-</li>
-<li><p>Revert to earlier versions when bugs appear.</p>
-</li>
-<li><p>Try out new features without affecting the main codebase.</p>
-</li>
-</ul>
-<h3 id="heading-best-practices-for-using-git"><strong>Best Practices for Using Git</strong></h3>
-<ol>
-<li><p><strong>Use Meaningful Commit Messages</strong></p>
-<ul>
-<li><p>Write clear and concise messages to explain the changes you've made.</p>
-</li>
-<li><p>Follow the format: <code>&lt;type&gt;: &lt;short summary&gt;</code> (e.g., <code>fix: resolve login page error</code>).</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Commit Often, but with Purpose</strong></p>
-<ul>
-<li><p>Break your changes into smaller, logical parts.</p>
-</li>
-<li><p>Avoid grouping unrelated changes in one commit.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Leverage Branching</strong></p>
-<ul>
-<li><p>Create feature branches for new features, bug fixes, or experiments.</p>
-</li>
-<li><p>Merge branches back into the main branch only after thorough testing.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Keep the Main Branch Stable</strong></p>
-<ul>
-<li><p>Ensure the main branch (often <code>main</code> or <code>master</code>) is always ready for deployment.</p>
-</li>
-<li><p>Use pull requests (PRs) and code reviews to maintain quality.</p>
-</li>
-</ul>
-</li>
-<li><p><strong>Use</strong> <code>.gitignore</code> <strong>Effectively</strong></p>
-<ul>
-<li>Exclude unnecessary files like logs, compiled binaries, and local environment settings.</li>
-</ul>
-</li>
-<li><p><strong>Rebase for Clean History</strong></p>
-<ul>
-<li>Use <code>git rebase</code> to tidy up the commit history, especially before merging a feature branch.</li>
-</ul>
-</li>
-<li><p><strong>Stay Synced with Remote</strong></p>
-<ul>
-<li><p>Regularly pull updates from the remote repository to avoid conflicts.</p>
-</li>
-<li><p>Push changes frequently to prevent losing local data.</p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="heading-advanced-git-commands"><strong>Advanced Git Commands</strong></h3>
-<p>While basic commands like <code>git add</code>, <code>git commit</code>, and <code>git push</code> are essential, using advanced commands can boost your productivity and help you tackle complex situations.</p>
-<h4 id="heading-1-git-stash">1. <code>git stash</code></h4>
-<p>This command lets you temporarily save your uncommitted changes without actually committing them.</p>
-<pre><code class="lang-plaintext">git stash
-git stash pop
-</code></pre>
-<h4 id="heading-2-git-cherry-pick">2. <code>git cherry-pick</code></h4>
-<p>Use this command to apply specific commits from one branch to another.</p>
-<pre><code class="lang-plaintext">git cherry-pick &lt;commit-hash&gt;
-</code></pre>
-<h4 id="heading-3-git-bisect">3. <code>git bisect</code></h4>
-<p>Use this command to pinpoint the commit that caused a bug by performing a binary search.</p>
-<pre><code class="lang-plaintext">git bisect start
-git bisect bad
-git bisect good &lt;commit-hash&gt;
-</code></pre>
-<h4 id="heading-4-git-reflog">4. <code>git reflog</code></h4>
-<p>Check out the history of all actions you've taken in the repository.</p>
-<pre><code class="lang-plaintext">git reflog
-</code></pre>
-<h4 id="heading-5-git-reset">5. <code>git reset</code></h4>
-<p>Use this command to undo changes by setting your current branch back to a specific commit.</p>
-<pre><code class="lang-plaintext">git reset --soft &lt;commit-hash&gt;
-git reset --hard &lt;commit-hash&gt;
-</code></pre>
-<h4 id="heading-6-git-blame">6. <code>git blame</code></h4>
-<p>Discover who made changes to a file and learn more about the details of those changes.</p>
-<pre><code class="lang-plaintext">git blame &lt;file-name&gt;
-</code></pre>
-<h4 id="heading-7-git-submodule">7. <code>git submodule</code></h4>
-<p>Easily manage external repositories that are part of your project.</p>
-<pre><code class="lang-plaintext">git submodule add &lt;repository-url&gt;
-</code></pre>
-<h3 id="heading-combining-commands-for-efficiency"><strong>Combining Commands for Efficiency</strong></h3>
-<ul>
-<li>Use <code>git log</code> with custom formatting to efficiently review commits.</li>
-</ul>
-<pre><code class="lang-plaintext">git log --oneline --graph --all
-</code></pre>
-<ul>
-<li>Combine <code>git rebase</code> with <code>--interactive</code> to merge multiple commits into one.</li>
-</ul>
-<pre><code class="lang-plaintext">git rebase -i HEAD~&lt;number-of-commits&gt;
-</code></pre>
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<p>Getting comfortable with Git is crucial for developers who want to make their workflows smoother and keep their projects well-organized. By following best practices and using advanced commands, you can fully utilize Git to handle version control effectively. Whether you're just starting or have been developing for a while, regularly learning and practicing with Git will definitely improve your software development experience.</p>
 ]]></content:encoded></item></channel></rss>
