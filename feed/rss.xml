@@ -1,4 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Oct 2026 19:38:22 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)]]></title><description><![CDATA[Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Oct 2026 12:39:14 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)]]></title><description><![CDATA[Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.
+
+The 4]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[validation-rules]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 12:36:37 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/10a66ceb-f74e-4c80-a624-63fc435d2002.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.</em></p>
+<hr />
+<h2>The 4 Data Quality Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Validation Rule</strong></td>
+<td>Blocks a save if the formula is TRUE</td>
+<td>Shows your error message</td>
+</tr>
+<tr>
+<td><strong>Formula Field</strong></td>
+<td>A read-only calculated value</td>
+<td>Recalculates automatically</td>
+</tr>
+<tr>
+<td><strong>Required Field</strong></td>
+<td>Must have a value to save</td>
+<td>Set on the field or the layout</td>
+</tr>
+<tr>
+<td><strong>Duplicate Rule</strong></td>
+<td>Warns or blocks likely duplicates</td>
+<td>Works with Matching Rules</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Validation Rule?</h3>
+<p>A formula that returns <strong>TRUE when data is bad</strong>. If it is TRUE, Salesforce blocks the save and shows your error message.</p>
+<blockquote>
+<p><strong>Tip:</strong> TRUE means error, FALSE means save.</p>
+</blockquote>
+<h3>2. Where does the error show?</h3>
+<p>You choose: <strong>at the top of the page</strong>, or <strong>next to a specific field</strong> on the record page.</p>
+<blockquote>
+<p><strong>Tip:</strong> Show it by the field the user must fix.</p>
+</blockquote>
+<h3>3. Required field vs Validation Rule?</h3>
+<p>A field-level required setting always applies, even through the API. A <strong>validation rule</strong> can add conditions, like required only at a certain stage.</p>
+<blockquote>
+<p><strong>Tip:</strong> Needed only sometimes? Use a rule.</p>
+</blockquote>
+<h3>4. Formula field vs Validation Rule?</h3>
+<p>A <strong>formula field</strong> returns a value users cannot edit. A <strong>validation rule</strong> formula returns TRUE or FALSE to allow or block a save.</p>
+<blockquote>
+<p><strong>Tip:</strong> Formula fields are read-only.</p>
+</blockquote>
+<h3>5. Which functions come up most?</h3>
+<p><code>ISBLANK</code> for empty checks, <code>ISPICKVAL</code> for picklists, <code>AND</code> and <code>OR</code> to combine tests, <code>ISCHANGED</code> on updates, and <code>REGEX</code> for patterns.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never compare a picklist with <code>=</code>.</p>
+</blockquote>
+<h3>6. Do rules run on imports and Flows?</h3>
+<p>Yes. They also run for the API, Apex and Flow. To skip them for admins or data loads, check a <strong>custom permission</strong> in the formula.</p>
+<blockquote>
+<p><strong>Tip:</strong> Avoid hardcoding profile names.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Reps must not mark an Opportunity Closed Won without an Amount. How do you enforce it?"</strong></p>
+<ol>
+<li><p>Go to <strong>Object Manager, Opportunity, Validation Rules</strong></p>
+</li>
+<li><p>Write the formula with <strong>ISPICKVAL</strong> and <strong>ISBLANK</strong></p>
+</li>
+<li><p>Add a clear <strong>error message</strong> on the Amount field</p>
+</li>
+<li><p><strong>Test in a sandbox</strong>, then activate</p>
+</li>
+</ol>
+<p>The formula looks like this:</p>
+<pre><code class="language-plaintext">AND(
+  ISPICKVAL(StageName, "Closed Won"),
+  ISBLANK(Amount)
+)
+</code></pre>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>TRUE</strong> = block the save</p>
+</li>
+<li><p><strong>ISBLANK</strong> = empty check</p>
+</li>
+<li><p><strong>ISPICKVAL</strong> = picklist check</p>
+</li>
+<li><p><strong>ISCHANGED</strong> = on updates</p>
+</li>
+<li><p><strong>Formula field</strong> = read-only</p>
+</li>
+<li><p><strong>Bypass</strong> = custom permission</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Write the rule so TRUE means bad data</p>
+</li>
+<li><p>Keep error messages specific</p>
+</li>
+<li><p>Required field for always, rule for sometimes</p>
+</li>
+<li><p>Add a bypass for data loads</p>
+</li>
+</ul>
+<hr />
+<p><strong>What is the best validation rule you have written? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 11 done, 19 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)]]></title><description><![CDATA[Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.
 
 The 4 Report Formats
 
@@ -1853,121 +1968,4 @@ git reset --hard &lt;commit-hash&gt;
 </ul>
 <p>Each tool shines in different areas, so the best choice depends on your team's needs, current workflows, and budget. Consider these factors carefully to pick the right tool for your CI/CD requirements.</p>
 <p>Would you like assistance in exploring a specific tool further?</p>
-]]></content:encoded></item><item><title><![CDATA[Step-by-Step Guide: Terraform and Kubernetes Integration]]></title><description><![CDATA[In the fast-changing world of DevOps, two standout tools have become incredibly popular: Terraform and Kubernetes. Terraform makes managing infrastructure as code (IaC) easier, while Kubernetes handle]]></description><link>https://sishodiarobin.hashnode.dev/step-by-step-guide-terraform-and-kubernetes-integration</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/step-by-step-guide-terraform-and-kubernetes-integration</guid><category><![CDATA[#DevOps ⚙️ #Terraform 💻 #Kubernetes 🐳 #CloudComputing ☁️ #IaC 🛠️ #InfrastructureAutomation 🚀 #ContainerOrchestration 📦 #CI/CD 🔄 #TechLearning 📘 #DevOpsTools 🧰 #InfrastructureAsCode 🖋️ #CloudInfrastructure 🌩️ #Automation 🤖 #TechTips 💡 #CodingBestPractices ✅]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Dec 2024 18:20:03 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733681922462/ec0416e4-c1a4-463c-a4d2-cf95146e8a45.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the fast-changing world of DevOps, two standout tools have become incredibly popular: <strong>Terraform</strong> and <strong>Kubernetes</strong>. Terraform makes managing infrastructure as code (IaC) easier, while Kubernetes handles container orchestration automatically. When used together, these tools offer a smooth process for managing infrastructure that is scalable, consistent, and efficient. Let's explore how to use Terraform with Kubernetes to enhance your DevOps pipelines.</p>
-<hr />
-<h3><strong>Why Combine Terraform and Kubernetes?</strong></h3>
-<ol>
-<li><p><strong>Infrastructure Automation</strong>: With Terraform, you can set up infrastructure, including Kubernetes clusters, using code, which ensures everything is consistent and can grow as needed.</p>
-</li>
-<li><p><strong>Simplified Orchestration</strong>: Kubernetes takes care of your containerized applications, making it easy to deploy and scale them without hassle.</p>
-</li>
-<li><p><strong>Enhanced Efficiency</strong>: Terraform works smoothly with Kubernetes to automate complex setups across different environments, cutting down on manual work.</p>
-</li>
-</ol>
-<hr />
-<h3><strong>Step-by-Step Guide to Using Terraform with Kubernetes</strong></h3>
-<h4><strong>1. Set Up Terraform</strong></h4>
-<p>Begin by installing Terraform on your system. Once installed, configure it to connect with your chosen cloud provider, such as AWS, Azure, or GCP.</p>
-<pre><code class="language-plaintext"># Install Terraform
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-get update &amp;&amp; sudo apt-get install terraform
-</code></pre>
-<h4><strong>2. Define Your Infrastructure</strong></h4>
-<p>Create a Terraform configuration file (<a href="http://main.tf"><code>main.tf</code></a>) to set up your Kubernetes cluster. For instance, if you're using <strong>AWS EKS</strong>:</p>
-<pre><code class="language-plaintext">provider "aws" {
-  region = "us-west-2"
-}
-
-module "eks" {
-  source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = "my-k8s-cluster"
-  cluster_version = "1.21"
-  subnets         = ["subnet-1", "subnet-2"]
-  vpc_id          = "vpc-123456"
-}
-</code></pre>
-<p>Execute the Terraform commands to set up the infrastructure:</p>
-<pre><code class="language-plaintext">terraform init
-terraform apply
-</code></pre>
-<hr />
-<h4><strong>3. Configure kubectl for Kubernetes</strong></h4>
-<p>After your cluster is set up, you'll need to configure <code>kubectl</code> so you can manage and interact with it:</p>
-<pre><code class="language-plaintext">aws eks --region us-west-2 update-kubeconfig --name my-k8s-cluster
-</code></pre>
-<p>To ensure everything is working smoothly, verify the connection:</p>
-<pre><code class="language-plaintext">kubectl get nodes
-</code></pre>
-<hr />
-<h4><strong>4. Manage Kubernetes Resources with Terraform</strong></h4>
-<p>Terraform is not just for setting up infrastructure; it can also manage Kubernetes resources like Pods, Services, and Deployments. To do this, add the Kubernetes provider to your <a href="http://main.tf"><code>main.tf</code></a>:</p>
-<pre><code class="language-plaintext">provider "kubernetes" {
-  config_path = "~/.kube/config"
-}
-
-resource "kubernetes_namespace" "example" {
-  metadata {
-    name = "example-namespace"
-  }
-}
-
-resource "kubernetes_deployment" "nginx" {
-  metadata {
-    name      = "nginx-deployment"
-    namespace = kubernetes_namespace.example.metadata[0].name
-  }
-  spec {
-    replicas = 2
-    selector {
-      match_labels = {
-        app = "nginx"
-      }
-    }
-    template {
-      metadata {
-        labels = {
-          app = "nginx"
-        }
-      }
-      spec {
-        container {
-          image = "nginx:latest"
-          name  = "nginx"
-        }
-      }
-    }
-  }
-}
-</code></pre>
-<p>To create the Kubernetes resources, apply the changes:</p>
-<pre><code class="language-plaintext">terraform apply
-</code></pre>
-<hr />
-<h3><strong>Benefits of Using Terraform with Kubernetes</strong></h3>
-<ol>
-<li><p><strong>Consistency Across Environments</strong>: Terraform helps maintain uniform cluster setups and deployments across staging, testing, and production environments.</p>
-</li>
-<li><p><strong>Scalability</strong>: With Terraform’s straightforward syntax, you can easily scale both your infrastructure and Kubernetes resources.</p>
-</li>
-<li><p><strong>Modularity</strong>: You can use modules to create standardized and reusable configurations.</p>
-</li>
-<li><p><strong>Team Collaboration</strong>: Version-controlled Terraform setups promote teamwork and transparency, making it easier for teams to work together.</p>
-</li>
-</ol>
-<hr />
-<h3><strong>Best Practices</strong></h3>
-<ol>
-<li><p><strong>Separate Infrastructure and Application Configurations</strong>: Keep Kubernetes cluster setup and resource definitions in different Terraform files or modules for better organization.</p>
-</li>
-<li><p><strong>Use Remote State Management</strong>: Securely store Terraform state files with solutions like <strong>Terraform Cloud</strong> or <strong>AWS S3</strong> with state locking to prevent conflicts.</p>
-</li>
-<li><p><strong>Implement RBAC in Kubernetes</strong>: Set up <strong>Role-Based Access Control (RBAC)</strong> using Terraform to ensure secure access to your Kubernetes resources.</p>
-</li>
-<li><p><strong>Monitor and Optimize</strong>: Utilize tools like <strong>Prometheus</strong> and <strong>Grafana</strong> to keep an eye on your Kubernetes cluster and improve performance.</p>
-</li>
-</ol>
-<hr />
-<h3><strong>Conclusion</strong></h3>
-<p>Using Terraform with Kubernetes offers a strong method for managing today's infrastructure. Terraform's Infrastructure as Code (IaC) features simplify setting up Kubernetes clusters, and Kubernetes handles container orchestration for scalable and reliable applications. Together, they create a solid base for effective DevOps processes.</p>
-<p>💡 <strong>Question for you</strong>: How are you using Terraform and Kubernetes in your projects? Share your thoughts in the comments!</p>
 ]]></content:encoded></item></channel></rss>
