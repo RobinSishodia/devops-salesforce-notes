@@ -1,4 +1,113 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Oct 2026 12:39:14 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)]]></title><description><![CDATA[Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Oct 2026 13:57:54 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)]]></title><description><![CDATA[Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.
+
+The 4 Buil]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Approval Process]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 13:55:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Entry Criteria</strong></td>
+<td>Decides which records can be submitted</td>
+<td>Records that miss them cannot be submitted</td>
+</tr>
+<tr>
+<td><strong>Approval Step</strong></td>
+<td>Who reviews the record</td>
+<td>User, queue, manager or field</td>
+</tr>
+<tr>
+<td><strong>Actions</strong></td>
+<td>Run on submit, approve or reject</td>
+<td>Field update, email, task</td>
+</tr>
+<tr>
+<td><strong>Record Lock</strong></td>
+<td>Record is read-only while pending</td>
+<td>Admins can still edit</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is an Approval Process?</h3>
+<p>It automates how a record gets approved: <strong>submit, route to approvers, then approve or reject</strong>, with actions at each stage.</p>
+<blockquote>
+<p><strong>Tip:</strong> Think of it as a manager sign-off.</p>
+</blockquote>
+<h3>2. What are entry criteria?</h3>
+<p>Conditions a record must meet before it can be submitted, like <strong>Discount over 20 percent</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Records that miss them cannot be submitted.</p>
+</blockquote>
+<h3>3. Who can be an approver?</h3>
+<p>A <strong>user</strong>, a <strong>queue</strong>, the submitter's <strong>manager</strong>, or a user picked from a <strong>field</strong> on the record.</p>
+<blockquote>
+<p><strong>Tip:</strong> Queues let a team share the work.</p>
+</blockquote>
+<h3>4. What actions can run?</h3>
+<p><strong>Field updates, email alerts, tasks and outbound messages</strong>, on submit, final approval, final rejection or recall.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use a field update to set Status.</p>
+</blockquote>
+<h3>5. What does the record lock do?</h3>
+<p>A pending record is <strong>locked</strong> so users cannot edit it. Admins can still edit, and a <strong>recall</strong> unlocks it.</p>
+<blockquote>
+<p><strong>Tip:</strong> The lock stops edits while review is open.</p>
+</blockquote>
+<h3>6. Approval Process vs Flow?</h3>
+<p>Approval Processes handle classic sign-off. <strong>Flow Orchestrator</strong> is the newer option for complex, multi-step approvals.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name the trade-off, then pick.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Discounts over 20 percent need manager approval before the deal moves on. How do you do it?"</strong></p>
+<ol>
+<li><p><strong>Entry criteria:</strong> Discount greater than 20 percent</p>
+</li>
+<li><p><strong>Approver:</strong> the submitter's manager</p>
+</li>
+<li><p><strong>On submit:</strong> a field update sets Status to Pending</p>
+</li>
+<li><p><strong>On approval:</strong> Status becomes Approved</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Entry</strong> = who may submit</p>
+</li>
+<li><p><strong>Approver</strong> = user, queue, manager</p>
+</li>
+<li><p><strong>Actions</strong> = update, email, task</p>
+</li>
+<li><p><strong>Lock</strong> = read-only while pending</p>
+</li>
+<li><p><strong>Recall</strong> = pulls it back</p>
+</li>
+<li><p><strong>Orchestrator</strong> = newer option</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Define entry criteria first</p>
+</li>
+<li><p>Prefer queues or managers over named users</p>
+</li>
+<li><p>Track status with field updates</p>
+</li>
+<li><p>Test with a real submitter</p>
+</li>
+</ul>
+<hr />
+<p><strong>What would you send for approval first? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 12 done, 18 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)]]></title><description><![CDATA[Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.
 
 The 4]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[validation-rules]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 12:36:37 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/10a66ceb-f74e-4c80-a624-63fc435d2002.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.</em></p>
 <hr />
@@ -1833,139 +1942,4 @@ git reset --hard &lt;commit-hash&gt;
 </code></pre>
 <h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
 <p>Getting comfortable with Git is crucial for developers who want to make their workflows smoother and keep their projects well-organized. By following best practices and using advanced commands, you can fully utilize Git to handle version control effectively. Whether you're just starting or have been developing for a while, regularly learning and practicing with Git will definitely improve your software development experience.</p>
-]]></content:encoded></item><item><title><![CDATA[Jenkins vs GitLab vs CircleCI: A Comprehensive CI/CD Tools Comparison]]></title><description><![CDATA[Continuous Integration and Continuous Deployment (CI/CD) tools play a crucial role in the DevOps world. They help automate the build, testing, and deployment processes, making software delivery faster and more reliable. Among the many CI/CD tools out...]]></description><link>https://sishodiarobin.hashnode.dev/jenkins-vs-gitlab-vs-circleci-a-comprehensive-cicd-tools-comparison</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/jenkins-vs-gitlab-vs-circleci-a-comprehensive-cicd-tools-comparison</guid><category><![CDATA[#DevOps #CICD #Jenkins #GitLab #CircleCI #SoftwareEngineering #Automation #TechBlogging #ContinuousIntegration #ContinuousDeployment #DevOpsTools #SoftwareDevelopment #CloudComputing #TechInnovation #BuildAndDeploy  👉 Let’s build faster, better, and smarter! 💻✨]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Dec 2024 17:16:19 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733850695678/2cea740a-ef14-4146-aab7-e35c0bb79acf.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Continuous Integration and Continuous Deployment (CI/CD) tools play a crucial role in the DevOps world. They help automate the build, testing, and deployment processes, making software delivery faster and more reliable. Among the many CI/CD tools out there, <strong>Jenkins</strong>, <strong>GitLab</strong>, and <strong>CircleCI</strong> are widely recognized as popular options. Let's take a closer look at these tools to help you choose the one that best suits your needs.</p>
-<hr />
-<h3 id="heading-1-jenkins"><strong>1. Jenkins</strong></h3>
-<p><strong>Overview:</strong><br />Jenkins is a widely used open-source CI/CD tool, known for its extensive plugin ecosystem that allows for high customization to fit various needs.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li><p>Offers over 1,800 plugins for integration with other tools.</p>
-</li>
-<li><p>Supports distributed builds to enhance scalability.</p>
-</li>
-<li><p>Open-source and free to use.</p>
-</li>
-<li><p>Backed by a strong community.</p>
-</li>
-</ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Highly customizable with a vast range of plugins.</p>
-</li>
-<li><p>Compatible with almost every development language and environment.</p>
-</li>
-<li><p>Supported by an active community and extensive documentation.</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>Dependency on plugins can create maintenance challenges.</p>
-</li>
-<li><p>Has a steeper learning curve for newcomers.</p>
-</li>
-<li><p>The user interface is less modern compared to GitLab and CircleCI.</p>
-</li>
-</ul>
-<p><strong>Best For:</strong><br />Organizations that require high levels of customization and the flexibility of open-source solutions.</p>
-<hr />
-<h3 id="heading-2-gitlab-cicd"><strong>2. GitLab CI/CD</strong></h3>
-<p><strong>Overview:</strong><br />GitLab CI/CD is an integral part of GitLab, offering smooth integration with its version control and project management tools. It provides a cohesive platform for managing the entire DevOps lifecycle.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li><p>Built-in CI/CD pipeline within GitLab.</p>
-</li>
-<li><p>Auto DevOps feature for automatic pipeline setup.</p>
-</li>
-<li><p>Strong support for containerized applications like Docker and Kubernetes.</p>
-</li>
-<li><p>Integrated security and monitoring tools.</p>
-</li>
-</ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>All-in-one platform for DevOps.</p>
-</li>
-<li><p>Easy configuration with <code>.gitlab-ci.yml</code>.</p>
-</li>
-<li><p>Excellent integration with Git repositories.</p>
-</li>
-<li><p>Modern and user-friendly interface.</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>Free tier has limits on runner minutes.</p>
-</li>
-<li><p>Some features are available only in paid tiers.</p>
-</li>
-</ul>
-<p><strong>Best For:</strong><br />Teams already using GitLab for version control and those seeking a comprehensive DevOps solution.</p>
-<hr />
-<h3 id="heading-3-circleci"><strong>3. CircleCI</strong></h3>
-<p><strong>Overview:</strong><br />CircleCI is a cloud-based CI/CD tool celebrated for its ease of use and speed. It provides both hosted and on-premise options, with robust support for modern development practices.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li><p>Pre-built Docker images for faster builds.</p>
-</li>
-<li><p>Integration with GitHub, Bitbucket, and GitLab.</p>
-</li>
-<li><p>Pay-per-use pricing for cloud builds.</p>
-</li>
-<li><p>Advanced caching for quicker pipelines.</p>
-</li>
-</ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li><p>Quick setup and easy integration.</p>
-</li>
-<li><p>Faster build times due to optimized caching.</p>
-</li>
-<li><p>Intuitive pipeline visualization.</p>
-</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li><p>Less flexible than Jenkins.</p>
-</li>
-<li><p>Fewer integrations compared to Jenkins.</p>
-</li>
-<li><p>Relies on cloud services unless using the on-premise version.</p>
-</li>
-</ul>
-<p><strong>Best For:</strong><br />Startups and small teams seeking a straightforward and speedy CI/CD solution.</p>
-<hr />
-<h3 id="heading-comparison-table"><strong>Comparison Table</strong></h3>
-<div class="hn-table">
-<table>
-<thead>
-<tr>
-<td>Feature</td><td>Jenkins</td><td>GitLab CI/CD</td><td>CircleCI</td></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Ease of Use</strong></td><td>Moderate</td><td>Easy</td><td>Easy</td></tr>
-<tr>
-<td><strong>Customization</strong></td><td>High (via plugins)</td><td>Moderate</td><td>Low</td></tr>
-<tr>
-<td><strong>Integration</strong></td><td>Extensive plugins</td><td>Built-in with GitLab</td><td>GitHub, Bitbucket</td></tr>
-<tr>
-<td><strong>Scalability</strong></td><td>High</td><td>Moderate</td><td>High (cloud-based)</td></tr>
-<tr>
-<td><strong>Cost</strong></td><td>Free (self-hosted)</td><td>Free &amp; Paid Tiers</td><td>Pay-as-you-go</td></tr>
-<tr>
-<td><strong>Best For</strong></td><td>Large, complex workflows</td><td>All-in-one DevOps needs</td><td>Fast, lightweight CI/CD</td></tr>
-</tbody>
-</table>
-</div><hr />
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<ul>
-<li><p><strong>Choose Jenkins</strong> if you need a highly customizable setup and are comfortable managing plugins and configurations.</p>
-</li>
-<li><p><strong>Go for GitLab CI/CD</strong> if you're already using GitLab for version control and want an integrated DevOps platform.</p>
-</li>
-<li><p><strong>Opt for CircleCI</strong> if speed, simplicity, and cloud-based solutions are your top priorities.</p>
-</li>
-</ul>
-<p>Each tool shines in different areas, so the best choice depends on your team's needs, current workflows, and budget. Consider these factors carefully to pick the right tool for your CI/CD requirements.</p>
-<p>Would you like assistance in exploring a specific tool further?</p>
 ]]></content:encoded></item></channel></rss>
