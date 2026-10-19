@@ -13,10 +13,11 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (30)
+## 📚 All posts (31)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-10-19 | [Salesforce Permission Sets & Groups Cheat Sheet: Profiles, Muting and Admin Interview Q&A (Day 14/30)](https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30) | `Salesforce` `Salesforce Admin` `Permission Sets` | [Markdown](posts/2026-10-19-salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30.md) |
 | 2026-10-17 | [Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)](https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30) | `Salesforce` `Salesforce Admin` `validation-rules` | [Markdown](posts/2026-10-17-salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30.md) |
 | 2026-10-17 | [Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)](https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30) | `Salesforce` `Salesforce Admin` `record types` | [Markdown](posts/2026-10-17-salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30.md) |
 | 2026-10-17 | [Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)](https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30) | `Salesforce` `Salesforce Admin` `Approval Process` | [Markdown](posts/2026-10-17-salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30.md) |
