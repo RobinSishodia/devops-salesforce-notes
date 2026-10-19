@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 17 Oct 2026 23:02:01 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)]]></title><description><![CDATA[One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Oct 2026 08:24:55 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Permission Sets & Groups Cheat Sheet: Profiles, Muting and Admin Interview Q&A (Day 14/30)]]></title><description><![CDATA[One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect from a modern admin.
+
+The 4 Building Blocks
+
+
+
+B]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Permission Sets]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 19 Oct 2026 08:21:14 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ca65621a-a9c9-4d5f-b797-87005f208713.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect from a modern admin.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Permission Set</strong></td>
+<td>Adds access on top of a profile</td>
+<td>Grants only, never removes</td>
+</tr>
+<tr>
+<td><strong>Set Group</strong></td>
+<td>Bundles sets for a job role</td>
+<td>Assign one group per role</td>
+</tr>
+<tr>
+<td><strong>Muting Set</strong></td>
+<td>Switches off a permission in a group</td>
+<td>Other uses stay unchanged</td>
+</tr>
+<tr>
+<td><strong>Assignment</strong></td>
+<td>Many sets per user</td>
+<td>One profile per user</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. Profile vs Permission Set?</h3>
+<p>A user has <strong>one profile</strong> as the baseline, and <strong>any number of permission sets</strong> that add extra access.</p>
+<blockquote>
+<p><strong>Tip:</strong> One profile, many sets.</p>
+</blockquote>
+<h3>2. Why prefer permission sets?</h3>
+<p>They follow <strong>least privilege</strong>: keep profiles minimal and grant extras only to the people who need them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fewer profiles, easier upkeep.</p>
+</blockquote>
+<h3>3. What is a Permission Set Group?</h3>
+<p>It <strong>bundles several permission sets</strong> into one unit you assign, usually matching a job role.</p>
+<blockquote>
+<p><strong>Tip:</strong> Assign one group per role.</p>
+</blockquote>
+<h3>4. What is a Muting Permission Set?</h3>
+<p>It lives <strong>inside a group</strong> and turns off chosen permissions from that group's sets, without editing the sets.</p>
+<blockquote>
+<p><strong>Tip:</strong> Mute, do not clone.</p>
+</blockquote>
+<h3>5. Can a permission set remove access?</h3>
+<p>A normal set <strong>only grants</strong>. To take access away, use a muting set or change the profile.</p>
+<blockquote>
+<p><strong>Tip:</strong> Access is additive.</p>
+</blockquote>
+<h3>6. What stays on the profile?</h3>
+<p><strong>Login hours, login IP ranges, default record types and page layout assignments</strong> still live on the profile.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name login hours and IP ranges.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Only 10 of 100 reps may export reports. How do you do it?"</strong></p>
+<ol>
+<li><p><strong>Keep</strong> one shared profile for all reps</p>
+</li>
+<li><p><strong>Create</strong> a permission set with Export Reports</p>
+</li>
+<li><p><strong>Assign</strong> it to the 10 users</p>
+</li>
+<li><p><strong>Bundle</strong> into a group if roles grow</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Profile</strong> = baseline, one per user</p>
+</li>
+<li><p><strong>Set</strong> = extra access, many per user</p>
+</li>
+<li><p><strong>Group</strong> = bundle for a role</p>
+</li>
+<li><p><strong>Muting</strong> = off inside a group</p>
+</li>
+<li><p><strong>Additive</strong> = sets only grant</p>
+</li>
+<li><p><strong>Profile-only</strong> = login hours, IPs</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Keep profiles minimal</p>
+</li>
+<li><p>Grant extra access with sets</p>
+</li>
+<li><p>Group sets by job role</p>
+</li>
+<li><p>Document what each set is for</p>
+</li>
+</ul>
+<hr />
+<p><strong>Which access would you move to a set first? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 14 done, 16 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)]]></title><description><![CDATA[One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.
 
 The 4 Building Blocks
 
@@ -1841,106 +1954,4 @@ kubectl get secrets
 <p>Monitoring and logging tools are essential for successful DevOps operations. <strong>Prometheus</strong> is great for tracking metrics, <strong>ELK Stack</strong> makes centralized logging easier, and <strong>Grafana</strong> improves data visualization. Together, these tools create a strong system for achieving excellence in modern IT environments.</p>
 <p>💡 <strong>Tip</strong>: Use Prometheus and Grafana together for smooth metrics monitoring and visualization, and rely on the ELK Stack for thorough log management.</p>
 <hr />
-]]></content:encoded></item><item><title><![CDATA[A Comprehensive Guide to Infrastructure as Code with Terraform and Ansible]]></title><description><![CDATA[Infrastructure as Code (IaC) has revolutionized the way organizations handle their IT infrastructure. By automating and turning infrastructure setup and management into code, IaC enhances consistency, scalability, and efficiency. Two of the most wide...]]></description><link>https://sishodiarobin.hashnode.dev/a-comprehensive-guide-to-infrastructure-as-code-with-terraform-and-ansible</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/a-comprehensive-guide-to-infrastructure-as-code-with-terraform-and-ansible</guid><category><![CDATA[#DevOps #InfrastructureAsCode #Terraform #Ansible #IaC #Automation #CloudComputing #DevOpsTools #ConfigurationManagement #TechInsights #ModernIT #DevOpsPractices #Innovation 🌟]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 11 Dec 2024 02:15:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733853054969/434cc68d-71bf-4c3d-b595-d6ccd1434fcf.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Infrastructure as Code (IaC) has revolutionized the way organizations handle their IT infrastructure. By automating and turning infrastructure setup and management into code, IaC enhances consistency, scalability, and efficiency. Two of the most widely used IaC tools are <strong>Terraform</strong> and <strong>Ansible</strong>. This article explores their features, use cases, and how they work together effectively.</p>
-<hr />
-<h2 id="heading-what-is-infrastructure-as-code-iac"><strong>What is Infrastructure as Code (IaC)?</strong></h2>
-<p>Infrastructure as Code (IaC) is a method of managing IT infrastructure, like networks, virtual machines, and load balancers, using configuration files that machines can read, instead of setting up hardware manually or using interactive tools.</p>
-<h3 id="heading-benefits-of-iac"><strong>Benefits of IaC</strong></h3>
-<ol>
-<li><p><strong>Consistency</strong>: Prevents configuration drift by keeping a single, reliable source of truth.</p>
-</li>
-<li><p><strong>Automation</strong>: Cuts down on manual work and reduces the chance of human errors.</p>
-</li>
-<li><p><strong>Scalability</strong>: Makes it easy to duplicate environments across different regions or cloud providers.</p>
-</li>
-<li><p><strong>Version Control</strong>: Allows infrastructure setups to be tracked, reviewed, and reverted using version control systems.</p>
-</li>
-</ol>
-<hr />
-<h2 id="heading-terraform-simplifying-infrastructure-provisioning"><strong>Terraform: Simplifying Infrastructure Provisioning</strong></h2>
-<p><strong>Terraform</strong>, created by HashiCorp, is an open-source tool that helps you build, change, and manage infrastructure efficiently and safely.</p>
-<h3 id="heading-key-features-of-terraform"><strong>Key Features of Terraform</strong></h3>
-<ul>
-<li><p><strong>Declarative Syntax</strong>: You specify how you want your infrastructure to look, and Terraform makes it happen.</p>
-</li>
-<li><p><strong>Provider Support</strong>: It works smoothly with major cloud providers like AWS, Azure, and GCP, as well as on-premises solutions.</p>
-</li>
-<li><p><strong>State Management</strong>: Keeps track of your infrastructure's state to plan updates smartly.</p>
-</li>
-<li><p><strong>Plan and Apply</strong>: Lets you preview changes before making them.</p>
-</li>
-</ul>
-<h3 id="heading-when-to-use-terraform"><strong>When to Use Terraform</strong></h3>
-<p>Terraform is ideal for tasks like:</p>
-<ul>
-<li><p>Setting up virtual networks, compute instances, and storage.</p>
-</li>
-<li><p>Deploying across multiple clouds or hybrid-cloud environments.</p>
-</li>
-<li><p>Creating reusable modules for infrastructure.</p>
-</li>
-</ul>
-<hr />
-<h2 id="heading-ansible-simplified-configuration-management"><strong>Ansible: Simplified Configuration Management</strong></h2>
-<p><strong>Ansible</strong>, created by Red Hat, is an open-source tool designed to make configuration management, application deployment, and task automation straightforward and efficient.</p>
-<h3 id="heading-key-features-of-ansible"><strong>Key Features of Ansible</strong></h3>
-<ul>
-<li><p><strong>Agentless</strong>: No need for additional software; it uses SSH to connect with nodes.</p>
-</li>
-<li><p><strong>YAML Playbooks</strong>: Employs easy-to-read YAML syntax to outline configurations and tasks.</p>
-</li>
-<li><p><strong>Idempotent Execution</strong>: Guarantees consistent outcomes, no matter how many times you execute it.</p>
-</li>
-<li><p><strong>Extensibility</strong>: Seamlessly integrates with existing DevOps tools.</p>
-</li>
-</ul>
-<h3 id="heading-when-to-use-ansible"><strong>When to Use Ansible</strong></h3>
-<p>Ansible is particularly effective for tasks such as:</p>
-<ul>
-<li><p>Installing and setting up software packages.</p>
-</li>
-<li><p>Managing operating system updates.</p>
-</li>
-<li><p>Automating routine administrative tasks.</p>
-</li>
-<li><p>Coordinating complex deployments.</p>
-</li>
-</ul>
-<hr />
-<h2 id="heading-terraform-vs-ansible-key-differences"><strong>Terraform vs. Ansible: Key Differences</strong></h2>
-<div class="hn-table">
-<table>
-<thead>
-<tr>
-<td>Feature</td><td><strong>Terraform</strong></td><td><strong>Ansible</strong></td></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Purpose</strong></td><td>Infrastructure provisioning</td><td>Configuration management and automation</td></tr>
-<tr>
-<td><strong>Language</strong></td><td>Declarative (HCL)</td><td>YAML-based tasks (imperative + declarative)</td></tr>
-<tr>
-<td><strong>Execution</strong></td><td>Requires state management</td><td>Stateless</td></tr>
-<tr>
-<td><strong>Complexity</strong></td><td>Ideal for multi-cloud setups</td><td>Simplifies configuration changes</td></tr>
-<tr>
-<td><strong>Agent Requirement</strong></td><td>Agentless</td><td>Agentless</td></tr>
-</tbody>
-</table>
-</div><hr />
-<h2 id="heading-using-terraform-and-ansible-together"><strong>Using Terraform and Ansible Together</strong></h2>
-<p>Terraform and Ansible work well together when combined. Here's how you can use them:</p>
-<ol>
-<li><p>Use <strong>Terraform</strong> to set up infrastructure like virtual machines, networks, and storage.</p>
-</li>
-<li><p>Use <strong>Ansible</strong> to configure the infrastructure, install software, and set up services.</p>
-</li>
-</ol>
-<p>This method takes advantage of the strengths of both tools, offering a strong and scalable Infrastructure as Code (IaC) workflow.</p>
-<hr />
-<h2 id="heading-conclusion"><strong>Conclusion</strong></h2>
-<p>Infrastructure as Code has transformed the way IT teams handle and expand their infrastructure. Terraform and Ansible are both powerful tools, each focusing on different parts of IaC. Terraform is great for setting up infrastructure, while Ansible is excellent for managing configurations and orchestrating tasks. Together, they create a strong partnership for modern DevOps practices.</p>
-<p>Using these tools for IaC not only boosts efficiency but also guarantees a dependable and consistent infrastructure. Begin exploring Terraform and Ansible to bring your infrastructure management into the modern age!</p>
-<hr />
-<p><em>What are your favorite ways to use Terraform or Ansible? I'd love to hear your thoughts in the comments!</em></p>
 ]]></content:encoded></item></channel></rss>
