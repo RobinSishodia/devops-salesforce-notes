@@ -4,7 +4,7 @@ date: 2024-12-20T07:57:16+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1734676222189/ba3143c3-cb71-4bfd-bdf6-c81aaff4c3f7.jpeg
 tags: ["DevOps", "Kubernetes", "Docker", "CloudComputing", "ContainerOrchestration", "TechInnovation", "ITInfrastructure", "Automation", "OpenSource", "Technology", "DevOpsEngineer"]
-brief: "In the fast-paced world of software development, containerization has become a revolutionary technology. Among the tools that make containerization both efficient and scalable, Docker and Kubernetes are essential. This article explores why these tool..."
+brief: "Docker and Kubernetes revolutionize software development with efficient container orchestration, scalable deployment, and robust DevOps practices"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker). This is an automated backup; read and comment on the blog.

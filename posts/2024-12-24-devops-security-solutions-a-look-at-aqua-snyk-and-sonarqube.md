@@ -4,7 +4,7 @@ date: 2024-12-24T09:25:27+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1735031401638/836969b4-a504-4e9c-bb42-8b51178c98f8.jpeg
 tags: ["DevOps", "DevSecOps", "CyberSecurity", "Snyk", "AquaSecurity", "SonarQube", "ContainerSecurity", "CloudSecurity", "InfrastructureAsCode", "DevOpsTools", "TechInsights", "ITSecurity", "ContinuousIntegration", "ContinuousDeployment", "DevOpsCulture"]
-brief: "In today's fast-moving DevOps landscape, weaving security into the software development process is essential. As cyber threats and vulnerabilities grow, DevSecOps (Development, Security, and Operations) has become a vital strategy for delivering secu..."
+brief: "Explore top DevOps security tools: Aqua, Snyk, and SonarQube, for secure software, vulnerability reduction, and enhanced code quality in development"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube). This is an automated backup; read and comment on the blog.

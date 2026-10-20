@@ -4,7 +4,7 @@ date: 2026-10-02T11:19:56+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2a2a0309-4f9b-4da0-9a33-be899e9caa2f.png
 tags: ["Career", "Devops", "Salesforce", "AWS"]
-brief: "For more than four years I worked in operations and process-driven roles. The work taught me a lot about SLAs, escalations, documentation and keeping things running when volumes spike. In July 2022 I"
+brief: "How I moved from 4+ years in operations roles into Salesforce administration and AWS DevOps, and what I'd tell anyone making the same switch."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers). This is an automated backup; read and comment on the blog.

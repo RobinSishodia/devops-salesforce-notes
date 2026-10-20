@@ -4,7 +4,7 @@ date: 2026-10-04T20:22:10+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png
 tags: ["Salesforce", "Salesforce Admin", "Security", "crm"]
-brief: "\"Why can't this user see that record?\" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the security model, which works in layers. Once you know th"
+brief: "A clear walkthrough of Salesforce's layered security model: org, object, field and record-level access, with OWD, role hierarchy and sharing rules."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more). This is an automated backup; read and comment on the blog.

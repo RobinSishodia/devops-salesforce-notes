@@ -4,7 +4,7 @@ date: 2026-10-06T18:55:43+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a390ec75-d149-40f3-92ab-70bff4950d11.png
 tags: ["Salesforce", "Salesforce Admin", "Devops", "Testing"]
-brief: "A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process sav"
+brief: "The four Salesforce sandbox types compared: storage, data, refresh intervals and which one to use for development, testing, UAT and training."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full). This is an automated backup; read and comment on the blog.

@@ -4,7 +4,7 @@ date: 2026-10-01T10:48:20+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2c6b9ae1-df24-4a14-a975-a9660b8dc57d.png
 tags: ["Salesforce", "Devops", "github-actions", "ci-cd", "salesforce development"]
-brief: "Most Salesforce teams still move changes between orgs by hand: build in a sandbox, add components to a change set, upload, validate, deploy, and hope nothing was missed. I wanted to see what the \"real"
+brief: "How I built a Salesforce metadata CI/CD pipeline with GitHub Actions and scratch orgs that deploys and runs Apex tests on every pull request."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs). This is an automated backup; read and comment on the blog.

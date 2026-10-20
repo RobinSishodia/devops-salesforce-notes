@@ -4,7 +4,7 @@ date: 2026-10-15T19:08:22+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png
 tags: ["Salesforce", "Salesforce Admin"]
-brief: "Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent? The 4 Relations"
+brief: "Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child…"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30). This is an automated backup; read and comment on the blog.

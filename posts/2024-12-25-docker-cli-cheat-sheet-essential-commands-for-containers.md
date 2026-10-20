@@ -4,7 +4,7 @@ date: 2024-12-25T12:45:27+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essential-commands-for-containers
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1735035924000/23174c08-66e8-431f-8cff-fe671d635bb7.webp
 tags: ["Docker", "DevOps", "Containerization", "DockerCLI", "TechTips", "DevOpsEngineer", "SoftwareDevelopment", "Containers", "CloudComputing", "TechCommunity"]
-brief: "In today's software development landscape, Docker is an essential tool for creating, deploying, and running applications smoothly across various environments. The Docker Command-Line Interface (CLI) offers a robust method to work with Docker, manage ..."
+brief: "Master Docker CLI commands to manage containers efficiently—a cheat sheet for developers and DevOps engineers"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essential-commands-for-containers). This is an automated backup; read and comment on the blog.

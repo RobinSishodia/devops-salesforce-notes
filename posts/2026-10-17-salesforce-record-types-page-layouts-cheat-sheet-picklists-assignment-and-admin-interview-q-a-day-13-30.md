@@ -4,7 +4,7 @@ date: 2026-10-17T23:00:34+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/60506fb3-c59b-48de-8457-eb20f9402e04.png
 tags: ["Salesforce", "Salesforce Admin", "record types"]
-brief: "One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview. The 4 Building Blocks Block What it"
+brief: "One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin…"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30). This is an automated backup; read and comment on the blog.

@@ -4,7 +4,7 @@ date: 2026-10-15T19:34:56+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fb51ec5-3bd6-4a7e-8d49-266df22d7b91.png
 tags: ["Salesforce", "Salesforce Admin", "Reports  Dashboards"]
-brief: "Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on. The 4 Report Formats Forma"
+brief: "Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a…"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30). This is an automated backup; read and comment on the blog.

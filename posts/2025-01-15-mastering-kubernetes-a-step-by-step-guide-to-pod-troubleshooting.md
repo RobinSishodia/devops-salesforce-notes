@@ -4,7 +4,7 @@ date: 2025-01-15T15:35:29+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1736955236741/1c0e8b67-d314-4a1d-ab2e-5f7985de6d36.png
 tags: ["Kubernetes", "DevOps", "ContainerOrchestration", "Troubleshooting", "CloudComputing", "TechTips", "DeveloperCommunity", "Innovation"]
-brief: "Kubernetes Pod Troubleshooting Tactics Sequence Kubernetes is a robust container orchestration platform that helps keep applications highly available and scalable. Yet, like any complex system, it can encounter pod-related issues. To tackle these pro..."
+brief: "Kubernetes Pod Troubleshooting Tactics Sequence Kubernetes is a robust container orchestration platform that helps keep applications highly available and…"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting). This is an automated backup; read and comment on the blog.

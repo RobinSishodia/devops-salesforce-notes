@@ -4,7 +4,7 @@ date: 2026-10-17T13:55:45+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png
 tags: ["Salesforce", "Salesforce Admin", "Approval Process"]
-brief: "Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation. The 4 Buil"
+brief: "Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin…"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30). This is an automated backup; read and comment on the blog.

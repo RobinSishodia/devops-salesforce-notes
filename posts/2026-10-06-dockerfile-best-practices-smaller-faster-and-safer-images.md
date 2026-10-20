@@ -4,7 +4,7 @@ date: 2026-10-06T18:47:39+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/44a6e4c1-f2f0-4211-92b2-e42fc15d29e8.png
 tags: ["Docker", "containers", "Devops", "best practices"]
-brief: "Writing a Dockerfile that works is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me. 1."
+brief: "Practical Dockerfile best practices: multi-stage builds, layer caching, small base images, non-root users and .dockerignore, with examples."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images). This is an automated backup; read and comment on the blog.

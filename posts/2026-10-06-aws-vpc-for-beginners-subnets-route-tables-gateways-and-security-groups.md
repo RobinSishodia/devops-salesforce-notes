@@ -4,7 +4,7 @@ date: 2026-10-06T18:58:21+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fbe0394d-2e2e-4c5d-83ee-badaeb008838.png
 tags: ["AWS", "networking", "vpc", "Cloud"]
-brief: "A Virtual Private Cloud (VPC) is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at fi"
+brief: "Beginner's guide to AWS VPC: CIDR blocks, public and private subnets, internet and NAT gateways, route tables, security groups and NACLs."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups). This is an automated backup; read and comment on the blog.

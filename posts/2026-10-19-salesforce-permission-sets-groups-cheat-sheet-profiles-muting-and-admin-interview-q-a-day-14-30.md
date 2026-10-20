@@ -4,7 +4,7 @@ date: 2026-10-19T08:21:14+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ca65621a-a9c9-4d5f-b797-87005f208713.png
 tags: ["Salesforce", "Salesforce Admin", "Permission Sets"]
-brief: "One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect from a modern admin. The 4 Building Blocks B"
+brief: "One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect…"
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30). This is an automated backup; read and comment on the blog.

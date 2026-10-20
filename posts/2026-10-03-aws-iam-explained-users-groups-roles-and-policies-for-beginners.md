@@ -4,7 +4,7 @@ date: 2026-10-03T21:45:02+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3f10720e-03d9-4134-bde3-75ae30fe3eba.png
 tags: ["AWS", "IAM", "cloud security", "Devops"]
-brief: "Almost every AWS problem I've debugged as a beginner came back to one thing: permissions. AWS Identity and Access Management (IAM) decides who can do what in your account, so it's worth understanding"
+brief: "A beginner-friendly guide to AWS IAM: users, groups, roles, policies, least privilege and the mistakes to avoid."
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners). This is an automated backup; read and comment on the blog.
