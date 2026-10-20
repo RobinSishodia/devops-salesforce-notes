@@ -1,10 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 19 Oct 2026 08:24:55 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Permission Sets & Groups Cheat Sheet: Profiles, Muting and Admin Interview Q&A (Day 14/30)]]></title><description><![CDATA[One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect from a modern admin.
-
-The 4 Building Blocks
-
-
-
-B]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Permission Sets]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 19 Oct 2026 08:21:14 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ca65621a-a9c9-4d5f-b797-87005f208713.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect from a modern admin.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 20 Oct 2026 10:53:23 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)]]></title><description><![CDATA[Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data loader]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 20 Oct 2026 10:52:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/99301182-eac6-4186-9c68-940321906d20.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a Salesforce admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Import Wizard</strong></td>
+<td>Browser tool for simple loads</td>
+<td>Up to 50,000 records</td>
+</tr>
+<tr>
+<td><strong>Data Loader</strong></td>
+<td>Desktop app for big jobs</td>
+<td>Up to 5 million records</td>
+</tr>
+<tr>
+<td><strong>Upsert</strong></td>
+<td>Update matches, insert the rest</td>
+<td>Matched by External ID</td>
+</tr>
+<tr>
+<td><strong>Export</strong></td>
+<td>Back up data before a load</td>
+<td>Export or Export All</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. Wizard vs Data Loader?</h3>
+<p>The Wizard is <strong>simple and browser-based</strong> for up to 50,000 records. Data Loader handles <strong>far larger volumes and more objects</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Size and object decide.</p>
+</blockquote>
+<h3>2. What is an upsert?</h3>
+<p>It <strong>updates records that match and inserts the rest</strong>, matching on the record ID or an External ID field.</p>
+<blockquote>
+<p><strong>Tip:</strong> External IDs avoid duplicates.</p>
+</blockquote>
+<h3>3. What can Data Loader do?</h3>
+<p><strong>Insert, update, upsert, delete, hard delete, export and export all</strong>, from the app or the command line.</p>
+<blockquote>
+<p><strong>Tip:</strong> Export All includes deleted rows.</p>
+</blockquote>
+<h3>4. How do you load related data?</h3>
+<p><strong>Load parents first</strong>, then load children using IDs or External IDs to link them to their parents.</p>
+<blockquote>
+<p><strong>Tip:</strong> Parents before children.</p>
+</blockquote>
+<h3>5. What do you check after a load?</h3>
+<p>Open the <strong>success and error files</strong>, fix the failed rows, and reload only those.</p>
+<blockquote>
+<p><strong>Tip:</strong> Keep the error file.</p>
+</blockquote>
+<h3>6. How do you avoid a bad load?</h3>
+<p><strong>Test in a sandbox</strong>, export a backup first, and check validation rules and automation that will fire.</p>
+<blockquote>
+<p><strong>Tip:</strong> Back up before you load.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Load 200,000 contacts from a CSV without duplicates. How do you do it?"</strong></p>
+<ol>
+<li><p><strong>Export</strong> a backup of existing contacts</p>
+</li>
+<li><p><strong>Clean</strong> the CSV and add an External ID</p>
+</li>
+<li><p><strong>Run</strong> Data Loader with upsert</p>
+</li>
+<li><p><strong>Check</strong> the success and error files</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Wizard</strong> = up to 50,000 records</p>
+</li>
+<li><p><strong>Loader</strong> = up to 5 million</p>
+</li>
+<li><p><strong>Upsert</strong> = update or insert</p>
+</li>
+<li><p><strong>External ID</strong> = match key</p>
+</li>
+<li><p><strong>Parents</strong> = load first</p>
+</li>
+<li><p><strong>Error file</strong> = fix and reload</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Clean the data before loading</p>
+</li>
+<li><p>Test in a sandbox first</p>
+</li>
+<li><p>Export a backup beforehand</p>
+</li>
+<li><p>Keep success and error files</p>
+</li>
+</ul>
+<hr />
+<p><strong>What was your biggest data load? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 15 done, 15 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Permission Sets & Groups Cheat Sheet: Profiles, Muting and Admin Interview Q&A (Day 14/30)]]></title><description><![CDATA[One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Permission Sets]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 19 Oct 2026 08:21:14 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ca65621a-a9c9-4d5f-b797-87005f208713.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect from a modern admin.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -111,14 +212,7 @@ B]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-permission
 <hr />
 <p><strong>Which access would you move to a set first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 14 done, 16 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)]]></title><description><![CDATA[One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.
-
-The 4 Building Blocks
-
-
-
-Block
-What it ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[record types]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 23:00:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/60506fb3-c59b-48de-8457-eb20f9402e04.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)]]></title><description><![CDATA[One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[record types]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 23:00:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/60506fb3-c59b-48de-8457-eb20f9402e04.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -225,9 +319,7 @@ What it ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-rec
 <hr />
 <p><strong>Which object would you split first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 13 done, 17 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)]]></title><description><![CDATA[Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.
-
-The 4 Buil]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Approval Process]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 13:55:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)]]></title><description><![CDATA[Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Approval Process]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 13:55:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -334,9 +426,7 @@ The 4 Buil]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-a
 <hr />
 <p><strong>What would you send for approval first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 12 done, 18 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)]]></title><description><![CDATA[Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.
-
-The 4]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[validation-rules]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 12:36:37 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/10a66ceb-f74e-4c80-a624-63fc435d2002.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)]]></title><description><![CDATA[Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[validation-rules]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 12:36:37 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/10a66ceb-f74e-4c80-a624-63fc435d2002.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics because every real org depends on them.</em></p>
 <hr />
 <h2>The 4 Data Quality Tools</h2>
 <table>
@@ -449,13 +539,7 @@ The 4]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-valida
 <hr />
 <p><strong>What is the best validation rule you have written? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 11 done, 19 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)]]></title><description><![CDATA[Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.
-
-The 4 Report Formats
-
-
-
-Forma]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Reports & Dashboards]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:34:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fb51ec5-3bd6-4a7e-8d49-266df22d7b91.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)]]></title><description><![CDATA[Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Reports & Dashboards]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:34:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fb51ec5-3bd6-4a7e-8d49-266df22d7b91.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.</em></p>
 <hr />
 <h2>The 4 Report Formats</h2>
 <table>
@@ -562,9 +646,7 @@ Forma]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-report
 <hr />
 <p><strong>Summary or Matrix: which do you build most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 10 done, 20 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)]]></title><description><![CDATA[Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?
-
-The 4 Relations]]></description><link>https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:08:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?</em></p>
+]]></content:encoded></item><item><title><![CDATA[Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)]]></title><description><![CDATA[Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child…]]></description><link>https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:08:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?</em></p>
 <hr />
 <h2>The 4 Relationship Types</h2>
 <table>
@@ -671,9 +753,7 @@ The 4 Relations]]></description><link>https://sishodiarobin.hashnode.dev/lookup-
 <hr />
 <p><strong>Lookup or Master-Detail: which do you pick first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 9 done, 21 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)]]></title><description><![CDATA[Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.
-
-The ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 22:00:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb5a0a21-2efe-429d-a1da-6e43dd949dff.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)]]></title><description><![CDATA[Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 22:00:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb5a0a21-2efe-429d-a1da-6e43dd949dff.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.</em></p>
 <hr />
 <h2>The 4 Flow Types</h2>
 <table>
@@ -780,7 +860,7 @@ The ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-ch
 <hr />
 <p><strong>Which Flow type do you use most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 8 done, 22 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)]]></title><description><![CDATA[Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on four doors, and every question is really asking ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 13:33:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3deb4392-f75a-4e09-ab55-b0d29d266241.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on four doors, and every question is really asking "which lock is this?"</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)]]></title><description><![CDATA[Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 13:33:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3deb4392-f75a-4e09-ab55-b0d29d266241.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on four doors, and every question is really asking "which lock is this?"</em></p>
 <p>This is the quick <strong>cheat sheet</strong> version. For the long, step-by-step walkthrough, read my earlier post: <a href="https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more">The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More</a>.</p>
 <hr />
 <h2>The Big Picture: 4 Layers of Access</h2>
@@ -900,7 +980,7 @@ The ]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-ch
 <hr />
 <p><strong>Which part of the Salesforce security model confused you the most when you were learning it? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 7 done, 23 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups]]></title><description><![CDATA[A Virtual Private Cloud (VPC) is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at fi]]></description><link>https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</guid><category><![CDATA[AWS]]></category><category><![CDATA[networking]]></category><category><![CDATA[vpc]]></category><category><![CDATA[Cloud]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:58:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fbe0394d-2e2e-4c5d-83ee-badaeb008838.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A <strong>Virtual Private Cloud (VPC)</strong> is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at first, so here is the explanation I wish I'd had.</p>
+]]></content:encoded></item><item><title><![CDATA[AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups]]></title><description><![CDATA[Beginner's guide to AWS VPC: CIDR blocks, public and private subnets, internet and NAT gateways, route tables, security groups and NACLs.]]></description><link>https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</guid><category><![CDATA[AWS]]></category><category><![CDATA[networking]]></category><category><![CDATA[vpc]]></category><category><![CDATA[Cloud]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:58:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fbe0394d-2e2e-4c5d-83ee-badaeb008838.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A <strong>Virtual Private Cloud (VPC)</strong> is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at first, so here is the explanation I wish I'd had.</p>
 <h2>The VPC and its CIDR block</h2>
 <p>When you create a VPC, you give it an IP range in <strong>CIDR</strong> notation, for example:</p>
 <pre><code>10.0.0.0/16   →   65,536 addresses (10.0.0.0 – 10.0.255.255)
@@ -991,7 +1071,7 @@ Private subnets  →  Database (RDS)
 <li>VPC Flow Logs to see whether traffic was accepted or rejected</li>
 </ol>
 <p>Once you can draw your VPC on paper, most networking problems become much easier to solve.</p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full]]></title><description><![CDATA[A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process sav]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Testing]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:55:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a390ec75-d149-40f3-92ab-70bff4950d11.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process saves a lot of pain.</p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full]]></title><description><![CDATA[The four Salesforce sandbox types compared: storage, data, refresh intervals and which one to use for development, testing, UAT and training.]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Testing]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:55:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a390ec75-d149-40f3-92ab-70bff4950d11.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process saves a lot of pain.</p>
 <h2>The four types at a glance</h2>
 <table>
 <thead>
@@ -1076,8 +1156,7 @@ Private subnets  →  Database (RDS)
 <li><strong>Know the difference from scratch orgs.</strong> Scratch orgs are short-lived, source-driven orgs created from a definition file, which suits CI pipelines. Sandboxes are copies of production, which suits integration testing and UAT.</li>
 </ul>
 <p>Choosing the right sandbox for each stage keeps development fast and testing realistic, without risking production.</p>
-]]></content:encoded></item><item><title><![CDATA[Dockerfile Best Practices: Smaller, Faster and Safer Images]]></title><description><![CDATA[Writing a Dockerfile that works is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me.
-1. ]]></description><link>https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</guid><category><![CDATA[Docker]]></category><category><![CDATA[containers]]></category><category><![CDATA[Devops]]></category><category><![CDATA[best practices]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:47:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/44a6e4c1-f2f0-4211-92b2-e42fc15d29e8.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Writing a Dockerfile that <em>works</em> is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me.</p>
+]]></content:encoded></item><item><title><![CDATA[Dockerfile Best Practices: Smaller, Faster and Safer Images]]></title><description><![CDATA[Practical Dockerfile best practices: multi-stage builds, layer caching, small base images, non-root users and .dockerignore, with examples.]]></description><link>https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</guid><category><![CDATA[Docker]]></category><category><![CDATA[containers]]></category><category><![CDATA[Devops]]></category><category><![CDATA[best practices]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:47:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/44a6e4c1-f2f0-4211-92b2-e42fc15d29e8.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Writing a Dockerfile that <em>works</em> is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me.</p>
 <h2>1. Start from a small, specific base image</h2>
 <pre><code class="language-dockerfile"># Avoid
 FROM node:latest
@@ -1165,7 +1244,7 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <li> Image scanned in CI</li>
 </ul>
 <p>Small changes, but together they often cut image size by more than half and make builds noticeably faster.</p>
-]]></content:encoded></item><item><title><![CDATA[The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More]]></title><description><![CDATA["Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the security model, which works in layers. Once you know th]]></description><link>https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 04 Oct 2026 20:22:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>"Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the <strong>security model</strong>, which works in layers. Once you know the layers, troubleshooting becomes a checklist.</p>
+]]></content:encoded></item><item><title><![CDATA[The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More]]></title><description><![CDATA[A clear walkthrough of Salesforce's layered security model: org, object, field and record-level access, with OWD, role hierarchy and sharing rules.]]></description><link>https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 04 Oct 2026 20:22:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>"Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the <strong>security model</strong>, which works in layers. Once you know the layers, troubleshooting becomes a checklist.</p>
 <h2>Layer 1: Org-level access</h2>
 <p>Who can log in at all, and when.</p>
 <ul>
@@ -1221,7 +1300,7 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <h2>Profiles vs permission sets</h2>
 <p>Salesforce is moving towards <strong>permission sets and permission set groups</strong> as the main way to grant access, with profiles kept minimal. I'll cover that in a dedicated post later this month.</p>
 <p>Get the layers straight and most "I can't see it" tickets take minutes instead of hours.</p>
-]]></content:encoded></item><item><title><![CDATA[AWS IAM Explained: Users, Groups, Roles and Policies for Beginners]]></title><description><![CDATA[Almost every AWS problem I've debugged as a beginner came back to one thing: permissions. AWS Identity and Access Management (IAM) decides who can do what in your account, so it's worth understanding ]]></description><link>https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 03 Oct 2026 21:45:02 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3f10720e-03d9-4134-bde3-75ae30fe3eba.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Almost every AWS problem I've debugged as a beginner came back to one thing: <strong>permissions</strong>. AWS Identity and Access Management (IAM) decides who can do what in your account, so it's worth understanding properly before anything else.</p>
+]]></content:encoded></item><item><title><![CDATA[AWS IAM Explained: Users, Groups, Roles and Policies for Beginners]]></title><description><![CDATA[A beginner-friendly guide to AWS IAM: users, groups, roles, policies, least privilege and the mistakes to avoid.]]></description><link>https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 03 Oct 2026 21:45:02 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3f10720e-03d9-4134-bde3-75ae30fe3eba.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Almost every AWS problem I've debugged as a beginner came back to one thing: <strong>permissions</strong>. AWS Identity and Access Management (IAM) decides who can do what in your account, so it's worth understanding properly before anything else.</p>
 <h2>The four building blocks</h2>
 <h3>Users</h3>
 <p>An IAM <strong>user</strong> is an identity for a person or an application that needs long-term credentials (a password for the console, or access keys for the CLI).</p>
@@ -1289,7 +1368,7 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <li> Access Analyzer enabled</li>
 </ul>
 <p>IAM looks dry, but once it clicks, the rest of AWS becomes much easier to reason about. Tomorrow I'll switch to Salesforce and look at its security model.</p>
-]]></content:encoded></item><item><title><![CDATA[From Operations to Salesforce and DevOps: How I Switched Careers]]></title><description><![CDATA[For more than four years I worked in operations and process-driven roles. The work taught me a lot about SLAs, escalations, documentation and keeping things running when volumes spike. In July 2022 I ]]></description><link>https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers</guid><category><![CDATA[Career]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Salesforce]]></category><category><![CDATA[AWS]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 02 Oct 2026 11:19:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2a2a0309-4f9b-4da0-9a33-be899e9caa2f.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>For more than four years I worked in operations and process-driven roles. The work taught me a lot about SLAs, escalations, documentation and keeping things running when volumes spike. In July 2022 I decided to move into <strong>Salesforce administration and AWS Cloud/DevOps</strong>, and I've been building towards it ever since.</p>
+]]></content:encoded></item><item><title><![CDATA[From Operations to Salesforce and DevOps: How I Switched Careers]]></title><description><![CDATA[How I moved from 4+ years in operations roles into Salesforce administration and AWS DevOps, and what I'd tell anyone making the same switch.]]></description><link>https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers</guid><category><![CDATA[Career]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Salesforce]]></category><category><![CDATA[AWS]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 02 Oct 2026 11:19:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2a2a0309-4f9b-4da0-9a33-be899e9caa2f.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>For more than four years I worked in operations and process-driven roles. The work taught me a lot about SLAs, escalations, documentation and keeping things running when volumes spike. In July 2022 I decided to move into <strong>Salesforce administration and AWS Cloud/DevOps</strong>, and I've been building towards it ever since.</p>
 <p>This post is about how I approached the switch, what worked, and what I'd do differently.</p>
 <h2>Why Salesforce and DevOps?</h2>
 <p>Both fields reward the same habits operations work builds:</p>
@@ -1326,7 +1405,7 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <h2>What's next</h2>
 <p>Over the next month I'll publish a post every morning on Salesforce administration, AWS and DevOps: the practical topics I wish I'd had clear explanations for when I started.</p>
 <p>If you're making a similar switch, I'd love to hear how it's going. Connect with me on <a href="https://www.linkedin.com/in/robinsishodia">LinkedIn</a>.</p>
-]]></content:encoded></item><item><title><![CDATA[Building a Salesforce CI/CD Pipeline with GitHub Actions and Scratch Orgs]]></title><description><![CDATA[Most Salesforce teams still move changes between orgs by hand: build in a sandbox, add components to a change set, upload, validate, deploy, and hope nothing was missed. I wanted to see what the "real]]></description><link>https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Devops]]></category><category><![CDATA[github-actions]]></category><category><![CDATA[ci-cd]]></category><category><![CDATA[salesforce development]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 01 Oct 2026 10:48:20 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2c6b9ae1-df24-4a14-a975-a9660b8dc57d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Most Salesforce teams still move changes between orgs by hand: build in a sandbox, add components to a change set, upload, validate, deploy, and hope nothing was missed. I wanted to see what the "real" DevOps way looks like on the Salesforce platform, so I built a small metadata CI/CD pipeline from scratch using <strong>Salesforce DX, GitHub Actions and scratch orgs</strong>.</p>
+]]></content:encoded></item><item><title><![CDATA[Building a Salesforce CI/CD Pipeline with GitHub Actions and Scratch Orgs]]></title><description><![CDATA[How I built a Salesforce metadata CI/CD pipeline with GitHub Actions and scratch orgs that deploys and runs Apex tests on every pull request.]]></description><link>https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Devops]]></category><category><![CDATA[github-actions]]></category><category><![CDATA[ci-cd]]></category><category><![CDATA[salesforce development]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 01 Oct 2026 10:48:20 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2c6b9ae1-df24-4a14-a975-a9660b8dc57d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Most Salesforce teams still move changes between orgs by hand: build in a sandbox, add components to a change set, upload, validate, deploy, and hope nothing was missed. I wanted to see what the "real" DevOps way looks like on the Salesforce platform, so I built a small metadata CI/CD pipeline from scratch using <strong>Salesforce DX, GitHub Actions and scratch orgs</strong>.</p>
 <p>In this post I'll walk through what the pipeline does, how it's wired together, and the one problem that cost me the most time.</p>
 <p><strong>Repo:</strong> <a href="https://github.com/RobinSishodia/salesforce-devops-pipeline">github.com/RobinSishodia/salesforce-devops-pipeline</a></p>
 <h2>The goal</h2>
@@ -1444,8 +1523,7 @@ jobs:
 <h2>What's next</h2>
 <p>The next part of this project is the <strong>release side</strong>: protecting the <code>main</code> branch so only validated PRs can merge, and adding <strong>Copado</strong> to manage environments and promote changes through a pipeline (dev → QA → production). I'll write that up in the next post.</p>
 <p>If you're an admin moving into Salesforce DevOps, I'd love to hear how your team handles deployments. Connect with me on <a href="https://www.linkedin.com/in/robinsishodia">LinkedIn</a>.</p>
-]]></content:encoded></item><item><title><![CDATA[Mastering Kubernetes: A Step-by-Step Guide to Pod Troubleshooting]]></title><description><![CDATA[Kubernetes Pod Troubleshooting Tactics Sequence
-Kubernetes is a robust container orchestration platform that helps keep applications highly available and scalable. Yet, like any complex system, it can encounter pod-related issues. To tackle these pro...]]></description><link>https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting</guid><category><![CDATA[#Kubernetes #DevOps #ContainerOrchestration #Troubleshooting #CloudComputing #TechTips #DeveloperCommunity #Innovation]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 15 Jan 2025 15:35:29 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1736955236741/1c0e8b67-d314-4a1d-ab2e-5f7985de6d36.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><strong>Kubernetes Pod Troubleshooting Tactics Sequence</strong></p>
+]]></content:encoded></item><item><title><![CDATA[Mastering Kubernetes: A Step-by-Step Guide to Pod Troubleshooting]]></title><description><![CDATA[Kubernetes Pod Troubleshooting Tactics Sequence Kubernetes is a robust container orchestration platform that helps keep applications highly available and…]]></description><link>https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting</guid><category><![CDATA[#Kubernetes #DevOps #ContainerOrchestration #Troubleshooting #CloudComputing #TechTips #DeveloperCommunity #Innovation]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 15 Jan 2025 15:35:29 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1736955236741/1c0e8b67-d314-4a1d-ab2e-5f7985de6d36.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><strong>Kubernetes Pod Troubleshooting Tactics Sequence</strong></p>
 <p>Kubernetes is a robust container orchestration platform that helps keep applications highly available and scalable. Yet, like any complex system, it can encounter pod-related issues. To tackle these problems effectively, a well-organized troubleshooting approach is essential. In this article, we'll walk through a series of tactics to help you diagnose and fix pod issues efficiently.</p>
 <hr />
 <h3 id="heading-understanding-pods-in-kubernetes"><strong>Understanding Pods in Kubernetes</strong></h3>
@@ -1565,7 +1643,7 @@ kubectl get secrets
 <hr />
 <h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
 <p>Troubleshooting Kubernetes pods might seem challenging, but with a step-by-step approach, it becomes much more manageable. By using these strategies, you can pinpoint the root cause and fix issues effectively, keeping your applications running smoothly and reliably.</p>
-]]></content:encoded></item><item><title><![CDATA[Docker CLI Cheat Sheet: Essential Commands for Containers]]></title><description><![CDATA[In today's software development landscape, Docker is an essential tool for creating, deploying, and running applications smoothly across various environments. The Docker Command-Line Interface (CLI) offers a robust method to work with Docker, manage ...]]></description><link>https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essential-commands-for-containers</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essential-commands-for-containers</guid><category><![CDATA[#Docker #DevOps #Containerization #DockerCLI #TechTips #DevOpsEngineer #SoftwareDevelopment #Containers #CloudComputing #TechCommunity 🚀🐳📦]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 25 Dec 2024 12:45:27 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1735035924000/23174c08-66e8-431f-8cff-fe671d635bb7.webp" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In today's software development landscape, <strong>Docker</strong> is an essential tool for creating, deploying, and running applications smoothly across various environments. The <strong>Docker Command-Line Interface (CLI)</strong> offers a robust method to work with Docker, manage containers, and efficiently organize your applications. This cheat sheet showcases the <strong>key Docker commands</strong> that every developer and DevOps engineer should be familiar with.</p>
+]]></content:encoded></item><item><title><![CDATA[Docker CLI Cheat Sheet: Essential Commands for Containers]]></title><description><![CDATA[Master Docker CLI commands to manage containers efficiently—a cheat sheet for developers and DevOps engineers]]></description><link>https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essential-commands-for-containers</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essential-commands-for-containers</guid><category><![CDATA[#Docker #DevOps #Containerization #DockerCLI #TechTips #DevOpsEngineer #SoftwareDevelopment #Containers #CloudComputing #TechCommunity 🚀🐳📦]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 25 Dec 2024 12:45:27 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1735035924000/23174c08-66e8-431f-8cff-fe671d635bb7.webp" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In today's software development landscape, <strong>Docker</strong> is an essential tool for creating, deploying, and running applications smoothly across various environments. The <strong>Docker Command-Line Interface (CLI)</strong> offers a robust method to work with Docker, manage containers, and efficiently organize your applications. This cheat sheet showcases the <strong>key Docker commands</strong> that every developer and DevOps engineer should be familiar with.</p>
 <hr />
 <h2 id="heading-1-docker-basics"><strong>1. Docker Basics</strong></h2>
 <ul>
@@ -1735,7 +1813,7 @@ kubectl get secrets
 <h2 id="heading-conclusion"><strong>Conclusion</strong></h2>
 <p>The Docker CLI is a powerful tool that makes managing containers easier, streamlining workflows and ensuring consistency. Whether you're just starting or you're a seasoned engineer, keeping this <strong>cheat sheet</strong> nearby will help you manage your containers with confidence. 🚀</p>
 <p>Dive into these commands, try them out, and incorporate them into your daily routines to fully leverage Docker's potential!</p>
-]]></content:encoded></item><item><title><![CDATA[DevOps Security Solutions: A Look at Aqua, Snyk, and SonarQube]]></title><description><![CDATA[In today's fast-moving DevOps landscape, weaving security into the software development process is essential. As cyber threats and vulnerabilities grow, DevSecOps (Development, Security, and Operations) has become a vital strategy for delivering secu...]]></description><link>https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube</guid><category><![CDATA[#DevOps #DevSecOps #CyberSecurity #Snyk #AquaSecurity #SonarQube #ContainerSecurity #CloudSecurity #InfrastructureAsCode #DevOpsTools #TechInsights #ITSecurity #ContinuousIntegration #ContinuousDeployment #DevOpsCulture 🚀🔐]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Dec 2024 09:25:27 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1735031401638/836969b4-a504-4e9c-bb42-8b51178c98f8.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In today's fast-moving DevOps landscape, weaving security into the software development process is essential. As cyber threats and vulnerabilities grow, DevSecOps (Development, Security, and Operations) has become a vital strategy for delivering secure software. In this article, we'll dive into three top DevOps security tools: <strong>Aqua Security</strong>, <strong>Snyk</strong>, and <strong>SonarQube</strong>.</p>
+]]></content:encoded></item><item><title><![CDATA[DevOps Security Solutions: A Look at Aqua, Snyk, and SonarQube]]></title><description><![CDATA[Explore top DevOps security tools: Aqua, Snyk, and SonarQube, for secure software, vulnerability reduction, and enhanced code quality in development]]></description><link>https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube</guid><category><![CDATA[#DevOps #DevSecOps #CyberSecurity #Snyk #AquaSecurity #SonarQube #ContainerSecurity #CloudSecurity #InfrastructureAsCode #DevOpsTools #TechInsights #ITSecurity #ContinuousIntegration #ContinuousDeployment #DevOpsCulture 🚀🔐]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Dec 2024 09:25:27 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1735031401638/836969b4-a504-4e9c-bb42-8b51178c98f8.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In today's fast-moving DevOps landscape, weaving security into the software development process is essential. As cyber threats and vulnerabilities grow, DevSecOps (Development, Security, and Operations) has become a vital strategy for delivering secure software. In this article, we'll dive into three top DevOps security tools: <strong>Aqua Security</strong>, <strong>Snyk</strong>, and <strong>SonarQube</strong>.</p>
 <h3 id="heading-1-aqua-security"><strong>1. Aqua Security</strong></h3>
 <p>Aqua Security offers a robust platform aimed at securing cloud-native applications and infrastructure. It delivers comprehensive security for containers, serverless functions, and Kubernetes environments.</p>
 <p><strong>Key Features:</strong></p>
@@ -1803,7 +1881,7 @@ kubectl get secrets
 <h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
 <p>Each of these tools plays a special role in the DevSecOps ecosystem. <strong>Aqua Security</strong> is great for cloud-native environments, <strong>Snyk</strong> helps developers tackle vulnerabilities early on, and <strong>SonarQube</strong> focuses on ensuring code quality and security right from the start.</p>
 <p>By adding these tools to your DevOps pipelines, you can greatly reduce vulnerabilities, enhance software quality, and strengthen the security of your applications. Ultimately, security is more than just using tools—it's about fostering a security-first mindset throughout the development process.</p>
-]]></content:encoded></item><item><title><![CDATA[Unlock the Potential of Container Orchestration Using Kubernetes and Docker]]></title><description><![CDATA[In the fast-paced world of software development, containerization has become a revolutionary technology. Among the tools that make containerization both efficient and scalable, Docker and Kubernetes are essential. This article explores why these tool...]]></description><link>https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker</guid><category><![CDATA[#DevOps #Kubernetes #Docker #CloudComputing #ContainerOrchestration #TechInnovation #ITInfrastructure #Automation #OpenSource #Technology #DevOpsEngineer 🌟]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Dec 2024 07:57:16 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1734676222189/ba3143c3-cb71-4bfd-bdf6-c81aaff4c3f7.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the fast-paced world of software development, containerization has become a revolutionary technology. Among the tools that make containerization both efficient and scalable, Docker and Kubernetes are essential. This article explores why these tools are important, their roles in managing containers, and their significance in modern DevOps practices.</p>
+]]></content:encoded></item><item><title><![CDATA[Unlock the Potential of Container Orchestration Using Kubernetes and Docker]]></title><description><![CDATA[Docker and Kubernetes revolutionize software development with efficient container orchestration, scalable deployment, and robust DevOps practices]]></description><link>https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker</guid><category><![CDATA[#DevOps #Kubernetes #Docker #CloudComputing #ContainerOrchestration #TechInnovation #ITInfrastructure #Automation #OpenSource #Technology #DevOpsEngineer 🌟]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Dec 2024 07:57:16 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1734676222189/ba3143c3-cb71-4bfd-bdf6-c81aaff4c3f7.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the fast-paced world of software development, containerization has become a revolutionary technology. Among the tools that make containerization both efficient and scalable, Docker and Kubernetes are essential. This article explores why these tools are important, their roles in managing containers, and their significance in modern DevOps practices.</p>
 <h3 id="heading-what-is-docker"><strong>What is Docker?</strong></h3>
 <p>Docker is a platform that makes it easier to develop, ship, and deploy applications by packaging them into lightweight, portable containers. These containers include everything needed to run the application, ensuring it works consistently in different environments.</p>
 <h4 id="heading-key-features-of-docker"><strong>Key Features of Docker:</strong></h4>
@@ -1878,80 +1956,4 @@ kubectl get secrets
 </ul>
 <h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
 <p>Docker and Kubernetes have transformed how modern applications are developed, deployed, and managed. Docker makes it easy to create and run containers, while Kubernetes is great at managing them on a large scale. Together, they are crucial for organizations looking to adopt containerization and DevOps practices. By mastering these tools, developers and DevOps teams can build resilient, scalable, and efficient software systems, ready to meet the demands of today’s fast-paced tech world.</p>
-]]></content:encoded></item><item><title><![CDATA[Comprehensive Guide to Top DevOps Tools: Prometheus, Grafana, and ELK Stack Explained]]></title><description><![CDATA[In DevOps, keeping an eye on systems and recording their activities is vital for making sure everything runs smoothly and efficiently. These tools give us a clear view of our infrastructure, applications, and workflows, helping teams spot and fix pro...]]></description><link>https://sishodiarobin.hashnode.dev/comprehensive-guide-to-top-devops-tools-prometheus-grafana-and-elk-stack-explained</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/comprehensive-guide-to-top-devops-tools-prometheus-grafana-and-elk-stack-explained</guid><category><![CDATA[#DevOps #Monitoring #Logging #Prometheus #Grafana #ELKStack #DevOpsTools #TechInnovation #SystemReliability #CloudComputing #TechBlog #DevOpsEngineer 🌟]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 11 Dec 2024 02:16:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1733852330096/fe21b07b-d99f-4f40-84a9-2c0c5fd80dbf.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In DevOps, keeping an eye on systems and recording their activities is vital for making sure everything runs smoothly and efficiently. These tools give us a clear view of our infrastructure, applications, and workflows, helping teams spot and fix problems quickly. Let's dive into three popular tools: <strong>Prometheus</strong>, <strong>Grafana</strong>, and the <strong>ELK Stack</strong>, and see how they play a role in today's DevOps practices.</p>
-<hr />
-<h2 id="heading-1-prometheus-monitoring-metrics-at-scale"><strong>1. Prometheus: Monitoring Metrics at Scale</strong></h2>
-<h3 id="heading-overview"><strong>Overview</strong></h3>
-<p>Prometheus is an open-source toolkit for monitoring systems and sending alerts. It's built for reliability and scalability, making it a popular choice in cloud-native environments.</p>
-<h3 id="heading-key-features"><strong>Key Features</strong></h3>
-<ul>
-<li><p><strong>Time-Series Database</strong>: Gathers metrics from applications, databases, and other sources, storing them in a time-series format.</p>
-</li>
-<li><p><strong>Powerful Query Language (PromQL)</strong>: Allows users to efficiently extract and analyze metrics.</p>
-</li>
-<li><p><strong>Alertmanager</strong>: Manages alert notifications based on set thresholds.</p>
-</li>
-<li><p><strong>Ease of Integration</strong>: Integrates smoothly with Kubernetes, Docker, and other cloud-native tools.</p>
-</li>
-</ul>
-<h3 id="heading-use-case"><strong>Use Case</strong></h3>
-<p>Prometheus is perfect for real-time monitoring of microservices and containerized environments, helping teams detect issues proactively.</p>
-<hr />
-<h2 id="heading-2-grafana-the-visualization-maestro"><strong>2. Grafana: The Visualization Maestro</strong></h2>
-<h3 id="heading-overview-1"><strong>Overview</strong></h3>
-<p>Grafana is a flexible, open-source platform for analytics and visualization. While it works well with Prometheus, it also connects with other data sources like MySQL, InfluxDB, and Elasticsearch.</p>
-<h3 id="heading-key-features-1"><strong>Key Features</strong></h3>
-<ul>
-<li><p><strong>Custom Dashboards</strong>: Design interactive, customizable dashboards to display metrics.</p>
-</li>
-<li><p><strong>Multi-Source Support</strong>: Links to various data sources, offering great flexibility.</p>
-</li>
-<li><p><strong>Alerting System</strong>: Sends visual and email alerts for any unusual activity.</p>
-</li>
-<li><p><strong>Plugins</strong>: Provides a wide range of plugins to enhance its capabilities.</p>
-</li>
-</ul>
-<h3 id="heading-use-case-1"><strong>Use Case</strong></h3>
-<p>Grafana is ideal for building unified dashboards in multi-cloud or hybrid environments, offering a comprehensive view of all metrics.</p>
-<hr />
-<h2 id="heading-3-elk-stack-simplifying-logging"><strong>3. ELK Stack: Simplifying Logging</strong></h2>
-<h3 id="heading-overview-2"><strong>Overview</strong></h3>
-<p>The ELK Stack, which includes Elasticsearch, Logstash, and Kibana, offers a robust solution for centralized logging and search functions.</p>
-<h3 id="heading-key-features-2"><strong>Key Features</strong></h3>
-<ul>
-<li><p><strong>Elasticsearch</strong>: Acts as a distributed search engine, efficiently indexing and querying logs.</p>
-</li>
-<li><p><strong>Logstash</strong>: Collects, processes, and transforms log data from various sources.</p>
-</li>
-<li><p><strong>Kibana</strong>: Provides visualization of log data through rich, interactive dashboards.</p>
-</li>
-<li><p><strong>Scalability</strong>: Capable of handling large volumes of log data, making it ideal for enterprise-level needs.</p>
-</li>
-</ul>
-<h3 id="heading-use-case-2"><strong>Use Case</strong></h3>
-<p>The ELK Stack is commonly used for centralized logging, allowing teams to quickly troubleshoot and perform root cause analysis.</p>
-<hr />
-<h2 id="heading-prometheus-vs-elk-stack-vs-grafana"><strong>Prometheus vs. ELK Stack vs. Grafana</strong></h2>
-<div class="hn-table">
-<table>
-<thead>
-<tr>
-<td>Feature</td><td>Prometheus</td><td>ELK Stack</td><td>Grafana</td></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Focus Area</strong></td><td>Metrics monitoring</td><td>Centralized logging</td><td>Visualization</td></tr>
-<tr>
-<td><strong>Integration</strong></td><td>Kubernetes, Grafana</td><td>Various log sources</td><td>Prometheus, ELK, others</td></tr>
-<tr>
-<td><strong>Best For</strong></td><td>Real-time metrics</td><td>Log management</td><td>Unified dashboards</td></tr>
-<tr>
-<td><strong>Strength</strong></td><td>Alerting, scalability</td><td>Full-text search, analytics</td><td>Multi-source support</td></tr>
-</tbody>
-</table>
-</div><hr />
-<h2 id="heading-conclusion"><strong>Conclusion</strong></h2>
-<p>Monitoring and logging tools are essential for successful DevOps operations. <strong>Prometheus</strong> is great for tracking metrics, <strong>ELK Stack</strong> makes centralized logging easier, and <strong>Grafana</strong> improves data visualization. Together, these tools create a strong system for achieving excellence in modern IT environments.</p>
-<p>💡 <strong>Tip</strong>: Use Prometheus and Grafana together for smooth metrics monitoring and visualization, and rely on the ELK Stack for thorough log management.</p>
-<hr />
 ]]></content:encoded></item></channel></rss>
