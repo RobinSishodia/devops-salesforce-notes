@@ -13,10 +13,11 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (32)
+## 📚 All posts (33)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-10-21 | [Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)](https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30) | `Salesforce` `Salesforce Admin` `Devops` | [Markdown](posts/2026-10-21-salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30.md) |
 | 2026-10-20 | [Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)](https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30) | `Salesforce` `Salesforce Admin` `data loader` | [Markdown](posts/2026-10-20-salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30.md) |
 | 2026-10-19 | [Salesforce Permission Sets & Groups Cheat Sheet: Profiles, Muting and Admin Interview Q&A (Day 14/30)](https://sishodiarobin.hashnode.dev/salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30) | `Salesforce` `Salesforce Admin` `Permission Sets` | [Markdown](posts/2026-10-19-salesforce-permission-sets-groups-cheat-sheet-profiles-muting-and-admin-interview-q-a-day-14-30.md) |
 | 2026-10-17 | [Salesforce Validation Rules Cheat Sheet: Formulas, Error Messages and Admin Interview Q&A (Day 11/30)](https://sishodiarobin.hashnode.dev/salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30) | `Salesforce` `Salesforce Admin` `validation-rules` | [Markdown](posts/2026-10-17-salesforce-validation-rules-cheat-sheet-formulas-error-messages-and-admin-interview-q-a-day-11-30.md) |
