@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 20 Oct 2026 10:53:23 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)]]></title><description><![CDATA[Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data loader]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 20 Oct 2026 10:52:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/99301182-eac6-4186-9c68-940321906d20.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a Salesforce admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 21 Oct 2026 09:22:09 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)]]></title><description><![CDATA[Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 09:18:25 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/18b9c4e0-d2c0-4960-a653-ec1e1ef9572d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a favourite interview question.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Sandbox</strong></td>
+<td>Safe copy of production</td>
+<td>Build and test here</td>
+</tr>
+<tr>
+<td><strong>Outbound Set</strong></td>
+<td>Built in the source org</td>
+<td>Uploaded to the target</td>
+</tr>
+<tr>
+<td><strong>Inbound Set</strong></td>
+<td>Arrives in the target org</td>
+<td>Validate, then deploy</td>
+</tr>
+<tr>
+<td><strong>Validation</strong></td>
+<td>Dry run with tests</td>
+<td>Saves nothing</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a sandbox?</h3>
+<p>A <strong>copy of production metadata</strong> where you build and test changes safely, away from live users.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never build in production.</p>
+</blockquote>
+<h3>2. What are the sandbox types?</h3>
+<p><strong>Developer and Developer Pro</strong> copy metadata. <strong>Partial Copy</strong> adds sample data. <strong>Full</strong> copies everything.</p>
+<blockquote>
+<p><strong>Tip:</strong> Match the type to the test.</p>
+</blockquote>
+<h3>3. What is a change set?</h3>
+<p>A <strong>bundle of metadata components</strong> you send from one org to another connected org.</p>
+<blockquote>
+<p><strong>Tip:</strong> Metadata only, not data.</p>
+</blockquote>
+<h3>4. Outbound vs inbound?</h3>
+<p><strong>Outbound</strong> is built and uploaded in the source org. <strong>Inbound</strong> waits in the target org to be validated and deployed.</p>
+<blockquote>
+<p><strong>Tip:</strong> Outbound out, inbound in.</p>
+</blockquote>
+<h3>5. Why validate first?</h3>
+<p>A validation <strong>runs the checks and tests without saving changes</strong>, so you know the deploy will pass.</p>
+<blockquote>
+<p><strong>Tip:</strong> Validate, then deploy.</p>
+</blockquote>
+<h3>6. What are the limits?</h3>
+<p>Change sets work <strong>only between connected orgs</strong>, some components are unsupported, and there is <strong>no version history or easy rollback</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name the limits, then mention Git and CI/CD.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Move a new validation rule and layout to production. How?"</strong></p>
+<ol>
+<li><p><strong>Build</strong> and test it in a sandbox</p>
+</li>
+<li><p><strong>Add</strong> both to an outbound change set</p>
+</li>
+<li><p><strong>Upload</strong> to production and validate</p>
+</li>
+<li><p><strong>Deploy</strong> in a quiet window</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Sandbox</strong> = safe copy of prod</p>
+</li>
+<li><p><strong>Outbound</strong> = sent from source</p>
+</li>
+<li><p><strong>Inbound</strong> = received in target</p>
+</li>
+<li><p><strong>Validate</strong> = dry run</p>
+</li>
+<li><p><strong>Apex</strong> = 75% test coverage</p>
+</li>
+<li><p><strong>Limits</strong> = no rollback</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Build in a sandbox only</p>
+</li>
+<li><p>Add every dependency to the set</p>
+</li>
+<li><p>Validate before you deploy</p>
+</li>
+<li><p>Deploy outside business hours</p>
+</li>
+</ul>
+<hr />
+<p><strong>What was your first deployment? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 16 done, 14 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)]]></title><description><![CDATA[Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data loader]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 20 Oct 2026 10:52:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/99301182-eac6-4186-9c68-940321906d20.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a Salesforce admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1881,79 +1988,4 @@ kubectl get secrets
 <h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
 <p>Each of these tools plays a special role in the DevSecOps ecosystem. <strong>Aqua Security</strong> is great for cloud-native environments, <strong>Snyk</strong> helps developers tackle vulnerabilities early on, and <strong>SonarQube</strong> focuses on ensuring code quality and security right from the start.</p>
 <p>By adding these tools to your DevOps pipelines, you can greatly reduce vulnerabilities, enhance software quality, and strengthen the security of your applications. Ultimately, security is more than just using tools—it's about fostering a security-first mindset throughout the development process.</p>
-]]></content:encoded></item><item><title><![CDATA[Unlock the Potential of Container Orchestration Using Kubernetes and Docker]]></title><description><![CDATA[Docker and Kubernetes revolutionize software development with efficient container orchestration, scalable deployment, and robust DevOps practices]]></description><link>https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/unlock-the-potential-of-container-orchestration-using-kubernetes-and-docker</guid><category><![CDATA[#DevOps #Kubernetes #Docker #CloudComputing #ContainerOrchestration #TechInnovation #ITInfrastructure #Automation #OpenSource #Technology #DevOpsEngineer 🌟]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Dec 2024 07:57:16 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1734676222189/ba3143c3-cb71-4bfd-bdf6-c81aaff4c3f7.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the fast-paced world of software development, containerization has become a revolutionary technology. Among the tools that make containerization both efficient and scalable, Docker and Kubernetes are essential. This article explores why these tools are important, their roles in managing containers, and their significance in modern DevOps practices.</p>
-<h3 id="heading-what-is-docker"><strong>What is Docker?</strong></h3>
-<p>Docker is a platform that makes it easier to develop, ship, and deploy applications by packaging them into lightweight, portable containers. These containers include everything needed to run the application, ensuring it works consistently in different environments.</p>
-<h4 id="heading-key-features-of-docker"><strong>Key Features of Docker:</strong></h4>
-<ul>
-<li><p><strong>Portability:</strong> Applications can run smoothly across various environments.</p>
-</li>
-<li><p><strong>Efficiency:</strong> Containers share the host OS kernel, which reduces overhead compared to traditional virtual machines.</p>
-</li>
-<li><p><strong>Isolation:</strong> Ensures that applications and their dependencies run in separate environments.</p>
-</li>
-<li><p><strong>Scalability:</strong> Makes it easy to scale applications horizontally.</p>
-</li>
-</ul>
-<h3 id="heading-what-is-kubernetes"><strong>What is Kubernetes?</strong></h3>
-<p>Kubernetes, often called K8s, is an open-source platform for managing containerized applications. It handles the deployment, scaling, and management of these applications, making it an ideal partner for Docker.</p>
-<h4 id="heading-key-features-of-kubernetes"><strong>Key Features of Kubernetes:</strong></h4>
-<ul>
-<li><p><strong>Automated Deployment and Scaling:</strong> Ensures applications are always available and resources are used efficiently.</p>
-</li>
-<li><p><strong>Load Balancing:</strong> Manages network traffic to keep applications running smoothly.</p>
-</li>
-<li><p><strong>Self-Healing:</strong> Automatically restarts or replaces containers that fail or become unresponsive.</p>
-</li>
-<li><p><strong>Declarative Configuration:</strong> Uses YAML or JSON files to specify how applications should run.</p>
-</li>
-</ul>
-<h3 id="heading-why-use-docker-and-kubernetes-together"><strong>Why Use Docker and Kubernetes Together?</strong></h3>
-<p>Docker is excellent for creating and running containers, but managing them on a large scale can be tough. Kubernetes helps by organizing and controlling containers across multiple machines.</p>
-<h4 id="heading-benefits-of-combining-docker-and-kubernetes"><strong>Benefits of Combining Docker and Kubernetes:</strong></h4>
-<ol>
-<li><p><strong>Scalability:</strong> Kubernetes effectively manages and scales Docker containers as needed.</p>
-</li>
-<li><p><strong>High Availability:</strong> Keeps applications running smoothly, even if some nodes fail.</p>
-</li>
-<li><p><strong>Resource Optimization:</strong> Allocates resources dynamically based on what containers need.</p>
-</li>
-<li><p><strong>Streamlined CI/CD Pipelines:</strong> Makes integration and deployment processes easier.</p>
-</li>
-</ol>
-<h3 id="heading-core-components-of-kubernetes"><strong>Core Components of Kubernetes</strong></h3>
-<p>To understand Kubernetes, it's important to know its core components:</p>
-<ol>
-<li><p><strong>Pods:</strong> The smallest units you can deploy, which may include one or more containers.</p>
-</li>
-<li><p><strong>Nodes:</strong> Machines that run the containerized applications.</p>
-</li>
-<li><p><strong>Cluster:</strong> A collection of nodes managed by a master node.</p>
-</li>
-<li><p><strong>Services:</strong> Provide consistent network access to Pods.</p>
-</li>
-<li><p><strong>Namespaces:</strong> Help with resource isolation and organization.</p>
-</li>
-</ol>
-<h3 id="heading-real-world-use-cases"><strong>Real-World Use Cases</strong></h3>
-<ol>
-<li><p><strong>Microservices Architecture:</strong> Kubernetes efficiently manages Docker containers to deploy and oversee microservices.</p>
-</li>
-<li><p><strong>Data Processing:</strong> Provides high availability and scalability for big data applications.</p>
-</li>
-<li><p><strong>Hybrid Cloud Deployments:</strong> Enables smooth operations across both on-premises and cloud environments.</p>
-</li>
-</ol>
-<h3 id="heading-challenges-and-considerations"><strong>Challenges and Considerations</strong></h3>
-<p>While Docker and Kubernetes are powerful, they come with their own complexities:</p>
-<ul>
-<li><p><strong>Learning Curve:</strong> Kubernetes can be challenging to learn due to its wide range of features.</p>
-</li>
-<li><p><strong>Monitoring:</strong> Requires strong monitoring tools like Prometheus and Grafana.</p>
-</li>
-<li><p><strong>Security:</strong> Needs careful management of container and cluster security.</p>
-</li>
-</ul>
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<p>Docker and Kubernetes have transformed how modern applications are developed, deployed, and managed. Docker makes it easy to create and run containers, while Kubernetes is great at managing them on a large scale. Together, they are crucial for organizations looking to adopt containerization and DevOps practices. By mastering these tools, developers and DevOps teams can build resilient, scalable, and efficient software systems, ready to meet the demands of today’s fast-paced tech world.</p>
 ]]></content:encoded></item></channel></rss>
