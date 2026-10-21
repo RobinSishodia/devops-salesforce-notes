@@ -1,4 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 21 Oct 2026 09:22:09 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)]]></title><description><![CDATA[Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 09:18:25 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/18b9c4e0-d2c0-4960-a653-ec1e1ef9572d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a favourite interview question.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 21 Oct 2026 22:17:32 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Email Templates & Alerts Cheat Sheet: Merge Fields, Flow and Admin Interview Q&A (Day 17/30)]]></title><description><![CDATA[Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce Flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 21:48:50 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b369969-4282-466f-bf47-5184c6d0c9b7.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a common interview topic.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Template</strong></td>
+<td>Reusable email layout</td>
+<td>Merge fields fill it in</td>
+</tr>
+<tr>
+<td><strong>Email Alert</strong></td>
+<td>Sends a template</td>
+<td>Chosen recipients</td>
+</tr>
+<tr>
+<td><strong>Letterhead</strong></td>
+<td>Logo and brand colours</td>
+<td>Wraps the template</td>
+</tr>
+<tr>
+<td><strong>Org-Wide Address</strong></td>
+<td>Trusted From address</td>
+<td>Must be verified</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is an email template?</h3>
+<p>A <strong>reusable email with merge fields</strong> that fill in record data automatically.</p>
+<blockquote>
+<p><strong>Tip:</strong> Write once, reuse everywhere.</p>
+</blockquote>
+<h3>2. What template types exist?</h3>
+<p><strong>Lightning templates</strong> use a builder. <strong>Classic</strong> ones are text, HTML and Visualforce.</p>
+<blockquote>
+<p><strong>Tip:</strong> Lightning is the modern default.</p>
+</blockquote>
+<h3>3. What is an email alert?</h3>
+<p>A <strong>saved action that sends a template</strong> to the recipients you choose.</p>
+<blockquote>
+<p><strong>Tip:</strong> The alert sends, Flow decides when.</p>
+</blockquote>
+<h3>4. How do you trigger one?</h3>
+<p>From a <strong>Flow or an approval process</strong> when your condition is met.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use Flow for new work.</p>
+</blockquote>
+<h3>5. What are merge fields?</h3>
+<p><strong>Placeholders</strong> like <code>{!Contact.FirstName}</code> swapped for real values when the email is sent.</p>
+<blockquote>
+<p><strong>Tip:</strong> Test with a real record.</p>
+</blockquote>
+<h3>6. What are the limits?</h3>
+<p>A <strong>daily send limit</strong> applies, and emails can bounce or land in spam.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use an org-wide address.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Email the customer when a case is closed. How?"</strong></p>
+<ol>
+<li><p><strong>Create</strong> a template with merge fields</p>
+</li>
+<li><p><strong>Create</strong> an email alert using it</p>
+</li>
+<li><p><strong>Add</strong> it to a Flow on case closed</p>
+</li>
+<li><p><strong>Test</strong> with a real case</p>
+</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><p><strong>Template</strong> = reusable email</p>
+</li>
+<li><p><strong>Alert</strong> = sends it</p>
+</li>
+<li><p><strong>Merge field</strong> = record data</p>
+</li>
+<li><p><strong>Letterhead</strong> = branding</p>
+</li>
+<li><p><strong>Org-wide</strong> = trusted sender</p>
+</li>
+<li><p><strong>Flow</strong> = decides when</p>
+</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li><p>Use merge fields, not typed names</p>
+</li>
+<li><p>Send from an org-wide address</p>
+</li>
+<li><p>Test before you activate</p>
+</li>
+<li><p>One template per purpose</p>
+</li>
+</ul>
+<hr />
+<p><strong>Which email do you automate first? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 17 done, 13 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)]]></title><description><![CDATA[Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 09:18:25 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/18b9c4e0-d2c0-4960-a653-ec1e1ef9572d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a favourite interview question.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1920,72 +2027,4 @@ kubectl get secrets
 <h2 id="heading-conclusion"><strong>Conclusion</strong></h2>
 <p>The Docker CLI is a powerful tool that makes managing containers easier, streamlining workflows and ensuring consistency. Whether you're just starting or you're a seasoned engineer, keeping this <strong>cheat sheet</strong> nearby will help you manage your containers with confidence. 🚀</p>
 <p>Dive into these commands, try them out, and incorporate them into your daily routines to fully leverage Docker's potential!</p>
-]]></content:encoded></item><item><title><![CDATA[DevOps Security Solutions: A Look at Aqua, Snyk, and SonarQube]]></title><description><![CDATA[Explore top DevOps security tools: Aqua, Snyk, and SonarQube, for secure software, vulnerability reduction, and enhanced code quality in development]]></description><link>https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/devops-security-solutions-a-look-at-aqua-snyk-and-sonarqube</guid><category><![CDATA[#DevOps #DevSecOps #CyberSecurity #Snyk #AquaSecurity #SonarQube #ContainerSecurity #CloudSecurity #InfrastructureAsCode #DevOpsTools #TechInsights #ITSecurity #ContinuousIntegration #ContinuousDeployment #DevOpsCulture 🚀🔐]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Dec 2024 09:25:27 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1735031401638/836969b4-a504-4e9c-bb42-8b51178c98f8.jpeg" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In today's fast-moving DevOps landscape, weaving security into the software development process is essential. As cyber threats and vulnerabilities grow, DevSecOps (Development, Security, and Operations) has become a vital strategy for delivering secure software. In this article, we'll dive into three top DevOps security tools: <strong>Aqua Security</strong>, <strong>Snyk</strong>, and <strong>SonarQube</strong>.</p>
-<h3 id="heading-1-aqua-security"><strong>1. Aqua Security</strong></h3>
-<p>Aqua Security offers a robust platform aimed at securing cloud-native applications and infrastructure. It delivers comprehensive security for containers, serverless functions, and Kubernetes environments.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li><p><strong>Container Image Scanning:</strong> Detects vulnerabilities in container images before they are deployed.</p>
-</li>
-<li><p><strong>Runtime Protection:</strong> Observes and blocks threats during runtime.</p>
-</li>
-<li><p><strong>Kubernetes Security Posture Management:</strong> Ensures Kubernetes environments follow security best practices.</p>
-</li>
-<li><p><strong>Compliance Auditing:</strong> Assists in meeting industry compliance standards (e.g., CIS, NIST).</p>
-</li>
-</ul>
-<p><strong>Use Case:</strong> Aqua Security is perfect for organizations that rely heavily on Kubernetes and containerized workloads.</p>
-<hr />
-<h3 id="heading-2-snyk"><strong>2. Snyk</strong></h3>
-<p>Snyk is a security tool designed with developers in mind, focusing on finding and fixing vulnerabilities in code, open-source libraries, containers, and cloud infrastructure.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li><p><strong>Vulnerability Scanning:</strong> Finds vulnerabilities in dependencies and container images.</p>
-</li>
-<li><p><strong>Code Security:</strong> Spots security issues directly in the code.</p>
-</li>
-<li><p><strong>Integration with CI/CD Pipelines:</strong> Easily fits into CI/CD workflows.</p>
-</li>
-<li><p><strong>Dependency Management:</strong> Offers automated updates for dependencies.</p>
-</li>
-</ul>
-<p><strong>Use Case:</strong> Snyk is ideal for developers who want to integrate security into their workflows without slowing down their development process.</p>
-<hr />
-<h3 id="heading-3-sonarqube"><strong>3. SonarQube</strong></h3>
-<p>SonarQube is a popular tool for analyzing code quality and security, supporting a variety of programming languages.</p>
-<p><strong>Key Features:</strong></p>
-<ul>
-<li><p><strong>Static Code Analysis:</strong> Detects bugs, code smells, and security vulnerabilities.</p>
-</li>
-<li><p><strong>Quality Gates:</strong> Ensures standards are met before code is merged.</p>
-</li>
-<li><p><strong>Customizable Rulesets:</strong> Allows you to adjust rules to fit your organization’s coding standards.</p>
-</li>
-<li><p><strong>CI/CD Integration:</strong> Works with popular CI/CD tools for automated checks.</p>
-</li>
-</ul>
-<p><strong>Use Case:</strong> SonarQube is perfect for maintaining high code quality and spotting security issues during development.</p>
-<hr />
-<h3 id="heading-comparison-table"><strong>Comparison Table:</strong></h3>
-<div class="hn-table">
-<table>
-<thead>
-<tr>
-<td>Feature</td><td>Aqua Security</td><td>Snyk</td><td>SonarQube</td></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Focus Area</strong></td><td>Containers &amp; Kubernetes</td><td>Code, Open-Source, Containers</td><td>Code Quality &amp; Security</td></tr>
-<tr>
-<td><strong>Best For</strong></td><td>Cloud-Native Environments</td><td>Developers &amp; DevOps Teams</td><td>Development Teams</td></tr>
-<tr>
-<td><strong>Integration</strong></td><td>Kubernetes, CI/CD</td><td>CI/CD Pipelines</td><td>CI/CD Pipelines</td></tr>
-<tr>
-<td><strong>Primary Strength</strong></td><td>Runtime Security</td><td>Dependency Management</td><td>Code Quality Checks</td></tr>
-</tbody>
-</table>
-</div><hr />
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<p>Each of these tools plays a special role in the DevSecOps ecosystem. <strong>Aqua Security</strong> is great for cloud-native environments, <strong>Snyk</strong> helps developers tackle vulnerabilities early on, and <strong>SonarQube</strong> focuses on ensuring code quality and security right from the start.</p>
-<p>By adding these tools to your DevOps pipelines, you can greatly reduce vulnerabilities, enhance software quality, and strengthen the security of your applications. Ultimately, security is more than just using tools—it's about fostering a security-first mindset throughout the development process.</p>
 ]]></content:encoded></item></channel></rss>
