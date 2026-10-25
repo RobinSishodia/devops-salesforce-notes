@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 23 Oct 2026 18:16:37 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Duplicate & Matching Rules Cheat Sheet: Block, Alert, Merge and Admin Interview Q&A (Day 18/30)]]></title><description><![CDATA[Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data-quality]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 23 Oct 2026 18:15:36 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65a26b2e-a26e-46d8-9e76-1867c19e08b4.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 25 Oct 2026 11:56:43 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)]]></title><description><![CDATA[Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce lightning]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 25 Oct 2026 11:55:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/13f30a72-b95b-4fa8-b9fc-b598ff016510.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>App Builder</strong></td>
+<td>Drag and drop page tool</td>
+<td>Clicks, not code</td>
+</tr>
+<tr>
+<td><strong>Page Types</strong></td>
+<td>App, home, record</td>
+<td>Pick the right one</td>
+</tr>
+<tr>
+<td><strong>Components</strong></td>
+<td>Standard or custom blocks</td>
+<td>Drop onto the page</td>
+</tr>
+<tr>
+<td><strong>Activation</strong></td>
+<td>Org, app or profile</td>
+<td>Assign to take effect</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is Lightning App Builder?</h3>
+<p>A <strong>drag and drop tool</strong> to build app, home and record pages without code.</p>
+<blockquote>
+<p><strong>Tip:</strong> Clicks before code.</p>
+</blockquote>
+<h3>2. What are the page types?</h3>
+<p><strong>App pages, home pages and record pages</strong>, each for a different job.</p>
+<blockquote>
+<p><strong>Tip:</strong> Record pages show one record.</p>
+</blockquote>
+<h3>3. What are components?</h3>
+<p><strong>Building blocks</strong> like the Highlights Panel and Related Lists you drop on a page.</p>
+<blockquote>
+<p><strong>Tip:</strong> Keep pages light and fast.</p>
+</blockquote>
+<h3>4. What are Dynamic Forms?</h3>
+<p>They <strong>show or hide fields by rules</strong> instead of one fixed layout.</p>
+<blockquote>
+<p><strong>Tip:</strong> They can replace extra layouts.</p>
+</blockquote>
+<h3>5. What is component visibility?</h3>
+<p>A <strong>filter that shows a component only when conditions are met</strong>, like profile or field value.</p>
+<blockquote>
+<p><strong>Tip:</strong> Less clutter for each user.</p>
+</blockquote>
+<h3>6. How do you activate a page?</h3>
+<p>Assign it as <strong>org default, app default, or by app, record type and profile</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> The most specific one wins.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Reps need a cleaner Opportunity page. How?"</strong></p>
+<ol>
+<li><strong>Clone</strong> the standard record page</li>
+<li><strong>Add</strong> components and set visibility</li>
+<li><strong>Use</strong> Dynamic Forms for key fields</li>
+<li><strong>Activate</strong> for the sales app</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>App Builder</strong> = page tool</li>
+<li><strong>Record page</strong> = one record</li>
+<li><strong>Dynamic Forms</strong> = field rules</li>
+<li><strong>Visibility</strong> = show if</li>
+<li><strong>Clone</strong> = safe start</li>
+<li><strong>Activation</strong> = who sees it</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Clone, never edit the standard page</li>
+<li>Hide what users do not need</li>
+<li>Fewer components load faster</li>
+<li>Test as the user profile</li>
+</ul>
+<hr />
+<p><strong>Which page would you clean up first? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 19 done, 11 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Duplicate & Matching Rules Cheat Sheet: Block, Alert, Merge and Admin Interview Q&A (Day 18/30)]]></title><description><![CDATA[Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data-quality]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 23 Oct 2026 18:15:36 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65a26b2e-a26e-46d8-9e76-1867c19e08b4.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1830,124 +1923,4 @@ jobs:
 <h2>What's next</h2>
 <p>The next part of this project is the <strong>release side</strong>: protecting the <code>main</code> branch so only validated PRs can merge, and adding <strong>Copado</strong> to manage environments and promote changes through a pipeline (dev → QA → production). I'll write that up in the next post.</p>
 <p>If you're an admin moving into Salesforce DevOps, I'd love to hear how your team handles deployments. Connect with me on <a href="https://www.linkedin.com/in/robinsishodia">LinkedIn</a>.</p>
-]]></content:encoded></item><item><title><![CDATA[Mastering Kubernetes: A Step-by-Step Guide to Pod Troubleshooting]]></title><description><![CDATA[Kubernetes Pod Troubleshooting Tactics Sequence Kubernetes is a robust container orchestration platform that helps keep applications highly available and…]]></description><link>https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by-step-guide-to-pod-troubleshooting</guid><category><![CDATA[#Kubernetes #DevOps #ContainerOrchestration #Troubleshooting #CloudComputing #TechTips #DeveloperCommunity #Innovation]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 15 Jan 2025 15:35:29 GMT</pubDate><enclosure url="https://cdn.hashnode.com/res/hashnode/image/upload/v1736955236741/1c0e8b67-d314-4a1d-ab2e-5f7985de6d36.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><strong>Kubernetes Pod Troubleshooting Tactics Sequence</strong></p>
-<p>Kubernetes is a robust container orchestration platform that helps keep applications highly available and scalable. Yet, like any complex system, it can encounter pod-related issues. To tackle these problems effectively, a well-organized troubleshooting approach is essential. In this article, we'll walk through a series of tactics to help you diagnose and fix pod issues efficiently.</p>
-<hr />
-<h3 id="heading-understanding-pods-in-kubernetes"><strong>Understanding Pods in Kubernetes</strong></h3>
-<p>In Kubernetes, a pod is the smallest unit you can deploy. It includes one or more containers, along with storage, networking, and configuration settings. When a pod doesn't function properly, it can impact your application's performance or availability. That's why it's crucial to troubleshoot quickly and accurately.</p>
-<hr />
-<h3 id="heading-1-start-with-pod-status"><strong>1. Start with Pod Status</strong></h3>
-<p>Begin your troubleshooting by examining the pod's status.</p>
-<pre><code class="lang-plaintext">kubectl get pods
-</code></pre>
-<ul>
-<li><p><strong>Running:</strong> The pod is up and running smoothly.</p>
-</li>
-<li><p><strong>Pending:</strong> There might not be enough resources available.</p>
-</li>
-<li><p><strong>CrashLoopBackOff:</strong> The container keeps failing and restarting.</p>
-</li>
-</ul>
-<p>To find out more details:</p>
-<pre><code class="lang-plaintext">kubectl describe pod &lt;pod-name&gt;
-</code></pre>
-<hr />
-<h3 id="heading-2-examine-pod-events"><strong>2. Examine Pod Events</strong></h3>
-<p>Events give you a glimpse into what's happening behind the scenes. Check for issues like resource allocation failures, network problems, or configuration errors.</p>
-<pre><code class="lang-plaintext">kubectl get events --sort-by='.metadata.creationTimestamp'
-</code></pre>
-<hr />
-<h3 id="heading-3-analyze-logs"><strong>3. Analyze Logs</strong></h3>
-<p>Container logs can often uncover the root cause of a pod's failure. To check the logs, use the following command:</p>
-<pre><code class="lang-plaintext">kubectl logs &lt;pod-name&gt;
-</code></pre>
-<p>For pods with multiple containers, make sure to specify the container name:</p>
-<pre><code class="lang-plaintext">kubectl logs &lt;pod-name&gt; -c &lt;container-name&gt;
-</code></pre>
-<p>If you find that logs are truncated or missing, make sure that logging is set up properly.</p>
-<hr />
-<h3 id="heading-4check-resource-utilization"><strong>4.Check Resource Utilization</strong></h3>
-<p>Resource constraints can cause pod failures. Make sure to verify the resource requests and limits:</p>
-<pre><code class="lang-plaintext">kubectl describe pod &lt;pod-name&gt;
-</code></pre>
-<p>Keep an eye on usage to make sure pods have enough CPU and memory:</p>
-<pre><code class="lang-plaintext">kubectl top pod
-</code></pre>
-<hr />
-<h3 id="heading-5-inspect-readiness-and-liveness-probes"><strong>5. Inspect Readiness and Liveness Probes</strong></h3>
-<p>Misconfigured probes can lead Kubernetes to incorrectly mark healthy pods as unready or restart them unnecessarily.<br />Take a look at the readiness and liveness probe settings in the pod's YAML:</p>
-<pre><code class="lang-plaintext">livenessProbe:
-  httpGet:
-    path: /healthz
-    port: 8080
-  initialDelaySeconds: 3
-  periodSeconds: 3
-</code></pre>
-<hr />
-<h3 id="heading-6-validate-configurations"><strong>6. Validate Configurations</strong></h3>
-<p>Errors in configurations, like secrets, config maps, or volume mounts, can cause pods to malfunction. Make sure all necessary configurations are correctly referenced:</p>
-<pre><code class="lang-plaintext">kubectl get configmap
-kubectl get secrets
-</code></pre>
-<p>Review the mounted volumes and ensure their paths are correct.</p>
-<hr />
-<h3 id="heading-7-examine-node-conditions"><strong>7. Examine Node Conditions</strong></h3>
-<p>Occasionally, the problem might be with the node instead of the pod. Take a moment to check the node that is running the problematic pod:</p>
-<pre><code class="lang-plaintext">kubectl describe node &lt;node-name&gt;
-</code></pre>
-<p>Check for conditions such as <code>OutOfDisk</code>, <code>MemoryPressure</code>, or <code>NetworkUnavailable</code>.</p>
-<hr />
-<h3 id="heading-8investigate-networking-issues"><strong>8.Investigate Networking Issues</strong></h3>
-<p>Ensure smooth communication between pods and services:</p>
-<ul>
-<li>Ping another pod using its IP:</li>
-</ul>
-<ul>
-<li><pre><code class="lang-plaintext">  kubectl exec -it &lt;pod-name&gt; -- ping &lt;target-ip&gt;
-</code></pre>
-</li>
-<li><p>Test DNS resolution within the pod:</p>
-<pre><code class="lang-plaintext">  kubectl exec -it &lt;pod-name&gt; -- nslookup &lt;service-name&gt;
-</code></pre>
-</li>
-</ul>
-<hr />
-<h3 id="heading-9-debug-with-interactive-shell"><strong>9. Debug with Interactive Shell</strong></h3>
-<p>Access the pod’s container to troubleshoot interactively:</p>
-<pre><code class="lang-plaintext">kubectl exec -it &lt;pod-name&gt; -- /bin/bash
-</code></pre>
-<p>Inspect configurations, review running processes, or explore file systems directly.</p>
-<hr />
-<h3 id="heading-10-use-diagnostic-tools"><strong>10. Use Diagnostic Tools</strong></h3>
-<p>Kubernetes provides tools like <code>kubectl debug</code> for advanced troubleshooting. This tool allows you to create a temporary debugging container within your pod, helping you diagnose and resolve issues efficiently.</p>
-<pre><code class="lang-plaintext">kubectl debug &lt;pod-name&gt; --image=busybox
-</code></pre>
-<p>Alternatively, you can use tools like <strong>Lens</strong> or <strong>k9s</strong>. These tools offer a visual interface that makes troubleshooting easier.</p>
-<hr />
-<h3 id="heading-11-examine-deployment-strategies"><strong>11. Examine Deployment Strategies</strong></h3>
-<p>At times, the issue might not be with the pod itself but rather with the deployment process.</p>
-<ul>
-<li><p>Check rolling updates or other deployment strategies.</p>
-</li>
-<li><p>Go through the deployment YAML to spot any misconfigurations.</p>
-</li>
-</ul>
-<hr />
-<h3 id="heading-12-engage-kubernetes-logs-and-audit-trails"><strong>12. Engage Kubernetes Logs and Audit Trails</strong></h3>
-<p>When troubleshooting issues that extend beyond the pod, delve into cluster-level logs or audit trails. These resources can reveal events that might have affected the pod, providing valuable insights for resolving problems.</p>
-<pre><code class="lang-plaintext">kubectl logs --previous &lt;pod-name&gt;
-</code></pre>
-<hr />
-<h3 id="heading-best-practices-for-proactive-troubleshooting"><strong>Best Practices for Proactive Troubleshooting</strong></h3>
-<ul>
-<li><p>Use monitoring tools like <strong>Prometheus</strong> and <strong>Grafana</strong> to gain real-time insights into your system's performance.</p>
-</li>
-<li><p>Set up logging solutions such as the <strong>ELK Stack</strong> for thorough log analysis.</p>
-</li>
-<li><p>Utilize Kubernetes-native tools like <strong>Kubelet</strong> and <strong>Metrics Server</strong> to keep track of your cluster's health.</p>
-</li>
-</ul>
-<hr />
-<h3 id="heading-conclusion"><strong>Conclusion</strong></h3>
-<p>Troubleshooting Kubernetes pods might seem challenging, but with a step-by-step approach, it becomes much more manageable. By using these strategies, you can pinpoint the root cause and fix issues effectively, keeping your applications running smoothly and reliably.</p>
 ]]></content:encoded></item></channel></rss>
