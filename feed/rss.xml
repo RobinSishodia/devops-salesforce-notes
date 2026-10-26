@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 25 Oct 2026 11:56:43 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)]]></title><description><![CDATA[Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce lightning]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 25 Oct 2026 11:55:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/13f30a72-b95b-4fa8-b9fc-b598ff016510.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 26 Oct 2026 14:39:18 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)]]></title><description><![CDATA[Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 26 Oct 2026 14:38:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/40f9df12-ed9f-4d3d-903f-aab2b1153d8b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Hierarchy</strong></td>
+<td>Top down visibility</td>
+<td>Managers see below</td>
+</tr>
+<tr>
+<td><strong>Roles</strong></td>
+<td>Jobs in the org chart</td>
+<td>One per user</td>
+</tr>
+<tr>
+<td><strong>Grant Access</strong></td>
+<td>Using Hierarchies setting</td>
+<td>On for standard objects</td>
+</tr>
+<tr>
+<td><strong>Vs Profiles</strong></td>
+<td>Roles = records</td>
+<td>Profiles = permissions</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a role hierarchy?</h3>
+<p>A <strong>structure that gives managers access to records owned by people below them</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Access flows up, never down.</p>
+</blockquote>
+<h3>2. Role vs profile?</h3>
+<p><strong>Roles control record access.</strong> Profiles control object and field permissions.</p>
+<blockquote>
+<p><strong>Tip:</strong> Data versus permissions.</p>
+</blockquote>
+<h3>3. Does a role restrict access?</h3>
+<p><strong>No.</strong> It only opens access above a Private default, it never reduces it.</p>
+<blockquote>
+<p><strong>Tip:</strong> OWD sets the floor.</p>
+</blockquote>
+<h3>4. What is Grant Access Using Hierarchies?</h3>
+<p>A <strong>per object setting</strong> that lets higher roles see lower roles' records.</p>
+<blockquote>
+<p><strong>Tip:</strong> Always on for standard objects.</p>
+</blockquote>
+<h3>5. Can a user have many roles?</h3>
+<p><strong>No.</strong> One role per user, but one role can hold many users.</p>
+<blockquote>
+<p><strong>Tip:</strong> One role each.</p>
+</blockquote>
+<h3>6. What if you delete a role?</h3>
+<p>You must <strong>reassign its users and child roles</strong> to another role first.</p>
+<blockquote>
+<p><strong>Tip:</strong> Plan before deleting.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A manager cannot see her team's accounts. Why?"</strong></p>
+<ol>
+<li><strong>Check</strong> the default access is Private</li>
+<li><strong>Place</strong> her role above the team</li>
+<li><strong>Confirm</strong> hierarchy access is on</li>
+<li><strong>Verify</strong> who owns the records</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Role</strong> = record access</li>
+<li><strong>Hierarchy</strong> = flows up</li>
+<li><strong>Profile</strong> = permissions</li>
+<li><strong>OWD</strong> = the floor</li>
+<li><strong>Branch</strong> = a region</li>
+<li><strong>One role</strong> = per user</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Roles open access, never close it</li>
+<li>Mirror the org chart, keep it simple</li>
+<li>Cross branch? Use sharing rules</li>
+<li>Few levels run faster</li>
+</ul>
+<hr />
+<p><strong>How deep is your role hierarchy? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 20 done, 10 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)]]></title><description><![CDATA[Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce lightning]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 25 Oct 2026 11:55:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/13f30a72-b95b-4fa8-b9fc-b598ff016510.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1805,122 +1898,4 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <h2>What's next</h2>
 <p>Over the next month I'll publish a post every morning on Salesforce administration, AWS and DevOps: the practical topics I wish I'd had clear explanations for when I started.</p>
 <p>If you're making a similar switch, I'd love to hear how it's going. Connect with me on <a href="https://www.linkedin.com/in/robinsishodia">LinkedIn</a>.</p>
-]]></content:encoded></item><item><title><![CDATA[Building a Salesforce CI/CD Pipeline with GitHub Actions and Scratch Orgs]]></title><description><![CDATA[How I built a Salesforce metadata CI/CD pipeline with GitHub Actions and scratch orgs that deploys and runs Apex tests on every pull request.]]></description><link>https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Devops]]></category><category><![CDATA[github-actions]]></category><category><![CDATA[ci-cd]]></category><category><![CDATA[salesforce development]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 01 Oct 2026 10:48:20 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2c6b9ae1-df24-4a14-a975-a9660b8dc57d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Most Salesforce teams still move changes between orgs by hand: build in a sandbox, add components to a change set, upload, validate, deploy, and hope nothing was missed. I wanted to see what the "real" DevOps way looks like on the Salesforce platform, so I built a small metadata CI/CD pipeline from scratch using <strong>Salesforce DX, GitHub Actions and scratch orgs</strong>.</p>
-<p>In this post I'll walk through what the pipeline does, how it's wired together, and the one problem that cost me the most time.</p>
-<p><strong>Repo:</strong> <a href="https://github.com/RobinSishodia/salesforce-devops-pipeline">github.com/RobinSishodia/salesforce-devops-pipeline</a></p>
-<h2>The goal</h2>
-<p>Every pull request into <code>main</code> should be checked automatically before anyone merges it:</p>
-<ol>
-<li>Spin up a brand-new, empty <strong>scratch org</strong></li>
-<li><strong>Deploy</strong> all the metadata from the branch into it</li>
-<li>Run the <strong>Apex tests</strong> with code coverage</li>
-<li><strong>Delete</strong> the scratch org, pass or fail</li>
-</ol>
-<p>If the deploy or any test fails, the PR shows a red check and the change doesn't go in. This is the same "validate before merge" idea used in any CI pipeline, applied to Salesforce metadata.</p>
-<h2>What you need</h2>
-<ul>
-<li>A <strong>Salesforce Developer Edition org</strong> with <strong>Dev Hub</strong> enabled (Setup → Dev Hub). The Dev Hub is the org that is allowed to create scratch orgs.</li>
-<li>The <strong>Salesforce CLI</strong> (<code>sf</code>), VS Code and Git</li>
-<li>A <strong>GitHub repository</strong> for the Salesforce DX project</li>
-<li>A <strong>connected app</strong> in the Dev Hub configured for <strong>JWT (certificate-based) login</strong>, so GitHub Actions can log in without a browser</li>
-</ul>
-<h2>Project structure</h2>
-<p>The repo is a standard Salesforce DX project:</p>
-<pre><code>force-app/main/default/            # metadata source (Apex, objects, LWC...)
-config/project-scratch-def.json    # what the scratch org should look like
-sfdx-project.json                  # project manifest
-.github/workflows/validate-pr.yml  # the pipeline
-</code></pre>
-<p>Working "source-first" like this is the key shift: the Git repo, not an org, is the source of truth.</p>
-<h2>Step 1: Let GitHub Actions log in to the Dev Hub</h2>
-<p>CI can't click through a browser login, so I used the <strong>JWT bearer flow</strong>:</p>
-<ol>
-<li>Generate a private key and self-signed certificate with OpenSSL</li>
-<li>Upload the certificate to a connected app in the Dev Hub and pre-authorize the user</li>
-<li>Store the secrets in GitHub (<strong>Settings → Secrets and variables → Actions</strong>):<ul>
-<li><code>SF_JWT_KEY</code> – the private key</li>
-<li><code>SF_CONSUMER_KEY</code> – the connected app's consumer key</li>
-<li><code>SF_USERNAME</code> – the Dev Hub username</li>
-<li><code>SF_INSTANCE_URL</code> – the org's login URL</li>
-</ul>
-</li>
-</ol>
-<p>Nothing sensitive lives in the repo; the workflow only reads these secrets at run time.</p>
-<h2>Step 2: The workflow</h2>
-<p>Here's the full <code>validate-pr.yml</code>:</p>
-<pre><code class="language-yaml">name: Validate PR against Scratch Org
-
-on:
-  pull_request:
-    branches: [main]
-
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install Salesforce CLI
-        run: npm install --global @salesforce/cli
-
-      - name: Authenticate to Dev Hub (JWT)
-        run: |
-          echo "${{ secrets.SF_JWT_KEY }}" &gt; server.key
-          sf org login jwt \
-            --client-id ${{ secrets.SF_CONSUMER_KEY }} \
-            --jwt-key-file server.key \
-            --username ${{ secrets.SF_USERNAME }} \
-            --instance-url ${{ secrets.SF_INSTANCE_URL }} \
-            --alias DevHub --set-default-dev-hub
-
-      - name: Create scratch org
-        env:
-          SF_SCRATCH_SIGNUP_CONNECTED_APP: PlatformCLI
-          SF_SCRATCH_SIGNUP_CALLBACK_URL: http://localhost:1717/OauthRedirect
-        run: |
-          sf org create scratch \
-            --definition-file config/project-scratch-def.json \
-            --alias ci-scratch --duration-days 1 --set-default
-
-      - name: Deploy metadata to scratch org
-        run: sf project deploy start --target-org ci-scratch
-
-      - name: Run Apex tests
-        run: |
-          sf apex run test \
-            --target-org ci-scratch \
-            --code-coverage --result-format human \
-            --wait 20 --test-level RunLocalTests
-
-      - name: Delete scratch org
-        if: always()
-        run: sf org delete scratch --target-org ci-scratch --no-prompt
-</code></pre>
-<p>A few details worth calling out:</p>
-<ul>
-<li><strong><code>--duration-days 1</code></strong> keeps scratch orgs short-lived, so a failed cleanup doesn't tie up the Dev Hub's active scratch org allocation for long.</li>
-<li><strong><code>RunLocalTests</code></strong> runs every test in the org except managed-package tests, which is what a production deployment requires anyway.</li>
-<li><strong><code>if: always()</code></strong> on the delete step means the scratch org is cleaned up even when the deploy or tests fail.</li>
-</ul>
-<h2>The problem that took the longest</h2>
-<p>Creating the scratch org kept failing even though the JWT login to the Dev Hub worked fine.</p>
-<p>The cause: newer Developer Edition orgs use <strong>External Client Apps</strong> instead of classic connected apps, and the CLI couldn't use my app to sign in to the <em>new scratch org</em> it had just created. The fix was to tell the CLI to use Salesforce's built-in <strong>PlatformCLI</strong> app for the scratch-org signup step:</p>
-<pre><code class="language-yaml">env:
-  SF_SCRATCH_SIGNUP_CONNECTED_APP: PlatformCLI
-  SF_SCRATCH_SIGNUP_CALLBACK_URL: http://localhost:1717/OauthRedirect
-</code></pre>
-<p>After that, the full cycle ran end to end: create → deploy → test → delete.</p>
-<h2>The result</h2>
-<p>I opened a pull request with a change, and GitHub Actions validated it automatically against a fresh scratch org. All checks passed, and the PR showed a green tick before merge. Every future change now gets the same treatment, with no manual change sets.</p>
-<h2>What I learned</h2>
-<ul>
-<li><strong>Git as the source of truth</strong> makes Salesforce changes reviewable, just like application code.</li>
-<li><strong>Scratch orgs are disposable test environments</strong>: every run starts clean, so there's no "works in my sandbox" drift.</li>
-<li><strong>JWT auth plus GitHub secrets</strong> is the standard way to give CI access to an org safely.</li>
-<li><strong>Read the CLI error carefully.</strong> The scratch-org failure looked like an auth problem but was really about which app the CLI uses for signup.</li>
-</ul>
-<h2>What's next</h2>
-<p>The next part of this project is the <strong>release side</strong>: protecting the <code>main</code> branch so only validated PRs can merge, and adding <strong>Copado</strong> to manage environments and promote changes through a pipeline (dev → QA → production). I'll write that up in the next post.</p>
-<p>If you're an admin moving into Salesforce DevOps, I'd love to hear how your team handles deployments. Connect with me on <a href="https://www.linkedin.com/in/robinsishodia">LinkedIn</a>.</p>
 ]]></content:encoded></item></channel></rss>
