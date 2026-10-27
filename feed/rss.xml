@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 26 Oct 2026 14:39:18 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)]]></title><description><![CDATA[Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 26 Oct 2026 14:38:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/40f9df12-ed9f-4d3d-903f-aab2b1153d8b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 27 Oct 2026 15:00:08 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Data Backup & Recovery Cheat Sheet: Data Export, Recycle Bin and Admin Interview Q&A (Day 21/30)]]></title><description><![CDATA[Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview. A Setup…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Backup]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 27 Oct 2026 13:39:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3d95ec16-33f2-4ca1-9a85-d78d31dad1ee.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Data Export</strong></td>
+<td>Zip of CSV files</td>
+<td>Weekly or monthly</td>
+</tr>
+<tr>
+<td><strong>Recycle Bin</strong></td>
+<td>Deleted records kept</td>
+<td>15 days to restore</td>
+</tr>
+<tr>
+<td><strong>Metadata</strong></td>
+<td>Setup is not in export</td>
+<td>Use sandboxes or Git</td>
+</tr>
+<tr>
+<td><strong>Recovery</strong></td>
+<td>Restore from your files</td>
+<td>Plan before you need it</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is Data Export?</h3>
+<p>A Setup tool that creates a <strong>zip of CSV files</strong> of your data, weekly or monthly.</p>
+<blockquote>
+<p><strong>Tip:</strong> It exports records only.</p>
+</blockquote>
+<h3>2. How long are export files kept?</h3>
+<p>The download link <strong>expires after 48 hours</strong>, so download it quickly.</p>
+<blockquote>
+<p><strong>Tip:</strong> Save a copy elsewhere.</p>
+</blockquote>
+<h3>3. What is the Recycle Bin?</h3>
+<p>It holds <strong>deleted records for 15 days</strong> so you can restore them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Hard delete skips it.</p>
+</blockquote>
+<h3>4. Is metadata in the export?</h3>
+<p><strong>No.</strong> Data Export saves records, not setup. Use sandboxes, change sets or Git.</p>
+<blockquote>
+<p><strong>Tip:</strong> Back up data and setup.</p>
+</blockquote>
+<h3>5. Can Salesforce restore lost data?</h3>
+<p>The old recovery service was <strong>retired</strong>, so keep your own backups.</p>
+<blockquote>
+<p><strong>Tip:</strong> Do not rely on support.</p>
+</blockquote>
+<h3>6. What other backup options exist?</h3>
+<p><strong>Data Loader, reports, the paid Backup and Restore, or AppExchange tools.</strong></p>
+<blockquote>
+<p><strong>Tip:</strong> Pick by size and speed.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A user deleted 500 accounts by mistake. What now?"</strong></p>
+<ol>
+<li><strong>Check</strong> the Recycle Bin first</li>
+<li><strong>Restore</strong> the deleted records</li>
+<li><strong>Use</strong> the last export if they were purged</li>
+<li><strong>Schedule</strong> regular exports</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Export</strong> = records zip</li>
+<li><strong>Recycle Bin</strong> = 15 days</li>
+<li><strong>Link</strong> = 48 hours</li>
+<li><strong>Metadata</strong> = separate</li>
+<li><strong>Hard delete</strong> = gone</li>
+<li><strong>Schedule</strong> = weekly</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Schedule exports, do not wait</li>
+<li>Test your restore plan</li>
+<li>Back up data and metadata</li>
+<li>Limit who can delete</li>
+</ul>
+<hr />
+<p><strong>When did you last test a restore? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 21 done, 9 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)]]></title><description><![CDATA[Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 26 Oct 2026 14:38:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/40f9df12-ed9f-4d3d-903f-aab2b1153d8b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1861,41 +1954,4 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <li> Access Analyzer enabled</li>
 </ul>
 <p>IAM looks dry, but once it clicks, the rest of AWS becomes much easier to reason about. Tomorrow I'll switch to Salesforce and look at its security model.</p>
-]]></content:encoded></item><item><title><![CDATA[From Operations to Salesforce and DevOps: How I Switched Careers]]></title><description><![CDATA[How I moved from 4+ years in operations roles into Salesforce administration and AWS DevOps, and what I'd tell anyone making the same switch.]]></description><link>https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/from-operations-to-salesforce-and-devops-how-i-switched-careers</guid><category><![CDATA[Career]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Salesforce]]></category><category><![CDATA[AWS]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 02 Oct 2026 11:19:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2a2a0309-4f9b-4da0-9a33-be899e9caa2f.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>For more than four years I worked in operations and process-driven roles. The work taught me a lot about SLAs, escalations, documentation and keeping things running when volumes spike. In July 2022 I decided to move into <strong>Salesforce administration and AWS Cloud/DevOps</strong>, and I've been building towards it ever since.</p>
-<p>This post is about how I approached the switch, what worked, and what I'd do differently.</p>
-<h2>Why Salesforce and DevOps?</h2>
-<p>Both fields reward the same habits operations work builds:</p>
-<ul>
-<li><strong>Process thinking.</strong> Salesforce admins design approval processes, flows and data rules. DevOps engineers design pipelines. Both are about turning a messy manual process into a repeatable one.</li>
-<li><strong>Attention to detail.</strong> A wrong sharing rule or a missing IAM permission causes the same kind of incident a missed step in an ops runbook does.</li>
-<li><strong>Working with users.</strong> Admins and support engineers spend a lot of time understanding what people actually need, which is something operations teaches every day.</li>
-</ul>
-<p>The two areas also connect. Salesforce DevOps (source control, CI/CD for metadata, tools like Copado and GitHub Actions) sits right between them.</p>
-<h2>How I learned</h2>
-<h3>1. Certifications as a structured syllabus</h3>
-<p>I used certifications as a roadmap rather than a goal in themselves. So far I've earned 11, including:</p>
-<ul>
-<li>AWS Certified DevOps Engineer – Professional</li>
-<li>AWS Certified AI Practitioner and Cloud Practitioner</li>
-<li>Salesforce Platform Administrator I and II, Platform App Builder, Agentforce Specialist</li>
-<li>GitHub Foundations, GitHub Actions and Copado AI</li>
-</ul>
-<p>Each exam forced me to cover topics I would have skipped on my own.</p>
-<h3>2. Trailhead every day</h3>
-<p>Trailhead's hands-on challenges check your work in a real org, which is the closest thing to on-the-job practice when you're starting out. I'm now a Double Star Ranger with 250+ badges and 7 superbadges. Superbadges in particular are worth the effort because they read like small real projects.</p>
-<h3>3. Building projects, not just watching videos</h3>
-<p>Tutorials feel productive, but you only find the gaps when you build something yourself. My most useful project so far is a <a href="https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pipeline-with-github-actions-and-scratch-orgs">Salesforce CI/CD pipeline</a> that validates every pull request in a scratch org with GitHub Actions.</p>
-<h3>4. Writing it down</h3>
-<p>This blog exists because explaining something is the fastest way to find out whether you understand it.</p>
-<h2>What I'd tell someone starting today</h2>
-<ol>
-<li><strong>Pick one track first.</strong> Salesforce admin <em>or</em> AWS. Trying to learn everything at once slows you down.</li>
-<li><strong>Get one certification early.</strong> It gives you vocabulary and confidence.</li>
-<li><strong>Build in public.</strong> A GitHub repo and a blog post about it are worth more than a list of courses.</li>
-<li><strong>Use your past experience.</strong> Operations, support, finance and sales backgrounds are an advantage for admin and support roles, not a gap to hide.</li>
-<li><strong>Be consistent.</strong> An hour a day beats a weekend binge once a month.</li>
-</ol>
-<h2>What's next</h2>
-<p>Over the next month I'll publish a post every morning on Salesforce administration, AWS and DevOps: the practical topics I wish I'd had clear explanations for when I started.</p>
-<p>If you're making a similar switch, I'd love to hear how it's going. Connect with me on <a href="https://www.linkedin.com/in/robinsishodia">LinkedIn</a>.</p>
 ]]></content:encoded></item></channel></rss>
