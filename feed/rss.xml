@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 28 Oct 2026 13:37:44 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)]]></title><description><![CDATA[Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[configuration]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 28 Oct 2026 13:36:46 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/453ebfe5-9b4d-48c7-b2e7-c8d676def4b1.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 29 Oct 2026 12:23:32 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)]]></title><description><![CDATA[Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 12:22:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ce3e14b7-d115-4ddb-a089-5708be00f5a6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Queues</strong></td>
+<td>Shared record owner</td>
+<td>Members claim records</td>
+</tr>
+<tr>
+<td><strong>Assignment Rules</strong></td>
+<td>Leads and cases only</td>
+<td>Entries run in order</td>
+</tr>
+<tr>
+<td><strong>Rule Entries</strong></td>
+<td>Criteria then assignee</td>
+<td>First match wins</td>
+</tr>
+<tr>
+<td><strong>Activation</strong></td>
+<td>One active per object</td>
+<td>Tick the box to apply</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a queue?</h3>
+<p>A <strong>shared owner</strong> that holds records until a member claims them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Records wait in it.</p>
+</blockquote>
+<h3>2. Who can be queue members?</h3>
+<p><strong>Users, roles, public groups</strong> and more.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add groups, not people.</p>
+</blockquote>
+<h3>3. Which objects get rules?</h3>
+<p>Assignment rules work for <strong>leads and cases only</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Not custom objects.</p>
+</blockquote>
+<h3>4. How do rule entries work?</h3>
+<p>Entries run in order and the <strong>first match assigns</strong> the record.</p>
+<blockquote>
+<p><strong>Tip:</strong> Order matters.</p>
+</blockquote>
+<h3>5. How many rules can be active?</h3>
+<p><strong>One active</strong> assignment rule per object at a time.</p>
+<blockquote>
+<p><strong>Tip:</strong> Activate one at a time.</p>
+</blockquote>
+<h3>6. Why did a record skip the rule?</h3>
+<p>The <strong>assign using active rules</strong> box was not ticked.</p>
+<blockquote>
+<p><strong>Tip:</strong> Tick it when saving.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"New web leads must route to regional teams. How?"</strong></p>
+<ol>
+<li><strong>Create</strong> a queue per region</li>
+<li><strong>Add</strong> rule entries by country</li>
+<li><strong>Activate</strong> the lead rule</li>
+<li><strong>Test</strong> with a sample lead</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Queue</strong> = shared owner</li>
+<li><strong>Rule</strong> = leads, cases</li>
+<li><strong>Entry</strong> = criteria + owner</li>
+<li><strong>Order</strong> = first match</li>
+<li><strong>Active</strong> = one rule</li>
+<li><strong>Checkbox</strong> = apply rule</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Queues stop records going unowned</li>
+<li>Order entries specific to general</li>
+<li>Add a catch all entry</li>
+<li>Test before you activate</li>
+</ul>
+<hr />
+<p><strong>Queue or direct owner? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 23 done, 7 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)]]></title><description><![CDATA[Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[configuration]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 28 Oct 2026 13:36:46 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/453ebfe5-9b4d-48c7-b2e7-c8d676def4b1.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1923,60 +2016,4 @@ CMD node server.js          # shell form: wraps in /bin/sh
 <li> Image scanned in CI</li>
 </ul>
 <p>Small changes, but together they often cut image size by more than half and make builds noticeably faster.</p>
-]]></content:encoded></item><item><title><![CDATA[The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More]]></title><description><![CDATA[A clear walkthrough of Salesforce's layered security model: org, object, field and record-level access, with OWD, role hierarchy and sharing rules.]]></description><link>https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 04 Oct 2026 20:22:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>"Why can't this user see that record?" is one of the most common questions a Salesforce admin gets. The answer is almost always somewhere in the <strong>security model</strong>, which works in layers. Once you know the layers, troubleshooting becomes a checklist.</p>
-<h2>Layer 1: Org-level access</h2>
-<p>Who can log in at all, and when.</p>
-<ul>
-<li>Active user and license</li>
-<li>Login hours and login IP ranges (on profiles)</li>
-<li>Multi-factor authentication</li>
-<li>Session settings</li>
-</ul>
-<h2>Layer 2: Object-level access</h2>
-<p>Can the user work with this <em>type</em> of record at all? Controlled by <strong>profiles</strong> and <strong>permission sets</strong> with Create, Read, Edit, Delete, View All and Modify All.</p>
-<p>If a user has no Read on Opportunity, nothing else matters. They won't see any opportunities.</p>
-<h2>Layer 3: Field-level security</h2>
-<p>Within an object, which <strong>fields</strong> can the user see or edit? Also set on profiles and permission sets.</p>
-<p>Removing a field from a page layout only hides it from that layout. It does <strong>not</strong> secure it. The field can still appear in reports, list views and the API. Use field-level security for real restrictions.</p>
-<h2>Layer 4: Record-level access (sharing)</h2>
-<p>Which individual <strong>records</strong> can the user see? This is where most of the complexity lives.</p>
-<h3>Organization-Wide Defaults (OWD)</h3>
-<p>OWD sets the <strong>baseline</strong> for each object:</p>
-<ul>
-<li><strong>Private</strong> – only the owner (and people above them in the role hierarchy) can see it</li>
-<li><strong>Public Read Only</strong> – everyone can see, only the owner can edit</li>
-<li><strong>Public Read/Write</strong> – everyone can see and edit</li>
-<li><strong>Controlled by Parent</strong> – for detail records in a master-detail relationship</li>
-</ul>
-<p>Rule of thumb: <strong>set OWD to the most restrictive level anyone needs, then open access up.</strong> Sharing can only grant access, never take it away.</p>
-<h3>Role hierarchy</h3>
-<p>Users higher in the hierarchy can see records owned by users below them (for standard objects this is always on; for custom objects it is controlled by the "Grant Access Using Hierarchies" setting). Roles reflect <em>data visibility</em>, not necessarily the org chart.</p>
-<h3>Sharing rules</h3>
-<p>Sharing rules open access to groups of users:</p>
-<ul>
-<li><strong>Owner-based</strong> – share records owned by the Sales India role with the Support India role</li>
-<li><strong>Criteria-based</strong> – share all Cases where <code>Region = APAC</code> with a public group</li>
-</ul>
-<h3>Teams and manual sharing</h3>
-<ul>
-<li><strong>Account, Opportunity and Case Teams</strong> give specific people access to specific records.</li>
-<li><strong>Manual sharing</strong> lets an owner share one record with someone.</li>
-</ul>
-<h3>Restriction rules</h3>
-<p>Restriction rules go the other way: they <strong>limit</strong> which records a user can see even when they would otherwise have access. They're useful for cases like letting users see only the records relevant to their region.</p>
-<h2>A troubleshooting checklist</h2>
-<p>When a user can't see or edit something:</p>
-<ol>
-<li>Is the user active with the right license?</li>
-<li>Does their profile or a permission set grant <strong>object</strong> access?</li>
-<li>Is <strong>field-level security</strong> hiding the field?</li>
-<li>What is the <strong>OWD</strong> for the object?</li>
-<li>Where are they in the <strong>role hierarchy</strong> relative to the owner?</li>
-<li>Does a <strong>sharing rule</strong>, team or manual share apply?</li>
-<li>Is a <strong>restriction rule</strong> limiting them?</li>
-</ol>
-<p>Use <strong>Sharing Settings</strong>, the record's <strong>Sharing Hierarchy</strong> button and the <strong>"View Summary"</strong> on a user's permissions to check quickly.</p>
-<h2>Profiles vs permission sets</h2>
-<p>Salesforce is moving towards <strong>permission sets and permission set groups</strong> as the main way to grant access, with profiles kept minimal. I'll cover that in a dedicated post later this month.</p>
-<p>Get the layers straight and most "I can't see it" tickets take minutes instead of hours.</p>
 ]]></content:encoded></item></channel></rss>
