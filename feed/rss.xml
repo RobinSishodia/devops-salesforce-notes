@@ -1,4 +1,136 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 29 Oct 2026 12:23:32 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)]]></title><description><![CDATA[Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 12:22:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ce3e14b7-d115-4ddb-a089-5708be00f5a6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 30 Oct 2026 17:30:59 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)]]></title><description><![CDATA[Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 17:30:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65d6c959-fb8c-4885-8020-82d51ec19302.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Web-to-Lead</strong></td>
+<td>HTML form makes leads</td>
+<td>500 per day</td>
+</tr>
+<tr>
+<td><strong>Web-to-Case</strong></td>
+<td>HTML form makes cases</td>
+<td>5,000 per day</td>
+</tr>
+<tr>
+<td><strong>Form Fields</strong></td>
+<td>Standard plus custom</td>
+<td>Use the field ID</td>
+</tr>
+<tr>
+<td><strong>Protection</strong></td>
+<td>reCAPTCHA and routing</td>
+<td>Stop the spam</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is Web-to-Lead?</h3>
+<p>A <strong>generated HTML form</strong> that creates leads from your website.</p>
+<blockquote>
+<p><strong>Tip:</strong> No hand coding needed.</p>
+</blockquote>
+<h3>2. What are the daily limits?</h3>
+<p><strong>Web-to-Lead allows 500 a day.</strong> Web-to-Case allows 5,000 a day.</p>
+<blockquote>
+<p><strong>Tip:</strong> Plan for busy days.</p>
+</blockquote>
+<h3>3. How do you add custom fields?</h3>
+<p>Add the field to the HTML using its <strong>field ID</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Test after adding.</p>
+</blockquote>
+<h3>4. What stops spam?</h3>
+<p>Turn on <strong>reCAPTCHA</strong> and validate the fields.</p>
+<blockquote>
+<p><strong>Tip:</strong> Bots love open forms.</p>
+</blockquote>
+<h3>5. How do leads get an owner?</h3>
+<p><strong>Lead assignment rules</strong> route them, or the default owner takes them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Rules run automatically.</p>
+</blockquote>
+<h3>6. Can customers get a reply?</h3>
+<p><strong>Yes</strong>, auto-response rules email them on creation.</p>
+<blockquote>
+<p><strong>Tip:</strong> Keep the template clear.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Website enquiries must become leads for sales. How?"</strong></p>
+<ol>
+<li><strong>Generate</strong> the form in Setup</li>
+<li><strong>Add</strong> reCAPTCHA and a return URL</li>
+<li><strong>Set</strong> assignment and auto-response</li>
+<li><strong>Test</strong> with a sample submit</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Form</strong> = generated HTML</li>
+<li><strong>Lead cap</strong> = 500 a day</li>
+<li><strong>Case cap</strong> = 5,000 a day</li>
+<li><strong>Spam</strong> = reCAPTCHA</li>
+<li><strong>Owner</strong> = assignment rule</li>
+<li><strong>Reply</strong> = auto-response</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Generate the form, do not hand build</li>
+<li>Protect it with reCAPTCHA</li>
+<li>Route and reply automatically</li>
+<li>Test before going live</li>
+</ul>
+<hr />
+<p><strong>Which form is on your site? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 24 done, 6 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS]]></title><description><![CDATA[Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…]]></description><link>https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 14:04:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1406349a-d476-4396-9f2a-03b7f242fe27.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: <em>is this identity allowed to do this?</em> IAM (Identity and Access Management) answers it, so I'm starting here.</p>
+<h2>The 5 building blocks</h2>
+<ul>
+<li><strong>Users:</strong> a person or app with long-term credentials.</li>
+<li><strong>Groups:</strong> a collection of users that share permissions. Attach policies to groups, not to individual people.</li>
+<li><strong>Roles:</strong> temporary credentials that anyone or anything can assume. This is how EC2, Lambda and cross-account access should work.</li>
+<li><strong>Policies:</strong> JSON documents that say who can do what on which resource.</li>
+<li><strong>MFA:</strong> a second factor that protects the account if a password leaks.</li>
+</ul>
+<h2>How a policy reads</h2>
+<pre><code class="language-json">{
+  "Effect": "Allow",
+  "Action": "s3:GetObject",
+  "Resource": "arn:aws:s3:::my-bucket/*"
+}
+</code></pre>
+<p>Effect, Action and Resource are the three parts to check first. An explicit Deny always beats an Allow, and anything not allowed is denied by default.</p>
+<h2>What I did hands-on today</h2>
+<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/19494e48-794b-43f4-abbd-eb5fe9e91660.png" alt="" style="display:block;margin:0 auto" />
+
+<ul>
+<li>Checked my IAM dashboard: MFA is on for my root user and my IAM user, and I have no stale access keys.</li>
+<li>Created a user group called <code>ReadOnlyTeam</code> and attached the AWS-managed <code>ReadOnlyAccess</code> policy.</li>
+<li>Used the <strong>Policy Simulator</strong> to test two S3 actions against that group:<ul>
+<li><code>s3:GetObject</code> was <strong>Allowed</strong> (explicit allow).</li>
+<li><code>s3:DeleteObject</code> was <strong>Denied</strong> (implicit deny: no policy allows it, so it's blocked by default).</li>
+</ul>
+</li>
+<li>Ran the same test against my own user, which has <code>AdministratorAccess</code>, and both actions were Allowed. The same action gets a different answer depending on which policies are attached, which is why least privilege matters.</li>
+</ul>
+<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/9a6021eb-28d2-443c-9422-8c18fc88bd40.png" alt="" style="display:block;margin:0 auto" />
+
+<h2>3 habits I'm keeping</h2>
+<ol>
+<li>Never use the root user for daily work.</li>
+<li>Grant least privilege: start with nothing and add only what's needed.</li>
+<li>Prefer roles over long-lived access keys.</li>
+</ol>
+<p>Tomorrow (Day 2): writing a custom IAM policy from scratch.</p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)]]></title><description><![CDATA[Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 12:22:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ce3e14b7-d115-4ddb-a089-5708be00f5a6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1843,177 +1975,4 @@ Private subnets  →  Database (RDS)
 <li>VPC Flow Logs to see whether traffic was accepted or rejected</li>
 </ol>
 <p>Once you can draw your VPC on paper, most networking problems become much easier to solve.</p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full]]></title><description><![CDATA[The four Salesforce sandbox types compared: storage, data, refresh intervals and which one to use for development, testing, UAT and training.]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><category><![CDATA[Testing]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:55:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a390ec75-d149-40f3-92ab-70bff4950d11.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A sandbox is a copy of your production org used for building and testing without touching real users. Salesforce offers four types, and picking the right one for each stage of your release process saves a lot of pain.</p>
-<h2>The four types at a glance</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Copies metadata</th>
-<th>Copies data</th>
-<th>Storage (data / files)</th>
-<th>Refresh interval</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Developer</strong></td>
-<td>Yes</td>
-<td>No</td>
-<td>200 MB / 200 MB</td>
-<td>1 day</td>
-</tr>
-<tr>
-<td><strong>Developer Pro</strong></td>
-<td>Yes</td>
-<td>No</td>
-<td>1 GB / 1 GB</td>
-<td>1 day</td>
-</tr>
-<tr>
-<td><strong>Partial Copy</strong></td>
-<td>Yes</td>
-<td>Sample (via template)</td>
-<td>5 GB / same as prod</td>
-<td>5 days</td>
-</tr>
-<tr>
-<td><strong>Full</strong></td>
-<td>Yes</td>
-<td>All (or selected objects)</td>
-<td>Same as production</td>
-<td>29 days</td>
-</tr>
-</tbody></table>
-<p>All sandboxes copy your <strong>metadata</strong> (objects, fields, flows, Apex, layouts and so on). The difference is how much <strong>data</strong> comes with it and how often you can refresh. Which types and how many you get depends on your edition and any add-ons.</p>
-<h2>Developer sandbox</h2>
-<p>Small and quick to refresh. Ideal for:</p>
-<ul>
-<li>An individual admin or developer building a feature</li>
-<li>Trying out a new flow or configuration</li>
-<li>Learning and experimenting</li>
-</ul>
-<p>You create the test data you need yourself.</p>
-<h2>Developer Pro sandbox</h2>
-<p>The same idea with more storage. Useful when:</p>
-<ul>
-<li>You need larger test data sets</li>
-<li>You're doing integration development</li>
-<li>Several people share the environment</li>
-</ul>
-<h2>Partial Copy sandbox</h2>
-<p>Includes a <strong>sample of production data</strong> chosen by a <strong>sandbox template</strong> (you pick objects; Salesforce copies up to 10,000 records per object). Good for:</p>
-<ul>
-<li>QA and integration testing with realistic data</li>
-<li>Testing reports, sharing and automation against real-looking records</li>
-</ul>
-<h2>Full sandbox</h2>
-<p>A complete replica of production, including all data (or the objects you select). Use it for:</p>
-<ul>
-<li><strong>User acceptance testing (UAT)</strong></li>
-<li><strong>Performance and load testing</strong></li>
-<li><strong>Staging</strong>: the final check before a production release</li>
-<li>Training on real-world data</li>
-</ul>
-<p>The 29-day refresh interval means you need to plan when you refresh it.</p>
-<h2>A typical setup</h2>
-<pre><code>Developer sandboxes  →  Developer Pro / Partial (QA)  →  Full (UAT/Staging)  →  Production
-</code></pre>
-<p>Each person builds in their own Developer sandbox, changes are combined and tested in QA, business users sign off in UAT, and then you deploy to production.</p>
-<h2>Tips</h2>
-<ul>
-<li><strong>Mask sensitive data.</strong> Production data in sandboxes is still personal data. Use <strong>Data Mask</strong> or scripts to anonymise it.</li>
-<li><strong>Check email deliverability.</strong> New sandboxes default to "System email only" so you don't email real customers. Keep it that way unless you need to test emails.</li>
-<li><strong>Re-run post-refresh steps.</strong> Use a <strong>SandboxPostCopy</strong> Apex class to automate tasks such as updating integration endpoints and creating test users.</li>
-<li><strong>Mind the user emails.</strong> Sandbox users' emails get <code>.invalid</code> appended so they can't receive mail by accident. Fix only the ones you need.</li>
-<li><strong>Know the difference from scratch orgs.</strong> Scratch orgs are short-lived, source-driven orgs created from a definition file, which suits CI pipelines. Sandboxes are copies of production, which suits integration testing and UAT.</li>
-</ul>
-<p>Choosing the right sandbox for each stage keeps development fast and testing realistic, without risking production.</p>
-]]></content:encoded></item><item><title><![CDATA[Dockerfile Best Practices: Smaller, Faster and Safer Images]]></title><description><![CDATA[Practical Dockerfile best practices: multi-stage builds, layer caching, small base images, non-root users and .dockerignore, with examples.]]></description><link>https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images</guid><category><![CDATA[Docker]]></category><category><![CDATA[containers]]></category><category><![CDATA[Devops]]></category><category><![CDATA[best practices]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:47:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/44a6e4c1-f2f0-4211-92b2-e42fc15d29e8.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Writing a Dockerfile that <em>works</em> is easy. Writing one that builds fast, produces a small image and doesn't run as root takes a few habits. Here are the ones that made the biggest difference for me.</p>
-<h2>1. Start from a small, specific base image</h2>
-<pre><code class="language-dockerfile"># Avoid
-FROM node:latest
-
-# Prefer
-FROM node:20-alpine
-</code></pre>
-<ul>
-<li><strong>Pin a version.</strong> <code>latest</code> changes under you and makes builds unreproducible.</li>
-<li><strong>Use slim or alpine variants</strong> when your app supports them. Smaller images pull faster and have fewer packages to patch.</li>
-<li>For compiled languages, consider <strong>distroless</strong> or <code>scratch</code> for the final image.</li>
-</ul>
-<h2>2. Order instructions for layer caching</h2>
-<p>Docker caches each layer. If a layer changes, every layer after it is rebuilt. Put things that change rarely first:</p>
-<pre><code class="language-dockerfile">WORKDIR /app
-COPY package*.json ./
-RUN npm ci --omit=dev
-COPY . .
-</code></pre>
-<p>Now changing your source code doesn't re-run <code>npm ci</code>. Dependencies are only reinstalled when <code>package.json</code> changes.</p>
-<h2>3. Use multi-stage builds</h2>
-<p>Build tools don't belong in production images. A multi-stage build compiles in one stage and copies only the output into a clean final stage:</p>
-<pre><code class="language-dockerfile"># Build stage
-FROM node:20-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
-
-# Runtime stage
-FROM node:20-alpine
-WORKDIR /app
-ENV NODE_ENV=production
-COPY package*.json ./
-RUN npm ci --omit=dev
-COPY --from=build /app/dist ./dist
-USER node
-EXPOSE 3000
-CMD ["node", "dist/server.js"]
-</code></pre>
-<p>The final image contains no dev dependencies, compilers or source files it doesn't need.</p>
-<h2>4. Add a .dockerignore</h2>
-<p>Without it, <code>COPY . .</code> sends everything to the build context, including <code>node_modules</code>, <code>.git</code> and possibly secrets.</p>
-<pre><code>node_modules
-.git
-.env
-*.log
-dist
-</code></pre>
-<p>This speeds up builds and keeps sensitive files out of the image.</p>
-<h2>5. Don't run as root</h2>
-<p>Containers run as root by default. If an attacker breaks out of your app, root makes it worse. Many official images include a non-root user (<code>node</code> in Node images). Otherwise create one:</p>
-<pre><code class="language-dockerfile">RUN addgroup -S app &amp;&amp; adduser -S app -G app
-USER app
-</code></pre>
-<h2>6. Combine and clean up RUN steps</h2>
-<p>Each <code>RUN</code> creates a layer. Clean up in the <strong>same</strong> layer you create files in, or the files still take space:</p>
-<pre><code class="language-dockerfile">RUN apt-get update \
-    &amp;&amp; apt-get install -y --no-install-recommends curl \
-    &amp;&amp; rm -rf /var/lib/apt/lists/*
-</code></pre>
-<h2>7. Never bake secrets into images</h2>
-<p>Anything in an image layer can be extracted, even if a later layer deletes it. Pass secrets at runtime (environment variables from a secrets manager, mounted files) or use BuildKit's <code>--mount=type=secret</code> for build-time secrets.</p>
-<h2>8. Prefer exec-form CMD and ENTRYPOINT</h2>
-<pre><code class="language-dockerfile">CMD ["node", "server.js"]   # exec form: receives signals properly
-CMD node server.js          # shell form: wraps in /bin/sh
-</code></pre>
-<p>The exec form lets your process receive <code>SIGTERM</code> directly, so containers stop cleanly.</p>
-<h2>9. Add a HEALTHCHECK (when not using an orchestrator's probes)</h2>
-<pre><code class="language-dockerfile">HEALTHCHECK --interval=30s --timeout=3s \
-  CMD wget -qO- http://localhost:3000/health || exit 1
-</code></pre>
-<p>On Kubernetes you'd use liveness and readiness probes instead.</p>
-<h2>10. Scan your images</h2>
-<p>Tools like <strong>Trivy</strong>, <strong>Docker Scout</strong> or <strong>Snyk</strong> find known vulnerabilities in base images and dependencies. Run them in CI so problems are caught before deployment.</p>
-<h2>Quick checklist</h2>
-<ul>
-<li> Pinned, minimal base image</li>
-<li> Dependencies copied and installed before source code</li>
-<li> Multi-stage build</li>
-<li> <code>.dockerignore</code> in place</li>
-<li> Non-root <code>USER</code></li>
-<li> No secrets in layers</li>
-<li> Image scanned in CI</li>
-</ul>
-<p>Small changes, but together they often cut image size by more than half and make builds noticeably faster.</p>
 ]]></content:encoded></item></channel></rss>
