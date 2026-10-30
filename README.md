@@ -13,11 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (40)
+## 📚 All posts (42)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-10-30 | [Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)](https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30) | `Salesforce` `Salesforce Admin` `crm` | [Markdown](posts/2026-10-30-salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30.md) |
 | 2026-10-29 | [Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)](https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30) | `Salesforce` `Salesforce Admin` `crm` | [Markdown](posts/2026-10-29-salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30.md) |
+| 2026-10-29 | [Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/2026-10-29-day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws.md) |
 | 2026-10-28 | [Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)](https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30) | `Salesforce` `Salesforce Admin` `configuration` | [Markdown](posts/2026-10-28-salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30.md) |
 | 2026-10-27 | [Salesforce Data Backup & Recovery Cheat Sheet: Data Export, Recycle Bin and Admin Interview Q&A (Day 21/30)](https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30) | `Salesforce` `Salesforce Admin` `Backup` | [Markdown](posts/2026-10-27-salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30.md) |
 | 2026-10-26 | [Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)](https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30) | `Salesforce` `Salesforce Admin` `Security` | [Markdown](posts/2026-10-26-salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30.md) |
