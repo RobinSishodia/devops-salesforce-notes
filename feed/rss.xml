@@ -1,4 +1,400 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 30 Oct 2026 17:30:59 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)]]></title><description><![CDATA[Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 17:30:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65d6c959-fb8c-4885-8020-82d51ec19302.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 31 Oct 2026 15:08:31 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)]]></title><description><![CDATA[Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 31 Oct 2026 15:07:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b369f436-93b4-418c-853c-984030ed288a.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Routing Address</strong></td>
+<td>Address makes cases</td>
+<td>Verify it first</td>
+</tr>
+<tr>
+<td><strong>On-Demand</strong></td>
+<td>Salesforce hosts it</td>
+<td>No agent needed</td>
+</tr>
+<tr>
+<td><strong>Standard</strong></td>
+<td>Agent on your server</td>
+<td>Behind firewall</td>
+</tr>
+<tr>
+<td><strong>Threading</strong></td>
+<td>Ref ID links replies</td>
+<td>One case thread</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is Email-to-Case?</h3>
+<p>Customer emails <strong>automatically become cases</strong> in Salesforce.</p>
+<blockquote>
+<p><strong>Tip:</strong> No manual typing.</p>
+</blockquote>
+<h3>2. On-Demand or Standard?</h3>
+<p><strong>On-Demand needs no agent.</strong> Standard runs an agent behind your firewall.</p>
+<blockquote>
+<p><strong>Tip:</strong> Default to On-Demand.</p>
+</blockquote>
+<h3>3. What is a routing address?</h3>
+<p>It links an email address to <strong>case settings</strong> like origin and priority.</p>
+<blockquote>
+<p><strong>Tip:</strong> Verify it before use.</p>
+</blockquote>
+<h3>4. How do replies stay on one case?</h3>
+<p>A <strong>Ref ID</strong> in the email ties each reply to the same case.</p>
+<blockquote>
+<p><strong>Tip:</strong> Keep it in the subject.</p>
+</blockquote>
+<h3>5. How do cases get an owner?</h3>
+<p><strong>Assignment rules</strong> route them, or the routing address owner takes them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Queues work well.</p>
+</blockquote>
+<h3>6. Can customers get a reply?</h3>
+<p><strong>Yes</strong>, auto-response rules confirm the case by email.</p>
+<blockquote>
+<p><strong>Tip:</strong> Include the case number.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Support inbox emails must become cases. How?"</strong></p>
+<ol>
+<li><strong>Enable</strong> Email-to-Case in Setup</li>
+<li><strong>Create</strong> and verify a routing address</li>
+<li><strong>Set</strong> assignment and auto-response</li>
+<li><strong>Test</strong> by emailing the inbox</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Email</strong> = becomes a case</li>
+<li><strong>Default</strong> = On-Demand</li>
+<li><strong>Agent</strong> = Standard only</li>
+<li><strong>Address</strong> = verify first</li>
+<li><strong>Thread</strong> = Ref ID</li>
+<li><strong>Reply</strong> = auto-response</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Pick On-Demand unless a firewall blocks it</li>
+<li>Verify every routing address</li>
+<li>Keep the Ref ID for threading</li>
+<li>Test with a real email</li>
+</ul>
+<hr />
+<p><strong>Which inbox do you run? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 25 done, 5 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch]]></title><description><![CDATA[When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But…]]></description><link>https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 23:50:49 GMT</pubDate><content:encoded><![CDATA[<p>When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But I also wanted to understand every command I typed.</p>
+<p>So I began with a small hands-on lab on an Ubuntu server. My starting point was a directory called <code>devops-lab</code> and a terminal.</p>
+<p>This article captures the foundation: navigating Linux, working with files, and understanding how changes move from a local Git repository to GitHub. The commands below form a simple practice exercise you can adapt to your own lab.</p>
+<h2>Why start with a small lab?</h2>
+<p>A deployment pipeline eventually runs commands on a machine, reads files, and works with a version of your code. Learning those basics makes the larger workflow easier to understand.</p>
+<p>My goal at this stage is to explain what a command does, run it, inspect the result, and repeat it without blindly copying instructions.</p>
+<h2>1. Know where you are</h2>
+<p>In my Ubuntu lab, I started by checking my current directory:</p>
+<pre><code class="language-bash">pwd
+</code></pre>
+<p>The output was:</p>
+<pre><code class="language-text">/home/ubuntu/devops-lab
+</code></pre>
+<p><code>pwd</code> means <strong>print working directory</strong>. It tells you where commands will operate unless you supply another path.</p>
+<p>To create a similar workspace from your home directory:</p>
+<pre><code class="language-bash">mkdir -p ~/devops-lab
+cd ~/devops-lab
+pwd
+</code></pre>
+<p>Here is what each command does:</p>
+<ul>
+<li><code>mkdir -p</code> creates the directory if it does not already exist.</li>
+<li><code>~</code> refers to your user's home directory.</li>
+<li><code>cd</code> changes your current directory.</li>
+<li><code>pwd</code> confirms your location.</li>
+</ul>
+<p>That final check is useful. Before creating or editing files, I want to know exactly where I am.</p>
+<h2>2. Create a file and inspect it</h2>
+<p>For a small practice example, create a README:</p>
+<pre><code class="language-bash">printf '# My DevOps Lab\n\nLearning Linux and Git through practice.\n' &gt; README.md
+cat README.md
+ls -l
+</code></pre>
+<p><code>printf</code> writes the text, while <code>&gt;</code> redirects that output into a file. Be careful: <code>&gt;</code> replaces an existing file's contents.</p>
+<p><code>cat</code> displays the file, and <code>ls -l</code> lists directory contents with details such as permissions, owner, and size.</p>
+<p>To add another line without replacing the file:</p>
+<pre><code class="language-bash">printf '\nFirst topic: Linux and Git fundamentals.\n' &gt;&gt; README.md
+cat README.md
+</code></pre>
+<p>The difference between <code>&gt;</code> and <code>&gt;&gt;</code> is small to type but important to understand: one replaces content; the other appends it.</p>
+<h2>3. Start tracking the project with Git</h2>
+<p>Git records versions of a project's tracked files. GitHub hosts repositories remotely so they can be shared and used for collaboration.</p>
+<p>From inside the practice directory:</p>
+<pre><code class="language-bash">git init
+git status
+</code></pre>
+<p><code>git init</code> creates a Git repository in the directory. It does not upload anything to GitHub.</p>
+<p><code>git status</code> shows the repository's current state. At this point, a new README will normally appear as an untracked file.</p>
+<p>Before creating your first commit, configure your commit identity if you have not already done so:</p>
+<pre><code class="language-bash">git config user.name "Your Name"
+git config user.email "YOUR_GITHUB_NOREPLY_EMAIL"
+</code></pre>
+<p>Replace those values with your own details. You can use the no-reply address provided in your GitHub email settings.</p>
+<p>These commands set the identity for this repository. They do not sign you in to GitHub.</p>
+<h2>4. Understand staging and committing</h2>
+<p>This was one of the most useful distinctions for me.</p>
+<p>A file can exist in my project without being included in the next commit. Staging lets me choose which changes to record.</p>
+<pre><code class="language-bash">git add README.md
+git diff --staged
+git commit -m "Add initial DevOps lab notes"
+git status
+</code></pre>
+<p>The sequence matters:</p>
+<ol>
+<li><code>git add README.md</code> stages the file's current contents.</li>
+<li><code>git diff --staged</code> lets me review what the next commit will contain.</li>
+<li><code>git commit</code> records the staged changes in the local repository.</li>
+<li><code>git status</code> shows whether any changes remain.</li>
+</ol>
+<p>If I edit the file again after staging it, I need to stage the new changes too if I want them in that commit.</p>
+<p>A commit message should explain the change. “Add initial DevOps lab notes” tells me more than “update.”</p>
+<h2>5. Connect the local repository to GitHub</h2>
+<p>For this practice workflow, first create an <strong>empty GitHub repository</strong>, without adding a README, license, or .gitignore through GitHub. That keeps the initial push straightforward.</p>
+<p>Then replace the placeholder URL below with your repository URL:</p>
+<pre><code class="language-bash">git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git remote -v
+git push -u origin main
+</code></pre>
+<p>Here is what these commands mean:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>git branch -M main</code></td>
+<td>Rename the current branch to <code>main</code></td>
+</tr>
+<tr>
+<td><code>git remote add origin ...</code></td>
+<td>Store the remote repository URL under the name <code>origin</code></td>
+</tr>
+<tr>
+<td><code>git remote -v</code></td>
+<td>Show the configured remote URLs</td>
+</tr>
+<tr>
+<td><code>git push -u origin main</code></td>
+<td>Push the branch and set its upstream tracking relationship</td>
+</tr>
+</tbody></table>
+<p>Authentication must be configured separately. Use a supported GitHub authentication method, such as an HTTPS credential manager or SSH. Never put tokens or private keys in your project files.</p>
+<p>If <code>origin</code> already exists, inspect it with <code>git remote -v</code> before changing anything. If the remote repository already contains commits, its history may need to be integrated before you can push.</p>
+<h2>6. The difference between commit and push</h2>
+<p>My simplest explanation is:</p>
+<blockquote>
+<p>A commit records staged changes locally. A push sends local commits to a remote repository.</p>
+</blockquote>
+<p>That means a successful commit does not automatically update GitHub.</p>
+<p>For another practice change:</p>
+<pre><code class="language-bash">printf '\nKey lesson: commit is local; push updates the remote.\n' &gt;&gt; README.md
+git diff
+git add README.md
+git diff --staged
+git commit -m "Document the difference between commit and push"
+git push
+</code></pre>
+<p>After the upstream is configured, <code>git push</code> can usually use that tracking relationship without repeating the remote and branch names.</p>
+<p>The workflow is:</p>
+<p><strong>Edit → Review → Stage → Review staged changes → Commit → Push</strong></p>
+<h2>7. Verify the result</h2>
+<p>A command finishing without an obvious error is a starting point. I also want to check the result.</p>
+<pre><code class="language-bash">git status
+git log --oneline -5
+git remote -v
+</code></pre>
+<p>These checks answer different questions:</p>
+<ul>
+<li><strong>Status:</strong> Do I have uncommitted changes?</li>
+<li><strong>Log:</strong> Which commits exist locally?</li>
+<li><strong>Remote:</strong> Which repository am I connected to?</li>
+</ul>
+<p>Finally, open the repository on GitHub and check that the expected file and latest commit appear.</p>
+<p>A clean working tree means there are no outstanding changes relative to the current commit. By itself, it does not prove that every commit has been pushed.</p>
+<h2>What this lab is teaching me</h2>
+<p>The biggest lesson is to connect every action with its purpose.</p>
+<p>Before running a command, I try to answer:</p>
+<ul>
+<li>Where am I running it?</li>
+<li>What will it change?</li>
+<li>How will I verify the result?</li>
+<li>What does the output tell me?</li>
+</ul>
+<p>I also want to build good habits early: review changes before committing, write useful commit messages, and keep credentials out of version control.</p>
+<p>A README is a useful place to record the lab's purpose, commands, results, and lessons. That makes it easier to return later and explain what I actually learned.</p>
+<h2>What comes next</h2>
+<p>My next goal is to build on this foundation with a small application, then gradually introduce a web server, scripting, containers, and a CI/CD pipeline.</p>
+<p>For this stage, the milestone is clear: work confidently in a Linux directory, inspect a file change, record it with Git, and understand how that commit reaches GitHub.</p>
+<p>I am documenting the process as I learn, one practical step at a time.</p>
+]]></content:encoded></item><item><title><![CDATA[Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch]]></title><description><![CDATA[On Day 1 I used an AWS managed policy (ReadOnlyAccess). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3…]]></description><link>https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 20:48:22 GMT</pubDate><content:encoded><![CDATA[<p>On Day 1 I used an AWS managed policy (<code>ReadOnlyAccess</code>). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3 bucket and nothing else. That's least privilege in practice.</p>
+<h2>Anatomy of an IAM policy</h2>
+<pre><code class="language-json">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadOneBucketOnly",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:ListBucket"],
+      "Resource": [
+        "arn:aws:s3:::robin-120days-demo",
+        "arn:aws:s3:::robin-120days-demo/*"
+      ]
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li><strong>Version:</strong> always <code>2012-10-17</code>, the current policy language version.</li>
+<li><strong>Statement:</strong> one or more permission rules.</li>
+<li><strong>Sid:</strong> an optional label so humans can tell statements apart.</li>
+<li><strong>Effect:</strong> <code>Allow</code> or <code>Deny</code>.</li>
+<li><strong>Action:</strong> the API calls the rule covers, written as <code>service:Action</code>.</li>
+<li><strong>Resource:</strong> the ARN of what the actions apply to.</li>
+<li><strong>Condition (optional):</strong> extra rules such as source IP, MFA required or a time window.</li>
+</ul>
+<h2>Why two Resource lines?</h2>
+<p>Bucket-level actions like <code>s3:ListBucket</code> apply to the bucket ARN. Object-level actions like <code>s3:GetObject</code> apply to the objects inside it, which is why the second ARN ends in <code>/*</code>. Missing one of the two is a very common reason a "correct" policy still gets denied.</p>
+<h2>What I did hands-on today</h2>
+<ul>
+<li>Created a customer managed policy called <code>ReadDemoBucketOnly</code> using the JSON editor.</li>
+<li>Created a user group <code>DemoBucketReaders</code> and attached only that policy.</li>
+<li>Tested it in the <strong>Policy Simulator</strong>:<ul>
+<li><code>s3:GetObject</code> on <code>robin-120days-demo/*</code> was <strong>Allowed</strong> (explicit allow).</li>
+<li><code>s3:PutObject</code> and <code>s3:DeleteObject</code> on the same bucket were <strong>Denied</strong> (implicit deny).</li>
+<li><code>s3:GetObject</code> on a different bucket was <strong>Denied</strong>, which shows the policy is scoped by resource.</li>
+</ul>
+</li>
+</ul>
+<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/39821615-b704-478a-9374-3abd4b22fcdb.png" alt="" style="display:block;margin:0 auto" />
+
+<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/5ee067ea-b36d-4882-9ad0-218afc05f314.png" alt="" style="display:block;margin:0 auto" />
+
+<h2>Common mistakes to avoid</h2>
+<ol>
+<li><code>"Action": "*"</code> or <code>"Resource": "*"</code> on a statement that doesn't need it.</li>
+<li>Forgetting the bucket ARN versus the object ARN (<code>/*</code>).</li>
+<li>Copying a policy from the internet without reading every line.</li>
+<li>Testing in production first instead of using the Policy Simulator.</li>
+</ol>
+<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/623354d9-7a0b-4e08-a793-0fb6436b4f2e.png" alt="" style="display:block;margin:0 auto" />
+
+<h2>3 habits I'm keeping</h2>
+<ol>
+<li>Start with no permissions and add one action at a time.</li>
+<li>Scope the Resource to a specific ARN, not a wildcard.</li>
+<li>Test every new policy in the Policy Simulator before attaching it to real users.</li>
+</ol>
+<p>Tomorrow (Day 3): IAM roles and how services like EC2 get temporary credentials.</p>
+]]></content:encoded></item><item><title><![CDATA[Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2]]></title><description><![CDATA[I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD…]]></description><link>https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 19:56:50 GMT</pubDate><content:encoded><![CDATA[<p>I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD, infrastructure as code, Kubernetes, and recovery exercises.</p>
+<p>This first checkpoint is deliberately small: launch an Ubuntu server on AWS, restrict its SSH access, connect to it, and verify the operating system. The ticket application is not deployed yet.</p>
+<p>I’m using AI assistance for setup and documentation. My learning rule is to understand each change, check the actual output, and record what has been completed before moving on.</p>
+<h2>What I launched</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Lab configuration</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Region</td>
+<td>Asia Pacific (Mumbai), <code>ap-south-1</code></td>
+</tr>
+<tr>
+<td>Operating system</td>
+<td>Canonical Ubuntu Server 24.04 LTS, x86_64</td>
+</tr>
+<tr>
+<td>Instance type</td>
+<td>One <code>t2.micro</code></td>
+</tr>
+<tr>
+<td>Root disk</td>
+<td>8 GiB, gp3</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>Default VPC and a public subnet</td>
+</tr>
+<tr>
+<td>Public IPv4</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td>Login</td>
+<td>EC2 Instance Connect as <code>ubuntu</code></td>
+</tr>
+<tr>
+<td>Persistent SSH key pair</td>
+<td>None; browser login uses temporary keys</td>
+</tr>
+</tbody></table>
+<p>This is an initial learning configuration. It is not a claim of production readiness or high availability.</p>
+<h2>The connection path</h2>
+<p>The browser connects through EC2 Instance Connect to the instance’s SSH service on TCP port 22. Successful access needs both authentication and a working network path.</p>
+<p>A public IP alone is not enough. The subnet also needs a route to an internet gateway, the instance needs an SSH service, and the security group must allow the connection source.</p>
+<h2>Restricting SSH correctly</h2>
+<p>The launch wizard initially offered SSH from <code>0.0.0.0/0</code>. That would allow connection attempts from any IPv4 address. I replaced it with the AWS-managed prefix list for EC2 Instance Connect in Mumbai:</p>
+<pre><code class="language-text">com.amazonaws.ap-south-1.ec2-instance-connect
+</code></pre>
+<p>The inbound rule is SSH, TCP 22, with that prefix list as its source. I did not open an application or database port at this checkpoint.</p>
+<p>There is an important distinction here:</p>
+<ul>
+<li>For SSH directly from my laptop, a source of <strong>My IP</strong> allows my current public IP address.</li>
+<li>For the browser-based EC2 Instance Connect method used here, the source is AWS’s EC2 Instance Connect service, so its regional prefix list is appropriate.</li>
+</ul>
+<p>The security group is only one layer. IAM permissions, temporary SSH authentication, and the instance configuration still matter. Allowing a source in a security group does not by itself authenticate a user.</p>
+<h2>Why I did not download a PEM file</h2>
+<p>I chose <strong>Proceed without a key pair</strong> because this lab uses EC2 Instance Connect. It temporarily provides an SSH public key for authentication, so I did not need a saved private key on my laptop.</p>
+<p>This is different from making the machine passwordless or publicly accessible without authentication. If I later want direct SSH access, I will configure that access explicitly.</p>
+<h2>The first three Linux commands</h2>
+<p>After connecting, I verified the user, current directory, and distribution:</p>
+<pre><code class="language-bash">whoami
+pwd
+cat /etc/os-release
+</code></pre>
+<p>The relevant output was:</p>
+<pre><code class="language-text">ubuntu
+/home/ubuntu
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+VERSION_ID="24.04"
+</code></pre>
+<p><code>whoami</code> confirms which account is executing commands. <code>pwd</code> shows where relative file paths will start. <code>/etc/os-release</code> identifies the distribution and release, which helps choose suitable package-management instructions.</p>
+<p>I keep commands separate while learning so it is easy to see which command produced which result.</p>
+<h2>Cost is part of the lab</h2>
+<p>A small instance or a <strong>Free tier eligible</strong> label does not establish that my account has remaining free usage. Account age, plan, credits, and actual consumption affect the bill.</p>
+<p>Compute, retained EBS storage, and public IPv4 usage can contribute charges. Closing the terminal does not stop the instance. My end-of-session routine is to save the work, stop the instance from EC2 when it is not needed, and check for resources that remain billable.</p>
+<h2>What is complete, and what comes next</h2>
+<p>Completed: one Ubuntu EC2 instance launched, SSH limited to the connection service, browser login successful, and the user, home directory, and OS verified.</p>
+<p>Next: refresh package metadata, install the initial tools, create a project workspace, and write a Bash health check. Nginx, the Flask application, persistence, and backups are later checkpoints.</p>
+<p>Each checkpoint will have commands, explanations, verification results, and troubleshooting notes committed to the project repository.</p>
+<p><strong>Project repository:</strong> <a href="https://github.com/RobinSishodia/devops-support-ticket-platform">devops-support-ticket-platform</a></p>
+<h2>Official references</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">Get started with Amazon EC2</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-prerequisites.html">EC2 Instance Connect prerequisites</a></li>
+<li><a href="https://aws.amazon.com/free/free-tier-faqs/">AWS Free Tier FAQs</a></li>
+<li><a href="https://aws.amazon.com/vpc/pricing/">Public IPv4 pricing</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping and starting EC2 instances</a></li>
+</ul>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)]]></title><description><![CDATA[Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 17:30:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65d6c959-fb8c-4885-8020-82d51ec19302.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1550,429 +1946,4 @@
 <hr />
 <p><strong>Summary or Matrix: which do you build most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 10 done, 20 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Lookup vs Master-Detail: Salesforce Relationships Cheat Sheet for Admin Interviews (Day 9/30)]]></title><description><![CDATA[Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child…]]></description><link>https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesforce-relationships-cheat-sheet-for-admin-interviews-day-9-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:08:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child record exist without its parent?</em></p>
-<hr />
-<h2>The 4 Relationship Types</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Lookup</strong></td>
-<td>A loose link between two objects</td>
-<td>Optional, the child keeps its own owner</td>
-</tr>
-<tr>
-<td><strong>Master-Detail</strong></td>
-<td>A tight parent-child bond</td>
-<td>Cascade delete, roll-ups, shared access</td>
-</tr>
-<tr>
-<td><strong>Junction object</strong></td>
-<td>Links two objects many-to-many</td>
-<td>Two master-detail fields</td>
-</tr>
-<tr>
-<td><strong>Hierarchical</strong></td>
-<td>Records link to the same object</td>
-<td>Parent Account, user manager</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. Standard vs Custom objects?</h3>
-<p>Standard objects ship with Salesforce, such as Account, Contact and Opportunity. Custom objects are built by you, and their API names end in <code>__c</code>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Custom objects and fields always end in <code>__c</code>.</p>
-</blockquote>
-<h3>2. Lookup vs Master-Detail?</h3>
-<p>A <strong>Lookup</strong> is optional and loosely coupled. A <strong>Master-Detail</strong> is required: the child inherits the parent's owner and sharing.</p>
-<blockquote>
-<p><strong>Tip:</strong> Ask: can the child exist without the parent?</p>
-</blockquote>
-<h3>3. What is a Junction object?</h3>
-<p>A custom object with <strong>two master-detail fields</strong> that creates a many-to-many link, like Student to Course through Enrollment.</p>
-<blockquote>
-<p><strong>Tip:</strong> The first master-detail sets the owner and sharing.</p>
-</blockquote>
-<h3>4. What is a Roll-up Summary field?</h3>
-<p>It lives on the master record and calculates <strong>COUNT, SUM, MIN or MAX</strong> over its detail records. It is only available with master-detail.</p>
-<blockquote>
-<p><strong>Tip:</strong> Need it on a lookup? Use a Flow instead.</p>
-</blockquote>
-<h3>5. Can you convert between them?</h3>
-<p><strong>Lookup to Master-Detail</strong> works only if every child record already has a parent. <strong>Master-Detail to Lookup</strong> works only if the parent has no roll-up summary fields.</p>
-<blockquote>
-<p><strong>Tip:</strong> Fill in blank lookups before converting.</p>
-</blockquote>
-<h3>6. What happens if the parent is deleted?</h3>
-<p>With <strong>Master-Detail</strong> the children are deleted too (cascade). With a <strong>Lookup</strong> the children stay, unless you restrict the delete.</p>
-<blockquote>
-<p><strong>Tip:</strong> Restricting delete protects child data.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A school tracks Students and Courses, and each student can take many courses. How do you model it?"</strong></p>
-<ol>
-<li><p>Create custom objects <strong>Student</strong> and <strong>Course</strong></p>
-</li>
-<li><p>Create a junction object called <strong>Enrollment</strong></p>
-</li>
-<li><p>Add <strong>two master-detail fields</strong>: one to Student, one to Course</p>
-</li>
-<li><p>Add a <strong>roll-up summary</strong> on Course to count Enrollments</p>
-</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><p><strong>Lookup</strong> = optional, independent</p>
-</li>
-<li><p><strong>Master-Detail</strong> = required, cascade delete</p>
-</li>
-<li><p><strong>Junction</strong> = two master-details</p>
-</li>
-<li><p><strong>Roll-up</strong> = master-detail only</p>
-</li>
-<li><p><strong>Max 2</strong> master-detail fields per object</p>
-</li>
-<li><p><strong>Custom</strong> API names end in <code>__c</code></p>
-</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li><p>Start with: can the child exist alone?</p>
-</li>
-<li><p>Use master-detail for tight ownership</p>
-</li>
-<li><p>Use a junction object for many-to-many</p>
-</li>
-<li><p>Plan relationships before you build</p>
-</li>
-</ul>
-<hr />
-<p><strong>Lookup or Master-Detail: which do you pick first? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 9 done, 21 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Cheat Sheet: Types, Triggers and Admin Interview Q&A (Day 8/30)]]></title><description><![CDATA[Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-types-triggers-and-admin-interview-q-a-day-8-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 22:00:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb5a0a21-2efe-429d-a1da-6e43dd949dff.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger timing, and how you keep it safe at scale.</em></p>
-<hr />
-<h2>The 4 Flow Types</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Use it when</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Screen Flow</strong></td>
-<td>A user needs to click and type</td>
-<td>Guided forms, wizards, Lightning pages</td>
-</tr>
-<tr>
-<td><strong>Record-Triggered Flow</strong></td>
-<td>A record is created, updated or deleted</td>
-<td>Update a field, create a task</td>
-</tr>
-<tr>
-<td><strong>Scheduled-Triggered Flow</strong></td>
-<td>Something must run at a set time</td>
-<td>Daily or weekly batch jobs</td>
-</tr>
-<tr>
-<td><strong>Autolaunched Flow</strong></td>
-<td>Another process calls it</td>
-<td>Called from flows, Apex, buttons</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a Record-Triggered Flow?</h3>
-<p>It runs automatically when a record is created, updated or deleted. Entry conditions decide when it actually fires.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add entry conditions so it only runs when needed.</p>
-</blockquote>
-<h3>2. Before-save vs After-save?</h3>
-<p><strong>Before-save</strong> updates the same record that triggered the flow, fast, with no extra DML. <strong>After-save</strong> handles related records, emails and other actions.</p>
-<blockquote>
-<p><strong>Tip:</strong> Same record = before. Anything else = after.</p>
-</blockquote>
-<h3>3. Flow vs Workflow Rules and Process Builder?</h3>
-<p>Workflow Rules and Process Builder are retired, with support ending on Dec 31, 2025. Flow is the single automation tool going forward.</p>
-<blockquote>
-<p><strong>Tip:</strong> Say you would migrate old automation to Flow.</p>
-</blockquote>
-<h3>4. Flow or Apex?</h3>
-<p>Start with clicks, not code. Use Apex when logic is very complex, needs heavy bulk processing, or Flow cannot do it.</p>
-<blockquote>
-<p><strong>Tip:</strong> "Declarative first" is the safe answer.</p>
-</blockquote>
-<h3>5. What are the data elements?</h3>
-<p>Get, Create, Update and Delete Records. Get Records reads data into variables you can reuse.</p>
-<blockquote>
-<p><strong>Tip:</strong> One well-filtered Get Records beats many.</p>
-</blockquote>
-<h3>6. Why never put DML in a loop?</h3>
-<p>Governor limits cap queries and DML per transaction. Collect records in a collection variable, then do <strong>one</strong> DML after the loop.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add a Fault path and test with Debug.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"When an Opportunity becomes Closed Won, create a follow-up Task and update the Account. How?"</strong></p>
-<ol>
-<li><p>Build a <strong>Record-Triggered Flow</strong> on Opportunity, run <strong>after save</strong></p>
-</li>
-<li><p>Entry condition: <strong>Stage = Closed Won</strong> and Stage <strong>is changed</strong></p>
-</li>
-<li><p><strong>Create Records</strong>: a Task for the Account owner</p>
-</li>
-<li><p><strong>Update Records</strong>: the Account, add a <strong>Fault path</strong>, then test with <strong>Debug</strong></p>
-</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><p><strong>Screen</strong> = user input</p>
-</li>
-<li><p><strong>Record-Triggered</strong> = on create, update, delete</p>
-</li>
-<li><p><strong>Scheduled</strong> = runs at a set time</p>
-</li>
-<li><p><strong>Autolaunched</strong> = called by others</p>
-</li>
-<li><p><strong>Before-save</strong> = fast, same record</p>
-</li>
-<li><p><strong>No DML in loops</strong></p>
-</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li><p>Flow first, Apex only when needed</p>
-</li>
-<li><p>Choose before-save or after-save on purpose</p>
-</li>
-<li><p>Use entry conditions to limit runs</p>
-</li>
-<li><p>Always add Fault paths and test with Debug</p>
-</li>
-</ul>
-<hr />
-<p><strong>Which Flow type do you use most? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 8 done, 22 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Security Model Cheat Sheet: 4 Layers and Admin Interview Q&A (Day 7/30)]]></title><description><![CDATA[Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-security-model-cheat-sheet-4-layers-and-admin-interview-q-a-day-7-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 13 Oct 2026 13:33:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3deb4392-f75a-4e09-ab55-b0d29d266241.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on four doors, and every question is really asking "which lock is this?"</em></p>
-<p>This is the quick <strong>cheat sheet</strong> version. For the long, step-by-step walkthrough, read my earlier post: <a href="https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more">The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More</a>.</p>
-<hr />
-<h2>The Big Picture: 4 Layers of Access</h2>
-<table>
-<thead>
-<tr>
-<th>Layer</th>
-<th>Question it answers</th>
-<th>Tools</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Org level</strong></td>
-<td>Can this person log in at all?</td>
-<td>Password policies, login hours, login IP ranges, MFA</td>
-</tr>
-<tr>
-<td><strong>Object level</strong></td>
-<td>Can they see or edit this <em>type</em> of data?</td>
-<td>Profiles, Permission Sets</td>
-</tr>
-<tr>
-<td><strong>Field level</strong></td>
-<td>Can they see this <em>column</em>?</td>
-<td>Field-Level Security (FLS)</td>
-</tr>
-<tr>
-<td><strong>Record level</strong></td>
-<td>Can they see this <em>row</em>?</td>
-<td>OWD, Role Hierarchy, Sharing Rules, Manual Sharing</td>
-</tr>
-</tbody></table>
-<p><strong>Golden rule:</strong> Object and field access decide <em>what kind</em> of data you can touch. Record access decides <em>which rows</em> you can touch. You need both.</p>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a Profile?</h3>
-<p>A profile controls what a user can do: which objects and fields they can access, which apps and tabs they see, and system permissions. Every user has exactly <strong>one</strong> profile.</p>
-<blockquote>
-<p><strong>Tip:</strong> Say "profile = baseline permissions". It sets up your next answer about permission sets.</p>
-</blockquote>
-<h3>2. What is a Permission Set, and how is it different from a Profile?</h3>
-<p>A permission set <strong>adds</strong> access on top of a profile. A user can have many permission sets, but only one profile. Permission sets can only grant access, never take it away.</p>
-<blockquote>
-<p><strong>Tip:</strong> Mention best practice: keep profiles minimal and grant extra access through permission sets (and Permission Set Groups to bundle them).</p>
-</blockquote>
-<h3>3. What is OWD (Organization-Wide Defaults)?</h3>
-<p>OWD sets the <strong>baseline record access</strong> for each object. It is the most restrictive level in the system, and every other tool (roles, sharing rules) can only <strong>open access up</strong> from there.</p>
-<p>Common settings: <strong>Private</strong>, <strong>Public Read Only</strong>, <strong>Public Read/Write</strong>, <strong>Controlled by Parent</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Always say "start restrictive, then open up".</p>
-</blockquote>
-<h3>4. What is the Role Hierarchy?</h3>
-<p>Roles control <strong>record visibility upward</strong>. A manager can see the records owned by people below them in the hierarchy. Roles do <strong>not</strong> give object permissions; that is the profile's job.</p>
-<blockquote>
-<p><strong>Tip:</strong> The classic trap question: <em>"Profile vs Role?"</em> Profile = what you can <strong>do</strong>. Role = which records you can <strong>see</strong>.</p>
-</blockquote>
-<h3>5. What are Sharing Rules?</h3>
-<p>Sharing rules open access to records for groups of users when OWD is restrictive. They can be based on <strong>record owner</strong> or on <strong>record criteria</strong> (for example, Region = West).</p>
-<blockquote>
-<p><strong>Tip:</strong> Remember sharing rules only <strong>extend</strong> access. They can never restrict it.</p>
-</blockquote>
-<h3>6. What is Field-Level Security?</h3>
-<p>FLS controls whether a user can see or edit a specific field, set through profiles or permission sets. Hidden fields disappear from page layouts, reports and list views.</p>
-<blockquote>
-<p><strong>Tip:</strong> A page layout alone does not secure a field. FLS does.</p>
-</blockquote>
-<h3>7. What is Manual Sharing?</h3>
-<p>The record owner (or a user with full access) can share an individual record with a specific user or group. It is useful for one-off exceptions.</p>
-<blockquote>
-<p><strong>Tip:</strong> Manual sharing is lost if the record owner changes, so don't build a process around it.</p>
-</blockquote>
-<h3>8. If two settings conflict, which one wins?</h3>
-<p>Access in Salesforce is <strong>additive</strong>: the <strong>most permissive</strong> result wins. Two permission sources never cancel each other out.</p>
-<hr />
-<h2>Scenario Question (Very Common!)</h2>
-<p><strong>"Sales reps should only see their own accounts. Managers should see their team's accounts. How do you set that up?"</strong></p>
-<ol>
-<li><p>Set <strong>Account OWD = Private</strong></p>
-</li>
-<li><p>Build the <strong>Role Hierarchy</strong> with managers above reps</p>
-</li>
-<li><p>Keep <strong>Grant Access Using Hierarchies</strong> enabled</p>
-</li>
-<li><p>If one team needs to see another team's accounts, add a <strong>Sharing Rule</strong></p>
-</li>
-</ol>
-<p>Result: reps see their own records, managers see their whole team's, no extra code needed.</p>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><p><strong>Profile</strong> = baseline permissions (one per user)</p>
-</li>
-<li><p><strong>Permission Set</strong> = extra permissions (many per user)</p>
-</li>
-<li><p><strong>OWD</strong> = the most restrictive baseline for records</p>
-</li>
-<li><p><strong>Role Hierarchy</strong> = upward record visibility</p>
-</li>
-<li><p><strong>Sharing Rules</strong> = open access to groups</p>
-</li>
-<li><p><strong>FLS</strong> = field-level visibility</p>
-</li>
-<li><p><strong>Most permissive wins</strong></p>
-</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li><p>Answer in layers: org, object, field, record</p>
-</li>
-<li><p>Use a real example for every answer</p>
-</li>
-<li><p>Always separate "what you can do" (profile) from "what you can see" (role)</p>
-</li>
-<li><p>Keep it simple, and explain <em>why</em> each tool exists</p>
-</li>
-</ul>
-<hr />
-<p><strong>Which part of the Salesforce security model confused you the most when you were learning it? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 7 done, 23 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups]]></title><description><![CDATA[Beginner's guide to AWS VPC: CIDR blocks, public and private subnets, internet and NAT gateways, route tables, security groups and NACLs.]]></description><link>https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups</guid><category><![CDATA[AWS]]></category><category><![CDATA[networking]]></category><category><![CDATA[vpc]]></category><category><![CDATA[Cloud]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 06 Oct 2026 18:58:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fbe0394d-2e2e-4c5d-83ee-badaeb008838.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>A <strong>Virtual Private Cloud (VPC)</strong> is your own private network inside AWS. Every EC2 instance, RDS database and many Lambda functions live in one. Networking was the part of AWS that confused me most at first, so here is the explanation I wish I'd had.</p>
-<h2>The VPC and its CIDR block</h2>
-<p>When you create a VPC, you give it an IP range in <strong>CIDR</strong> notation, for example:</p>
-<pre><code>10.0.0.0/16   →   65,536 addresses (10.0.0.0 – 10.0.255.255)
-</code></pre>
-<p>A VPC lives in <strong>one region</strong> but spans all of that region's Availability Zones.</p>
-<h2>Subnets</h2>
-<p>A <strong>subnet</strong> is a slice of the VPC's range in <strong>one Availability Zone</strong>:</p>
-<pre><code>10.0.1.0/24   public subnet   (AZ a)
-10.0.2.0/24   public subnet   (AZ b)
-10.0.11.0/24  private subnet  (AZ a)
-10.0.12.0/24  private subnet  (AZ b)
-</code></pre>
-<p>AWS reserves 5 addresses in every subnet, so a <code>/24</code> gives you 251 usable IPs.</p>
-<p><strong>Public vs private</strong> isn't a setting. It depends on the subnet's <strong>route table</strong>.</p>
-<h2>Internet Gateway</h2>
-<p>An <strong>Internet Gateway (IGW)</strong> connects the VPC to the internet. A subnet is <strong>public</strong> when its route table sends internet traffic to the IGW:</p>
-<pre><code>Destination     Target
-10.0.0.0/16     local
-0.0.0.0/0       igw-xxxx
-</code></pre>
-<p>Instances in it also need a public IP to be reachable.</p>
-<h2>NAT Gateway</h2>
-<p>Instances in <strong>private</strong> subnets often still need to reach the internet (to download updates, for example) without being reachable <em>from</em> it. A <strong>NAT Gateway</strong> sits in a public subnet and handles that:</p>
-<pre><code>Private subnet route table
-Destination     Target
-10.0.0.0/16     local
-0.0.0.0/0       nat-xxxx
-</code></pre>
-<p>NAT Gateways are charged per hour plus per GB processed, so they're often one of the bigger networking costs. For high availability, use one per AZ.</p>
-<h2>Route tables</h2>
-<p>Every subnet is associated with one <strong>route table</strong>. The <code>local</code> route (VPC CIDR → local) is always there, so everything inside the VPC can talk to everything else unless security rules block it.</p>
-<h2>Security groups vs network ACLs</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Security Group</th>
-<th>Network ACL</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Applies to</td>
-<td>Network interfaces (instances)</td>
-<td>Subnets</td>
-</tr>
-<tr>
-<td>Rules</td>
-<td>Allow only</td>
-<td>Allow and deny</td>
-</tr>
-<tr>
-<td>State</td>
-<td><strong>Stateful</strong> (return traffic allowed automatically)</td>
-<td><strong>Stateless</strong> (must allow return traffic explicitly)</td>
-</tr>
-<tr>
-<td>Evaluation</td>
-<td>All rules together</td>
-<td>In number order, first match wins</td>
-</tr>
-</tbody></table>
-<p>In practice, <strong>security groups do most of the work</strong>. A common pattern is referencing one security group from another, for example: "the database security group allows port 5432 only from the app security group."</p>
-<h2>A classic three-tier layout</h2>
-<pre><code>Internet
-   │
-Internet Gateway
-   │
-Public subnets   →  Load balancer, NAT Gateway
-   │
-Private subnets  →  App servers (EC2 / ECS)
-   │
-Private subnets  →  Database (RDS)
-</code></pre>
-<p>Only the load balancer is exposed. App servers and databases stay private.</p>
-<h2>Other pieces you'll meet</h2>
-<ul>
-<li><strong>VPC endpoints</strong> – reach services like S3 or DynamoDB privately, without a NAT Gateway (and often more cheaply)</li>
-<li><strong>VPC peering / Transit Gateway</strong> – connect VPCs together</li>
-<li><strong>VPC Flow Logs</strong> – record traffic metadata for troubleshooting and security</li>
-</ul>
-<h2>Troubleshooting connectivity</h2>
-<p>When something can't connect, check in this order:</p>
-<ol>
-<li>Route table of the source subnet</li>
-<li>Security group on the destination (inbound) and source (outbound)</li>
-<li>Network ACLs on both subnets (remember return traffic)</li>
-<li>Public IP / Elastic IP if internet access is involved</li>
-<li>VPC Flow Logs to see whether traffic was accepted or rejected</li>
-</ol>
-<p>Once you can draw your VPC on paper, most networking problems become much easier to solve.</p>
 ]]></content:encoded></item></channel></rss>
