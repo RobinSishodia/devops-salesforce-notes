@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 31 Oct 2026 15:08:31 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)]]></title><description><![CDATA[Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 31 Oct 2026 15:07:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b369f436-93b4-418c-853c-984030ed288a.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 01 Nov 2026 17:54:07 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Field History & Audit Trail Cheat Sheet: Limits, Retention, and Admin Interview Q&A (Day 26/30)]]></title><description><![CDATA[Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview. It records the old and new values of selected…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 01 Nov 2026 17:53:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/8f423134-d86f-42c7-99ce-743e5ef94263.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Field History</strong></td>
+<td>Old and new values</td>
+<td>20 fields each</td>
+</tr>
+<tr>
+<td><strong>Setup Trail</strong></td>
+<td>Logs admin changes</td>
+<td>Last 180 days</td>
+</tr>
+<tr>
+<td><strong>Field Audit</strong></td>
+<td>Paid long retention</td>
+<td>Up to 10 years</td>
+</tr>
+<tr>
+<td><strong>Login History</strong></td>
+<td>Who logged in</td>
+<td>Last 6 months</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is Field History?</h3>
+<p>It records the <strong>old and new values</strong> of selected fields.</p>
+<blockquote>
+<p><strong>Tip:</strong> Turn it on per object.</p>
+</blockquote>
+<h3>2. How many fields can you track?</h3>
+<p><strong>Up to 20 fields</strong> on each object.</p>
+<blockquote>
+<p><strong>Tip:</strong> Pick fields that matter.</p>
+</blockquote>
+<h3>3. How long is history kept?</h3>
+<p><strong>18 months in the UI</strong> and 24 months through the API.</p>
+<blockquote>
+<p><strong>Tip:</strong> Export what you must keep.</p>
+</blockquote>
+<h3>4. What is Setup Audit Trail?</h3>
+<p>It logs <strong>setup changes</strong> and who made them for 180 days.</p>
+<blockquote>
+<p><strong>Tip:</strong> Download the CSV to keep it.</p>
+</blockquote>
+<h3>5. Need longer retention?</h3>
+<p><strong>Field Audit Trail</strong> is an add-on: up to 60 fields and 10 years.</p>
+<blockquote>
+<p><strong>Tip:</strong> Ask about licensing.</p>
+</blockquote>
+<h3>6. Which fields cannot be tracked?</h3>
+<p><strong>Formula and roll-up summary fields.</strong></p>
+<blockquote>
+<p><strong>Tip:</strong> Track the source fields.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Auditors ask who changed Amount, and when. How?"</strong></p>
+<ol>
+<li><strong>Enable</strong> history on Opportunity</li>
+<li><strong>Select</strong> the Amount field</li>
+<li><strong>Show</strong> the History related list</li>
+<li><strong>Check</strong> Setup Audit Trail</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Fields</strong> = 20 per object</li>
+<li><strong>UI</strong> = 18 months</li>
+<li><strong>API</strong> = 24 months</li>
+<li><strong>Setup trail</strong> = 180 days</li>
+<li><strong>Add-on</strong> = 60 fields</li>
+<li><strong>Formulas</strong> = not tracked</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Track only fields that matter</li>
+<li>Export before data ages out</li>
+<li>Setup Audit Trail covers admin changes</li>
+<li>Use Field Audit Trail for compliance</li>
+</ul>
+<hr />
+<p><strong>Which field do you audit most? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 26 done, 4 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)]]></title><description><![CDATA[Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 31 Oct 2026 15:07:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b369f436-93b4-418c-853c-984030ed288a.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1839,111 +1932,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>What is the best validation rule you have written? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 11 done, 19 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Reports & Dashboards Cheat Sheet: Formats, Running User and Admin Interview Q&A (Day 10/30)]]></title><description><![CDATA[Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-cheat-sheet-formats-running-user-and-admin-interview-q-a-day-10-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Reports & Dashboards]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 15 Oct 2026 19:34:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fb51ec5-3bd6-4a7e-8d49-266df22d7b91.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a manager can act on.</em></p>
-<hr />
-<h2>The 4 Report Formats</h2>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Tabular</strong></td>
-<td>A simple list of records</td>
-<td>No grouping, no dashboard charts</td>
-</tr>
-<tr>
-<td><strong>Summary</strong></td>
-<td>Rows grouped by a field</td>
-<td>Up to 3 groupings, subtotals</td>
-</tr>
-<tr>
-<td><strong>Matrix</strong></td>
-<td>Grouped by rows and columns</td>
-<td>Up to 2 row and 2 column groups</td>
-</tr>
-<tr>
-<td><strong>Joined</strong></td>
-<td>Blocks from different report types</td>
-<td>Up to 5 blocks in one report</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a Report Type?</h3>
-<p>It decides which objects and fields a report can use. Standard report types exist, and you can build <strong>custom report types</strong> with related objects.</p>
-<blockquote>
-<p><strong>Tip:</strong> "With" shows parents that have children, "with or without" shows all parents.</p>
-</blockquote>
-<h3>2. Summary vs Matrix report?</h3>
-<p>A <strong>Summary</strong> report groups rows by up to 3 fields. A <strong>Matrix</strong> report groups by both rows and columns, so you can compare two dimensions at once.</p>
-<blockquote>
-<p><strong>Tip:</strong> Need a cross-tab like region by quarter? Use a matrix.</p>
-</blockquote>
-<h3>3. Report vs Dashboard?</h3>
-<p>A <strong>report</strong> lists filtered records. A <strong>dashboard</strong> shows up to 20 components, each built from a source report.</p>
-<blockquote>
-<p><strong>Tip:</strong> Every component needs a source report.</p>
-</blockquote>
-<h3>4. Running user vs dynamic dashboard?</h3>
-<p>A normal dashboard shows data as seen by its <strong>running user</strong>. A <strong>dynamic dashboard</strong> runs as whoever is viewing it.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use dynamic when each viewer should see only their own data.</p>
-</blockquote>
-<h3>5. What is a Bucket field?</h3>
-<p>It groups report values into categories you define, with <strong>no formula or custom field</strong> needed.</p>
-<blockquote>
-<p><strong>Tip:</strong> For example, group deal amounts into Small, Medium and Large.</p>
-</blockquote>
-<h3>6. What is a Cross filter?</h3>
-<p>It filters records by related records, like <strong>Accounts with or without Opportunities</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Great for finding accounts with no activity.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A sales manager wants open pipeline by stage as a dashboard, emailed weekly. How do you do it?"</strong></p>
-<ol>
-<li><p>Build a <strong>Summary report</strong> on Opportunities, open only</p>
-</li>
-<li><p><strong>Group</strong> the report by Stage and add a chart</p>
-</li>
-<li><p>Add it to a <strong>dashboard</strong> as a component</p>
-</li>
-<li><p><strong>Subscribe</strong> the manager for a weekly email</p>
-</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><p><strong>Tabular</strong> = simple list</p>
-</li>
-<li><p><strong>Summary</strong> = up to 3 groupings</p>
-</li>
-<li><p><strong>Matrix</strong> = rows and columns</p>
-</li>
-<li><p><strong>Joined</strong> = up to 5 blocks</p>
-</li>
-<li><p><strong>Dashboard</strong> = up to 20 components</p>
-</li>
-<li><p><strong>Bucket</strong> = group without a formula</p>
-</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li><p>Choose the report type first</p>
-</li>
-<li><p>Summary to group, matrix to compare</p>
-</li>
-<li><p>Dashboards display reports</p>
-</li>
-<li><p>Check the running user</p>
-</li>
-</ul>
-<hr />
-<p><strong>Summary or Matrix: which do you build most? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 10 done, 20 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
