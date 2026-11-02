@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 02 Nov 2026 14:36:11 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)]]></title><description><![CDATA[Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview. It reassigns or…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 14:35:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/59358d6f-5056-45ec-8bdd-8205bbd34736.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 02 Nov 2026 20:05:52 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)]]></title><description><![CDATA[One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 20:05:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c790c182-5fab-4e0e-b43c-49db691d24c9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Picklist</strong></td>
+<td>One value from a list</td>
+<td>Admin controlled</td>
+</tr>
+<tr>
+<td><strong>Value Set</strong></td>
+<td>Shared by many fields</td>
+<td>Edit it once</td>
+</tr>
+<tr>
+<td><strong>Dependent</strong></td>
+<td>Values follow a field</td>
+<td>Needs a controller</td>
+</tr>
+<tr>
+<td><strong>Restricted</strong></td>
+<td>Blocks unlisted values</td>
+<td>Cleaner data</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a global value set?</h3>
+<p>A <strong>shared list of values</strong> reused by many picklists.</p>
+<blockquote>
+<p><strong>Tip:</strong> Edit once, update everywhere.</p>
+</blockquote>
+<h3>2. What is a dependent picklist?</h3>
+<p>Its values change based on a <strong>controlling field</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Plan the mapping first.</p>
+</blockquote>
+<h3>3. What can be a controller?</h3>
+<p>A standard or custom <strong>picklist, or a checkbox</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Multi-select cannot control.</p>
+</blockquote>
+<h3>4. What does Restrict do?</h3>
+<p>It <strong>blocks values outside the list</strong>, even through the API.</p>
+<blockquote>
+<p><strong>Tip:</strong> Turn it on for clean data.</p>
+</blockquote>
+<h3>5. How do record types help?</h3>
+<p>Each record type can show <strong>only a subset of values</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Set it per record type.</p>
+</blockquote>
+<h3>6. Retiring a value?</h3>
+<p>Existing records keep it, <strong>new records cannot use it</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Deactivate, do not delete.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Sales and Support need the same Region list. How?"</strong></p>
+<ol>
+<li><strong>Create</strong> a global value set</li>
+<li><strong>Attach</strong> it to both fields</li>
+<li><strong>Restrict</strong> the picklist</li>
+<li><strong>Limit</strong> values per record type</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Shared</strong> = global value set</li>
+<li><strong>Depends</strong> = controlling field</li>
+<li><strong>Controller</strong> = picklist or checkbox</li>
+<li><strong>Restrict</strong> = blocks new values</li>
+<li><strong>Subset</strong> = record types</li>
+<li><strong>Retire</strong> = deactivate</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Reuse lists with global value sets</li>
+<li>Pick the controlling field first</li>
+<li>Restrict to keep data clean</li>
+<li>Deactivate instead of deleting</li>
+</ul>
+<hr />
+<p><strong>Which picklist is hardest to maintain? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 28 done, 2 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)]]></title><description><![CDATA[Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview. It reassigns or…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 14:35:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/59358d6f-5056-45ec-8bdd-8205bbd34736.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1805,111 +1898,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which object would you split first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 13 done, 17 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Approval Processes Cheat Sheet: Entry Criteria, Approvers and Admin Interview Q&A (Day 12/30)]]></title><description><![CDATA[Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-approval-processes-cheat-sheet-entry-criteria-approvers-and-admin-interview-q-a-day-12-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Approval Process]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 13:55:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin interview that touches automation.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Entry Criteria</strong></td>
-<td>Decides which records can be submitted</td>
-<td>Records that miss them cannot be submitted</td>
-</tr>
-<tr>
-<td><strong>Approval Step</strong></td>
-<td>Who reviews the record</td>
-<td>User, queue, manager or field</td>
-</tr>
-<tr>
-<td><strong>Actions</strong></td>
-<td>Run on submit, approve or reject</td>
-<td>Field update, email, task</td>
-</tr>
-<tr>
-<td><strong>Record Lock</strong></td>
-<td>Record is read-only while pending</td>
-<td>Admins can still edit</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is an Approval Process?</h3>
-<p>It automates how a record gets approved: <strong>submit, route to approvers, then approve or reject</strong>, with actions at each stage.</p>
-<blockquote>
-<p><strong>Tip:</strong> Think of it as a manager sign-off.</p>
-</blockquote>
-<h3>2. What are entry criteria?</h3>
-<p>Conditions a record must meet before it can be submitted, like <strong>Discount over 20 percent</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Records that miss them cannot be submitted.</p>
-</blockquote>
-<h3>3. Who can be an approver?</h3>
-<p>A <strong>user</strong>, a <strong>queue</strong>, the submitter's <strong>manager</strong>, or a user picked from a <strong>field</strong> on the record.</p>
-<blockquote>
-<p><strong>Tip:</strong> Queues let a team share the work.</p>
-</blockquote>
-<h3>4. What actions can run?</h3>
-<p><strong>Field updates, email alerts, tasks and outbound messages</strong>, on submit, final approval, final rejection or recall.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use a field update to set Status.</p>
-</blockquote>
-<h3>5. What does the record lock do?</h3>
-<p>A pending record is <strong>locked</strong> so users cannot edit it. Admins can still edit, and a <strong>recall</strong> unlocks it.</p>
-<blockquote>
-<p><strong>Tip:</strong> The lock stops edits while review is open.</p>
-</blockquote>
-<h3>6. Approval Process vs Flow?</h3>
-<p>Approval Processes handle classic sign-off. <strong>Flow Orchestrator</strong> is the newer option for complex, multi-step approvals.</p>
-<blockquote>
-<p><strong>Tip:</strong> Name the trade-off, then pick.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Discounts over 20 percent need manager approval before the deal moves on. How do you do it?"</strong></p>
-<ol>
-<li><p><strong>Entry criteria:</strong> Discount greater than 20 percent</p>
-</li>
-<li><p><strong>Approver:</strong> the submitter's manager</p>
-</li>
-<li><p><strong>On submit:</strong> a field update sets Status to Pending</p>
-</li>
-<li><p><strong>On approval:</strong> Status becomes Approved</p>
-</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><p><strong>Entry</strong> = who may submit</p>
-</li>
-<li><p><strong>Approver</strong> = user, queue, manager</p>
-</li>
-<li><p><strong>Actions</strong> = update, email, task</p>
-</li>
-<li><p><strong>Lock</strong> = read-only while pending</p>
-</li>
-<li><p><strong>Recall</strong> = pulls it back</p>
-</li>
-<li><p><strong>Orchestrator</strong> = newer option</p>
-</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li><p>Define entry criteria first</p>
-</li>
-<li><p>Prefer queues or managers over named users</p>
-</li>
-<li><p>Track status with field updates</p>
-</li>
-<li><p>Test with a real submitter</p>
-</li>
-</ul>
-<hr />
-<p><strong>What would you send for approval first? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 12 done, 18 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
