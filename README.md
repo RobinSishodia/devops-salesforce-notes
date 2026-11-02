@@ -13,10 +13,11 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (47)
+## 📚 All posts (48)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-11-02 | [Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)](https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-11-02-salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30.md) |
 | 2026-11-01 | [Salesforce Field History & Audit Trail Cheat Sheet: Limits, Retention, and Admin Interview Q&A (Day 26/30)](https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-11-01-salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30.md) |
 | 2026-10-31 | [Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)](https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-10-31-salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30.md) |
 | 2026-10-30 | [Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)](https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30) | `Salesforce` `Salesforce Admin` `crm` | [Markdown](posts/2026-10-30-salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30.md) |
