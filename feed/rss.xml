@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 02 Nov 2026 20:05:52 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)]]></title><description><![CDATA[One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 20:05:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c790c182-5fab-4e0e-b43c-49db691d24c9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 03 Nov 2026 18:11:58 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)]]></title><description><![CDATA[Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview. Files are modern: versions, sharing and…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 03 Nov 2026 18:11:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/914045fa-4c41-443e-a434-cb43a6ee33b2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it is</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Files</strong></td>
+<td>Modern and versioned</td>
+<td>Up to 2 GB</td>
+</tr>
+<tr>
+<td><strong>Attachments</strong></td>
+<td>Legacy and basic</td>
+<td>Up to 25 MB</td>
+</tr>
+<tr>
+<td><strong>Libraries</strong></td>
+<td>Shared team folders</td>
+<td>Member roles</td>
+</tr>
+<tr>
+<td><strong>Sharing</strong></td>
+<td>Links to records</td>
+<td>Viewer or Collab</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. Files or Attachments?</h3>
+<p><strong>Files are modern</strong>: versions, sharing and preview.</p>
+<blockquote>
+<p><strong>Tip:</strong> Migrate old attachments.</p>
+</blockquote>
+<h3>2. What are the size limits?</h3>
+<p><strong>Up to 2 GB per file.</strong> Legacy attachments allow 25 MB.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check your org limits.</p>
+</blockquote>
+<h3>3. How are files shared?</h3>
+<p>Through <strong>links to records</strong>, people, groups or libraries.</p>
+<blockquote>
+<p><strong>Tip:</strong> One file, many records.</p>
+</blockquote>
+<h3>4. Viewer or Collaborator?</h3>
+<p><strong>Viewer can view and download.</strong> Collaborator can also edit.</p>
+<blockquote>
+<p><strong>Tip:</strong> Default to Viewer.</p>
+</blockquote>
+<h3>5. What is a library?</h3>
+<p>A <strong>shared folder</strong> for files, with member roles and permissions.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use it for team content.</p>
+</blockquote>
+<h3>6. Uploading a new version?</h3>
+<p>The file <strong>keeps its history</strong> and the same links.</p>
+<blockquote>
+<p><strong>Tip:</strong> No need to re-share.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Reps must attach signed contracts to Opportunities. How?"</strong></p>
+<ol>
+<li><strong>Add</strong> Files to the page layout</li>
+<li><strong>Store</strong> contracts in a library</li>
+<li><strong>Set</strong> members to Viewer</li>
+<li><strong>Test</strong> upload and preview</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Files</strong> = modern</li>
+<li><strong>Attachments</strong> = legacy</li>
+<li><strong>Limit</strong> = 2 GB per file</li>
+<li><strong>Share</strong> = record links</li>
+<li><strong>Viewer</strong> = view only</li>
+<li><strong>Version</strong> = keeps history</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Use Files, not Attachments</li>
+<li>Share through records and libraries</li>
+<li>Give Viewer unless edit is needed</li>
+<li>Upload versions, do not duplicate</li>
+</ul>
+<hr />
+<p><strong>Where do your files live? Tell me in the comments!</strong></p>
+<p><em>Following my 30-day daily blogging journey. Day 29 done, 1 to go.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)]]></title><description><![CDATA[One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 20:05:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c790c182-5fab-4e0e-b43c-49db691d24c9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1791,111 +1884,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which access would you move to a set first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 14 done, 16 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Record Types & Page Layouts Cheat Sheet: Picklists, Assignment and Admin Interview Q&A (Day 13/30)]]></title><description><![CDATA[One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-record-types-page-layouts-cheat-sheet-picklists-assignment-and-admin-interview-q-a-day-13-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[record types]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 17 Oct 2026 23:00:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/60506fb3-c59b-48de-8457-eb20f9402e04.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Record Type</strong></td>
-<td>Splits one object into variants</td>
-<td>Own picklists and process</td>
-</tr>
-<tr>
-<td><strong>Page Layout</strong></td>
-<td>Fields, buttons, related lists</td>
-<td>Assigned by profile</td>
-</tr>
-<tr>
-<td><strong>Picklist Values</strong></td>
-<td>Limited per record type</td>
-<td>Hide the ones not needed</td>
-</tr>
-<tr>
-<td><strong>Assignment</strong></td>
-<td>Profile plus record type</td>
-<td>Picks the layout shown</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a Record Type?</h3>
-<p>It lets one object serve different teams, each with its own <strong>picklist values, page layouts and business process</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use it when processes differ.</p>
-</blockquote>
-<h3>2. What is a Page Layout?</h3>
-<p>It controls which <strong>fields, buttons, sections and related lists</strong> a user sees on a record.</p>
-<blockquote>
-<p><strong>Tip:</strong> Layouts shape the screen, not security.</p>
-</blockquote>
-<h3>3. How is a layout assigned?</h3>
-<p>By <strong>profile and record type together</strong>. Each pair gets one page layout.</p>
-<blockquote>
-<p><strong>Tip:</strong> Check the assignment matrix.</p>
-</blockquote>
-<h3>4. How do users get a record type?</h3>
-<p>Through their <strong>profile or a permission set</strong>. Without access, they cannot pick it.</p>
-<blockquote>
-<p><strong>Tip:</strong> Permission sets add types without editing the profile.</p>
-</blockquote>
-<h3>5. Layout vs field-level security?</h3>
-<p>A layout only <strong>hides a field on the page</strong>. Field-level security blocks access everywhere, including reports and the API.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use FLS to truly protect data.</p>
-</blockquote>
-<h3>6. Page Layout vs Lightning Page?</h3>
-<p>Page layouts set <strong>fields and related lists</strong>. Lightning record pages set the <strong>overall page, components and dynamic forms</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Name both, then say which you use.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Support handles Billing and Technical cases with different fields. How do you do it?"</strong></p>
-<ol>
-<li><p><strong>Create</strong> two Case record types</p>
-</li>
-<li><p><strong>Limit</strong> the Status values for each type</p>
-</li>
-<li><p><strong>Build</strong> one page layout for each type</p>
-</li>
-<li><p><strong>Assign</strong> by profile and record type</p>
-</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><p><strong>Record type</strong> = variant of an object</p>
-</li>
-<li><p><strong>Layout</strong> = fields and related lists</p>
-</li>
-<li><p><strong>Picklist</strong> = values per type</p>
-</li>
-<li><p><strong>Access</strong> = profile or permission set</p>
-</li>
-<li><p><strong>FLS</strong> = real field security</p>
-</li>
-<li><p><strong>Lightning page</strong> = overall page</p>
-</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li><p>Add types only when processes differ</p>
-</li>
-<li><p>Keep layouts simple and few</p>
-</li>
-<li><p>Never rely on layouts for security</p>
-</li>
-<li><p>Test as a real user</p>
-</li>
-</ul>
-<hr />
-<p><strong>Which object would you split first? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 13 done, 17 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
