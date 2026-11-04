@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 04 Nov 2026 10:19:49 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)]]></title><description><![CDATA[30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 04 Nov 2026 10:19:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/35f9441c-4c3e-415a-8186-4d04a090ce5b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 04 Nov 2026 13:27:55 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)]]></title><description><![CDATA[30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 04 Nov 2026 10:19:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/881dc5bf-2bb4-4863-9347-fb39dea83a15.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -91,7 +91,7 @@
 <hr />
 <p><strong>Which day helped you most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 30 done, 0 to go. Thank you for reading.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)]]></title><description><![CDATA[Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview. Files are modern: versions, sharing and…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 03 Nov 2026 18:11:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/914045fa-4c41-443e-a434-cb43a6ee33b2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)]]></title><description><![CDATA[Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview. Files are modern: versions, sharing and…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 03 Nov 2026 18:11:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/84c736a3-f1b9-49a0-ae8e-c06b48469e00.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -184,7 +184,7 @@
 <hr />
 <p><strong>Where do your files live? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 29 done, 1 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)]]></title><description><![CDATA[One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 20:05:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c790c182-5fab-4e0e-b43c-49db691d24c9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)]]></title><description><![CDATA[One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 20:05:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0455a106-ca61-489c-b5ed-66d38466f4b9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -277,7 +277,7 @@
 <hr />
 <p><strong>Which picklist is hardest to maintain? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 28 done, 2 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)]]></title><description><![CDATA[Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview. It reassigns or…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 14:35:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/59358d6f-5056-45ec-8bdd-8205bbd34736.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)]]></title><description><![CDATA[Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview. It reassigns or…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 14:35:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/487a58f8-4baf-4493-a6fe-b066c803a035.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -370,7 +370,7 @@
 <hr />
 <p><strong>What is your case SLA? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 27 done, 3 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Field History & Audit Trail Cheat Sheet: Limits, Retention, and Admin Interview Q&A (Day 26/30)]]></title><description><![CDATA[Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview. It records the old and new values of selected…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 01 Nov 2026 17:53:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/8f423134-d86f-42c7-99ce-743e5ef94263.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Field History & Audit Trail Cheat Sheet: Limits, Retention, and Admin Interview Q&A (Day 26/30)]]></title><description><![CDATA[Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview. It records the old and new values of selected…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 01 Nov 2026 17:53:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6dd8c50d-5479-4ae9-8899-cdb33fbf022d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -463,7 +463,7 @@
 <hr />
 <p><strong>Which field do you audit most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 26 done, 4 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)]]></title><description><![CDATA[Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 31 Oct 2026 15:07:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b369f436-93b4-418c-853c-984030ed288a.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)]]></title><description><![CDATA[Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 31 Oct 2026 15:07:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/04a212f4-c895-4e09-b6a3-a88c1057a6bf.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -556,7 +556,7 @@
 <hr />
 <p><strong>Which inbox do you run? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 25 done, 5 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch]]></title><description><![CDATA[When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But…]]></description><link>https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 23:50:49 GMT</pubDate><content:encoded><![CDATA[<p>When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But I also wanted to understand every command I typed.</p>
+]]></content:encoded></item><item><title><![CDATA[My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch]]></title><description><![CDATA[When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But…]]></description><link>https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 23:50:49 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/844def38-929e-4570-845f-6b5cd296da9d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But I also wanted to understand every command I typed.</p>
 <p>So I began with a small hands-on lab on an Ubuntu server. My starting point was a directory called <code>devops-lab</code> and a terminal.</p>
 <p>This article captures the foundation: navigating Linux, working with files, and understanding how changes move from a local Git repository to GitHub. The commands below form a simple practice exercise you can adapt to your own lab.</p>
 <h2>Why start with a small lab?</h2>
@@ -708,7 +708,7 @@ git remote -v
 <p>My next goal is to build on this foundation with a small application, then gradually introduce a web server, scripting, containers, and a CI/CD pipeline.</p>
 <p>For this stage, the milestone is clear: work confidently in a Linux directory, inspect a file change, record it with Git, and understand how that commit reaches GitHub.</p>
 <p>I am documenting the process as I learn, one practical step at a time.</p>
-]]></content:encoded></item><item><title><![CDATA[Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch]]></title><description><![CDATA[On Day 1 I used an AWS managed policy (ReadOnlyAccess). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3…]]></description><link>https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 20:48:22 GMT</pubDate><content:encoded><![CDATA[<p>On Day 1 I used an AWS managed policy (<code>ReadOnlyAccess</code>). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3 bucket and nothing else. That's least privilege in practice.</p>
+]]></content:encoded></item><item><title><![CDATA[Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch]]></title><description><![CDATA[On Day 1 I used an AWS managed policy (ReadOnlyAccess). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3…]]></description><link>https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 20:48:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4f4a2a19-6c35-4ba1-bcee-b813577c6287.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>On Day 1 I used an AWS managed policy (<code>ReadOnlyAccess</code>). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3 bucket and nothing else. That's least privilege in practice.</p>
 <h2>Anatomy of an IAM policy</h2>
 <pre><code class="language-json">{
   "Version": "2012-10-17",
@@ -767,7 +767,7 @@ git remote -v
 <li>Test every new policy in the Policy Simulator before attaching it to real users.</li>
 </ol>
 <p>Tomorrow (Day 3): IAM roles and how services like EC2 get temporary credentials.</p>
-]]></content:encoded></item><item><title><![CDATA[Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2]]></title><description><![CDATA[I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD…]]></description><link>https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 19:56:50 GMT</pubDate><content:encoded><![CDATA[<p>I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD, infrastructure as code, Kubernetes, and recovery exercises.</p>
+]]></content:encoded></item><item><title><![CDATA[Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2]]></title><description><![CDATA[I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD…]]></description><link>https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 19:56:50 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ae5042c8-5477-4e2b-8ce8-f099d755f6c2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD, infrastructure as code, Kubernetes, and recovery exercises.</p>
 <p>This first checkpoint is deliberately small: launch an Ubuntu server on AWS, restrict its SSH access, connect to it, and verify the operating system. The ticket application is not deployed yet.</p>
 <p>I’m using AI assistance for setup and documentation. My learning rule is to understand each change, check the actual output, and record what has been completed before moving on.</p>
 <h2>What I launched</h2>
@@ -859,7 +859,7 @@ VERSION_ID="24.04"
 <li><a href="https://aws.amazon.com/vpc/pricing/">Public IPv4 pricing</a></li>
 <li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping and starting EC2 instances</a></li>
 </ul>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)]]></title><description><![CDATA[Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 17:30:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65d6c959-fb8c-4885-8020-82d51ec19302.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)]]></title><description><![CDATA[Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 17:30:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d1f9409c-7684-4eeb-b7d8-360d04e53fae.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -952,7 +952,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which form is on your site? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 24 done, 6 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS]]></title><description><![CDATA[Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…]]></description><link>https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 14:04:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1406349a-d476-4396-9f2a-03b7f242fe27.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: <em>is this identity allowed to do this?</em> IAM (Identity and Access Management) answers it, so I'm starting here.</p>
+]]></content:encoded></item><item><title><![CDATA[Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS]]></title><description><![CDATA[Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…]]></description><link>https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 14:04:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/12ed922d-565e-4dfd-a0e2-dba39e1b9a3d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: <em>is this identity allowed to do this?</em> IAM (Identity and Access Management) answers it, so I'm starting here.</p>
 <h2>The 5 building blocks</h2>
 <ul>
 <li><strong>Users:</strong> a person or app with long-term credentials.</li>
@@ -991,7 +991,7 @@ VERSION_ID="24.04"
 <li>Prefer roles over long-lived access keys.</li>
 </ol>
 <p>Tomorrow (Day 2): writing a custom IAM policy from scratch.</p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)]]></title><description><![CDATA[Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 12:22:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ce3e14b7-d115-4ddb-a089-5708be00f5a6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)]]></title><description><![CDATA[Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 12:22:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/5331a4e9-8be8-49b3-bad6-90d297908cef.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1084,7 +1084,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Queue or direct owner? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 23 done, 7 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)]]></title><description><![CDATA[Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[configuration]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 28 Oct 2026 13:36:46 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/453ebfe5-9b4d-48c7-b2e7-c8d676def4b1.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)]]></title><description><![CDATA[Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[configuration]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 28 Oct 2026 13:36:46 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e937e131-3a74-4416-90b4-87c5268274e5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1177,7 +1177,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>What do you still hardcode? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 22 done, 8 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Data Backup & Recovery Cheat Sheet: Data Export, Recycle Bin and Admin Interview Q&A (Day 21/30)]]></title><description><![CDATA[Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview. A Setup…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Backup]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 27 Oct 2026 13:39:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3d95ec16-33f2-4ca1-9a85-d78d31dad1ee.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Data Backup & Recovery Cheat Sheet: Data Export, Recycle Bin and Admin Interview Q&A (Day 21/30)]]></title><description><![CDATA[Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview. A Setup…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Backup]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 27 Oct 2026 13:39:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e3eb421f-cf0a-4d84-995b-484dee579c72.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1270,7 +1270,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>When did you last test a restore? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 21 done, 9 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)]]></title><description><![CDATA[Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 26 Oct 2026 14:38:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/40f9df12-ed9f-4d3d-903f-aab2b1153d8b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)]]></title><description><![CDATA[Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 26 Oct 2026 14:38:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a5300f2e-4e36-4691-9ed1-964351e72b95.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1363,7 +1363,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>How deep is your role hierarchy? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 20 done, 10 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)]]></title><description><![CDATA[Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce lightning]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 25 Oct 2026 11:55:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/13f30a72-b95b-4fa8-b9fc-b598ff016510.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)]]></title><description><![CDATA[Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce lightning]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 25 Oct 2026 11:55:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1b19b28a-88c7-4442-9b1f-a787585004f0.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1456,7 +1456,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which page would you clean up first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 19 done, 11 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Duplicate & Matching Rules Cheat Sheet: Block, Alert, Merge and Admin Interview Q&A (Day 18/30)]]></title><description><![CDATA[Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data-quality]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 23 Oct 2026 18:15:36 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/65a26b2e-a26e-46d8-9e76-1867c19e08b4.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Duplicate & Matching Rules Cheat Sheet: Block, Alert, Merge and Admin Interview Q&A (Day 18/30)]]></title><description><![CDATA[Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data-quality]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 23 Oct 2026 18:15:36 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7a25a61a-f4e4-44af-93cf-b294a5752b2b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1549,7 +1549,7 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>What is the messiest duplicate you have seen? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 18 done, 12 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Email Templates & Alerts Cheat Sheet: Merge Fields, Flow and Admin Interview Q&A (Day 17/30)]]></title><description><![CDATA[Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce Flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 21:48:50 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b369969-4282-466f-bf47-5184c6d0c9b7.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a common interview topic.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Email Templates & Alerts Cheat Sheet: Merge Fields, Flow and Admin Interview Q&A (Day 17/30)]]></title><description><![CDATA[Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce Flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 21:48:50 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/546df1ed-ae1c-4785-b5f6-7fa95d7567bf.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a common interview topic.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1617,46 +1617,32 @@ VERSION_ID="24.04"
 <h2>Scenario Question</h2>
 <p><strong>"Email the customer when a case is closed. How?"</strong></p>
 <ol>
-<li><p><strong>Create</strong> a template with merge fields</p>
-</li>
-<li><p><strong>Create</strong> an email alert using it</p>
-</li>
-<li><p><strong>Add</strong> it to a Flow on case closed</p>
-</li>
-<li><p><strong>Test</strong> with a real case</p>
-</li>
+<li><strong>Create</strong> a template with merge fields</li>
+<li><strong>Create</strong> an email alert using it</li>
+<li><strong>Add</strong> it to a Flow on case closed</li>
+<li><strong>Test</strong> with a real case</li>
 </ol>
 <hr />
 <h2>Quick Cheat Sheet</h2>
 <ul>
-<li><p><strong>Template</strong> = reusable email</p>
-</li>
-<li><p><strong>Alert</strong> = sends it</p>
-</li>
-<li><p><strong>Merge field</strong> = record data</p>
-</li>
-<li><p><strong>Letterhead</strong> = branding</p>
-</li>
-<li><p><strong>Org-wide</strong> = trusted sender</p>
-</li>
-<li><p><strong>Flow</strong> = decides when</p>
-</li>
+<li><strong>Template</strong> = reusable email</li>
+<li><strong>Alert</strong> = sends it</li>
+<li><strong>Merge field</strong> = record data</li>
+<li><strong>Letterhead</strong> = branding</li>
+<li><strong>Org-wide</strong> = trusted sender</li>
+<li><strong>Flow</strong> = decides when</li>
 </ul>
 <h2>Key Takeaways</h2>
 <ul>
-<li><p>Use merge fields, not typed names</p>
-</li>
-<li><p>Send from an org-wide address</p>
-</li>
-<li><p>Test before you activate</p>
-</li>
-<li><p>One template per purpose</p>
-</li>
+<li>Use merge fields, not typed names</li>
+<li>Send from an org-wide address</li>
+<li>Test before you activate</li>
+<li>One template per purpose</li>
 </ul>
 <hr />
 <p><strong>Which email do you automate first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 17 done, 13 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)]]></title><description><![CDATA[Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 09:18:25 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/18b9c4e0-d2c0-4960-a653-ec1e1ef9572d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a favourite interview question.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)]]></title><description><![CDATA[Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 09:18:25 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/420c329a-7a36-4064-bbef-1ffa1c4d0628.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a favourite interview question.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1724,46 +1710,32 @@ VERSION_ID="24.04"
 <h2>Scenario Question</h2>
 <p><strong>"Move a new validation rule and layout to production. How?"</strong></p>
 <ol>
-<li><p><strong>Build</strong> and test it in a sandbox</p>
-</li>
-<li><p><strong>Add</strong> both to an outbound change set</p>
-</li>
-<li><p><strong>Upload</strong> to production and validate</p>
-</li>
-<li><p><strong>Deploy</strong> in a quiet window</p>
-</li>
+<li><strong>Build</strong> and test it in a sandbox</li>
+<li><strong>Add</strong> both to an outbound change set</li>
+<li><strong>Upload</strong> to production and validate</li>
+<li><strong>Deploy</strong> in a quiet window</li>
 </ol>
 <hr />
 <h2>Quick Cheat Sheet</h2>
 <ul>
-<li><p><strong>Sandbox</strong> = safe copy of prod</p>
-</li>
-<li><p><strong>Outbound</strong> = sent from source</p>
-</li>
-<li><p><strong>Inbound</strong> = received in target</p>
-</li>
-<li><p><strong>Validate</strong> = dry run</p>
-</li>
-<li><p><strong>Apex</strong> = 75% test coverage</p>
-</li>
-<li><p><strong>Limits</strong> = no rollback</p>
-</li>
+<li><strong>Sandbox</strong> = safe copy of prod</li>
+<li><strong>Outbound</strong> = sent from source</li>
+<li><strong>Inbound</strong> = received in target</li>
+<li><strong>Validate</strong> = dry run</li>
+<li><strong>Apex</strong> = 75% test coverage</li>
+<li><strong>Limits</strong> = no rollback</li>
 </ul>
 <h2>Key Takeaways</h2>
 <ul>
-<li><p>Build in a sandbox only</p>
-</li>
-<li><p>Add every dependency to the set</p>
-</li>
-<li><p>Validate before you deploy</p>
-</li>
-<li><p>Deploy outside business hours</p>
-</li>
+<li>Build in a sandbox only</li>
+<li>Add every dependency to the set</li>
+<li>Validate before you deploy</li>
+<li>Deploy outside business hours</li>
 </ul>
 <hr />
 <p><strong>What was your first deployment? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 16 done, 14 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)]]></title><description><![CDATA[Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data loader]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 20 Oct 2026 10:52:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/99301182-eac6-4186-9c68-940321906d20.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a Salesforce admin interview.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)]]></title><description><![CDATA[Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data loader]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 20 Oct 2026 10:52:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/83f2f388-eaa5-4655-a1d9-2937253063c8.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a Salesforce admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1831,41 +1803,27 @@ VERSION_ID="24.04"
 <h2>Scenario Question</h2>
 <p><strong>"Load 200,000 contacts from a CSV without duplicates. How do you do it?"</strong></p>
 <ol>
-<li><p><strong>Export</strong> a backup of existing contacts</p>
-</li>
-<li><p><strong>Clean</strong> the CSV and add an External ID</p>
-</li>
-<li><p><strong>Run</strong> Data Loader with upsert</p>
-</li>
-<li><p><strong>Check</strong> the success and error files</p>
-</li>
+<li><strong>Export</strong> a backup of existing contacts</li>
+<li><strong>Clean</strong> the CSV and add an External ID</li>
+<li><strong>Run</strong> Data Loader with upsert</li>
+<li><strong>Check</strong> the success and error files</li>
 </ol>
 <hr />
 <h2>Quick Cheat Sheet</h2>
 <ul>
-<li><p><strong>Wizard</strong> = up to 50,000 records</p>
-</li>
-<li><p><strong>Loader</strong> = up to 5 million</p>
-</li>
-<li><p><strong>Upsert</strong> = update or insert</p>
-</li>
-<li><p><strong>External ID</strong> = match key</p>
-</li>
-<li><p><strong>Parents</strong> = load first</p>
-</li>
-<li><p><strong>Error file</strong> = fix and reload</p>
-</li>
+<li><strong>Wizard</strong> = up to 50,000 records</li>
+<li><strong>Loader</strong> = up to 5 million</li>
+<li><strong>Upsert</strong> = update or insert</li>
+<li><strong>External ID</strong> = match key</li>
+<li><strong>Parents</strong> = load first</li>
+<li><strong>Error file</strong> = fix and reload</li>
 </ul>
 <h2>Key Takeaways</h2>
 <ul>
-<li><p>Clean the data before loading</p>
-</li>
-<li><p>Test in a sandbox first</p>
-</li>
-<li><p>Export a backup beforehand</p>
-</li>
-<li><p>Keep success and error files</p>
-</li>
+<li>Clean the data before loading</li>
+<li>Test in a sandbox first</li>
+<li>Export a backup beforehand</li>
+<li>Keep success and error files</li>
 </ul>
 <hr />
 <p><strong>What was your biggest data load? Tell me in the comments!</strong></p>
