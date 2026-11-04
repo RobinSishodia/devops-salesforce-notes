@@ -2,7 +2,7 @@
 title: "Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)"
 date: 2026-10-21T09:18:25+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/18b9c4e0-d2c0-4960-a653-ec1e1ef9572d.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/420c329a-7a36-4064-bbef-1ffa1c4d0628.png
 tags: ["Salesforce", "Salesforce Admin", "Devops"]
 brief: "Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…"
 series: "Salesforce Admin 30-Day Series"

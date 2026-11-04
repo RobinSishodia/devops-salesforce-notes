@@ -2,7 +2,7 @@
 title: "Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)"
 date: 2026-11-03T18:11:42+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/914045fa-4c41-443e-a434-cb43a6ee33b2.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/84c736a3-f1b9-49a0-ae8e-c06b48469e00.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview. Files are modern: versions, sharing and…"
 series: "Salesforce Admin 30-Day Series"

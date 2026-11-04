@@ -2,7 +2,7 @@
 title: "Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)"
 date: 2026-10-31T15:07:06+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b369f436-93b4-418c-853c-984030ed288a.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/04a212f4-c895-4e09-b6a3-a88c1057a6bf.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…"
 series: "Salesforce Admin 30-Day Series"

@@ -2,7 +2,7 @@
 title: "Salesforce Email Templates & Alerts Cheat Sheet: Merge Fields, Flow and Admin Interview Q&A (Day 17/30)"
 date: 2026-10-21T21:48:50+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b369969-4282-466f-bf47-5184c6d0c9b7.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/546df1ed-ae1c-4785-b5f6-7fa95d7567bf.png
 tags: ["Salesforce", "Salesforce Admin", "Salesforce Flow"]
 brief: "Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a…"
 series: "Salesforce Admin 30-Day Series"

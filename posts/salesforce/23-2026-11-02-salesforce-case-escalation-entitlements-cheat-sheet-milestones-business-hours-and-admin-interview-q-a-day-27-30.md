@@ -2,7 +2,7 @@
 title: "Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)"
 date: 2026-11-02T14:35:57+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/59358d6f-5056-45ec-8bdd-8205bbd34736.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/487a58f8-4baf-4493-a6fe-b066c803a035.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview. It reassigns or…"
 series: "Salesforce Admin 30-Day Series"

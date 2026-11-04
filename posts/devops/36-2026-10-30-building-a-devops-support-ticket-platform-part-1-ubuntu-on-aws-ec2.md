@@ -2,7 +2,7 @@
 title: "Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2"
 date: 2026-10-30T19:56:50+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2
-cover_image: 
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ae5042c8-5477-4e2b-8ce8-f099d755f6c2.png
 tags: []
 brief: "I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD…"
 series: "DevOps & AWS Learning Notes"

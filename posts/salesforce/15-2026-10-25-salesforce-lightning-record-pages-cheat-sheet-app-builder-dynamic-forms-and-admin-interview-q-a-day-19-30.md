@@ -2,7 +2,7 @@
 title: "Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)"
 date: 2026-10-25T11:55:41+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/13f30a72-b95b-4fa8-b9fc-b598ff016510.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1b19b28a-88c7-4442-9b1f-a787585004f0.png
 tags: ["Salesforce", "Salesforce Admin", "Salesforce lightning"]
 brief: "Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…"
 series: "Salesforce Admin 30-Day Series"

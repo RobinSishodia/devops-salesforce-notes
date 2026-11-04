@@ -2,7 +2,7 @@
 title: "Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)"
 date: 2026-10-29T12:22:43+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ce3e14b7-d115-4ddb-a089-5708be00f5a6.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/5331a4e9-8be8-49b3-bad6-90d297908cef.png
 tags: ["Salesforce", "Salesforce Admin", "crm"]
 brief: "Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…"
 series: "Salesforce Admin 30-Day Series"

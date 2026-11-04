@@ -2,7 +2,7 @@
 title: "Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)"
 date: 2026-10-20T10:52:05+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/99301182-eac6-4186-9c68-940321906d20.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/83f2f388-eaa5-4655-a1d9-2937253063c8.png
 tags: ["Salesforce", "Salesforce Admin", "data loader"]
 brief: "Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…"
 series: "Salesforce Admin 30-Day Series"

@@ -2,7 +2,7 @@
 title: "Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS"
 date: 2026-10-29T14:04:45+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1406349a-d476-4396-9f2a-03b7f242fe27.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/12ed922d-565e-4dfd-a0e2-dba39e1b9a3d.png
 tags: ["AWS", "IAM", "cloudsecurity", "120daysofaws", "Devops"]
 brief: "Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…"
 series: "DevOps & AWS Learning Notes"
