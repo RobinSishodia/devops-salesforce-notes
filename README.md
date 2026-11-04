@@ -13,10 +13,11 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts (50)
+## 📚 All posts (51)
 
 | Date | Title | Tags | Source |
 |------|-------|------|--------|
+| 2026-11-04 | [Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)](https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-11-04-salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30.md) |
 | 2026-11-03 | [Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)](https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-11-03-salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30.md) |
 | 2026-11-02 | [Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)](https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-11-02-salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30.md) |
 | 2026-11-02 | [Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)](https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/2026-11-02-salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30.md) |
