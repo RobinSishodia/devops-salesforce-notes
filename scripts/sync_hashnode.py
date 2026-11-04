@@ -6,8 +6,11 @@ uses the blog's free public RSS feed instead:
 
 - Reads the feed from FEED_FILE (a committed copy of <blog>/rss.xml) or,
   if that isn't set, downloads it (full post content is in <content:encoded>)
-- Converts each post's HTML to Markdown and writes posts/<YYYY-MM-DD>-<slug>.md
-- Rebuilds README.md from every file in posts/, so older posts that drop
+- Converts each post's HTML to Markdown and writes
+  posts/<category>/<NN>-<YYYY-MM-DD>-<slug>.md, where <category> is
+  salesforce, devops or other and NN is the post's serial number within
+  its category (oldest = 01)
+- Rebuilds README.md from every file under posts/, so older posts that drop
   out of the feed are kept
 
 Dependency: markdownify (installed by the workflow).
@@ -30,6 +33,13 @@ FEED = f"https://{HOST}/rss.xml"
 ROOT = Path(__file__).resolve().parent.parent
 POSTS_DIR = ROOT / "posts"
 README = ROOT / "README.md"
+# Posts that existed on the blog before the oldest post kept in this repo
+# (they were never in the feed, so only the numbering has to account for them)
+OLDER_NOT_IN_REPO = {"devops": 14}
+CATEGORIES = {
+    "salesforce": ("Salesforce Admin 30-Day Series", "Salesforce"),
+    "devops": ("DevOps & AWS Learning Notes", "DevOps & AWS"),
+}
 NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
     "dc": "http://purl.org/dc/elements/1.1/",
@@ -106,14 +116,23 @@ def code_language(pre):
     return ""
 
 
-def write_post(p):
-    path = POSTS_DIR / f"{p['date']}-{p['slug']}.md"
+def classify(title):
+    if re.search(r"From Operations to Salesforce", title, re.I):
+        return "other"
+    if re.search(r"CI/CD Pipeline with GitHub", title, re.I):
+        return "devops"
+    if re.search(r"salesforce|lookup vs master", title, re.I):
+        return "salesforce"
+    return "devops"
+
+
+def render(p, category, serial):
     body = html_to_md(
         p["html"], heading_style="ATX", bullets="-",
         code_language_callback=code_language,
     ).strip()
     body = re.sub(r"\n{3,}", "\n\n", body)
-    content = "\n".join([
+    head = [
         "---",
         f"title: {q(p['title'])}",
         f"date: {p['published']}",
@@ -121,6 +140,10 @@ def write_post(p):
         f"cover_image: {p['cover']}",
         f"tags: [{', '.join(q(t) for t in p['tags'])}]",
         f"brief: {q(p['brief'])}",
+    ]
+    if category in CATEGORIES:
+        head += [f"series: {q(CATEGORIES[category][0])}", f"serial: {serial}"]
+    head += [
         "---",
         "",
         f"> Originally published at [{HOST}]({p['url']}). "
@@ -128,11 +151,74 @@ def write_post(p):
         "",
         body,
         "",
-    ])
-    if not path.exists() or path.read_text(encoding="utf-8") != content:
-        path.write_text(content, encoding="utf-8")
-        return True
-    return False
+    ]
+    return "\n".join(head)
+
+
+def with_series(text_, category, serial):
+    """Add or refresh the series/serial lines in an existing file's front matter."""
+    lines = text_.split("\n")
+    end = lines.index("---", 1)
+    front = [l for l in lines[1:end]
+             if not l.startswith("series: ") and not l.startswith("serial: ")]
+    if category in CATEGORIES:
+        front += [f"series: {q(CATEGORIES[category][0])}", f"serial: {serial}"]
+    return "\n".join(["---"] + front + lines[end:])
+
+
+def post_from_file(path):
+    m = read_front_matter(path)
+    url = m.get("canonical_url", "")
+    return {
+        "title": json.loads(m.get("title", '""')),
+        "url": url,
+        "slug": url.rstrip("/").rsplit("/", 1)[-1],
+        "published": m.get("date", ""),
+        "date": m.get("date", "")[:10],
+        "tags": json.loads(m.get("tags", "[]") or "[]"),
+    }
+
+
+def sync_files(feed_posts):
+    """Write every post into posts/<category>/ with its serial number."""
+    existing = {}
+    for f in POSTS_DIR.rglob("*.md"):
+        info = post_from_file(f)
+        if info["slug"]:
+            existing[info["slug"]] = (f, info)
+    fresh = {p["slug"]: p for p in feed_posts}
+    items = {}
+    for slug, (f, info) in existing.items():
+        items[slug] = dict(info)
+    for slug, p in fresh.items():
+        items[slug] = p
+    order = {}
+    for cat in list(CATEGORIES) + ["other"]:
+        group = sorted(
+            (i for i in items.values() if classify(i["title"]) == cat),
+            key=lambda i: i["published"],
+        )
+        base = OLDER_NOT_IN_REPO.get(cat, 0)
+        for n, i in enumerate(group, start=base + 1):
+            order[i["slug"]] = (cat, n)
+    changed = 0
+    for slug, i in items.items():
+        cat, n = order[slug]
+        name = f"{n:02d}-{i['date']}-{slug}.md" if cat in CATEGORIES else f"{i['date']}-{slug}.md"
+        target = POSTS_DIR / cat / name
+        if slug in fresh:
+            content = render(fresh[slug], cat, n)
+        else:
+            old_path = existing[slug][0]
+            content = with_series(old_path.read_text(encoding="utf-8"), cat, n)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if not target.exists() or target.read_text(encoding="utf-8") != content:
+            target.write_text(content, encoding="utf-8")
+            changed += 1
+        if slug in existing and existing[slug][0] != target and existing[slug][0].exists():
+            existing[slug][0].unlink()
+            changed += 1
+    return changed
 
 
 def read_front_matter(path):
@@ -152,16 +238,28 @@ def cell(s):
 
 
 def write_readme():
-    entries = []
-    for f in sorted(POSTS_DIR.glob("*.md"), reverse=True):
+    groups = {"salesforce": [], "devops": [], "other": []}
+    for f in sorted(POSTS_DIR.rglob("*.md"), reverse=True):
         m = read_front_matter(f)
         title = json.loads(m.get("title", '""'))
         tags = json.loads(m.get("tags", "[]") or "[]")
         tag_str = " ".join(f"`{t}`" for t in tags[:4])
-        entries.append(
-            f"| {f.name[:10]} | [{cell(title)}]({m.get('canonical_url', '')}) "
-            f"| {tag_str} | [Markdown](posts/{f.name}) |"
+        cat = f.parent.name
+        rel = f.relative_to(ROOT).as_posix()
+        serial = m.get("serial", "")
+        groups.setdefault(cat, []).append(
+            f"| {serial} | {f.name[3:13] if serial else f.name[:10]} "
+            f"| [{cell(title)}]({m.get('canonical_url', '')}) "
+            f"| {tag_str} | [Markdown]({rel}) |"
         )
+    head = "| # | Date | Title | Tags | Source |\n|---|------|-------|------|--------|\n"
+    sections = []
+    for cat, label in (("salesforce", "Salesforce Admin 30-Day Series"),
+                       ("devops", "DevOps & AWS Learning Notes")):
+        sections.append(f"## 📚 {label} ({len(groups[cat])} in this repo)\n\n" + head + "\n".join(groups[cat]))
+    if groups["other"]:
+        sections.append("## 📚 Other\n\n" + head + "\n".join(groups["other"]))
+    total = sum(len(v) for v in groups.values())
     content = f"""# 📝 DevOps & Salesforce Notes
 
 Hands-on articles on **Salesforce Administration**, **AWS**, **DevOps** (Docker, Kubernetes, Terraform, CI/CD) and **cloud security**, written by **Robin Sishodia** while learning in public.
@@ -174,14 +272,12 @@ Hands-on articles on **Salesforce Administration**, **AWS**, **DevOps** (Docker,
 Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](.github/workflows/sync-blog.yml)) runs whenever the feed file is updated and:
 
 1. Converts a committed copy of the blog RSS feed ([`feed/rss.xml`](feed/rss.xml)) with [`scripts/sync_hashnode.py`](scripts/sync_hashnode.py)
-2. Turns each post from HTML into Markdown and saves it in [`posts/`](posts/)
+2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-## 📚 All posts ({len(entries)})
+Total posts in this repo: {total}
 
-| Date | Title | Tags | Source |
-|------|-------|------|--------|
-""" + "\n".join(entries) + """
+""" + "\n\n".join(sections) + """
 
 <sub>This index is generated automatically. Edits here will be overwritten.</sub>
 """
@@ -200,7 +296,7 @@ def main():
     else:
         xml = fetch(FEED)
     posts = parse_feed(xml)
-    changed = sum(write_post(p) for p in posts)
+    changed = sync_files(posts)
     write_readme()
     print(f"Feed had {len(posts)} posts; {changed} new or updated.")
 
