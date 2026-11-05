@@ -118,7 +118,7 @@ def code_language(pre):
 
 
 def classify(title):
-    if re.search(r"Day \d+/120", title):
+    if re.search(r"Day \d+/120", title) and "120DaysOfAWS" not in title:
         return "salesforce-120"
     if re.search(r"From Operations to Salesforce", title, re.I):
         return "other"
