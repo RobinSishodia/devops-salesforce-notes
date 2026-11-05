@@ -40,6 +40,7 @@ CATEGORIES = {
     "salesforce": ("Salesforce Admin 30-Day Series", "Salesforce"),
     "devops": ("DevOps & AWS Learning Notes", "DevOps & AWS"),
     "salesforce-120": ("120 Days of Salesforce", "Salesforce 120"),
+    "aws-120": ("120 Days of AWS", "AWS 120"),
 }
 NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
@@ -118,7 +119,9 @@ def code_language(pre):
 
 
 def classify(title):
-    if re.search(r"Day \d+/120", title) and "120DaysOfAWS" not in title:
+    if "120DaysOfAWS" in title:
+        return "aws-120"
+    if re.search(r"Day \d+/120", title):
         return "salesforce-120"
     if re.search(r"From Operations to Salesforce", title, re.I):
         return "other"
@@ -241,7 +244,7 @@ def cell(s):
 
 
 def write_readme():
-    groups = {"salesforce": [], "devops": [], "salesforce-120": [], "other": []}
+    groups = {"salesforce": [], "devops": [], "salesforce-120": [], "aws-120": [], "other": []}
     for f in sorted(POSTS_DIR.rglob("*.md"), reverse=True):
         m = read_front_matter(f)
         title = json.loads(m.get("title", '""'))
@@ -259,7 +262,8 @@ def write_readme():
     sections = []
     for cat, label in (("salesforce", "Salesforce Admin 30-Day Series"),
                        ("devops", "DevOps & AWS Learning Notes"),
-                       ("salesforce-120", "120 Days of Salesforce")):
+                       ("salesforce-120", "120 Days of Salesforce"),
+                       ("aws-120", "120 Days of AWS")):
         sections.append(f"## 📚 {label} ({len(groups[cat])} in this repo)\n\n" + head + "\n".join(groups[cat]))
     if groups["other"]:
         sections.append("## 📚 Other\n\n" + head + "\n".join(groups["other"]))
@@ -276,7 +280,7 @@ Hands-on articles on **Salesforce Administration**, **AWS**, **DevOps** (Docker,
 Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](.github/workflows/sync-blog.yml)) runs whenever the feed file is updated and:
 
 1. Converts a committed copy of the blog RSS feed ([`feed/rss.xml`](feed/rss.xml)) with [`scripts/sync_hashnode.py`](scripts/sync_hashnode.py)
-2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/), [`posts/salesforce-120/`](posts/salesforce-120/) or [`posts/devops/`](posts/devops/), numbered by publish order within each series
+2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/), [`posts/salesforce-120/`](posts/salesforce-120/), [`posts/aws-120/`](posts/aws-120/) or [`posts/devops/`](posts/devops/), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
 Total posts in this repo: {total}
