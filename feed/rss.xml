@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 04 Nov 2026 13:27:55 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)]]></title><description><![CDATA[30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 04 Nov 2026 10:19:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/881dc5bf-2bb4-4863-9347-fb39dea83a15.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 05 Nov 2026 07:38:45 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)]]></title><description><![CDATA[Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 07:37:28 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6788cbb5-1103-471a-9597-f56d51c75604.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just click.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>What it holds</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Variable</strong></td>
+<td>A value</td>
+<td>Changes via Assignment</td>
+</tr>
+<tr>
+<td><strong>Constant</strong></td>
+<td>A fixed value</td>
+<td>Never changes</td>
+</tr>
+<tr>
+<td><strong>Formula</strong></td>
+<td>A calculated value</td>
+<td>Read-only, calculated live</td>
+</tr>
+<tr>
+<td><strong>Collection</strong></td>
+<td>A list of values or records</td>
+<td>Allow multiple values</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. Variable, Constant or Formula?</h3>
+<p><strong>Variables change through Assignment.</strong> Constants never change. Formulas calculate when they are used.</p>
+<blockquote>
+<p><strong>Tip:</strong> Need to change it? Use a variable.</p>
+</blockquote>
+<h3>2. What is a record variable?</h3>
+<p>One variable that <strong>holds a whole record</strong>. Read its fields as <code>{!recVar.Field}</code>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fill it with Get Records.</p>
+</blockquote>
+<h3>3. What is a collection variable?</h3>
+<p>A variable with <strong>Allow multiple values</strong> turned on. It holds a list you can loop over.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name it plural, like <code>contactList</code>.</p>
+</blockquote>
+<h3>4. What do the input and output settings do?</h3>
+<p><strong>Input lets a caller pass values in</strong> (a subflow, Apex or a URL). <strong>Output returns values</strong> to the caller.</p>
+<blockquote>
+<p><strong>Tip:</strong> Open only what you need.</p>
+</blockquote>
+<h3>5. What is $Record?</h3>
+<p>The <strong>record that triggered</strong> a record-triggered flow. <code>$Record__Prior</code> holds the old values on updates.</p>
+<blockquote>
+<p><strong>Tip:</strong> Compare old to new.</p>
+</blockquote>
+<h3>6. Text Template or Formula?</h3>
+<p><strong>Text Template builds readable text</strong> with merge fields. A Formula returns a calculated value.</p>
+<blockquote>
+<p><strong>Tip:</strong> Emails and screen messages: use a template.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A screen flow must show a 10% discount on an Opportunity."</strong></p>
+<ol>
+<li><strong>Get Records</strong> into an Opportunity variable</li>
+<li><strong>Formula:</strong> Amount x 0.1</li>
+<li><strong>Text Template:</strong> build the message</li>
+<li><strong>Show</strong> it on a screen, then <strong>Debug</strong></li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> and add a <strong>Get Records</strong> element for one Opportunity into a record variable.</li>
+<li>Add a <strong>Formula</strong> resource of type Currency: <code>{!oppRecord.Amount} * 0.1</code>.</li>
+<li>Add a <strong>Text Template</strong> that says "Discount: {!discountFormula}".</li>
+<li>Show the template in a <strong>Display Text</strong> component on a screen.</li>
+<li>Run <strong>Debug</strong> and check the value against the Opportunity amount.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Change</strong> = variable</li>
+<li><strong>Fixed</strong> = constant</li>
+<li><strong>Calculate</strong> = formula</li>
+<li><strong>Message</strong> = text template</li>
+<li><strong>List</strong> = collection</li>
+<li><strong>Trigger record</strong> = $Record</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Pick the right resource type.</li>
+<li>Use a Formula for any calculation.</li>
+<li>Open input and output with care.</li>
+<li>Name every resource clearly.</li>
+</ul>
+<p><strong>Next up, Day 2:</strong> Decision and Assignment elements.</p>
+<p><em>Part of #120DaysOfSalesforce. Which resource do you use most? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)]]></title><description><![CDATA[30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 04 Nov 2026 10:19:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/881dc5bf-2bb4-4863-9347-fb39dea83a15.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1735,97 +1836,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>What was your first deployment? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 16 done, 14 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Data Import Wizard vs Data Loader Cheat Sheet: Upsert, Limits and Admin Interview Q&A (Day 15/30)]]></title><description><![CDATA[Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-import-wizard-vs-data-loader-cheat-sheet-upsert-limits-and-admin-interview-q-a-day-15-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data loader]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 20 Oct 2026 10:52:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/83f2f388-eaa5-4655-a1d9-2937253063c8.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Two tools, one job. Pick by record volume, objects and whether you need to update or delete. This is one of the most common practical questions in a Salesforce admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Import Wizard</strong></td>
-<td>Browser tool for simple loads</td>
-<td>Up to 50,000 records</td>
-</tr>
-<tr>
-<td><strong>Data Loader</strong></td>
-<td>Desktop app for big jobs</td>
-<td>Up to 5 million records</td>
-</tr>
-<tr>
-<td><strong>Upsert</strong></td>
-<td>Update matches, insert the rest</td>
-<td>Matched by External ID</td>
-</tr>
-<tr>
-<td><strong>Export</strong></td>
-<td>Back up data before a load</td>
-<td>Export or Export All</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. Wizard vs Data Loader?</h3>
-<p>The Wizard is <strong>simple and browser-based</strong> for up to 50,000 records. Data Loader handles <strong>far larger volumes and more objects</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Size and object decide.</p>
-</blockquote>
-<h3>2. What is an upsert?</h3>
-<p>It <strong>updates records that match and inserts the rest</strong>, matching on the record ID or an External ID field.</p>
-<blockquote>
-<p><strong>Tip:</strong> External IDs avoid duplicates.</p>
-</blockquote>
-<h3>3. What can Data Loader do?</h3>
-<p><strong>Insert, update, upsert, delete, hard delete, export and export all</strong>, from the app or the command line.</p>
-<blockquote>
-<p><strong>Tip:</strong> Export All includes deleted rows.</p>
-</blockquote>
-<h3>4. How do you load related data?</h3>
-<p><strong>Load parents first</strong>, then load children using IDs or External IDs to link them to their parents.</p>
-<blockquote>
-<p><strong>Tip:</strong> Parents before children.</p>
-</blockquote>
-<h3>5. What do you check after a load?</h3>
-<p>Open the <strong>success and error files</strong>, fix the failed rows, and reload only those.</p>
-<blockquote>
-<p><strong>Tip:</strong> Keep the error file.</p>
-</blockquote>
-<h3>6. How do you avoid a bad load?</h3>
-<p><strong>Test in a sandbox</strong>, export a backup first, and check validation rules and automation that will fire.</p>
-<blockquote>
-<p><strong>Tip:</strong> Back up before you load.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Load 200,000 contacts from a CSV without duplicates. How do you do it?"</strong></p>
-<ol>
-<li><strong>Export</strong> a backup of existing contacts</li>
-<li><strong>Clean</strong> the CSV and add an External ID</li>
-<li><strong>Run</strong> Data Loader with upsert</li>
-<li><strong>Check</strong> the success and error files</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Wizard</strong> = up to 50,000 records</li>
-<li><strong>Loader</strong> = up to 5 million</li>
-<li><strong>Upsert</strong> = update or insert</li>
-<li><strong>External ID</strong> = match key</li>
-<li><strong>Parents</strong> = load first</li>
-<li><strong>Error file</strong> = fix and reload</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Clean the data before loading</li>
-<li>Test in a sandbox first</li>
-<li>Export a backup beforehand</li>
-<li>Keep success and error files</li>
-</ul>
-<hr />
-<p><strong>What was your biggest data load? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 15 done, 15 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
