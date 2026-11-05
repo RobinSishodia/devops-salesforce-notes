@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-reports-dashboards-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fb51ec5-3bd6-4a7e-8d49-266df22d7b91.png
 tags: ["Salesforce", "Salesforce Admin", "Reports  Dashboards"]
 brief: "Reports answer the question, dashboards show the answer. Interviewers love this topic because it tests whether you can turn raw data into something a…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 6
 ---
 

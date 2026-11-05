@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/a-comprehensive-guide-to-infra
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733853054969/434cc68d-71bf-4c3d-b595-d6ccd1434fcf.png
 tags: ["DevOps", "InfrastructureAsCode", "Terraform", "Ansible", "IaC", "Automation", "CloudComputing", "DevOpsTools", "ConfigurationManagement", "TechInsights", "ModernIT", "DevOpsPractices", "Innovation"]
 brief: "Infrastructure as Code (IaC) has revolutionized the way organizations handle their IT infrastructure. By automating and turning infrastructure setup and management into code, IaC enhances consistency, scalability, and efficiency. Two of the most wide..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 25
 ---
 

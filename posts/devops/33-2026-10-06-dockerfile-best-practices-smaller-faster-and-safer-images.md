@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smal
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/44a6e4c1-f2f0-4211-92b2-e42fc15d29e8.png
 tags: ["Docker", "containers", "Devops", "best practices"]
 brief: "Practical Dockerfile best practices: multi-stage builds, layer caching, small base images, non-root users and .dockerignore, with examples."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 33
 ---
 

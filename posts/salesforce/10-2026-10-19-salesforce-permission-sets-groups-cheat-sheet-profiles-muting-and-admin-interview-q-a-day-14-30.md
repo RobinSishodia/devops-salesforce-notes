@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-permission-sets-gro
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ca65621a-a9c9-4d5f-b797-87005f208713.png
 tags: ["Salesforce", "Salesforce Admin", "Permission Sets"]
 brief: "One profile, many permission sets. Start with minimum access, then add only what each person needs. It is the access-control answer interviewers expect…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 10
 ---
 

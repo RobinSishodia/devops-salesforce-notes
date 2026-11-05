@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-admin-interview-fin
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/881dc5bf-2bb4-4863-9347-fb39dea83a15.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 26
 ---
 

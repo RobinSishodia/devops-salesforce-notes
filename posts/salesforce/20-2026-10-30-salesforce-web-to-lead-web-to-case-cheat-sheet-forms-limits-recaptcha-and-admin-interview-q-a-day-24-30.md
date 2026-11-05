@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d1f9409c-7684-4eeb-b7d8-360d04e53fae.png
 tags: ["Salesforce", "Salesforce Admin", "crm"]
 brief: "Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 20
 ---
 

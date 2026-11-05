@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/lookup-vs-master-detail-salesf
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d162fe54-2745-411e-8e47-8c5796d1ed23.png
 tags: ["Salesforce", "Salesforce Admin"]
 brief: "Relationships are the backbone of every Salesforce data model, and interviewers love them. Almost every question comes down to one idea: can the child…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 5
 ---
 

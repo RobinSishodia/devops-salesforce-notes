@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/gitlab-cicd-pipelines-automate
 cover_image: https://cdn.hashnode.com/res/hashnode/image/stock/unsplash/ZV_64LdGoao/upload/f1f476bc78faf6d1253ad81d1238cd29.jpeg
 tags: ["GitLab", "CICD", "DevOps", "Automation", "SoftwareDevelopment", "TechBlog", "Productivity", "BuildTestDeploy"]
 brief: "GitLab CI/CD Pipelines: Automate Everything In the fast-paced world of DevOps, automation is essential for achieving efficiency, consistency, and speed. GitLab CI/CD pipelines provide a powerful framework to automate the whole software delivery proce..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 17
 ---
 

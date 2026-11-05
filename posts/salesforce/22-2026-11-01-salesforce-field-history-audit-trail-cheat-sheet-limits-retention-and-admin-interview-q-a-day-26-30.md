@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-field-history-audit
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6dd8c50d-5479-4ae9-8899-cdb33fbf022d.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview. It records the old and new values of selected…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 22
 ---
 

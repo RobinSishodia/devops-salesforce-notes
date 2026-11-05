@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-security-model-chea
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3deb4392-f75a-4e09-ab55-b0d29d266241.png
 tags: ["Salesforce", "Salesforce Admin"]
 brief: "Security questions come up in almost every Salesforce Admin interview. The good news: the whole model fits in one picture. Think of it as four locks on…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 3
 ---
 

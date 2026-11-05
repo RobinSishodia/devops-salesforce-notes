@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7a25a61a-f4e4-44af-93cf-b294a5752b2b.png
 tags: ["Salesforce", "Salesforce Admin", "data-quality"]
 brief: "Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 14
 ---
 

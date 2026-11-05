@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/enhance-devops-efficiency-with
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733507714792/addd7e30-8445-4ea0-9228-d6661be65d3c.jpeg
 tags: ["DevOps", "Jenkins", "CICD", "PipelineAutomation", "SharedLibraries", "Automation", "SoftwareDevelopment", "TechLearning", "CloudComputing", "InfrastructureAsCode", "DevOpsTools", "ContinuousIntegration", "ContinuousDelivery", "CodingBestPractices", "TechInsights", "EfficiencyInDevOps", "TeamCollaboration", "ITInnovation", "BuildBetterPipelines"]
 brief: "In the dynamic world of DevOps, automation is the backbone of efficient and repeatable processes. Jenkins, a leading open-source automation server, has long been a favorite among DevOps practitioners. But as pipelines grow in complexity and teams sca..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 20
 ---
 

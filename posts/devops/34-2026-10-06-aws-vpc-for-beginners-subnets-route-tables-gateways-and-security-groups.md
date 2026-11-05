@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fbe0394d-2e2e-4c5d-83ee-badaeb008838.png
 tags: ["AWS", "networking", "vpc", "Cloud"]
 brief: "Beginner's guide to AWS VPC: CIDR blocks, public and private subnets, internet and NAT gateways, route tables, security groups and NACLs."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 34
 ---
 

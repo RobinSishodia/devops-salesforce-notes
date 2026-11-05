@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/unlocking-the-power-of-version
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733597561934/8059f2ec-d07f-4c0a-a9e4-9f3ff44e144b.png
 tags: ["Git", "VersionControl", "DevOps", "CICD", "ProjectManagement", "TechLearning", "Collaboration", "CodingBestPractices", "SoftwareDevelopment", "TechTips", "GitCommands", "TechCareer"]
 brief: "In the software development and project management world, version control is a must-have tool. It allows teams to work together smoothly, keep track of changes, and manage code efficiently, helping projects stay organized and on schedule. Whether you..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 21
 ---
 

@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/docker-cli-cheat-sheet-essenti
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1735035924000/23174c08-66e8-431f-8cff-fe671d635bb7.webp
 tags: ["Docker", "DevOps", "Containerization", "DockerCLI", "TechTips", "DevOpsEngineer", "SoftwareDevelopment", "Containers", "CloudComputing", "TechCommunity"]
 brief: "Master Docker CLI commands to manage containers efficiently—a cheat sheet for developers and DevOps engineers"
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 29
 ---
 

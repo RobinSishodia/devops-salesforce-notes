@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e937e131-3a74-4416-90b4-87c5268274e5.png
 tags: ["Salesforce", "Salesforce Admin", "configuration"]
 brief: "Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 18
 ---
 

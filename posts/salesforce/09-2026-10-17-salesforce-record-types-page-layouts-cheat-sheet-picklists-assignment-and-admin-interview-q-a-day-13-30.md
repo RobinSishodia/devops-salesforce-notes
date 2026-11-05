@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-record-types-page-l
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/60506fb3-c59b-48de-8457-eb20f9402e04.png
 tags: ["Salesforce", "Salesforce Admin", "record types"]
 brief: "One object, many teams. Record types and page layouts show each team the fields, values and process it needs, and they come up in almost every admin…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 9
 ---
 

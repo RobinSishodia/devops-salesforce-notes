@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/advanced-git-commands-and-best
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733881037034/770e97e0-d2fe-42b5-a6e0-99f67cc434cd.png
 tags: ["Git", "VersionControl", "DevOps", "SoftwareDevelopment", "BestPractices", "AdvancedGit", "CodingTips", "GitCommands", "TechBlog", "DevLife", "DeveloperTools"]
 brief: "In today's software development world, version control systems are absolutely essential. Git, a distributed version control system, has become the favorite tool for developers everywhere. It offers powerful features to manage code changes, work toget..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 24
 ---
 

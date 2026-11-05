@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/how-aws-lambda-eases-applicati
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733336058695/64f48916-8dd2-4f62-9060-a034d69c8a92.png
 tags: ["Serverless", "DevOps", "AWSLambda", "CloudComputing", "Automation", "SoftwareDevelopment", "TechInnovation", "CICD", "Scalability"]
 brief: "Exploring Serverless DevOps: How to Deploy Applications with AWS Lambda In today's fast-paced world of application development, the need for agility and efficiency is greater than ever. Serverless computing has become a game-changer in this space. AW..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 18
 ---
 

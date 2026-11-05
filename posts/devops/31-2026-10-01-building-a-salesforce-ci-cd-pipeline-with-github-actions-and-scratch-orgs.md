@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/building-a-salesforce-ci-cd-pi
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2c6b9ae1-df24-4a14-a975-a9660b8dc57d.png
 tags: ["Salesforce", "Devops", "github-actions", "ci-cd", "salesforce development"]
 brief: "How I built a Salesforce metadata CI/CD pipeline with GitHub Actions and scratch orgs that deploys and runs Apex tests on every pull request."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 31
 ---
 

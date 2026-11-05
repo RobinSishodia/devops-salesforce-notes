@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-files-attachments-c
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/84c736a3-f1b9-49a0-ae8e-c06b48469e00.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview. Files are modern: versions, sharing and…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 25
 ---
 

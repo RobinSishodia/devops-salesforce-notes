@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-expla
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a390ec75-d149-40f3-92ab-70bff4950d11.png
 tags: ["Salesforce", "Salesforce Admin", "Devops", "Testing"]
 brief: "The four Salesforce sandbox types compared: storage, data, refresh intervals and which one to use for development, testing, UAT and training."
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 2
 ---
 

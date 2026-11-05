@@ -5,8 +5,8 @@ canonical_url: https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-rol
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0099bc68-809e-41e0-993c-4f482644f64c.png
 tags: ["AWS", "IAM", "120daysofaws", "cloudsecurity", "Devops"]
 brief: "On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and…"
-series: "120 Days of AWS"
-serial: 3
+series: "DevOps & AWS"
+serial: 39
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2). This is an automated backup; read and comment on the blog.

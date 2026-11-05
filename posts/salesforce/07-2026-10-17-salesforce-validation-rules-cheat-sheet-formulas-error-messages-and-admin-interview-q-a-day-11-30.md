@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-validation-rules-ch
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/10a66ceb-f74e-4c80-a624-63fc435d2002.png
 tags: ["Salesforce", "Salesforce Admin", "validation-rules"]
 brief: "Clean data starts at the door. Validation rules decide what Salesforce lets in, and what it turns away. They are one of the most asked-about admin topics…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 7
 ---
 

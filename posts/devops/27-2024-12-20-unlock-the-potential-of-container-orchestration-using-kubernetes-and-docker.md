@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/unlock-the-potential-of-contai
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1734676222189/ba3143c3-cb71-4bfd-bdf6-c81aaff4c3f7.jpeg
 tags: ["DevOps", "Kubernetes", "Docker", "CloudComputing", "ContainerOrchestration", "TechInnovation", "ITInfrastructure", "Automation", "OpenSource", "Technology", "DevOpsEngineer"]
 brief: "Docker and Kubernetes revolutionize software development with efficient container orchestration, scalable deployment, and robust DevOps practices"
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 27
 ---
 

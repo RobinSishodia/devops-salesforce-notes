@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/the-ultimate-guide-to-easy-ec2
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1732943268257/f63754c0-1668-4d8f-b579-e7aab152145c.jpeg
 tags: ["AWS", "EC2", "CloudComputing", "DevOps", "CloudSecurity", "Technology", "CloudInfrastructure", "TechTips", "SSH", "SecureCommunication", "ITAutomation", "CloudEngineering"]
 brief: "In the ever-evolving world of cloud computing, Amazon Web Services (AWS) stands out as a leader, offering a broad array of services that help organizations easily build, deploy, and manage scalable applications. Among these services, Amazon Elastic C..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 16
 ---
 

@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarch
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a5300f2e-4e36-4691-9ed1-964351e72b95.png
 tags: ["Salesforce", "Salesforce Admin", "Security"]
 brief: "Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 16
 ---
 

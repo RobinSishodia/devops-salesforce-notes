@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3f10720e-03d9-4134-bde3-75ae30fe3eba.png
 tags: ["AWS", "IAM", "cloud security", "Devops"]
 brief: "A beginner-friendly guide to AWS IAM: users, groups, roles, policies, least privilege and the mistakes to avoid."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 32
 ---
 

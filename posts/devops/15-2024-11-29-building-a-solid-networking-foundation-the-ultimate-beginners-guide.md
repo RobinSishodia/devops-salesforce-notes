@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/building-a-solid-networking-fo
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1732919556725/718137b9-25bf-4c23-93bf-8f75f5afec9f.jpeg
 tags: ["ComputerNetworking", "NetworkingBasics", "ITInfrastructure", "NetworkingDevices", "OSIModel", "TCPIP", "LAN", "WAN", "NetworkSecurity", "NetworkProtocols", "VirtualNetworking", "NetworkingTools", "TechEducation", "BeginnerGuide", "TechSkills", "NetworkSetup", "Networking101", "CyberSecurity", "HandsOnLearning", "TechCommunity", "TechCareer", "NetworkManagement", "DataCommunication"]
 brief: "Embarking on Your Journey into Computer Networking: A Beginner's Guide In our digital age, computer networking is crucial for connecting devices and allowing communication across great distances. Whether you're just starting out in this field or a pr..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 15
 ---
 

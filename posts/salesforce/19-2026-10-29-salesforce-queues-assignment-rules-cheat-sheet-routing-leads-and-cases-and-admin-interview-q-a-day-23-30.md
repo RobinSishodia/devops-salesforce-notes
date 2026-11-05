@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-r
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/5331a4e9-8be8-49b3-bad6-90d297908cef.png
 tags: ["Salesforce", "Salesforce Admin", "crm"]
 brief: "Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 19
 ---
 

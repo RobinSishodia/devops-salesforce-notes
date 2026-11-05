@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/mastering-kubernetes-a-step-by
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1736955236741/1c0e8b67-d314-4a1d-ab2e-5f7985de6d36.png
 tags: ["Kubernetes", "DevOps", "ContainerOrchestration", "Troubleshooting", "CloudComputing", "TechTips", "DeveloperCommunity", "Innovation"]
 brief: "Kubernetes Pod Troubleshooting Tactics Sequence Kubernetes is a robust container orchestration platform that helps keep applications highly available and…"
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 30
 ---
 

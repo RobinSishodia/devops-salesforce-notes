@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/comprehensive-guide-to-top-dev
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733852330096/fe21b07b-d99f-4f40-84a9-2c0c5fd80dbf.jpeg
 tags: ["DevOps", "Monitoring", "Logging", "Prometheus", "Grafana", "ELKStack", "DevOpsTools", "TechInnovation", "SystemReliability", "CloudComputing", "TechBlog", "DevOpsEngineer"]
 brief: "In DevOps, keeping an eye on systems and recording their activities is vital for making sure everything runs smoothly and efficiently. These tools give us a clear view of our infrastructure, applications, and workflows, helping teams spot and fix pro..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 26
 ---
 

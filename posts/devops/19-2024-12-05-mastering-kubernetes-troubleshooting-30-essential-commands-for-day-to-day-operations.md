@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/mastering-kubernetes-troublesh
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733422485727/a0b240c8-5d78-48de-baef-5e05406894ed.png
 tags: ["Kubernetes", "DevOps", "CloudComputing", "Troubleshooting", "Automation", "TechTips", "CICD", "OpenSource", "ContainerOrchestration", "InfrastructureAsCode", "K8sInsights", "TechInnovation", "ITOperations", "ClusterManagement", "LearnDevOps"]
 brief: "Kubernetes, the powerful container orchestration platform, is the backbone of modern cloud-native applications. However, its complexity can be overwhelming when troubleshooting issues. Whether you're dealing with pod failures, network issues, or scal..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 19
 ---
 

@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-data-backup-recover
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e3eb421f-cf0a-4d84-995b-484dee579c72.png
 tags: ["Salesforce", "Salesforce Admin", "Backup"]
 brief: "Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview. A Setup…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 17
 ---
 

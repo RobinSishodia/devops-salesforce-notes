@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-se
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/420c329a-7a36-4064-bbef-1ffa1c4d0628.png
 tags: ["Salesforce", "Salesforce Admin", "Devops"]
 brief: "Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 12
 ---
 

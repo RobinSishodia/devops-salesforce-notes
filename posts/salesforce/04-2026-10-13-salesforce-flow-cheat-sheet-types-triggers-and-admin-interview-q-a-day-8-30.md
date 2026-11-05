@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-flow-cheat-sheet-ty
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb5a0a21-2efe-429d-a1da-6e43dd949dff.png
 tags: ["Salesforce", "Salesforce Admin", "flow"]
 brief: "Flow is now the one automation tool every Salesforce Admin is expected to know. Interviewers usually ask the same few things: which type, which trigger…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 4
 ---
 

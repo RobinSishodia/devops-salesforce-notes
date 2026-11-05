@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/jenkins-vs-gitlab-vs-circleci-
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733850695678/2cea740a-ef14-4146-aab7-e35c0bb79acf.jpeg
 tags: ["DevOps", "CICD", "Jenkins", "GitLab", "CircleCI", "SoftwareEngineering", "Automation", "TechBlogging", "ContinuousIntegration", "ContinuousDeployment", "DevOpsTools", "SoftwareDevelopment", "CloudComputing", "TechInnovation", "BuildAndDeploy   Lets build faster", "better", "and smarter"]
 brief: "Continuous Integration and Continuous Deployment (CI/CD) tools play a crucial role in the DevOps world. They help automate the build, testing, and deployment processes, making software delivery faster and more reliable. Among the many CI/CD tools out..."
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 23
 ---
 

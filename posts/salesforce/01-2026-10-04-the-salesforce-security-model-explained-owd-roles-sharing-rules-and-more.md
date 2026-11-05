@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/the-salesforce-security-model-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6f286a06-ea1b-4783-a01f-cc2392918012.png
 tags: ["Salesforce", "Salesforce Admin", "Security", "crm"]
 brief: "A clear walkthrough of Salesforce's layered security model: org, object, field and record-level access, with OWD, role hierarchy and sharing rules."
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 1
 ---
 

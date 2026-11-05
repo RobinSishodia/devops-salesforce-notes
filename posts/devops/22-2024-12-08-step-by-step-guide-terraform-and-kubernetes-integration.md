@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/step-by-step-guide-terraform-a
 cover_image: https://cdn.hashnode.com/res/hashnode/image/upload/v1733681922462/ec0416e4-c1a4-463c-a4d2-cf95146e8a45.png
 tags: ["DevOps", "Terraform", "Kubernetes", "CloudComputing", "IaC", "InfrastructureAutomation", "ContainerOrchestration", "CICD", "TechLearning", "DevOpsTools", "InfrastructureAsCode", "CloudInfrastructure", "Automation", "TechTips", "CodingBestPractices"]
 brief: "In the fast-changing world of DevOps, two standout tools have become incredibly popular: Terraform and Kubernetes. Terraform makes managing infrastructure as code (IaC) easier, while Kubernetes handle"
-series: "DevOps & AWS Learning Notes"
+series: "DevOps & AWS"
 serial: 22
 ---
 

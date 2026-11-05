@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-approval-processes-
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ffa00b3a-6821-43d9-91bf-e3b9a1a89d05.png
 tags: ["Salesforce", "Salesforce Admin", "Approval Process"]
 brief: "Some changes need a second pair of eyes. Approval processes route a record to the right person before it moves on, and they come up in almost every admin…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 8
 ---
 

@@ -5,7 +5,7 @@ canonical_url: https://sishodiarobin.hashnode.dev/salesforce-email-templates-ale
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/546df1ed-ae1c-4785-b5f6-7fa95d7567bf.png
 tags: ["Salesforce", "Salesforce Admin", "Salesforce Flow"]
 brief: "Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a…"
-series: "Salesforce Admin 30-Day Series"
+series: "Salesforce"
 serial: 13
 ---
 
