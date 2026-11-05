@@ -5,8 +5,8 @@ canonical_url: https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4f4a2a19-6c35-4ba1-bcee-b813577c6287.png
 tags: ["AWS", "IAM", "120daysofaws", "cloudsecurity", "Devops"]
 brief: "On Day 1 I used an AWS managed policy (ReadOnlyAccess). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3…"
-series: "DevOps & AWS Learning Notes"
-serial: 37
+series: "120 Days of Salesforce"
+serial: 2
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch). This is an automated backup; read and comment on the blog.

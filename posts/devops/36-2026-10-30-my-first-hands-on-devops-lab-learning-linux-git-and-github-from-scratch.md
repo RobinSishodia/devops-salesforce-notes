@@ -6,7 +6,7 @@ cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/84
 tags: []
 brief: "When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But…"
 series: "DevOps & AWS Learning Notes"
-serial: 38
+serial: 36
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch). This is an automated backup; read and comment on the blog.

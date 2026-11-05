@@ -10,7 +10,7 @@ Hands-on articles on **Salesforce Administration**, **AWS**, **DevOps** (Docker,
 Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](.github/workflows/sync-blog.yml)) runs whenever the feed file is updated and:
 
 1. Converts a committed copy of the blog RSS feed ([`feed/rss.xml`](feed/rss.xml)) with [`scripts/sync_hashnode.py`](scripts/sync_hashnode.py)
-2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/), numbered by publish order within each series
+2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/), [`posts/salesforce-120/`](posts/salesforce-120/) or [`posts/devops/`](posts/devops/), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
 Total posts in this repo: 51
@@ -46,14 +46,12 @@ Total posts in this repo: 51
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS Learning Notes (24 in this repo)
+## 📚 DevOps & AWS Learning Notes (22 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
-| 38 | 2026-10-30 | [My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch) |  | [Markdown](posts/devops/38-2026-10-30-my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch.md) |
-| 37 | 2026-10-30 | [Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/37-2026-10-30-day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch.md) |
-| 36 | 2026-10-30 | [Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2](https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2) |  | [Markdown](posts/devops/36-2026-10-30-building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2.md) |
-| 35 | 2026-10-29 | [Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/devops/35-2026-10-29-day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws.md) |
+| 36 | 2026-10-30 | [My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch) |  | [Markdown](posts/devops/36-2026-10-30-my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch.md) |
+| 35 | 2026-10-30 | [Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2](https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2) |  | [Markdown](posts/devops/35-2026-10-30-building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2.md) |
 | 34 | 2026-10-06 | [AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups](https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups) | `AWS` `networking` `vpc` `Cloud` | [Markdown](posts/devops/34-2026-10-06-aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups.md) |
 | 33 | 2026-10-06 | [Dockerfile Best Practices: Smaller, Faster and Safer Images](https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images) | `Docker` `containers` `Devops` `best practices` | [Markdown](posts/devops/33-2026-10-06-dockerfile-best-practices-smaller-faster-and-safer-images.md) |
 | 32 | 2026-10-03 | [AWS IAM Explained: Users, Groups, Roles and Policies for Beginners](https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners) | `AWS` `IAM` `cloud security` `Devops` | [Markdown](posts/devops/32-2026-10-03-aws-iam-explained-users-groups-roles-and-policies-for-beginners.md) |
@@ -74,6 +72,13 @@ Total posts in this repo: 51
 | 17 | 2024-12-03 | [GitLab CI/CD Pipelines: Automate Everything and Streamline Your DevOps Workflows](https://sishodiarobin.hashnode.dev/gitlab-cicd-pipelines-automate-everything-and-streamline-your-devops-workflows) | `GitLab` `CICD` `DevOps` `Automation` | [Markdown](posts/devops/17-2024-12-03-gitlab-cicd-pipelines-automate-everything-and-streamline-your-devops-workflows.md) |
 | 16 | 2024-12-02 | [The Ultimate Guide to Easy EC2 Connectivity: SSH Access and Secure Communication](https://sishodiarobin.hashnode.dev/the-ultimate-guide-to-easy-ec2-connectivity-ssh-access-and-secure-communication) | `AWS` `EC2` `CloudComputing` `DevOps` | [Markdown](posts/devops/16-2024-12-02-the-ultimate-guide-to-easy-ec2-connectivity-ssh-access-and-secure-communication.md) |
 | 15 | 2024-11-29 | [Building a Solid Networking Foundation: The Ultimate Beginner's Guide🌐💻🔌](https://sishodiarobin.hashnode.dev/building-a-solid-networking-foundation-the-ultimate-beginners-guide) | `ComputerNetworking` `NetworkingBasics` `ITInfrastructure` `NetworkingDevices` | [Markdown](posts/devops/15-2024-11-29-building-a-solid-networking-foundation-the-ultimate-beginners-guide.md) |
+
+## 📚 120 Days of Salesforce (2 in this repo)
+
+| # | Date | Title | Tags | Source |
+|---|------|-------|------|--------|
+| 2 | 2026-10-30 | [Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/salesforce-120/02-2026-10-30-day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch.md) |
+| 1 | 2026-10-29 | [Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/salesforce-120/01-2026-10-29-day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws.md) |
 
 ## 📚 Other
 
