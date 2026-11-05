@@ -5,8 +5,8 @@ canonical_url: https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the
 cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/12ed922d-565e-4dfd-a0e2-dba39e1b9a3d.png
 tags: ["AWS", "IAM", "cloudsecurity", "120daysofaws", "Devops"]
 brief: "Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…"
-series: "120 Days of Salesforce"
-serial: 1
+series: "DevOps & AWS Learning Notes"
+serial: 35
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws). This is an automated backup; read and comment on the blog.

@@ -6,7 +6,7 @@ cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/67
 tags: ["Salesforce", "Salesforce Admin", "flow"]
 brief: "Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just…"
 series: "120 Days of Salesforce"
-serial: 3
+serial: 1
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120). This is an automated backup; read and comment on the blog.
