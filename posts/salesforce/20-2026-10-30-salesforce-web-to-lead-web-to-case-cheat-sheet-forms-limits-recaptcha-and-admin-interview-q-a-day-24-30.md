@@ -2,7 +2,7 @@
 title: "Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)"
 date: 2026-10-30T17:30:07+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d1f9409c-7684-4eeb-b7d8-360d04e53fae.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/aabff6a8-1b79-4db4-9187-24ee06ea3348.png
 tags: ["Salesforce", "Salesforce Admin", "crm"]
 brief: "Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…"
 series: "Salesforce"

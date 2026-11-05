@@ -2,7 +2,7 @@
 title: "Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)"
 date: 2026-11-02T20:05:38+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0455a106-ca61-489c-b5ed-66d38466f4b9.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b65504d9-0be5-4557-9244-c265f4badd36.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…"
 series: "Salesforce"

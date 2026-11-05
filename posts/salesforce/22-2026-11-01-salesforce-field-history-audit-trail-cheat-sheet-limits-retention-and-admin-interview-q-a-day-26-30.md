@@ -2,7 +2,7 @@
 title: "Salesforce Field History & Audit Trail Cheat Sheet: Limits, Retention, and Admin Interview Q&A (Day 26/30)"
 date: 2026-11-01T17:53:48+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6dd8c50d-5479-4ae9-8899-cdb33fbf022d.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/106222a6-ae4f-417a-83d5-2aa14a45688d.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview. It records the old and new values of selected…"
 series: "Salesforce"

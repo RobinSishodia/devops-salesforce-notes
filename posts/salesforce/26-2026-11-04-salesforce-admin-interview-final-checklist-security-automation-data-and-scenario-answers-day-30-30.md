@@ -2,7 +2,7 @@
 title: "Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)"
 date: 2026-11-04T10:19:34+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/881dc5bf-2bb4-4863-9347-fb39dea83a15.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/f340500a-5089-42ad-a5b9-b331e38beed1.png
 tags: ["Salesforce", "crm", "interview questions"]
 brief: "30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…"
 series: "Salesforce"

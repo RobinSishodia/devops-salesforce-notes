@@ -2,7 +2,7 @@
 title: "Salesforce Data Backup & Recovery Cheat Sheet: Data Export, Recycle Bin and Admin Interview Q&A (Day 21/30)"
 date: 2026-10-27T13:39:21+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e3eb421f-cf0a-4d84-995b-484dee579c72.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7ea118c9-af7d-4a81-b20e-2aefd08e1d4b.png
 tags: ["Salesforce", "Salesforce Admin", "Backup"]
 brief: "Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview. A Setup…"
 series: "Salesforce"

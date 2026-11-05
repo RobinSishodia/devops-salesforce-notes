@@ -2,7 +2,7 @@
 title: "Salesforce Duplicate & Matching Rules Cheat Sheet: Block, Alert, Merge and Admin Interview Q&A (Day 18/30)"
 date: 2026-10-23T18:15:36+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7a25a61a-f4e4-44af-93cf-b294a5752b2b.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb6bdff2-77ee-48a0-9b74-8d1b77ce4700.png
 tags: ["Salesforce", "Salesforce Admin", "data-quality"]
 brief: "Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…"
 series: "Salesforce"

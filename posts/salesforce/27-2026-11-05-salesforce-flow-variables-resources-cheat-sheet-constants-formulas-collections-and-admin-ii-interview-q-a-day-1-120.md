@@ -2,7 +2,7 @@
 title: "Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)"
 date: 2026-11-05T07:37:28+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6788cbb5-1103-471a-9597-f56d51c75604.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c32c2d2a-aa56-4236-a810-15453c5ed41e.png
 tags: ["Salesforce", "Salesforce Admin", "flow"]
 brief: "Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just…"
 series: "Salesforce"

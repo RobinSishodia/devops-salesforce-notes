@@ -2,11 +2,11 @@
 title: "My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch"
 date: 2026-10-30T23:50:49+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/844def38-929e-4570-845f-6b5cd296da9d.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/58e0c24b-1afb-4b7e-8bcc-daddd4609c1a.png
 tags: []
 brief: "When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But…"
 series: "DevOps & AWS"
-serial: 38
+serial: 40
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch). This is an automated backup; read and comment on the blog.

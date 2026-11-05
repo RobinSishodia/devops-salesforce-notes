@@ -2,7 +2,7 @@
 title: "Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)"
 date: 2026-10-26T14:38:08+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a5300f2e-4e36-4691-9ed1-964351e72b95.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0e16dd0f-a32b-4948-9fe1-0034cf505626.png
 tags: ["Salesforce", "Salesforce Admin", "Security"]
 brief: "Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…"
 series: "Salesforce"

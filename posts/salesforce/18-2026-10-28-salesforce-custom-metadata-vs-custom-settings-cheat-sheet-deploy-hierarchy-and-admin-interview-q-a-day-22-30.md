@@ -2,7 +2,7 @@
 title: "Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)"
 date: 2026-10-28T13:36:46+00:00
 canonical_url: https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e937e131-3a74-4416-90b4-87c5268274e5.png
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7b09c901-daf9-4482-b387-71b738004b83.png
 tags: ["Salesforce", "Salesforce Admin", "configuration"]
 brief: "Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…"
 series: "Salesforce"

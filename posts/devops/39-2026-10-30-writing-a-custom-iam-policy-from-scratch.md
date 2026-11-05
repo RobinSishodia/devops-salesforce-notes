@@ -1,15 +1,15 @@
 ---
-title: "Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch"
+title: "Writing a Custom IAM Policy from Scratch"
 date: 2026-10-30T20:48:22+00:00
-canonical_url: https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/bd184eba-0a57-4ac6-bd43-434515088554.png
+canonical_url: https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a30d9c19-0b7d-4523-8d78-a177bb14eb30.png
 tags: ["AWS", "IAM", "120daysofaws", "cloudsecurity", "Devops"]
 brief: "On Day 1 I used an AWS managed policy (ReadOnlyAccess). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3…"
 series: "DevOps & AWS"
-serial: 37
+serial: 39
 ---
 
-> Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch). This is an automated backup; read and comment on the blog.
+> Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch). This is an automated backup; read and comment on the blog.
 
 On Day 1 I used an AWS managed policy (`ReadOnlyAccess`). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3 bucket and nothing else. That's least privilege in practice.
 

@@ -1,15 +1,15 @@
 ---
-title: "Day 3/120 – #120DaysOfAWS: IAM Roles and Temporary Credentials for EC2"
+title: "IAM Roles and Temporary Credentials for EC2"
 date: 2026-11-05T08:24:48+00:00
-canonical_url: https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2
-cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0099bc68-809e-41e0-993c-4f482644f64c.png
+canonical_url: https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2
+cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c1fe1f46-8de5-4d5f-a434-071e901466b2.png
 tags: ["AWS", "IAM", "120daysofaws", "cloudsecurity", "Devops"]
 brief: "On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and…"
 series: "DevOps & AWS"
-serial: 39
+serial: 42
 ---
 
-> Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2). This is an automated backup; read and comment on the blog.
+> Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2). This is an automated backup; read and comment on the blog.
 
 On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and apps, it should be a **role**, so nothing long-lived ever sits on the machine.
 
