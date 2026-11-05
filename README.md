@@ -13,7 +13,7 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/), [`posts/salesforce-120/`](posts/salesforce-120/) or [`posts/devops/`](posts/devops/), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 51
+Total posts in this repo: 52
 
 ## 📚 Salesforce Admin 30-Day Series (26 in this repo)
 
@@ -73,10 +73,11 @@ Total posts in this repo: 51
 | 16 | 2024-12-02 | [The Ultimate Guide to Easy EC2 Connectivity: SSH Access and Secure Communication](https://sishodiarobin.hashnode.dev/the-ultimate-guide-to-easy-ec2-connectivity-ssh-access-and-secure-communication) | `AWS` `EC2` `CloudComputing` `DevOps` | [Markdown](posts/devops/16-2024-12-02-the-ultimate-guide-to-easy-ec2-connectivity-ssh-access-and-secure-communication.md) |
 | 15 | 2024-11-29 | [Building a Solid Networking Foundation: The Ultimate Beginner's Guide🌐💻🔌](https://sishodiarobin.hashnode.dev/building-a-solid-networking-foundation-the-ultimate-beginners-guide) | `ComputerNetworking` `NetworkingBasics` `ITInfrastructure` `NetworkingDevices` | [Markdown](posts/devops/15-2024-11-29-building-a-solid-networking-foundation-the-ultimate-beginners-guide.md) |
 
-## 📚 120 Days of Salesforce (2 in this repo)
+## 📚 120 Days of Salesforce (3 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 3 | 2026-11-05 | [Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)](https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120) | `Salesforce` `Salesforce Admin` `flow` | [Markdown](posts/salesforce-120/03-2026-11-05-salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120.md) |
 | 2 | 2026-10-30 | [Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/salesforce-120/02-2026-10-30-day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch.md) |
 | 1 | 2026-10-29 | [Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/salesforce-120/01-2026-10-29-day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws.md) |
 
