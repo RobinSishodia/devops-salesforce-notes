@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 05 Nov 2026 07:51:23 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)]]></title><description><![CDATA[Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 07:37:28 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6788cbb5-1103-471a-9597-f56d51c75604.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just click.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 05 Nov 2026 08:25:03 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Day 3/120 – #120DaysOfAWS: IAM Roles and Temporary Credentials for EC2]]></title><description><![CDATA[On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and…]]></description><link>https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 08:24:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0099bc68-809e-41e0-993c-4f482644f64c.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and apps, it should be a <strong>role</strong>, so nothing long-lived ever sits on the machine.</p>
+<h2>Users vs roles</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IAM user</th>
+<th>IAM role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>For</strong></td>
+<td>A person</td>
+<td>A service, an app or a person who needs temporary access</td>
+</tr>
+<tr>
+<td><strong>Credentials</strong></td>
+<td>Long-term (password, access keys)</td>
+<td>Temporary, issued on demand</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>You do it</td>
+<td>Automatic</td>
+</tr>
+<tr>
+<td><strong>Typical use</strong></td>
+<td>Console and CLI sign-in</td>
+<td>EC2, Lambda, cross-account access</td>
+</tr>
+</tbody></table>
+<h2>Two policies on every role</h2>
+<ul>
+<li><strong>Trust policy:</strong> who is allowed to assume the role (for example <code>ec2.amazonaws.com</code>).</li>
+<li><strong>Permissions policy:</strong> what the role can do once assumed (for example the Day 2 S3 read policy).</li>
+</ul>
+<p>A trust policy for EC2 looks like this:</p>
+<pre><code class="language-json">{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": { "Service": "ec2.amazonaws.com" },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+</code></pre>
+<h2>How EC2 gets credentials</h2>
+<ol>
+<li>The role is attached to the instance through an <strong>instance profile</strong> (the console creates it for you when you make an EC2 role).</li>
+<li>Software on the instance asks the <strong>instance metadata service</strong> for credentials.</li>
+<li><strong>STS</strong> (Security Token Service) issues a temporary access key, secret key and session token.</li>
+<li>AWS refreshes them automatically before they expire, so nothing is stored on disk.</li>
+</ol>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Create a role: trusted entity <strong>AWS service, EC2</strong>.</li>
+<li>Attach the <code>ReadDemoBucketOnly</code> policy from Day 2 (or any least-privilege S3 read policy).</li>
+<li>Launch a small EC2 instance and attach the role under <strong>Actions, Security, Modify IAM role</strong>.</li>
+<li>Connect to the instance and run:</li>
+</ol>
+<pre><code class="language-bash">aws sts get-caller-identity
+aws s3 ls s3://your-demo-bucket
+aws s3 ls s3://some-other-bucket   # should be denied
+</code></pre>
+<ol start="5">
+<li>To see the temporary credentials the instance receives (IMDSv2):</li>
+</ol>
+<pre><code class="language-bash">TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
+  http://169.254.169.254/latest/meta-data/iam/security-credentials/
+</code></pre>
+<p><code>get-caller-identity</code> should show an <strong>assumed-role</strong> ARN instead of a user, which proves the instance is using the role. Don't paste the credentials from the metadata call anywhere.</p>
+<h2>Common mistakes to avoid</h2>
+<ol>
+<li>Putting access keys in code, config files or an AMI "just for now".</li>
+<li>Making the trust policy too wide, for example trusting a whole account when one role is enough.</li>
+<li>Attaching <code>AdministratorAccess</code> to a role so the app "just works".</li>
+<li>Forgetting the role is attached to the instance but the app still uses old keys from a config file.</li>
+</ol>
+<h2>3 habits I'm keeping</h2>
+<ol>
+<li>Workloads get roles, people get users or federated sign-in, never the other way round.</li>
+<li>Keep trust and permissions separate and check both when access fails.</li>
+<li>Run <code>aws sts get-caller-identity</code> first whenever something is denied.</li>
+</ol>
+<p>Tomorrow (Day 4): protecting the root account and turning on MFA.</p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)]]></title><description><![CDATA[Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 07:37:28 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6788cbb5-1103-471a-9597-f56d51c75604.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just click.</em></p>
 <hr />
 <h2>The 4 Building Blocks</h2>
 <table>
@@ -1743,97 +1832,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which email do you automate first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 17 done, 13 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Sandboxes & Change Sets Cheat Sheet: Types, Validation and Admin Interview Q&A (Day 16/30)]]></title><description><![CDATA[Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-sandboxes-change-sets-cheat-sheet-types-validation-and-admin-interview-q-a-day-16-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 09:18:25 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/420c329a-7a36-4064-bbef-1ffa1c4d0628.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build safely away from live users, then move the changes to production the controlled way. Sandboxes and change sets are core admin deployment topics and a favourite interview question.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Sandbox</strong></td>
-<td>Safe copy of production</td>
-<td>Build and test here</td>
-</tr>
-<tr>
-<td><strong>Outbound Set</strong></td>
-<td>Built in the source org</td>
-<td>Uploaded to the target</td>
-</tr>
-<tr>
-<td><strong>Inbound Set</strong></td>
-<td>Arrives in the target org</td>
-<td>Validate, then deploy</td>
-</tr>
-<tr>
-<td><strong>Validation</strong></td>
-<td>Dry run with tests</td>
-<td>Saves nothing</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a sandbox?</h3>
-<p>A <strong>copy of production metadata</strong> where you build and test changes safely, away from live users.</p>
-<blockquote>
-<p><strong>Tip:</strong> Never build in production.</p>
-</blockquote>
-<h3>2. What are the sandbox types?</h3>
-<p><strong>Developer and Developer Pro</strong> copy metadata. <strong>Partial Copy</strong> adds sample data. <strong>Full</strong> copies everything.</p>
-<blockquote>
-<p><strong>Tip:</strong> Match the type to the test.</p>
-</blockquote>
-<h3>3. What is a change set?</h3>
-<p>A <strong>bundle of metadata components</strong> you send from one org to another connected org.</p>
-<blockquote>
-<p><strong>Tip:</strong> Metadata only, not data.</p>
-</blockquote>
-<h3>4. Outbound vs inbound?</h3>
-<p><strong>Outbound</strong> is built and uploaded in the source org. <strong>Inbound</strong> waits in the target org to be validated and deployed.</p>
-<blockquote>
-<p><strong>Tip:</strong> Outbound out, inbound in.</p>
-</blockquote>
-<h3>5. Why validate first?</h3>
-<p>A validation <strong>runs the checks and tests without saving changes</strong>, so you know the deploy will pass.</p>
-<blockquote>
-<p><strong>Tip:</strong> Validate, then deploy.</p>
-</blockquote>
-<h3>6. What are the limits?</h3>
-<p>Change sets work <strong>only between connected orgs</strong>, some components are unsupported, and there is <strong>no version history or easy rollback</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Name the limits, then mention Git and CI/CD.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Move a new validation rule and layout to production. How?"</strong></p>
-<ol>
-<li><strong>Build</strong> and test it in a sandbox</li>
-<li><strong>Add</strong> both to an outbound change set</li>
-<li><strong>Upload</strong> to production and validate</li>
-<li><strong>Deploy</strong> in a quiet window</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Sandbox</strong> = safe copy of prod</li>
-<li><strong>Outbound</strong> = sent from source</li>
-<li><strong>Inbound</strong> = received in target</li>
-<li><strong>Validate</strong> = dry run</li>
-<li><strong>Apex</strong> = 75% test coverage</li>
-<li><strong>Limits</strong> = no rollback</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Build in a sandbox only</li>
-<li>Add every dependency to the set</li>
-<li>Validate before you deploy</li>
-<li>Deploy outside business hours</li>
-</ul>
-<hr />
-<p><strong>What was your first deployment? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 16 done, 14 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
