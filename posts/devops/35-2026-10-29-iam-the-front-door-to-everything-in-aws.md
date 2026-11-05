@@ -6,7 +6,7 @@ cover_image: https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1b
 tags: ["AWS", "IAM", "cloudsecurity", "120daysofaws", "Devops"]
 brief: "Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…"
 series: "DevOps & AWS"
-serial: 36
+serial: 35
 ---
 
 > Originally published at [sishodiarobin.hashnode.dev](https://sishodiarobin.hashnode.dev/iam-the-front-door-to-everything-in-aws). This is an automated backup; read and comment on the blog.

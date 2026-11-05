@@ -13,7 +13,7 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 56
+Total posts in this repo: 53
 
 ## 📚 Salesforce (27 in this repo)
 
@@ -47,18 +47,15 @@ Total posts in this repo: 56
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (28 in this repo)
+## 📚 DevOps & AWS (25 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
-| 42 | 2026-11-05 | [IAM Roles and Temporary Credentials for EC2](https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/42-2026-11-05-iam-roles-and-temporary-credentials-for-ec2.md) |
-| 41 | 2026-11-05 | [Day 3/120 – #120DaysOfAWS: IAM Roles and Temporary Credentials for EC2](https://sishodiarobin.hashnode.dev/day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/41-2026-11-05-day-3-120-120daysofaws-iam-roles-and-temporary-credentials-for-ec2.md) |
-| 40 | 2026-10-30 | [My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch) |  | [Markdown](posts/devops/40-2026-10-30-my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch.md) |
-| 39 | 2026-10-30 | [Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/39-2026-10-30-writing-a-custom-iam-policy-from-scratch.md) |
-| 38 | 2026-10-30 | [Day 2/120 – #120DaysOfAWS: Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/38-2026-10-30-day-2-120-120daysofaws-writing-a-custom-iam-policy-from-scratch.md) |
-| 37 | 2026-10-30 | [Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2](https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2) |  | [Markdown](posts/devops/37-2026-10-30-building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2.md) |
-| 36 | 2026-10-29 | [IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/devops/36-2026-10-29-iam-the-front-door-to-everything-in-aws.md) |
-| 35 | 2026-10-29 | [Day 1/120 – #120DaysOfAWS: IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/devops/35-2026-10-29-day-1-120-120daysofaws-iam-the-front-door-to-everything-in-aws.md) |
+| 39 | 2026-11-05 | [IAM Roles and Temporary Credentials for EC2](https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/39-2026-11-05-iam-roles-and-temporary-credentials-for-ec2.md) |
+| 38 | 2026-10-30 | [My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch) |  | [Markdown](posts/devops/38-2026-10-30-my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch.md) |
+| 37 | 2026-10-30 | [Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/37-2026-10-30-writing-a-custom-iam-policy-from-scratch.md) |
+| 36 | 2026-10-30 | [Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2](https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2) |  | [Markdown](posts/devops/36-2026-10-30-building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2.md) |
+| 35 | 2026-10-29 | [IAM, the Front Door to Everything in AWS](https://sishodiarobin.hashnode.dev/iam-the-front-door-to-everything-in-aws) | `AWS` `IAM` `cloudsecurity` `120daysofaws` | [Markdown](posts/devops/35-2026-10-29-iam-the-front-door-to-everything-in-aws.md) |
 | 34 | 2026-10-06 | [AWS VPC for Beginners: Subnets, Route Tables, Gateways and Security Groups](https://sishodiarobin.hashnode.dev/aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups) | `AWS` `networking` `vpc` `Cloud` | [Markdown](posts/devops/34-2026-10-06-aws-vpc-for-beginners-subnets-route-tables-gateways-and-security-groups.md) |
 | 33 | 2026-10-06 | [Dockerfile Best Practices: Smaller, Faster and Safer Images](https://sishodiarobin.hashnode.dev/dockerfile-best-practices-smaller-faster-and-safer-images) | `Docker` `containers` `Devops` `best practices` | [Markdown](posts/devops/33-2026-10-06-dockerfile-best-practices-smaller-faster-and-safer-images.md) |
 | 32 | 2026-10-03 | [AWS IAM Explained: Users, Groups, Roles and Policies for Beginners](https://sishodiarobin.hashnode.dev/aws-iam-explained-users-groups-roles-and-policies-for-beginners) | `AWS` `IAM` `cloud security` `Devops` | [Markdown](posts/devops/32-2026-10-03-aws-iam-explained-users-groups-roles-and-policies-for-beginners.md) |
