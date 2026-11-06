@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 53
+Total posts in this repo: 55
 
-## 📚 Salesforce (27 in this repo)
+## 📚 Salesforce (28 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 28 | 2026-11-06 | [Salesforce Flow Decision and Assignment Elements Cheat Sheet: Outcomes, Operators and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Admin` `flow` `120daysofsalesforce` | [Markdown](posts/salesforce/28-2026-11-06-salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a.md) |
 | 27 | 2026-11-05 | [Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)](https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120) | `Salesforce` `Salesforce Admin` `flow` | [Markdown](posts/salesforce/27-2026-11-05-salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120.md) |
 | 26 | 2026-11-04 | [Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)](https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/salesforce/26-2026-11-04-salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30.md) |
 | 25 | 2026-11-03 | [Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)](https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30) | `Salesforce` `crm` `interview questions` | [Markdown](posts/salesforce/25-2026-11-03-salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30.md) |
@@ -47,10 +48,11 @@ Total posts in this repo: 53
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (25 in this repo)
+## 📚 DevOps & AWS (26 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 40 | 2026-11-06 | [Protect the AWS Root Account and Turn on MFA](https://sishodiarobin.hashnode.dev/protect-the-aws-root-account-and-turn-on-mfa) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/40-2026-11-06-protect-the-aws-root-account-and-turn-on-mfa.md) |
 | 39 | 2026-11-05 | [IAM Roles and Temporary Credentials for EC2](https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/39-2026-11-05-iam-roles-and-temporary-credentials-for-ec2.md) |
 | 38 | 2026-10-30 | [My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch](https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch) |  | [Markdown](posts/devops/38-2026-10-30-my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch.md) |
 | 37 | 2026-10-30 | [Writing a Custom IAM Policy from Scratch](https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/37-2026-10-30-writing-a-custom-iam-policy-from-scratch.md) |
