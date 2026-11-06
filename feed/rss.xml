@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 05 Nov 2026 12:21:31 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[IAM Roles and Temporary Credentials for EC2]]></title><description><![CDATA[On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and…]]></description><link>https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 08:24:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c1fe1f46-8de5-4d5f-a434-071e901466b2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and apps, it should be a <strong>role</strong>, so nothing long-lived ever sits on the machine.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 06 Nov 2026 16:14:54 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Decision and Assignment Elements Cheat Sheet: Outcomes, Operators and Admin II Interview Q&A]]></title><description><![CDATA[Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Nov 2026 16:14:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/37320372-06a2-4897-9e7f-f13110315cea.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses them.</em></p>
+<hr />
+<h2>The 2 Elements</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Decision</strong></td>
+<td>Routes the flow into one path</td>
+<td>Outcomes are checked top to bottom, the first match wins</td>
+</tr>
+<tr>
+<td><strong>Assignment</strong></td>
+<td>Sets or changes values</td>
+<td>Changes variables, not the database</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. How does a Decision pick a path?</h3>
+<p>It checks its <strong>outcomes from top to bottom</strong>. The first outcome whose conditions are met runs. If none match, the <strong>Default Outcome</strong> runs.</p>
+<blockquote>
+<p><strong>Tip:</strong> Put the most specific outcome first.</p>
+</blockquote>
+<h3>2. How can outcome conditions be combined?</h3>
+<p>Choose <strong>All Conditions Are Met (AND)</strong>, <strong>Any Condition Is Met (OR)</strong>, <strong>Custom Logic</strong> such as <code>1 AND (2 OR 3)</code>, or <strong>Always (No Conditions Required)</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use custom logic for mixed AND and OR.</p>
+</blockquote>
+<h3>3. What does an Assignment do?</h3>
+<p>It <strong>sets values</strong> on variables, including fields of a record variable such as <code>{!caseRecord.Status}</code>. Operators include <strong>Equals</strong>, <strong>Add</strong> and <strong>Subtract</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Equals overwrites, Add accumulates.</p>
+</blockquote>
+<h3>4. Does an Assignment save to the database?</h3>
+<p><strong>No.</strong> It only changes values in the flow. Use <strong>Update Records</strong> to save, except for <code>$Record</code> in a before-save record-triggered flow, which saves automatically.</p>
+<blockquote>
+<p><strong>Tip:</strong> Assignment edits, Update Records saves.</p>
+</blockquote>
+<h3>5. How do you build up a collection?</h3>
+<p>Use an Assignment on a <strong>collection variable</strong> with the <strong>Add</strong> operator to put each record in the list. Then use <strong>one Update Records</strong> after the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never put DML inside a loop.</p>
+</blockquote>
+<h3>6. What should the Default Outcome do?</h3>
+<p>Handle everything <strong>no outcome matched</strong>. Rename it so the path is clear, and leave it connected to something, even a simple end.</p>
+<blockquote>
+<p><strong>Tip:</strong> Plan the "none of the above" case.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A record-triggered flow must escalate high-priority Cases from Premium accounts."</strong></p>
+<ol>
+<li><strong>Decision:</strong> Priority equals High AND account type is Premium</li>
+<li><strong>Assignment:</strong> set Escalated to true and Status to Escalated on <code>{!caseRecord}</code></li>
+<li><strong>Assignment:</strong> add the record to a collection</li>
+<li><strong>One Update Records</strong> after the loop, then <strong>Debug</strong></li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> with a <strong>Get Records</strong> for one Case into a record variable.</li>
+<li>Add a <strong>Decision</strong> with an outcome <code>High Priority</code> where Priority equals High, and leave the Default Outcome as <code>Other</code>.</li>
+<li>On the <code>High Priority</code> path, add an <strong>Assignment</strong> that sets <code>{!caseRecord.Status}</code> to Escalated.</li>
+<li>Add an <strong>Update Records</strong> element that saves <code>{!caseRecord}</code>.</li>
+<li>Run <strong>Debug</strong> with a High priority Case and then a Low priority Case, and compare the paths.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Choose a path</strong> = Decision</li>
+<li><strong>Change a value</strong> = Assignment</li>
+<li><strong>Order of outcomes</strong> = top to bottom</li>
+<li><strong>None matched</strong> = Default Outcome</li>
+<li><strong>Save changes</strong> = Update Records</li>
+<li><strong>Add to a list</strong> = Assignment on a collection</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Decisions route, Assignments change values.</li>
+<li>The first matching outcome wins.</li>
+<li>Assignments do not save to the database.</li>
+<li>Keep DML outside loops.</li>
+</ul>
+<p><strong>Next up:</strong> the Get Records element and how filters and sort order work.</p>
+<p><em>Part of #120DaysOfSalesforce. Which element do you use most? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Protect the AWS Root Account and Turn on MFA]]></title><description><![CDATA[Every AWS account starts with one identity that can do everything: the root user. IAM policies cannot restrict it, so if someone gets in, there is no…]]></description><link>https://sishodiarobin.hashnode.dev/protect-the-aws-root-account-and-turn-on-mfa</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/protect-the-aws-root-account-and-turn-on-mfa</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Nov 2026 16:12:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/332adbcb-b6c2-4f76-8a3a-2d8fb4c371c5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Every AWS account starts with one identity that can do everything: the <strong>root user</strong>. IAM policies cannot restrict it, so if someone gets in, there is no safety net. Before building anything else, lock it down.</p>
+<h2>What the root user is (and is not)</h2>
+<ul>
+<li>It is the email address you signed up with, and it has <strong>unrestricted access</strong> to the whole account, including billing and closing the account.</li>
+<li>It is <strong>not</strong> an IAM user, so you cannot limit it with a policy.</li>
+<li>You should almost never sign in with it. Daily work belongs to IAM identities (Day 1) and roles (Day 3).</li>
+</ul>
+<h2>The root account checklist</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Turn on <strong>MFA</strong> for the root user</td>
+<td>A stolen password alone is no longer enough</td>
+</tr>
+<tr>
+<td>Use a <strong>long, unique password</strong> in a password manager</td>
+<td>Root should not share a password with anything else</td>
+</tr>
+<tr>
+<td><strong>Delete root access keys</strong> (or never create them)</td>
+<td>A leaked key would have full power with no MFA prompt</td>
+</tr>
+<tr>
+<td>Use a <strong>shared mailbox or alias</strong> you control</td>
+<td>You keep recovery access if one person leaves</td>
+</tr>
+<tr>
+<td>Keep alternate contacts and billing alerts up to date</td>
+<td>You hear about problems early</td>
+</tr>
+</tbody></table>
+<h2>Choosing an MFA type</h2>
+<ul>
+<li><strong>Passkey or security key (FIDO2):</strong> phishing-resistant, the strongest everyday option.</li>
+<li><strong>Authenticator app (TOTP):</strong> free, quick to set up, and fine for most learners.</li>
+<li><strong>Hardware TOTP token:</strong> a physical code generator, mostly for strict environments.</li>
+</ul>
+<p>You can register more than one MFA device on the same user, so add a second one as a backup.</p>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Sign in as the root user, open the account menu and choose <strong>Security credentials</strong>.</li>
+<li>Under <strong>Multi-factor authentication (MFA)</strong>, choose <strong>Assign MFA device</strong>.</li>
+<li>Give it a clear name, pick <strong>Authenticator app</strong> or <strong>Passkey or security key</strong>, and follow the prompts.</li>
+<li>Under <strong>Access keys</strong>, confirm there are none. If there are, delete them.</li>
+<li>Sign out and sign in again to confirm the MFA prompt appears.</li>
+<li>Create an IAM admin identity for daily use and stop using root.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Using root for everyday tasks "just this once".</li>
+<li>Keeping root access keys in a script or a laptop folder.</li>
+<li>Registering MFA on a single phone with no backup device.</li>
+<li>Using a personal inbox that only one person can read.</li>
+</ul>
+<h2>What only root can do</h2>
+<p>A short list of tasks still needs root, such as changing the account name or email, closing the account and restoring IAM permissions if you lock yourself out. That is the only reason to sign in as root.</p>
+<h2>Key takeaways</h2>
+<ul>
+<li>The root user is unrestricted, so protect it before anything else.</li>
+<li>Turn on MFA, remove access keys and keep a backup MFA device.</li>
+<li>Do real work with IAM users and roles, not root.</li>
+</ul>
+<p>Tomorrow I'll look at what comes next once the front door is locked.</p>
+]]></content:encoded></item><item><title><![CDATA[IAM Roles and Temporary Credentials for EC2]]></title><description><![CDATA[On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and…]]></description><link>https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 08:24:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c1fe1f46-8de5-4d5f-a434-071e901466b2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and apps, it should be a <strong>role</strong>, so nothing long-lived ever sits on the machine.</p>
 <h2>Users vs roles</h2>
 <table>
 <thead>
@@ -1646,190 +1805,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which page would you clean up first? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 19 done, 11 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Duplicate & Matching Rules Cheat Sheet: Block, Alert, Merge and Admin Interview Q&A (Day 18/30)]]></title><description><![CDATA[Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-duplicate-matching-rules-cheat-sheet-block-alert-merge-and-admin-interview-q-a-day-18-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[data-quality]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 23 Oct 2026 18:15:36 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/eb6bdff2-77ee-48a0-9b74-8d1b77ce4700.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Stop messy duplicates before they land, and clean up the ones already in your data. Duplicate and matching rules are core data quality topics in any admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Matching Rule</strong></td>
-<td>Defines what is a match</td>
-<td>Compares chosen fields</td>
-</tr>
-<tr>
-<td><strong>Duplicate Rule</strong></td>
-<td>Acts on a match</td>
-<td>Block or alert</td>
-</tr>
-<tr>
-<td><strong>Merge</strong></td>
-<td>Combine up to 3 records</td>
-<td>Keeps one master</td>
-</tr>
-<tr>
-<td><strong>Report</strong></td>
-<td>Lists found duplicates</td>
-<td>Review and clean</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a matching rule?</h3>
-<p>It <strong>defines which fields to compare</strong> and how closely records must match.</p>
-<blockquote>
-<p><strong>Tip:</strong> Fuzzy or exact, field by field.</p>
-</blockquote>
-<h3>2. What is a duplicate rule?</h3>
-<p>It <strong>decides what happens on a match</strong>: block the save or allow it with an alert.</p>
-<blockquote>
-<p><strong>Tip:</strong> Matching finds, the rule acts.</p>
-</blockquote>
-<h3>3. Are there standard rules?</h3>
-<p>Salesforce ships <strong>standard rules for accounts, contacts and leads</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Activate them before customising.</p>
-</blockquote>
-<h3>4. Block or alert?</h3>
-<p><strong>Block</strong> stops the save. <strong>Alert</strong> warns, then lets the user continue.</p>
-<blockquote>
-<p><strong>Tip:</strong> Start with alert, then tighten.</p>
-</blockquote>
-<h3>5. How do you merge?</h3>
-<p>Combine <strong>up to three records into one master</strong>, choosing which values to keep.</p>
-<blockquote>
-<p><strong>Tip:</strong> Check related records first.</p>
-</blockquote>
-<h3>6. What are the limits?</h3>
-<p>Rules <strong>check new saves</strong>, so existing duplicates need a separate clean up.</p>
-<blockquote>
-<p><strong>Tip:</strong> Clean first, then prevent.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Stop duplicate leads being created. How?"</strong></p>
-<ol>
-<li><strong>Activate</strong> the standard lead matching rule</li>
-<li><strong>Create</strong> a duplicate rule on Lead</li>
-<li><strong>Set</strong> the action to alert first</li>
-<li><strong>Test</strong>, then merge old duplicates</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Matching</strong> = finds matches</li>
-<li><strong>Duplicate rule</strong> = acts</li>
-<li><strong>Block</strong> = stops the save</li>
-<li><strong>Alert</strong> = warns the user</li>
-<li><strong>Merge</strong> = up to 3 records</li>
-<li><strong>Report</strong> = lists duplicates</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Prevent and clean, do both</li>
-<li>Start with alert, not block</li>
-<li>Test with real data</li>
-<li>Merge carefully, there is no undo</li>
-</ul>
-<hr />
-<p><strong>What is the messiest duplicate you have seen? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 18 done, 12 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Email Templates & Alerts Cheat Sheet: Merge Fields, Flow and Admin Interview Q&A (Day 17/30)]]></title><description><![CDATA[Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-templates-alerts-cheat-sheet-merge-fields-flow-and-admin-interview-q-a-day-17-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce Flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 21 Oct 2026 21:48:50 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fc35fee8-cb36-480c-ab7f-9d9b7c01b81b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Write the email once, merge in the record data, and let automation send it at the right moment. Email templates and alerts are everyday admin work and a common interview topic.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Template</strong></td>
-<td>Reusable email layout</td>
-<td>Merge fields fill it in</td>
-</tr>
-<tr>
-<td><strong>Email Alert</strong></td>
-<td>Sends a template</td>
-<td>Chosen recipients</td>
-</tr>
-<tr>
-<td><strong>Letterhead</strong></td>
-<td>Logo and brand colours</td>
-<td>Wraps the template</td>
-</tr>
-<tr>
-<td><strong>Org-Wide Address</strong></td>
-<td>Trusted From address</td>
-<td>Must be verified</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is an email template?</h3>
-<p>A <strong>reusable email with merge fields</strong> that fill in record data automatically.</p>
-<blockquote>
-<p><strong>Tip:</strong> Write once, reuse everywhere.</p>
-</blockquote>
-<h3>2. What template types exist?</h3>
-<p><strong>Lightning templates</strong> use a builder. <strong>Classic</strong> ones are text, HTML and Visualforce.</p>
-<blockquote>
-<p><strong>Tip:</strong> Lightning is the modern default.</p>
-</blockquote>
-<h3>3. What is an email alert?</h3>
-<p>A <strong>saved action that sends a template</strong> to the recipients you choose.</p>
-<blockquote>
-<p><strong>Tip:</strong> The alert sends, Flow decides when.</p>
-</blockquote>
-<h3>4. How do you trigger one?</h3>
-<p>From a <strong>Flow or an approval process</strong> when your condition is met.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use Flow for new work.</p>
-</blockquote>
-<h3>5. What are merge fields?</h3>
-<p><strong>Placeholders</strong> like <code>{!Contact.FirstName}</code> swapped for real values when the email is sent.</p>
-<blockquote>
-<p><strong>Tip:</strong> Test with a real record.</p>
-</blockquote>
-<h3>6. What are the limits?</h3>
-<p>A <strong>daily send limit</strong> applies, and emails can bounce or land in spam.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use an org-wide address.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Email the customer when a case is closed. How?"</strong></p>
-<ol>
-<li><strong>Create</strong> a template with merge fields</li>
-<li><strong>Create</strong> an email alert using it</li>
-<li><strong>Add</strong> it to a Flow on case closed</li>
-<li><strong>Test</strong> with a real case</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Template</strong> = reusable email</li>
-<li><strong>Alert</strong> = sends it</li>
-<li><strong>Merge field</strong> = record data</li>
-<li><strong>Letterhead</strong> = branding</li>
-<li><strong>Org-wide</strong> = trusted sender</li>
-<li><strong>Flow</strong> = decides when</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Use merge fields, not typed names</li>
-<li>Send from an org-wide address</li>
-<li>Test before you activate</li>
-<li>One template per purpose</li>
-</ul>
-<hr />
-<p><strong>Which email do you automate first? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 17 done, 13 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
