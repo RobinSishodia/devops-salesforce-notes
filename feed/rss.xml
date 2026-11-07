@@ -1,4 +1,168 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 06 Nov 2026 16:14:54 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Decision and Assignment Elements Cheat Sheet: Outcomes, Operators and Admin II Interview Q&A]]></title><description><![CDATA[Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Nov 2026 16:14:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/37320372-06a2-4897-9e7f-f13110315cea.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses them.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 07 Nov 2026 17:21:08 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order, Null Checks and Admin II Interview Q&A]]></title><description><![CDATA[Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Nov 2026 17:20:59 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6b2a561e-132c-4284-8ff1-b002709dc391.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common cause of slow or broken Flows.</em></p>
+<hr />
+<h2>The 4 Settings That Matter</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it controls</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Filter conditions</strong></td>
+<td>Which records come back</td>
+<td>AND, OR or custom logic</td>
+</tr>
+<tr>
+<td><strong>Sort order</strong></td>
+<td>Which record is "first"</td>
+<td>Set it whenever you need one record</td>
+</tr>
+<tr>
+<td><strong>How many records</strong></td>
+<td>One or many</td>
+<td>Only the first record, or all records</td>
+</tr>
+<tr>
+<td><strong>Store fields</strong></td>
+<td>What data is kept</td>
+<td>Choose only the fields you need</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. How do you filter a Get Records?</h3>
+<p>Add <strong>filter conditions</strong> on the object's fields, such as <code>Status Equals Open</code>. Combine them with <strong>All Conditions Are Met (AND)</strong>, <strong>Any Condition Is Met (OR)</strong> or <strong>Custom Condition Logic</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Filter in Get Records, not after it.</p>
+</blockquote>
+<h3>2. Why does sort order matter?</h3>
+<p>With <strong>Only the first record</strong>, Salesforce returns the first match <strong>in your sort order</strong>. Without a sort, which record you get is not guaranteed.</p>
+<blockquote>
+<p><strong>Tip:</strong> Sort by CreatedDate descending for "latest".</p>
+</blockquote>
+<h3>3. One record or all records?</h3>
+<p><strong>Only the first record</strong> stores a single record variable. <strong>All records</strong> stores a <strong>collection</strong> you can loop over.</p>
+<blockquote>
+<p><strong>Tip:</strong> Match the choice to the variable you need.</p>
+</blockquote>
+<h3>4. Which fields should you store?</h3>
+<p>Choose <strong>only the fields you need</strong> instead of all fields. Fewer fields means less data to carry through the Flow.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name the fields you will actually read.</p>
+</blockquote>
+<h3>5. What if no record is found?</h3>
+<p>The variable is <strong>empty (null)</strong>. Add a <strong>Decision</strong> after the Get Records that checks whether the variable <strong>Is Null</strong>, and handle that path.</p>
+<blockquote>
+<p><strong>Tip:</strong> Always plan the "found nothing" path.</p>
+</blockquote>
+<h3>6. Why keep Get Records out of loops?</h3>
+<p>Each Get Records is a <strong>SOQL query</strong>, and a transaction has a limit on queries. A query inside a loop can hit that limit on bulk data.</p>
+<blockquote>
+<p><strong>Tip:</strong> Query once before the loop, then loop the collection.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A flow must find the most recent open Case for a Contact and show its subject."</strong></p>
+<ol>
+<li><strong>Get Records</strong> on Case: <code>ContactId Equals the Contact</code> AND <code>Status Does Not Equal Closed</code></li>
+<li><strong>Sort</strong> by CreatedDate descending, <strong>Only the first record</strong></li>
+<li><strong>Decision:</strong> is the Case variable <strong>Is Null</strong>?</li>
+<li><strong>Display</strong> the Subject, or a "No open cases" message</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> and add a <strong>Get Records</strong> element on Case, returning <strong>Only the first record</strong>.</li>
+<li>Add a filter <code>Status Does Not Equal Closed</code> and sort by <code>CreatedDate</code> descending.</li>
+<li>Choose <strong>Choose fields and let Salesforce do the rest</strong> and pick Subject and Status.</li>
+<li>Add a <strong>Decision</strong> that checks the Case variable <strong>Is Null</strong> and a screen for each path.</li>
+<li>Run <strong>Debug</strong> with a Contact who has open cases and one who has none.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Read data</strong> = Get Records</li>
+<li><strong>Narrow it down</strong> = filter conditions</li>
+<li><strong>Pick the first</strong> = sort order</li>
+<li><strong>A list</strong> = All records (collection)</li>
+<li><strong>Nothing found</strong> = Is Null Decision</li>
+<li><strong>Efficiency</strong> = store only needed fields, no queries in loops</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Filter and sort inside Get Records.</li>
+<li>Always handle the nothing-found path.</li>
+<li>Store only the fields you need.</li>
+<li>Query once, then loop.</li>
+</ul>
+<p><strong>Next up:</strong> Update Records and Create Records, and how they save changes.</p>
+<p><em>Part of #120DaysOfSalesforce. Which Get Records setting trips you up? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Budgets and Billing Alerts: Set a Spending Limit Before You Build]]></title><description><![CDATA[Yesterday I locked down the root account and noted "keep billing alerts up to date". Today is the other half of the front door: making sure a forgotten…]]></description><link>https://sishodiarobin.hashnode.dev/aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloudcost]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Nov 2026 17:18:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e57520eb-ece5-4ada-9cef-6db17a101324.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Yesterday I locked down the root account and noted "keep billing alerts up to date". Today is the other half of the front door: making sure a forgotten resource never turns into a surprise bill. <strong>AWS Budgets</strong> does that.</p>
+<h2>What AWS Budgets does</h2>
+<ul>
+<li>You set a <strong>spending limit</strong> (or a usage limit) and AWS compares your actual and forecasted spend against it.</li>
+<li>When a threshold is crossed, it <strong>emails you</strong> (and can notify an SNS topic).</li>
+<li>Spend data is not instant. Billing data can lag, so treat alerts as an early warning, not a live meter.</li>
+</ul>
+<h2>Types of budget</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Tracks</th>
+<th>Good for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Cost budget</strong></td>
+<td>Dollars spent</td>
+<td>Almost every learner</td>
+</tr>
+<tr>
+<td><strong>Usage budget</strong></td>
+<td>Units used, such as hours or GB</td>
+<td>Watching a specific service</td>
+</tr>
+<tr>
+<td><strong>Savings Plans / Reservation budgets</strong></td>
+<td>Coverage and utilization</td>
+<td>Later, when you commit to spend</td>
+</tr>
+</tbody></table>
+<h2>Two templates to start with</h2>
+<ul>
+<li><strong>Zero spend budget:</strong> alerts you as soon as your spend goes above the free tier. Ideal for a learning account.</li>
+<li><strong>Monthly cost budget:</strong> you choose a monthly amount, and the console sets alerts at <strong>85% of actual spend</strong>, <strong>100% of actual spend</strong> and <strong>100% of forecasted spend</strong>.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Sign in and open <strong>Billing and Cost Management</strong>, then <strong>Budgets</strong>.</li>
+<li>Choose <strong>Create budget</strong> and pick a <strong>template</strong>, such as <strong>Zero spend budget</strong> or <strong>Monthly cost budget</strong>.</li>
+<li>Name it, set the amount (for example 10 USD) and add the <strong>email addresses</strong> to alert.</li>
+<li>Review the thresholds and create the budget.</li>
+<li>Optionally, as the root user, turn on <strong>IAM user and role access to Billing information</strong> so your admin identity can see costs without using root.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Creating a budget but typing the email address wrongly.</li>
+<li>Setting only an actual-spend alert, so you hear about a problem after the money is gone.</li>
+<li>Forgetting that some services keep charging until you delete the resource.</li>
+<li>Using root every time to check the bill instead of enabling billing access for IAM.</li>
+</ul>
+<h2>Worth knowing next</h2>
+<p><strong>Cost Explorer</strong> shows where your spend comes from, and <strong>Cost Anomaly Detection</strong> can flag unusual spikes. Budgets tells you <em>that</em> spend is rising. Those two help explain <em>why</em>.</p>
+<h2>Key takeaways</h2>
+<ul>
+<li>Create a budget before you create any real resources.</li>
+<li>Alert on <strong>forecasted</strong> spend as well as actual spend.</li>
+<li>Give billing access to an IAM admin, not just root.</li>
+<li>Delete what you stop using.</li>
+</ul>
+<p>Tomorrow I'll go one step further into securing access to the account.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Decision and Assignment Elements Cheat Sheet: Outcomes, Operators and Admin II Interview Q&A]]></title><description><![CDATA[Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Nov 2026 16:14:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/37320372-06a2-4897-9e7f-f13110315cea.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses them.</em></p>
 <hr />
 <h2>The 2 Elements</h2>
 <table>
@@ -1619,190 +1783,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>When did you last test a restore? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 21 done, 9 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Roles & Role Hierarchy Cheat Sheet: Record Access, Profiles and Admin Interview Q&A (Day 20/30)]]></title><description><![CDATA[Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-roles-role-hierarchy-cheat-sheet-record-access-profiles-and-admin-interview-q-a-day-20-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Security]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 26 Oct 2026 14:38:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0e16dd0f-a32b-4948-9fe1-0034cf505626.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Access flows up the org chart. Roles open doors for managers, they never close them. Roles and the role hierarchy come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Hierarchy</strong></td>
-<td>Top down visibility</td>
-<td>Managers see below</td>
-</tr>
-<tr>
-<td><strong>Roles</strong></td>
-<td>Jobs in the org chart</td>
-<td>One per user</td>
-</tr>
-<tr>
-<td><strong>Grant Access</strong></td>
-<td>Using Hierarchies setting</td>
-<td>On for standard objects</td>
-</tr>
-<tr>
-<td><strong>Vs Profiles</strong></td>
-<td>Roles = records</td>
-<td>Profiles = permissions</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a role hierarchy?</h3>
-<p>A <strong>structure that gives managers access to records owned by people below them</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Access flows up, never down.</p>
-</blockquote>
-<h3>2. Role vs profile?</h3>
-<p><strong>Roles control record access.</strong> Profiles control object and field permissions.</p>
-<blockquote>
-<p><strong>Tip:</strong> Data versus permissions.</p>
-</blockquote>
-<h3>3. Does a role restrict access?</h3>
-<p><strong>No.</strong> It only opens access above a Private default, it never reduces it.</p>
-<blockquote>
-<p><strong>Tip:</strong> OWD sets the floor.</p>
-</blockquote>
-<h3>4. What is Grant Access Using Hierarchies?</h3>
-<p>A <strong>per object setting</strong> that lets higher roles see lower roles' records.</p>
-<blockquote>
-<p><strong>Tip:</strong> Always on for standard objects.</p>
-</blockquote>
-<h3>5. Can a user have many roles?</h3>
-<p><strong>No.</strong> One role per user, but one role can hold many users.</p>
-<blockquote>
-<p><strong>Tip:</strong> One role each.</p>
-</blockquote>
-<h3>6. What if you delete a role?</h3>
-<p>You must <strong>reassign its users and child roles</strong> to another role first.</p>
-<blockquote>
-<p><strong>Tip:</strong> Plan before deleting.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A manager cannot see her team's accounts. Why?"</strong></p>
-<ol>
-<li><strong>Check</strong> the default access is Private</li>
-<li><strong>Place</strong> her role above the team</li>
-<li><strong>Confirm</strong> hierarchy access is on</li>
-<li><strong>Verify</strong> who owns the records</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Role</strong> = record access</li>
-<li><strong>Hierarchy</strong> = flows up</li>
-<li><strong>Profile</strong> = permissions</li>
-<li><strong>OWD</strong> = the floor</li>
-<li><strong>Branch</strong> = a region</li>
-<li><strong>One role</strong> = per user</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Roles open access, never close it</li>
-<li>Mirror the org chart, keep it simple</li>
-<li>Cross branch? Use sharing rules</li>
-<li>Few levels run faster</li>
-</ul>
-<hr />
-<p><strong>How deep is your role hierarchy? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 20 done, 10 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Lightning Record Pages Cheat Sheet: App Builder, Dynamic Forms and Admin Interview Q&A (Day 19/30)]]></title><description><![CDATA[Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-lightning-record-pages-cheat-sheet-app-builder-dynamic-forms-and-admin-interview-q-a-day-19-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Salesforce lightning]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 25 Oct 2026 11:55:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b8fd03e6-ac4e-405e-8230-4a135951268c.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Build the page each user needs with clicks, then show it to the right people. Lightning App Builder and record pages come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>App Builder</strong></td>
-<td>Drag and drop page tool</td>
-<td>Clicks, not code</td>
-</tr>
-<tr>
-<td><strong>Page Types</strong></td>
-<td>App, home, record</td>
-<td>Pick the right one</td>
-</tr>
-<tr>
-<td><strong>Components</strong></td>
-<td>Standard or custom blocks</td>
-<td>Drop onto the page</td>
-</tr>
-<tr>
-<td><strong>Activation</strong></td>
-<td>Org, app or profile</td>
-<td>Assign to take effect</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is Lightning App Builder?</h3>
-<p>A <strong>drag and drop tool</strong> to build app, home and record pages without code.</p>
-<blockquote>
-<p><strong>Tip:</strong> Clicks before code.</p>
-</blockquote>
-<h3>2. What are the page types?</h3>
-<p><strong>App pages, home pages and record pages</strong>, each for a different job.</p>
-<blockquote>
-<p><strong>Tip:</strong> Record pages show one record.</p>
-</blockquote>
-<h3>3. What are components?</h3>
-<p><strong>Building blocks</strong> like the Highlights Panel and Related Lists you drop on a page.</p>
-<blockquote>
-<p><strong>Tip:</strong> Keep pages light and fast.</p>
-</blockquote>
-<h3>4. What are Dynamic Forms?</h3>
-<p>They <strong>show or hide fields by rules</strong> instead of one fixed layout.</p>
-<blockquote>
-<p><strong>Tip:</strong> They can replace extra layouts.</p>
-</blockquote>
-<h3>5. What is component visibility?</h3>
-<p>A <strong>filter that shows a component only when conditions are met</strong>, like profile or field value.</p>
-<blockquote>
-<p><strong>Tip:</strong> Less clutter for each user.</p>
-</blockquote>
-<h3>6. How do you activate a page?</h3>
-<p>Assign it as <strong>org default, app default, or by app, record type and profile</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> The most specific one wins.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Reps need a cleaner Opportunity page. How?"</strong></p>
-<ol>
-<li><strong>Clone</strong> the standard record page</li>
-<li><strong>Add</strong> components and set visibility</li>
-<li><strong>Use</strong> Dynamic Forms for key fields</li>
-<li><strong>Activate</strong> for the sales app</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>App Builder</strong> = page tool</li>
-<li><strong>Record page</strong> = one record</li>
-<li><strong>Dynamic Forms</strong> = field rules</li>
-<li><strong>Visibility</strong> = show if</li>
-<li><strong>Clone</strong> = safe start</li>
-<li><strong>Activation</strong> = who sees it</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Clone, never edit the standard page</li>
-<li>Hide what users do not need</li>
-<li>Fewer components load faster</li>
-<li>Test as the user profile</li>
-</ul>
-<hr />
-<p><strong>Which page would you clean up first? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 19 done, 11 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
