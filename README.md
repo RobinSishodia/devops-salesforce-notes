@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 57
+Total posts in this repo: 59
 
-## 📚 Salesforce (29 in this repo)
+## 📚 Salesforce (30 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 30 | 2026-11-08 | [Salesforce Flow Create, Update and Delete Records Cheat Sheet: Fault Paths and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a) | `Salesforce` `flow` `120daysofsalesforce` `Salesforce Admin` | [Markdown](posts/salesforce/30-2026-11-08-salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a.md) |
 | 29 | 2026-11-07 | [Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order, Null Checks and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Admin` `flow` `120daysofsalesforce` | [Markdown](posts/salesforce/29-2026-11-07-salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a.md) |
 | 28 | 2026-11-06 | [Salesforce Flow Decision and Assignment Elements Cheat Sheet: Outcomes, Operators and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Admin` `flow` `120daysofsalesforce` | [Markdown](posts/salesforce/28-2026-11-06-salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a.md) |
 | 27 | 2026-11-05 | [Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)](https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120) | `Salesforce` `Salesforce Admin` `flow` | [Markdown](posts/salesforce/27-2026-11-05-salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120.md) |
@@ -49,10 +50,11 @@ Total posts in this repo: 57
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (27 in this repo)
+## 📚 DevOps & AWS (28 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 42 | 2026-11-08 | [AWS CloudTrail Basics: Who Did What, When and From Where](https://sishodiarobin.hashnode.dev/aws-cloudtrail-basics-who-did-what-when-and-from-where) | `AWS` `cloudtrail` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/42-2026-11-08-aws-cloudtrail-basics-who-did-what-when-and-from-where.md) |
 | 41 | 2026-11-07 | [AWS Budgets and Billing Alerts: Set a Spending Limit Before You Build](https://sishodiarobin.hashnode.dev/aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build) | `AWS` `cloudcost` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/41-2026-11-07-aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build.md) |
 | 40 | 2026-11-06 | [Protect the AWS Root Account and Turn on MFA](https://sishodiarobin.hashnode.dev/protect-the-aws-root-account-and-turn-on-mfa) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/40-2026-11-06-protect-the-aws-root-account-and-turn-on-mfa.md) |
 | 39 | 2026-11-05 | [IAM Roles and Temporary Credentials for EC2](https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2) | `AWS` `IAM` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/39-2026-11-05-iam-roles-and-temporary-credentials-for-ec2.md) |
