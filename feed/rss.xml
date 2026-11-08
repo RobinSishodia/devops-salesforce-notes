@@ -1,4 +1,163 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 07 Nov 2026 17:21:08 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order, Null Checks and Admin II Interview Q&A]]></title><description><![CDATA[Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Nov 2026 17:20:59 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6b2a561e-132c-4284-8ff1-b002709dc391.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common cause of slow or broken Flows.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 08 Nov 2026 17:54:16 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Create, Update and Delete Records Cheat Sheet: Fault Paths and Admin II Interview Q&A]]></title><description><![CDATA[Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Nov 2026 17:54:09 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7e7c2a4b-9c75-45d2-9a0a-70a0dd57f738.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether a Flow is safe, fast and bulk-ready.</em></p>
+<hr />
+<h2>The 3 Data Elements</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Create Records</strong></td>
+<td>Adds new records</td>
+<td>Can store the new record Id</td>
+</tr>
+<tr>
+<td><strong>Update Records</strong></td>
+<td>Changes existing records</td>
+<td>Filter, or pass a record or collection</td>
+</tr>
+<tr>
+<td><strong>Delete Records</strong></td>
+<td>Removes records</td>
+<td>Use filters or a collection, and be careful</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. How does Create Records set field values?</h3>
+<p>Either <strong>set the fields one by one</strong>, or <strong>use all values from a record variable or collection</strong> you built earlier. Choose <strong>Create multiple records</strong> when you pass a collection.</p>
+<blockquote>
+<p><strong>Tip:</strong> Build a collection, then create once.</p>
+</blockquote>
+<h3>2. How can Update Records pick what to change?</h3>
+<p>Two ways: <strong>specify conditions and set fields individually</strong>, or <strong>use the Ids and all field values from a record or collection</strong>. The first changes every record that matches the filter.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check the filter before you run it.</p>
+</blockquote>
+<h3>3. Why store the new record Id?</h3>
+<p>After Create Records you can <strong>store the Id</strong> in a variable. Use it to create related records, such as a Task linked to the new Case.</p>
+<blockquote>
+<p><strong>Tip:</strong> Store the Id, then relate children to it.</p>
+</blockquote>
+<h3>4. How do you make a Flow bulk-safe?</h3>
+<p>Do the work on a <strong>collection</strong>: add records to it in the loop with an Assignment, and run <strong>one Create, Update or Delete Records</strong> after the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> DML belongs outside the loop.</p>
+</blockquote>
+<h3>5. What is a fault path?</h3>
+<p>A <strong>fault connector</strong> that runs when a data element fails, for example on a validation rule error. Use it to show a message or log the error.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add a fault path to every data element.</p>
+</blockquote>
+<h3>6. Update Records or an Assignment on $Record?</h3>
+<p>In a <strong>before-save</strong> record-triggered flow, an Assignment on <code>$Record</code> changes the record with no extra DML. In an <strong>after-save</strong> flow, use <strong>Update Records</strong> to change the triggering record or related records.</p>
+<blockquote>
+<p><strong>Tip:</strong> Before-save is faster for same-record updates.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"When a Case is closed, create a follow-up Task and mark the related Contact as contacted."</strong></p>
+<ol>
+<li><strong>Record-triggered flow</strong> on Case, after save, when Status changes to Closed</li>
+<li><strong>Create Records:</strong> a Task, with <code>WhatId</code> set to the Case Id</li>
+<li><strong>Update Records:</strong> set the Contact's <code>Last_Contacted__c</code> field</li>
+<li><strong>Fault path</strong> on both elements, then <strong>Debug</strong></li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> with a text input for a Case subject.</li>
+<li>Add <strong>Create Records</strong> for Case, set Subject from the input, and store the new Id in a variable.</li>
+<li>Add <strong>Update Records</strong> that sets the same Case's Priority to High using that Id.</li>
+<li>Add a <strong>fault path</strong> from each element to a screen that shows <code>{!$Flow.FaultMessage}</code>.</li>
+<li>Run <strong>Debug</strong> and check the new Case in your org.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Add</strong> = Create Records</li>
+<li><strong>Change</strong> = Update Records</li>
+<li><strong>Remove</strong> = Delete Records</li>
+<li><strong>Many at once</strong> = collection, one element after the loop</li>
+<li><strong>Failure</strong> = fault path</li>
+<li><strong>Same record, before save</strong> = Assignment on $Record</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Work on collections, then save once.</li>
+<li>Store the Id to build related records.</li>
+<li>Add a fault path to every data element.</li>
+<li>Be careful with filters on Update and Delete.</li>
+</ul>
+<p><strong>Next up:</strong> the Loop element and how to process collections safely.</p>
+<p><em>Part of #120DaysOfSalesforce. Which data element do you use most? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS CloudTrail Basics: Who Did What, When and From Where]]></title><description><![CDATA[This week I locked the root account and set a budget. Now the question that comes after both: when something changes in the account, how do I find out who…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudtrail-basics-who-did-what-when-and-from-where</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudtrail-basics-who-did-what-when-and-from-where</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloudtrail]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Nov 2026 17:51:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c3b0a5a9-5204-4c65-854d-bd46e48e5e69.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>This week I locked the root account and set a budget. Now the question that comes after both: when something changes in the account, how do I find out <strong>who did it, what they did and when</strong>? That is <strong>AWS CloudTrail</strong>.</p>
+<h2>What CloudTrail records</h2>
+<ul>
+<li>CloudTrail logs <strong>API activity</strong> in your account, whether it came from the console, the CLI, an SDK or another AWS service.</li>
+<li>Each event says <strong>who</strong> (the identity), <strong>what</strong> (the API call), <strong>when</strong>, and <strong>where from</strong> (the source IP address).</li>
+<li>It is the audit trail you open when a resource disappears or a setting changes.</li>
+</ul>
+<h2>Event types</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it covers</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Management events</strong></td>
+<td>Control-plane actions, such as creating a role or launching an instance</td>
+<td>Recorded by default</td>
+</tr>
+<tr>
+<td><strong>Data events</strong></td>
+<td>Object-level actions, such as S3 object reads or Lambda invokes</td>
+<td>Off by default, extra cost</td>
+</tr>
+<tr>
+<td><strong>Insights events</strong></td>
+<td>Unusual API activity</td>
+<td>Optional</td>
+</tr>
+</tbody></table>
+<h2>Event history vs a trail</h2>
+<ul>
+<li><strong>Event history</strong> is on by default and lets you look up recent management events (the last 90 days) in the console, with no setup.</li>
+<li>A <strong>trail</strong> delivers events to an <strong>S3 bucket</strong> (and optionally CloudWatch Logs) so you keep them longer and can search them with other tools.</li>
+<li>A <strong>multi-Region trail</strong> records activity in all Regions, so nothing slips through in a Region you do not use.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>CloudTrail</strong> and choose <strong>Event history</strong>.</li>
+<li>Filter by <strong>Event name</strong> <code>ConsoleLogin</code> and open one event to see who signed in and from which IP address.</li>
+<li>Filter by <strong>User name</strong> <code>root</code> to check whether root has been used, tying back to the root account checklist.</li>
+<li>Choose <strong>Create trail</strong>, name it, and create or choose an <strong>S3 bucket</strong> for the logs.</li>
+<li>Enable a <strong>multi-Region trail</strong> and <strong>log file validation</strong>, then create it.</li>
+<li>After a few minutes, open the S3 bucket and find the delivered log files.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Relying on event history only, then needing events older than 90 days.</li>
+<li>Creating a trail in one Region and missing activity elsewhere.</li>
+<li>Leaving the log bucket open. Keep it private.</li>
+<li>Turning on data events everywhere without checking the cost.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>CloudTrail answers who, what, when and from where.</li>
+<li>Event history is free to browse, a trail keeps the records.</li>
+<li>Use a multi-Region trail and keep the bucket private.</li>
+<li>Check root activity regularly.</li>
+</ul>
+<p>Tomorrow I'll look at how to see what is happening inside your resources, not just who changed them.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order, Null Checks and Admin II Interview Q&A]]></title><description><![CDATA[Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Nov 2026 17:20:59 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6b2a561e-132c-4284-8ff1-b002709dc391.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common cause of slow or broken Flows.</em></p>
 <hr />
 <h2>The 4 Settings That Matter</h2>
 <table>
@@ -1597,190 +1756,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Queue or direct owner? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 23 done, 7 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Custom Metadata vs Custom Settings Cheat Sheet: Deploy, Hierarchy and Admin Interview Q&A (Day 22/30)]]></title><description><![CDATA[Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview. App…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-custom-metadata-vs-custom-settings-cheat-sheet-deploy-hierarchy-and-admin-interview-q-a-day-22-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[configuration]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 28 Oct 2026 13:36:46 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7b09c901-daf9-4482-b387-71b738004b83.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Never hardcode a value. Pick the home that fits how it must travel. Custom metadata versus custom settings comes up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Custom Settings</strong></td>
-<td>List or hierarchy type</td>
-<td>Data stays in the org</td>
-</tr>
-<tr>
-<td><strong>Custom Metadata</strong></td>
-<td>Config stored as records</td>
-<td>Deploys with metadata</td>
-</tr>
-<tr>
-<td><strong>Hierarchy</strong></td>
-<td>Values per user or profile</td>
-<td>Settings only</td>
-</tr>
-<tr>
-<td><strong>Use Cases</strong></td>
-<td>Rates, flags, mappings</td>
-<td>Not for big data</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What are custom settings?</h3>
-<p>App config kept in a <strong>cached table</strong>, as a List or Hierarchy type.</p>
-<blockquote>
-<p><strong>Tip:</strong> Fast to read in code.</p>
-</blockquote>
-<h3>2. What is custom metadata?</h3>
-<p>Custom types whose <strong>records are metadata</strong>, so they deploy between orgs.</p>
-<blockquote>
-<p><strong>Tip:</strong> Records travel with deploys.</p>
-</blockquote>
-<h3>3. Biggest difference?</h3>
-<p><strong>Custom metadata records deploy.</strong> Custom settings data does not.</p>
-<blockquote>
-<p><strong>Tip:</strong> The interview favorite.</p>
-</blockquote>
-<h3>4. What is a hierarchy setting?</h3>
-<p>A setting with <strong>values per user, profile or org default</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Only in custom settings.</p>
-</blockquote>
-<h3>5. Can admins use them without code?</h3>
-<p><strong>Yes</strong>, in formulas, validation rules and flows.</p>
-<blockquote>
-<p><strong>Tip:</strong> Skip hardcoding.</p>
-</blockquote>
-<h3>6. Which should you pick?</h3>
-<p><strong>Metadata for deployable config.</strong> Settings for per user values.</p>
-<blockquote>
-<p><strong>Tip:</strong> Default to metadata.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A tax rate differs by region and must reach prod. How?"</strong></p>
-<ol>
-<li><strong>Create</strong> a custom metadata type</li>
-<li><strong>Add</strong> one record per region</li>
-<li><strong>Use</strong> it in a formula or flow</li>
-<li><strong>Deploy</strong> with a change set</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Settings</strong> = data stays</li>
-<li><strong>Metadata</strong> = deploys</li>
-<li><strong>Hierarchy</strong> = per user</li>
-<li><strong>Cache</strong> = fast reads</li>
-<li><strong>Hardcode</strong> = avoid</li>
-<li><strong>Default</strong> = metadata</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Never hardcode values</li>
-<li>Choose metadata when you deploy</li>
-<li>Choose hierarchy for per user rules</li>
-<li>Admins edit it without code</li>
-</ul>
-<hr />
-<p><strong>What do you still hardcode? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 22 done, 8 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Data Backup & Recovery Cheat Sheet: Data Export, Recycle Bin and Admin Interview Q&A (Day 21/30)]]></title><description><![CDATA[Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview. A Setup…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-data-backup-recovery-cheat-sheet-data-export-recycle-bin-and-admin-interview-q-a-day-21-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[Backup]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 27 Oct 2026 13:39:21 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7ea118c9-af7d-4a81-b20e-2aefd08e1d4b.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Back up before you need it. Deleted data is only safe while a copy exists. Backup and recovery questions come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Data Export</strong></td>
-<td>Zip of CSV files</td>
-<td>Weekly or monthly</td>
-</tr>
-<tr>
-<td><strong>Recycle Bin</strong></td>
-<td>Deleted records kept</td>
-<td>15 days to restore</td>
-</tr>
-<tr>
-<td><strong>Metadata</strong></td>
-<td>Setup is not in export</td>
-<td>Use sandboxes or Git</td>
-</tr>
-<tr>
-<td><strong>Recovery</strong></td>
-<td>Restore from your files</td>
-<td>Plan before you need it</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is Data Export?</h3>
-<p>A Setup tool that creates a <strong>zip of CSV files</strong> of your data, weekly or monthly.</p>
-<blockquote>
-<p><strong>Tip:</strong> It exports records only.</p>
-</blockquote>
-<h3>2. How long are export files kept?</h3>
-<p>The download link <strong>expires after 48 hours</strong>, so download it quickly.</p>
-<blockquote>
-<p><strong>Tip:</strong> Save a copy elsewhere.</p>
-</blockquote>
-<h3>3. What is the Recycle Bin?</h3>
-<p>It holds <strong>deleted records for 15 days</strong> so you can restore them.</p>
-<blockquote>
-<p><strong>Tip:</strong> Hard delete skips it.</p>
-</blockquote>
-<h3>4. Is metadata in the export?</h3>
-<p><strong>No.</strong> Data Export saves records, not setup. Use sandboxes, change sets or Git.</p>
-<blockquote>
-<p><strong>Tip:</strong> Back up data and setup.</p>
-</blockquote>
-<h3>5. Can Salesforce restore lost data?</h3>
-<p>The old recovery service was <strong>retired</strong>, so keep your own backups.</p>
-<blockquote>
-<p><strong>Tip:</strong> Do not rely on support.</p>
-</blockquote>
-<h3>6. What other backup options exist?</h3>
-<p><strong>Data Loader, reports, the paid Backup and Restore, or AppExchange tools.</strong></p>
-<blockquote>
-<p><strong>Tip:</strong> Pick by size and speed.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A user deleted 500 accounts by mistake. What now?"</strong></p>
-<ol>
-<li><strong>Check</strong> the Recycle Bin first</li>
-<li><strong>Restore</strong> the deleted records</li>
-<li><strong>Use</strong> the last export if they were purged</li>
-<li><strong>Schedule</strong> regular exports</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Export</strong> = records zip</li>
-<li><strong>Recycle Bin</strong> = 15 days</li>
-<li><strong>Link</strong> = 48 hours</li>
-<li><strong>Metadata</strong> = separate</li>
-<li><strong>Hard delete</strong> = gone</li>
-<li><strong>Schedule</strong> = weekly</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Schedule exports, do not wait</li>
-<li>Test your restore plan</li>
-<li>Back up data and metadata</li>
-<li>Limit who can delete</li>
-</ul>
-<hr />
-<p><strong>When did you last test a restore? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 21 done, 9 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
