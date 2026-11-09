@@ -1,4 +1,168 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 08 Nov 2026 17:54:16 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Create, Update and Delete Records Cheat Sheet: Fault Paths and Admin II Interview Q&A]]></title><description><![CDATA[Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Nov 2026 17:54:09 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7e7c2a4b-9c75-45d2-9a0a-70a0dd57f738.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether a Flow is safe, fast and bulk-ready.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 09 Nov 2026 16:14:06 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Loop Element Cheat Sheet: Bulk-Safe Collections and Admin II Interview Q&A]]></title><description><![CDATA[The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 09 Nov 2026 16:13:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3e82fdc6-ae52-48f3-bf49-8404cc951deb.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay bulk-safe or hit governor limits.</em></p>
+<hr />
+<h2>The 4 Loop Pieces</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Collection variable</strong></td>
+<td>Holds the records to process</td>
+<td>Often from Get Records</td>
+</tr>
+<tr>
+<td><strong>Loop element</strong></td>
+<td>Hands you one item at a time</td>
+<td>Exposes the current item variable</td>
+</tr>
+<tr>
+<td><strong>Assignment inside</strong></td>
+<td>Changes the current item or builds an output collection</td>
+<td>No DML here</td>
+</tr>
+<tr>
+<td><strong>Data element after</strong></td>
+<td>Saves the output collection once</td>
+<td>One Update Records outside the loop</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What does the Loop element do?</h3>
+<p>It goes through a <strong>collection</strong> and gives you <strong>one item at a time</strong> as a loop variable. It has two paths: <strong>For Each Item</strong> runs for every item, and <strong>After Last Item</strong> runs once at the end.</p>
+<blockquote>
+<p><strong>Tip:</strong> Put the save step on After Last Item.</p>
+</blockquote>
+<h3>2. Why not put Update Records inside the loop?</h3>
+<p>Each pass would run <strong>one DML</strong> call. With many records you hit <strong>governor limits</strong> and the Flow fails. Instead, add each changed item to a <strong>second collection</strong>, then update that collection <strong>once</strong> after the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never put DML or Get Records inside a loop.</p>
+</blockquote>
+<h3>3. How do you change a field on the current item?</h3>
+<p>Use an <strong>Assignment</strong> inside the loop to set the field on the <strong>loop variable</strong>, then <strong>add the loop variable to an output collection</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Loop variable in, output collection out.</p>
+</blockquote>
+<h3>4. Can you loop in reverse?</h3>
+<p>Yes. The Loop element has a direction setting: <strong>first to last</strong> or <strong>last to first</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use reverse when order matters.</p>
+</blockquote>
+<h3>5. When can you skip the loop?</h3>
+<p>Often a Flow does not need one. <strong>Update Records with conditions</strong> can change every matching record in a single element, and a <strong>before-save</strong> flow can set fields on the triggering record directly.</p>
+<blockquote>
+<p><strong>Tip:</strong> No loop is the safest loop.</p>
+</blockquote>
+<h3>6. How do you debug a loop?</h3>
+<p>Run <strong>Debug</strong> and watch the loop variable change on each pass. Use the Flow's <strong>fault path</strong> and, for large data, test with a small set first.</p>
+<blockquote>
+<p><strong>Tip:</strong> Test with 2 records, then 200.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Set every open Opportunity on an Account to Needs Review when the Account is marked At Risk."</strong></p>
+<ol>
+<li><strong>Record-triggered flow</strong> on Account, after save, when <code>At_Risk__c</code> becomes true</li>
+<li><strong>Get Records:</strong> open Opportunities where <code>AccountId</code> equals the Account Id</li>
+<li><strong>Loop</strong> through them, with an <strong>Assignment</strong> setting <code>StageName</code> and adding each to an output collection</li>
+<li><strong>Update Records</strong> on the output collection, once, after the loop</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> and add <strong>Get Records</strong> for a few Contacts into a collection.</li>
+<li>Add a <strong>Loop</strong> over that collection.</li>
+<li>Inside the loop, add an <strong>Assignment</strong> that sets the current Contact's Description, then adds it to a new collection.</li>
+<li>After the last item, add <strong>Update Records</strong> using the new collection.</li>
+<li>Run <strong>Debug</strong> and check the Contacts in your org.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Loop</strong> = one item at a time</li>
+<li><strong>For Each Item</strong> = runs per record</li>
+<li><strong>After Last Item</strong> = runs once at the end</li>
+<li><strong>Output collection</strong> = what you save</li>
+<li><strong>DML</strong> = outside the loop</li>
+<li><strong>Often no loop</strong> = Update Records with conditions</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Loop through a collection, build an output collection, save once.</li>
+<li>Never put DML or Get Records inside a loop.</li>
+<li>Skip the loop when one element can do the job.</li>
+<li>Test with small data first.</li>
+</ul>
+<p><strong>Next up:</strong> Flow formulas and how they replace small pieces of logic.</p>
+<p><em>Part of #120DaysOfSalesforce. Do you try to avoid loops, or use them often? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS CloudWatch Basics: Metrics, Logs and Alarms for Your Resources]]></title><description><![CDATA[Last time I looked at who changed things with CloudTrail. The next question is different: what is happening inside my resources right now? That is Amazon…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudwatch-basics-metrics-logs-and-alarms-for-your-resources</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudwatch-basics-metrics-logs-and-alarms-for-your-resources</guid><category><![CDATA[AWS]]></category><category><![CDATA[#CloudWatch]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[monitoring]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 09 Nov 2026 16:12:16 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/daf81834-3965-479b-b034-7650726588c5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Last time I looked at <strong>who</strong> changed things with CloudTrail. The next question is different: <strong>what is happening inside my resources right now</strong>? That is <strong>Amazon CloudWatch</strong>.</p>
+<h2>What CloudWatch does</h2>
+<ul>
+<li><strong>Metrics:</strong> numbers over time, such as EC2 CPU utilization or S3 request counts.</li>
+<li><strong>Logs:</strong> log data from your applications and services, stored in log groups.</li>
+<li><strong>Alarms:</strong> watch a metric and do something when it crosses a threshold.</li>
+<li><strong>Dashboards:</strong> put the graphs you care about on one page.</li>
+</ul>
+<h2>CloudTrail vs CloudWatch</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Who made this change?</td>
+<td><strong>CloudTrail</strong></td>
+</tr>
+<tr>
+<td>Is this resource healthy and busy?</td>
+<td><strong>CloudWatch</strong></td>
+</tr>
+</tbody></table>
+<h2>How an alarm works</h2>
+<ul>
+<li>An alarm watches <strong>one metric</strong> over a <strong>period</strong> (for example, 5 minutes).</li>
+<li>Its state is <strong>OK</strong>, <strong>ALARM</strong> or <strong>INSUFFICIENT_DATA</strong>.</li>
+<li>When the state changes, it can send a message to an <strong>SNS topic</strong>, which can email you.</li>
+<li>The <strong>threshold</strong> and the number of <strong>periods</strong> to evaluate decide how sensitive it is.</li>
+</ul>
+<h2>Good to know</h2>
+<ul>
+<li>EC2 sends basic metrics every <strong>5 minutes</strong> by default, and <strong>detailed monitoring</strong> gives 1-minute data (extra cost).</li>
+<li>EC2 does <strong>not</strong> report memory or disk usage by default. You need the <strong>CloudWatch agent</strong> for those.</li>
+<li>Logs stay forever unless you set a <strong>retention</strong> period, so set one.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>CloudWatch</strong> and browse <strong>All metrics</strong> for EC2 or S3.</li>
+<li>Choose <strong>Alarms</strong>, then <strong>Create alarm</strong>.</li>
+<li>Pick a metric, such as <strong>EC2 CPUUtilization</strong> for one instance.</li>
+<li>Set a threshold, for example greater than 70% for 2 periods.</li>
+<li>Create or choose an <strong>SNS topic</strong> with your email, and confirm the subscription email.</li>
+<li>Save the alarm and check that it shows <strong>OK</strong> or <strong>INSUFFICIENT_DATA</strong> at first.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Creating alarms with no action, so nobody is told.</li>
+<li>Forgetting to confirm the SNS email subscription.</li>
+<li>Expecting memory metrics without the CloudWatch agent.</li>
+<li>Leaving log groups on never-expire retention.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>CloudTrail tells you who changed it, CloudWatch tells you how it is doing.</li>
+<li>Metrics feed alarms, alarms feed SNS, SNS reaches you.</li>
+<li>Install the agent for memory and disk.</li>
+<li>Set log retention.</li>
+</ul>
+<p>Tomorrow I'll look at how to use tags to keep resources organized and costs traceable.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Create, Update and Delete Records Cheat Sheet: Fault Paths and Admin II Interview Q&A]]></title><description><![CDATA[Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Nov 2026 17:54:09 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7e7c2a4b-9c75-45d2-9a0a-70a0dd57f738.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether a Flow is safe, fast and bulk-ready.</em></p>
 <hr />
 <h2>The 3 Data Elements</h2>
 <table>
@@ -1624,136 +1788,4 @@ VERSION_ID="24.04"
 <hr />
 <p><strong>Which form is on your site? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 24 done, 6 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[IAM, the Front Door to Everything in AWS]]></title><description><![CDATA[Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: is this identity allowed to do this? IAM (Identity and…]]></description><link>https://sishodiarobin.hashnode.dev/iam-the-front-door-to-everything-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/iam-the-front-door-to-everything-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 14:04:45 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1bb046f4-436c-402e-9f08-4566eae8a975.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Every AWS action, from launching an EC2 instance to reading an S3 object, goes through one question: <em>is this identity allowed to do this?</em> IAM (Identity and Access Management) answers it, so I'm starting here.</p>
-<h2>The 5 building blocks</h2>
-<ul>
-<li><strong>Users:</strong> a person or app with long-term credentials.</li>
-<li><strong>Groups:</strong> a collection of users that share permissions. Attach policies to groups, not to individual people.</li>
-<li><strong>Roles:</strong> temporary credentials that anyone or anything can assume. This is how EC2, Lambda and cross-account access should work.</li>
-<li><strong>Policies:</strong> JSON documents that say who can do what on which resource.</li>
-<li><strong>MFA:</strong> a second factor that protects the account if a password leaks.</li>
-</ul>
-<h2>How a policy reads</h2>
-<pre><code class="language-json">{
-  "Effect": "Allow",
-  "Action": "s3:GetObject",
-  "Resource": "arn:aws:s3:::my-bucket/*"
-}
-</code></pre>
-<p>Effect, Action and Resource are the three parts to check first. An explicit Deny always beats an Allow, and anything not allowed is denied by default.</p>
-<h2>What I did hands-on today</h2>
-<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/19494e48-794b-43f4-abbd-eb5fe9e91660.png" alt="" style="display:block;margin:0 auto" />
-
-<ul>
-<li>Checked my IAM dashboard: MFA is on for my root user and my IAM user, and I have no stale access keys.</li>
-<li>Created a user group called <code>ReadOnlyTeam</code> and attached the AWS-managed <code>ReadOnlyAccess</code> policy.</li>
-<li>Used the <strong>Policy Simulator</strong> to test two S3 actions against that group:<ul>
-<li><code>s3:GetObject</code> was <strong>Allowed</strong> (explicit allow).</li>
-<li><code>s3:DeleteObject</code> was <strong>Denied</strong> (implicit deny: no policy allows it, so it's blocked by default).</li>
-</ul>
-</li>
-<li>Ran the same test against my own user, which has <code>AdministratorAccess</code>, and both actions were Allowed. The same action gets a different answer depending on which policies are attached, which is why least privilege matters.</li>
-</ul>
-<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/9a6021eb-28d2-443c-9422-8c18fc88bd40.png" alt="" style="display:block;margin:0 auto" />
-
-<h2>3 habits I'm keeping</h2>
-<ol>
-<li>Never use the root user for daily work.</li>
-<li>Grant least privilege: start with nothing and add only what's needed.</li>
-<li>Prefer roles over long-lived access keys.</li>
-</ol>
-<p>Tomorrow (Day 2): writing a custom IAM policy from scratch.</p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Queues & Assignment Rules Cheat Sheet: Routing Leads and Cases and Admin Interview Q&A (Day 23/30)]]></title><description><![CDATA[Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview. A shared owner…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-queues-assignment-rules-cheat-sheet-routing-leads-and-cases-and-admin-interview-q-a-day-23-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 29 Oct 2026 12:22:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/d66ac460-76d8-44e0-b842-56e203637999.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every lead and case needs an owner. Queues hold them, rules route them. Queues and assignment rules come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Queues</strong></td>
-<td>Shared record owner</td>
-<td>Members claim records</td>
-</tr>
-<tr>
-<td><strong>Assignment Rules</strong></td>
-<td>Leads and cases only</td>
-<td>Entries run in order</td>
-</tr>
-<tr>
-<td><strong>Rule Entries</strong></td>
-<td>Criteria then assignee</td>
-<td>First match wins</td>
-</tr>
-<tr>
-<td><strong>Activation</strong></td>
-<td>One active per object</td>
-<td>Tick the box to apply</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a queue?</h3>
-<p>A <strong>shared owner</strong> that holds records until a member claims them.</p>
-<blockquote>
-<p><strong>Tip:</strong> Records wait in it.</p>
-</blockquote>
-<h3>2. Who can be queue members?</h3>
-<p><strong>Users, roles, public groups</strong> and more.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add groups, not people.</p>
-</blockquote>
-<h3>3. Which objects get rules?</h3>
-<p>Assignment rules work for <strong>leads and cases only</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Not custom objects.</p>
-</blockquote>
-<h3>4. How do rule entries work?</h3>
-<p>Entries run in order and the <strong>first match assigns</strong> the record.</p>
-<blockquote>
-<p><strong>Tip:</strong> Order matters.</p>
-</blockquote>
-<h3>5. How many rules can be active?</h3>
-<p><strong>One active</strong> assignment rule per object at a time.</p>
-<blockquote>
-<p><strong>Tip:</strong> Activate one at a time.</p>
-</blockquote>
-<h3>6. Why did a record skip the rule?</h3>
-<p>The <strong>assign using active rules</strong> box was not ticked.</p>
-<blockquote>
-<p><strong>Tip:</strong> Tick it when saving.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"New web leads must route to regional teams. How?"</strong></p>
-<ol>
-<li><strong>Create</strong> a queue per region</li>
-<li><strong>Add</strong> rule entries by country</li>
-<li><strong>Activate</strong> the lead rule</li>
-<li><strong>Test</strong> with a sample lead</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Queue</strong> = shared owner</li>
-<li><strong>Rule</strong> = leads, cases</li>
-<li><strong>Entry</strong> = criteria + owner</li>
-<li><strong>Order</strong> = first match</li>
-<li><strong>Active</strong> = one rule</li>
-<li><strong>Checkbox</strong> = apply rule</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Queues stop records going unowned</li>
-<li>Order entries specific to general</li>
-<li>Add a catch all entry</li>
-<li>Test before you activate</li>
-</ul>
-<hr />
-<p><strong>Queue or direct owner? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 23 done, 7 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
