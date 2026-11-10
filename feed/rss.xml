@@ -1,4 +1,185 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 09 Nov 2026 16:14:06 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Loop Element Cheat Sheet: Bulk-Safe Collections and Admin II Interview Q&A]]></title><description><![CDATA[The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 09 Nov 2026 16:13:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3e82fdc6-ae52-48f3-bf49-8404cc951deb.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay bulk-safe or hit governor limits.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Nov 2026 18:51:25 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Formulas Cheat Sheet: Dates, Booleans and Admin II Interview Q&A]]></title><description><![CDATA[A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Nov 2026 18:51:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/8591c7ed-e97f-4cb9-bfef-3ca046bd8a76.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them because formulas keep Flows small, readable and easy to maintain.</em></p>
+<hr />
+<h2>Formula Basics</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Formula resource</strong></td>
+<td>Returns one calculated value</td>
+<td>Created under New Resource</td>
+</tr>
+<tr>
+<td><strong>Data type</strong></td>
+<td>Text, Number, Currency, Date, Date/Time or Boolean</td>
+<td>Pick the type the formula returns</td>
+</tr>
+<tr>
+<td><strong>Functions</strong></td>
+<td>IF, AND, OR, TEXT, TODAY, BLANKVALUE and more</td>
+<td>Same style as validation rule formulas</td>
+</tr>
+<tr>
+<td><strong>Where you use it</strong></td>
+<td>Decision conditions, Assignments, Screen text, Get Records filters</td>
+<td>Reference it like a variable</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a formula resource in a Flow?</h3>
+<p>A <strong>resource</strong> that calculates <strong>one value</strong> from fields, variables and functions, then returns it. Reference it anywhere you would use a variable.</p>
+<blockquote>
+<p><strong>Tip:</strong> One formula, used in many places.</p>
+</blockquote>
+<h3>2. Why use a formula instead of Decision and Assignment elements?</h3>
+<p>A formula can do the same logic in <strong>one resource</strong>, such as a calculated date or a yes/no flag. The Flow canvas stays <strong>short and readable</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fewer elements, fewer places to break.</p>
+</blockquote>
+<h3>3. How do you handle blank values?</h3>
+<p>Use <strong>BLANKVALUE</strong> or <strong>ISBLANK</strong> (or <strong>ISNULL</strong> checks in conditions) so a missing field does not break the result. Empty values in math can lead to unexpected results.</p>
+<blockquote>
+<p><strong>Tip:</strong> Always plan for blank.</p>
+</blockquote>
+<h3>4. Can a formula return a Boolean?</h3>
+<p>Yes. A <strong>Boolean formula</strong> returns true or false, which is handy as a single condition in a <strong>Decision</strong>, for example whether an Opportunity amount is over a limit and the stage is open.</p>
+<blockquote>
+<p><strong>Tip:</strong> Boolean formula in, simple Decision out.</p>
+</blockquote>
+<h3>5. How do you use dates in a formula?</h3>
+<p>Use <strong>TODAY()</strong> or <strong>NOW()</strong> and add or subtract days, for example <code>TODAY() + 7</code> for a follow-up date. Pick <strong>Date</strong> or <strong>Date/Time</strong> to match the field you set.</p>
+<blockquote>
+<p><strong>Tip:</strong> Match the formula type to the field type.</p>
+</blockquote>
+<h3>6. Where are the limits?</h3>
+<p>A formula returns <strong>one value</strong>, it cannot change records, and it <strong>cannot query other records</strong> directly. Use Get Records for data, then use the formula to work with it.</p>
+<blockquote>
+<p><strong>Tip:</strong> Get Records finds, formulas calculate.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Create a follow-up Task due in 7 days, or 2 days if the Opportunity is over 100,000."</strong></p>
+<ol>
+<li><strong>Record-triggered flow</strong> on Opportunity, after save, when Stage becomes Negotiation</li>
+<li><strong>Formula (Date):</strong> <code>IF({!$Record.Amount} &gt; 100000, TODAY() + 2, TODAY() + 7)</code></li>
+<li><strong>Create Records:</strong> a Task with <code>ActivityDate</code> set to the formula</li>
+<li><strong>Fault path</strong>, then <strong>Debug</strong></li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> with a Number input for an amount.</li>
+<li>Add a <strong>Formula resource</strong> of type Text that returns <code>IF({!Amount} &gt; 1000, "High", "Normal")</code>.</li>
+<li>Add a <strong>Screen</strong> that displays the formula result.</li>
+<li>Add a second <strong>Formula</strong> of type Date that returns <code>TODAY() + 7</code> and show that too.</li>
+<li>Run <strong>Debug</strong> with a few amounts and check the results.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Formula</strong> = one calculated value</li>
+<li><strong>Boolean formula</strong> = single true or false condition</li>
+<li><strong>Date formula</strong> = TODAY() plus or minus days</li>
+<li><strong>Blank safe</strong> = BLANKVALUE or ISBLANK</li>
+<li><strong>Cannot</strong> = change records or query data</li>
+<li><strong>Pair with</strong> = Get Records for data</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Use a formula to replace small Decision and Assignment chains.</li>
+<li>Match the formula data type to what it feeds.</li>
+<li>Plan for blank values.</li>
+<li>Get Records finds data, formulas calculate on it.</li>
+</ul>
+<p><strong>Next up:</strong> Flow screens and user input.</p>
+<p><em>Part of #120DaysOfSalesforce. What is the most useful Flow formula you have written? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Tagging Strategy: Name, Owner and Environment Tags for Every Resource]]></title><description><![CDATA[By now I have IAM, a budget, CloudTrail and CloudWatch. One more habit makes all of them easier to use: tags. When the bill rises or something looks odd…]]></description><link>https://sishodiarobin.hashnode.dev/aws-tagging-strategy-name-owner-and-environment-tags-for-every-resource</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-tagging-strategy-name-owner-and-environment-tags-for-every-resource</guid><category><![CDATA[AWS]]></category><category><![CDATA[tagging]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Nov 2026 18:49:12 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/663c873f-a882-420e-b81b-74b8731154b3.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>By now I have IAM, a budget, CloudTrail and CloudWatch. One more habit makes all of them easier to use: <strong>tags</strong>. When the bill rises or something looks odd, tags tell you <strong>what the resource is, who owns it and what it is for</strong>.</p>
+<h2>What tags are</h2>
+<ul>
+<li>A tag is a <strong>key and value pair</strong> attached to a resource, such as <code>Environment = dev</code>.</li>
+<li>Most AWS resources support tags, and you can have up to <strong>50 tags per resource</strong>.</li>
+<li>Tags are labels for people and tools. They do not change how the resource works.</li>
+</ul>
+<h2>A simple starting set</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Example value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Name</strong></td>
+<td><code>web-server-1</code></td>
+<td>Shows in the console list</td>
+</tr>
+<tr>
+<td><strong>Environment</strong></td>
+<td><code>dev</code>, <code>test</code>, <code>prod</code></td>
+<td>Separate workloads</td>
+</tr>
+<tr>
+<td><strong>Owner</strong></td>
+<td><code>robin</code></td>
+<td>Who to ask</td>
+</tr>
+<tr>
+<td><strong>Project</strong></td>
+<td><code>blog-site</code></td>
+<td>Group related resources</td>
+</tr>
+<tr>
+<td><strong>CostCenter</strong></td>
+<td><code>learning</code></td>
+<td>Split the bill</td>
+</tr>
+</tbody></table>
+<h2>What tags are used for</h2>
+<ul>
+<li><strong>Cost allocation:</strong> activate <strong>cost allocation tags</strong> in Billing, then filter Cost Explorer by tag.</li>
+<li><strong>Access control:</strong> IAM policies can allow or deny actions based on tags (ABAC).</li>
+<li><strong>Automation:</strong> scripts can find resources by tag, such as all <code>Environment = dev</code> instances to stop at night.</li>
+<li><strong>Search:</strong> Tag Editor and Resource Groups find resources across Regions.</li>
+</ul>
+<h2>Good to know</h2>
+<ul>
+<li>Tag keys and values are <strong>case sensitive</strong>, so <code>Owner</code> and <code>owner</code> are different.</li>
+<li>Tags are <strong>not retroactive</strong> in Cost Explorer. Cost allocation tags only show costs from the time you activate them.</li>
+<li><strong>Tag policies</strong> in AWS Organizations help keep names consistent.</li>
+<li>Do not put secrets or personal data in tags.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>EC2</strong> or <strong>S3</strong> and select a resource you created.</li>
+<li>Add the tags <strong>Name</strong>, <strong>Environment</strong>, <strong>Owner</strong> and <strong>Project</strong>.</li>
+<li>Open <strong>Resource Groups &amp; Tag Editor</strong> and use <strong>Tag Editor</strong> to search by <code>Environment = dev</code> across Regions.</li>
+<li>Open <strong>Billing</strong> and <strong>Cost allocation tags</strong>, then activate <code>Project</code>.</li>
+<li>After a day, filter <strong>Cost Explorer</strong> by the <code>Project</code> tag.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Inconsistent keys, such as <code>env</code>, <code>Env</code> and <code>Environment</code>.</li>
+<li>Tagging only some resources, so reports have gaps.</li>
+<li>Forgetting to activate cost allocation tags.</li>
+<li>Storing sensitive data in tag values.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Tags answer what, who and why for every resource.</li>
+<li>Pick a small standard set and use it everywhere.</li>
+<li>Activate cost allocation tags to see costs by tag.</li>
+<li>Keep tag names consistent.</li>
+</ul>
+<p>Tomorrow I'll look at how to see all of this from a single place: AWS Organizations and account structure.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Loop Element Cheat Sheet: Bulk-Safe Collections and Admin II Interview Q&A]]></title><description><![CDATA[The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 09 Nov 2026 16:13:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3e82fdc6-ae52-48f3-bf49-8404cc951deb.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay bulk-safe or hit governor limits.</em></p>
 <hr />
 <h2>The 4 Loop Pieces</h2>
 <table>
@@ -1603,189 +1784,4 @@ git remote -v
 <li>Test every new policy in the Policy Simulator before attaching it to real users.</li>
 </ol>
 <p>Tomorrow (Day 3): IAM roles and how services like EC2 get temporary credentials.</p>
-]]></content:encoded></item><item><title><![CDATA[Building a DevOps Support-Ticket Platform, Part 1: Ubuntu on AWS EC2]]></title><description><![CDATA[I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD…]]></description><link>https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/building-a-devops-support-ticket-platform-part-1-ubuntu-on-aws-ec2</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 19:56:50 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/479ff36a-ab94-43f8-9212-f815a1b985d9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>I'm starting a hands-on DevOps project around a support-ticket application. The application will grow through Linux hosting, containers, CI/CD, infrastructure as code, Kubernetes, and recovery exercises.</p>
-<p>This first checkpoint is deliberately small: launch an Ubuntu server on AWS, restrict its SSH access, connect to it, and verify the operating system. The ticket application is not deployed yet.</p>
-<p>I’m using AI assistance for setup and documentation. My learning rule is to understand each change, check the actual output, and record what has been completed before moving on.</p>
-<h2>What I launched</h2>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Lab configuration</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Region</td>
-<td>Asia Pacific (Mumbai), <code>ap-south-1</code></td>
-</tr>
-<tr>
-<td>Operating system</td>
-<td>Canonical Ubuntu Server 24.04 LTS, x86_64</td>
-</tr>
-<tr>
-<td>Instance type</td>
-<td>One <code>t2.micro</code></td>
-</tr>
-<tr>
-<td>Root disk</td>
-<td>8 GiB, gp3</td>
-</tr>
-<tr>
-<td>Network</td>
-<td>Default VPC and a public subnet</td>
-</tr>
-<tr>
-<td>Public IPv4</td>
-<td>Enabled</td>
-</tr>
-<tr>
-<td>Login</td>
-<td>EC2 Instance Connect as <code>ubuntu</code></td>
-</tr>
-<tr>
-<td>Persistent SSH key pair</td>
-<td>None; browser login uses temporary keys</td>
-</tr>
-</tbody></table>
-<p>This is an initial learning configuration. It is not a claim of production readiness or high availability.</p>
-<h2>The connection path</h2>
-<p>The browser connects through EC2 Instance Connect to the instance’s SSH service on TCP port 22. Successful access needs both authentication and a working network path.</p>
-<p>A public IP alone is not enough. The subnet also needs a route to an internet gateway, the instance needs an SSH service, and the security group must allow the connection source.</p>
-<h2>Restricting SSH correctly</h2>
-<p>The launch wizard initially offered SSH from <code>0.0.0.0/0</code>. That would allow connection attempts from any IPv4 address. I replaced it with the AWS-managed prefix list for EC2 Instance Connect in Mumbai:</p>
-<pre><code class="language-text">com.amazonaws.ap-south-1.ec2-instance-connect
-</code></pre>
-<p>The inbound rule is SSH, TCP 22, with that prefix list as its source. I did not open an application or database port at this checkpoint.</p>
-<p>There is an important distinction here:</p>
-<ul>
-<li>For SSH directly from my laptop, a source of <strong>My IP</strong> allows my current public IP address.</li>
-<li>For the browser-based EC2 Instance Connect method used here, the source is AWS’s EC2 Instance Connect service, so its regional prefix list is appropriate.</li>
-</ul>
-<p>The security group is only one layer. IAM permissions, temporary SSH authentication, and the instance configuration still matter. Allowing a source in a security group does not by itself authenticate a user.</p>
-<h2>Why I did not download a PEM file</h2>
-<p>I chose <strong>Proceed without a key pair</strong> because this lab uses EC2 Instance Connect. It temporarily provides an SSH public key for authentication, so I did not need a saved private key on my laptop.</p>
-<p>This is different from making the machine passwordless or publicly accessible without authentication. If I later want direct SSH access, I will configure that access explicitly.</p>
-<h2>The first three Linux commands</h2>
-<p>After connecting, I verified the user, current directory, and distribution:</p>
-<pre><code class="language-bash">whoami
-pwd
-cat /etc/os-release
-</code></pre>
-<p>The relevant output was:</p>
-<pre><code class="language-text">ubuntu
-/home/ubuntu
-PRETTY_NAME="Ubuntu 24.04.5 LTS"
-VERSION_ID="24.04"
-</code></pre>
-<p><code>whoami</code> confirms which account is executing commands. <code>pwd</code> shows where relative file paths will start. <code>/etc/os-release</code> identifies the distribution and release, which helps choose suitable package-management instructions.</p>
-<p>I keep commands separate while learning so it is easy to see which command produced which result.</p>
-<h2>Cost is part of the lab</h2>
-<p>A small instance or a <strong>Free tier eligible</strong> label does not establish that my account has remaining free usage. Account age, plan, credits, and actual consumption affect the bill.</p>
-<p>Compute, retained EBS storage, and public IPv4 usage can contribute charges. Closing the terminal does not stop the instance. My end-of-session routine is to save the work, stop the instance from EC2 when it is not needed, and check for resources that remain billable.</p>
-<h2>What is complete, and what comes next</h2>
-<p>Completed: one Ubuntu EC2 instance launched, SSH limited to the connection service, browser login successful, and the user, home directory, and OS verified.</p>
-<p>Next: refresh package metadata, install the initial tools, create a project workspace, and write a Bash health check. Nginx, the Flask application, persistence, and backups are later checkpoints.</p>
-<p>Each checkpoint will have commands, explanations, verification results, and troubleshooting notes committed to the project repository.</p>
-<p><strong>Project repository:</strong> <a href="https://github.com/RobinSishodia/devops-support-ticket-platform">devops-support-ticket-platform</a></p>
-<h2>Official references</h2>
-<ul>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html">Get started with Amazon EC2</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-prerequisites.html">EC2 Instance Connect prerequisites</a></li>
-<li><a href="https://aws.amazon.com/free/free-tier-faqs/">AWS Free Tier FAQs</a></li>
-<li><a href="https://aws.amazon.com/vpc/pricing/">Public IPv4 pricing</a></li>
-<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping and starting EC2 instances</a></li>
-</ul>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Web-to-Lead & Web-to-Case Cheat Sheet: Forms, Limits, reCAPTCHA and Admin Interview Q&A (Day 24/30)]]></title><description><![CDATA[Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview. A generated HTML form…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-web-to-lead-web-to-case-cheat-sheet-forms-limits-recaptcha-and-admin-interview-q-a-day-24-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[crm]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 17:30:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/aabff6a8-1b79-4db4-9187-24ee06ea3348.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Turn website visitors into records without lifting a finger. Web-to-Lead and Web-to-Case come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Web-to-Lead</strong></td>
-<td>HTML form makes leads</td>
-<td>500 per day</td>
-</tr>
-<tr>
-<td><strong>Web-to-Case</strong></td>
-<td>HTML form makes cases</td>
-<td>5,000 per day</td>
-</tr>
-<tr>
-<td><strong>Form Fields</strong></td>
-<td>Standard plus custom</td>
-<td>Use the field ID</td>
-</tr>
-<tr>
-<td><strong>Protection</strong></td>
-<td>reCAPTCHA and routing</td>
-<td>Stop the spam</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is Web-to-Lead?</h3>
-<p>A <strong>generated HTML form</strong> that creates leads from your website.</p>
-<blockquote>
-<p><strong>Tip:</strong> No hand coding needed.</p>
-</blockquote>
-<h3>2. What are the daily limits?</h3>
-<p><strong>Web-to-Lead allows 500 a day.</strong> Web-to-Case allows 5,000 a day.</p>
-<blockquote>
-<p><strong>Tip:</strong> Plan for busy days.</p>
-</blockquote>
-<h3>3. How do you add custom fields?</h3>
-<p>Add the field to the HTML using its <strong>field ID</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Test after adding.</p>
-</blockquote>
-<h3>4. What stops spam?</h3>
-<p>Turn on <strong>reCAPTCHA</strong> and validate the fields.</p>
-<blockquote>
-<p><strong>Tip:</strong> Bots love open forms.</p>
-</blockquote>
-<h3>5. How do leads get an owner?</h3>
-<p><strong>Lead assignment rules</strong> route them, or the default owner takes them.</p>
-<blockquote>
-<p><strong>Tip:</strong> Rules run automatically.</p>
-</blockquote>
-<h3>6. Can customers get a reply?</h3>
-<p><strong>Yes</strong>, auto-response rules email them on creation.</p>
-<blockquote>
-<p><strong>Tip:</strong> Keep the template clear.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Website enquiries must become leads for sales. How?"</strong></p>
-<ol>
-<li><strong>Generate</strong> the form in Setup</li>
-<li><strong>Add</strong> reCAPTCHA and a return URL</li>
-<li><strong>Set</strong> assignment and auto-response</li>
-<li><strong>Test</strong> with a sample submit</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Form</strong> = generated HTML</li>
-<li><strong>Lead cap</strong> = 500 a day</li>
-<li><strong>Case cap</strong> = 5,000 a day</li>
-<li><strong>Spam</strong> = reCAPTCHA</li>
-<li><strong>Owner</strong> = assignment rule</li>
-<li><strong>Reply</strong> = auto-response</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Generate the form, do not hand build</li>
-<li>Protect it with reCAPTCHA</li>
-<li>Route and reply automatically</li>
-<li>Test before going live</li>
-</ul>
-<hr />
-<p><strong>Which form is on your site? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 24 done, 6 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
