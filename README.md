@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 61
+Total posts in this repo: 63
 
-## 📚 Salesforce (31 in this repo)
+## 📚 Salesforce (32 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 32 | 2026-11-10 | [Salesforce Flow Formulas Cheat Sheet: Dates, Booleans and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a) | `Salesforce` `flow` `120daysofsalesforce` `Salesforce Admin` | [Markdown](posts/salesforce/32-2026-11-10-salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a.md) |
 | 31 | 2026-11-09 | [Salesforce Flow Loop Element Cheat Sheet: Bulk-Safe Collections and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a) | `Salesforce` `flow` `120daysofsalesforce` `Salesforce Admin` | [Markdown](posts/salesforce/31-2026-11-09-salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a.md) |
 | 30 | 2026-11-08 | [Salesforce Flow Create, Update and Delete Records Cheat Sheet: Fault Paths and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a) | `Salesforce` `flow` `120daysofsalesforce` `Salesforce Admin` | [Markdown](posts/salesforce/30-2026-11-08-salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a.md) |
 | 29 | 2026-11-07 | [Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order, Null Checks and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Admin` `flow` `120daysofsalesforce` | [Markdown](posts/salesforce/29-2026-11-07-salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a.md) |
@@ -51,10 +52,11 @@ Total posts in this repo: 61
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (29 in this repo)
+## 📚 DevOps & AWS (30 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 44 | 2026-11-10 | [AWS Tagging Strategy: Name, Owner and Environment Tags for Every Resource](https://sishodiarobin.hashnode.dev/aws-tagging-strategy-name-owner-and-environment-tags-for-every-resource) | `AWS` `tagging` `120daysofaws` `Devops` | [Markdown](posts/devops/44-2026-11-10-aws-tagging-strategy-name-owner-and-environment-tags-for-every-resource.md) |
 | 43 | 2026-11-09 | [AWS CloudWatch Basics: Metrics, Logs and Alarms for Your Resources](https://sishodiarobin.hashnode.dev/aws-cloudwatch-basics-metrics-logs-and-alarms-for-your-resources) | `AWS` `CloudWatch` `120daysofaws` `monitoring` | [Markdown](posts/devops/43-2026-11-09-aws-cloudwatch-basics-metrics-logs-and-alarms-for-your-resources.md) |
 | 42 | 2026-11-08 | [AWS CloudTrail Basics: Who Did What, When and From Where](https://sishodiarobin.hashnode.dev/aws-cloudtrail-basics-who-did-what-when-and-from-where) | `AWS` `cloudtrail` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/42-2026-11-08-aws-cloudtrail-basics-who-did-what-when-and-from-where.md) |
 | 41 | 2026-11-07 | [AWS Budgets and Billing Alerts: Set a Spending Limit Before You Build](https://sishodiarobin.hashnode.dev/aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build) | `AWS` `cloudcost` `120daysofaws` `cloudsecurity` | [Markdown](posts/devops/41-2026-11-07-aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build.md) |
