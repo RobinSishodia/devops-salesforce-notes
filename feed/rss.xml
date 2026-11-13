@@ -1,4 +1,206 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 10 Nov 2026 18:51:25 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Salesforce Flow Formulas Cheat Sheet: Dates, Booleans and Admin II Interview Q&A]]></title><description><![CDATA[A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Nov 2026 18:51:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/8591c7ed-e97f-4cb9-bfef-3ca046bd8a76.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them because formulas keep Flows small, readable and easy to maintain.</em></p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 13 Nov 2026 14:37:21 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Organizations: Multiple Accounts, OUs and Service Control Policies]]></title><description><![CDATA[So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the…]]></description><link>https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Organizations]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 13 Nov 2026 14:37:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/85b59680-73ea-4bdd-911d-e3a934c22353.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the structure around it: <strong>AWS Organizations</strong>.</p>
+<h2>Why more than one account</h2>
+<ul>
+<li>An AWS account is a strong boundary for <strong>security, cost and blast radius</strong>.</li>
+<li>A mistake in a sandbox account cannot touch production.</li>
+<li>Each account has its own root user, IAM and limits, so teams can work separately.</li>
+</ul>
+<h2>The building blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Organization</strong></td>
+<td>The group of accounts you manage together</td>
+<td>Created from one account</td>
+</tr>
+<tr>
+<td><strong>Management account</strong></td>
+<td>The account that creates the organization and pays the bill</td>
+<td>SCPs do not apply to it</td>
+</tr>
+<tr>
+<td><strong>Member accounts</strong></td>
+<td>Every other account in the organization</td>
+<td>One per workload or team</td>
+</tr>
+<tr>
+<td><strong>OU</strong></td>
+<td>An organizational unit that groups accounts</td>
+<td>Policies on an OU apply to its accounts</td>
+</tr>
+<tr>
+<td><strong>SCP</strong></td>
+<td>A service control policy</td>
+<td>Sets the maximum permissions, never grants them</td>
+</tr>
+</tbody></table>
+<h2>Consolidated billing</h2>
+<ul>
+<li>All member accounts roll up to <strong>one bill</strong> on the management account.</li>
+<li>Usage across accounts can count together for <strong>volume discounts</strong>.</li>
+<li>Tags still let you split cost by project or owner.</li>
+</ul>
+<h2>How SCPs behave</h2>
+<ul>
+<li>An SCP is a <strong>guardrail</strong>: an action must be allowed by the SCP <strong>and</strong> by the identity's own IAM policy.</li>
+<li>They apply to IAM users and roles in member accounts, including the account root user.</li>
+<li>They do not apply to the <strong>management account</strong>, so keep workloads out of it.</li>
+<li>Use <strong>all features</strong> mode to turn SCPs on.</li>
+</ul>
+<h2>A simple starting structure</h2>
+<ul>
+<li><strong>Security</strong> OU: logging and audit accounts</li>
+<li><strong>Workloads</strong> OU: production and non-production accounts</li>
+<li><strong>Sandbox</strong> OU: learning and experiments, with tighter SCPs</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>AWS Organizations</strong> and choose <strong>Create an organization</strong>.</li>
+<li>Check that <strong>MFA is on for the management account root user</strong>.</li>
+<li>Create an OU named <strong>Sandbox</strong>.</li>
+<li>Choose <strong>Add an AWS account</strong>, then <strong>Create an AWS account</strong>, and give it a unique email address and a name. Move it into the Sandbox OU.</li>
+<li>Open <strong>Policies</strong>, enable service control policies, and attach a deny policy to the Sandbox OU, for example one that stops the account leaving the organization.</li>
+<li>Sign in to the management account and <strong>assume the OrganizationAccountAccessRole</strong> in the new account to check it works.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Running workloads in the management account.</li>
+<li>Using SCPs as if they grant permissions. They only limit.</li>
+<li>Reusing one email address for several accounts. Each account needs a unique one.</li>
+<li>Attaching SCPs to the organization root before testing on a Sandbox OU.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Use separate accounts as security and cost boundaries.</li>
+<li>Group accounts into OUs and attach policy once.</li>
+<li>SCPs set the maximum, IAM still grants.</li>
+<li>Keep the management account for administration only.</li>
+</ul>
+<p>Tomorrow I'll look at how people and tools sign in across these accounts.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Screens Cheat Sheet: User Input, Validation and Admin II Interview Q&A]]></title><description><![CDATA[Screens are how a Flow talks to the user. Admin II interviews ask about them because input, validation and navigation decide whether a Screen Flow is easy…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-screens-cheat-sheet-user-input-validation-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-screens-cheat-sheet-user-input-validation-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 13 Nov 2026 14:35:26 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a4c64a51-3c86-4942-bf10-2883f4fe65ab.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Screens are how a Flow talks to the user. Admin II interviews ask about them because input, validation and navigation decide whether a Screen Flow is easy to use and safe to trust.</em></p>
+<hr />
+<h2>The 4 Building Blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Input components</strong></td>
+<td>Collect text, numbers, dates and more</td>
+<td>The value is stored for later elements</td>
+</tr>
+<tr>
+<td><strong>Choice components</strong></td>
+<td>Radio buttons, picklists, checkboxes</td>
+<td>Fed by a choice or a choice set</td>
+</tr>
+<tr>
+<td><strong>Display components</strong></td>
+<td>Show text, sections and messages</td>
+<td>Guide the user</td>
+</tr>
+<tr>
+<td><strong>Validation</strong></td>
+<td>Required, or a formula with an error message</td>
+<td>Stops bad data early</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Screen element?</h3>
+<p>The element that <strong>shows a user interface</strong> and collects input. Screens only work in <strong>Screen Flows</strong>, not in record-triggered or autolaunched flows.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use a Screen whenever a person has to type or choose something.</p>
+</blockquote>
+<h3>2. How do you use what the user entered?</h3>
+<p>Each screen component keeps its value. Reference it with the component's API name, for example <code>{!Subject.value}</code>, in later elements such as Create Records.</p>
+<blockquote>
+<p><strong>Tip:</strong> Give components clear API names. You will type them a lot.</p>
+</blockquote>
+<h3>3. How do you validate input?</h3>
+<p>Mark a field <strong>Required</strong>, or open its <strong>Validate Input</strong> setting and add a formula with an <strong>error message</strong>. The user cannot continue until the formula is true.</p>
+<blockquote>
+<p><strong>Tip:</strong> Stop bad data at the screen, not after it is saved.</p>
+</blockquote>
+<h3>4. Can you hide components?</h3>
+<p>Yes. Set <strong>Component Visibility</strong> conditions on a field or a section, so it only appears when an earlier answer calls for it.</p>
+<blockquote>
+<p><strong>Tip:</strong> Show only what the user needs for this case.</p>
+</blockquote>
+<h3>5. Where do choices come from?</h3>
+<p>Create a <strong>Choice</strong> resource for a fixed option, or a <strong>Record Choice Set</strong> or <strong>Picklist Choice Set</strong> to load options from records or from a field's picklist values.</p>
+<blockquote>
+<p><strong>Tip:</strong> Build a choice set once and reuse it across screens.</p>
+</blockquote>
+<h3>6. How does the user move through the flow?</h3>
+<p>With the <strong>Next, Previous and Finish</strong> buttons. You choose which of them each screen shows, and whether the user can go back.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check the Back button on every screen. Going back can change data you already saved.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Let sales reps log a call from a Screen Flow."</strong></p>
+<ol>
+<li><strong>Screen:</strong> Subject (text), Priority (picklist), Due Date (date)</li>
+<li><strong>Create Records:</strong> a Task, with fields from the screen inputs</li>
+<li><strong>Confirmation screen</strong> that shows the new Task Id</li>
+<li><strong>Fault path</strong> on Create Records, then <strong>Debug</strong></li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a <strong>Screen Flow</strong> and add a <strong>Screen</strong> with a Text input named <code>Subject</code>.</li>
+<li>Add a <strong>Picklist</strong> choice for Priority and a <strong>Date</strong> input for Due Date.</li>
+<li>Make Subject <strong>Required</strong>, and add a Validate formula so the date cannot be in the past.</li>
+<li>Add <strong>Create Records</strong> for Task and map the three inputs.</li>
+<li>Add a confirmation screen, run <strong>Debug</strong>, then add the flow to a Lightning page.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Show UI</strong> = Screen</li>
+<li><strong>Read input</strong> = <code>{!Name.value}</code></li>
+<li><strong>Block bad data</strong> = Validate Input</li>
+<li><strong>Hide fields</strong> = Component Visibility</li>
+<li><strong>Pick from a list</strong> = Choice or choice set</li>
+<li><strong>Save the data</strong> = Create Records after the screen</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Screens belong to Screen Flows.</li>
+<li>Validate on the screen.</li>
+<li>Reuse choice sets.</li>
+<li>Save once, after the user is done.</li>
+</ul>
+<p><strong>Next up:</strong> running a Screen Flow from buttons, Lightning pages and quick actions.</p>
+<p><em>Part of #120DaysOfSalesforce. Which Screen component do you use most? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[I built a tiny GitHub repo auditor, and it found my own mess]]></title><description><![CDATA[Just shipped repo-health-report: a tiny, dependency-free Python tool that audits your GitHub repos through the REST API. It flags missing licenses…]]></description><link>https://sishodiarobin.hashnode.dev/i-built-a-tiny-github-repo-auditor-and-it-found-my-own-mess</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/i-built-a-tiny-github-repo-auditor-and-it-found-my-own-mess</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 11 Nov 2026 13:49:37 GMT</pubDate><content:encoded><![CDATA[<p>Just shipped <strong>repo-health-report</strong>: a tiny, dependency-free Python tool that audits your GitHub repos through the REST API.</p>
+<p>It flags missing licenses, descriptions, topics and READMEs, plus pull requests that have gone stale. It also runs as a scheduled GitHub Action and writes the results to the job summary.</p>
+<p>On my own account it found 15 repos without a license. I fixed 12 of them in an afternoon.</p>
+<h2>What it checks</h2>
+<ul>
+<li>Missing license</li>
+<li>Missing description or topics</li>
+<li>Missing README</li>
+<li>Open pull requests with no activity for 30+ days</li>
+</ul>
+<h2>Try it</h2>
+<pre><code class="language-bash">python repo_health_report.py &lt;github-username&gt;
+</code></pre>
+<p>Code and setup: <a href="https://github.com/RobinSishodia/repo-health-report">https://github.com/RobinSishodia/repo-health-report</a></p>
+<p>Feedback and issues welcome. If it's useful to you, a star helps.</p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Formulas Cheat Sheet: Dates, Booleans and Admin II Interview Q&A]]></title><description><![CDATA[A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Nov 2026 18:51:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/8591c7ed-e97f-4cb9-bfef-3ca046bd8a76.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them because formulas keep Flows small, readable and easy to maintain.</em></p>
 <hr />
 <h2>Formula Basics</h2>
 <table>
@@ -1480,308 +1682,4 @@ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
 <hr />
 <p><strong>Which field do you audit most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 26 done, 4 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Email-to-Case Cheat Sheet: On-Demand, Routing Addresses, and Admin Interview Q&A (Day 25/30)]]></title><description><![CDATA[Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview. Customer emails…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-email-to-case-cheat-sheet-on-demand-routing-addresses-and-admin-interview-q-a-day-25-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 31 Oct 2026 15:07:06 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/1fd7ffcf-69d2-4eb4-807e-b6f4d377e5ca.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every support email, tracked as a case from the first message. Email-to-Case comes up in almost every Service Cloud and admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Routing Address</strong></td>
-<td>Address makes cases</td>
-<td>Verify it first</td>
-</tr>
-<tr>
-<td><strong>On-Demand</strong></td>
-<td>Salesforce hosts it</td>
-<td>No agent needed</td>
-</tr>
-<tr>
-<td><strong>Standard</strong></td>
-<td>Agent on your server</td>
-<td>Behind firewall</td>
-</tr>
-<tr>
-<td><strong>Threading</strong></td>
-<td>Ref ID links replies</td>
-<td>One case thread</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is Email-to-Case?</h3>
-<p>Customer emails <strong>automatically become cases</strong> in Salesforce.</p>
-<blockquote>
-<p><strong>Tip:</strong> No manual typing.</p>
-</blockquote>
-<h3>2. On-Demand or Standard?</h3>
-<p><strong>On-Demand needs no agent.</strong> Standard runs an agent behind your firewall.</p>
-<blockquote>
-<p><strong>Tip:</strong> Default to On-Demand.</p>
-</blockquote>
-<h3>3. What is a routing address?</h3>
-<p>It links an email address to <strong>case settings</strong> like origin and priority.</p>
-<blockquote>
-<p><strong>Tip:</strong> Verify it before use.</p>
-</blockquote>
-<h3>4. How do replies stay on one case?</h3>
-<p>A <strong>Ref ID</strong> in the email ties each reply to the same case.</p>
-<blockquote>
-<p><strong>Tip:</strong> Keep it in the subject.</p>
-</blockquote>
-<h3>5. How do cases get an owner?</h3>
-<p><strong>Assignment rules</strong> route them, or the routing address owner takes them.</p>
-<blockquote>
-<p><strong>Tip:</strong> Queues work well.</p>
-</blockquote>
-<h3>6. Can customers get a reply?</h3>
-<p><strong>Yes</strong>, auto-response rules confirm the case by email.</p>
-<blockquote>
-<p><strong>Tip:</strong> Include the case number.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Support inbox emails must become cases. How?"</strong></p>
-<ol>
-<li><strong>Enable</strong> Email-to-Case in Setup</li>
-<li><strong>Create</strong> and verify a routing address</li>
-<li><strong>Set</strong> assignment and auto-response</li>
-<li><strong>Test</strong> by emailing the inbox</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Email</strong> = becomes a case</li>
-<li><strong>Default</strong> = On-Demand</li>
-<li><strong>Agent</strong> = Standard only</li>
-<li><strong>Address</strong> = verify first</li>
-<li><strong>Thread</strong> = Ref ID</li>
-<li><strong>Reply</strong> = auto-response</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Pick On-Demand unless a firewall blocks it</li>
-<li>Verify every routing address</li>
-<li>Keep the Ref ID for threading</li>
-<li>Test with a real email</li>
-</ul>
-<hr />
-<p><strong>Which inbox do you run? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 25 done, 5 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[My First Hands-On DevOps Lab: Learning Linux, Git, and GitHub from Scratch]]></title><description><![CDATA[When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But…]]></description><link>https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/my-first-hands-on-devops-lab-learning-linux-git-and-github-from-scratch</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 23:50:49 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/58e0c24b-1afb-4b7e-8bcc-daddd4609c1a.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>When I started learning DevOps, I wanted to understand everything together: Linux, Git, cloud infrastructure, automation, containers, and deployments. But I also wanted to understand every command I typed.</p>
-<p>So I began with a small hands-on lab on an Ubuntu server. My starting point was a directory called <code>devops-lab</code> and a terminal.</p>
-<p>This article captures the foundation: navigating Linux, working with files, and understanding how changes move from a local Git repository to GitHub. The commands below form a simple practice exercise you can adapt to your own lab.</p>
-<h2>Why start with a small lab?</h2>
-<p>A deployment pipeline eventually runs commands on a machine, reads files, and works with a version of your code. Learning those basics makes the larger workflow easier to understand.</p>
-<p>My goal at this stage is to explain what a command does, run it, inspect the result, and repeat it without blindly copying instructions.</p>
-<h2>1. Know where you are</h2>
-<p>In my Ubuntu lab, I started by checking my current directory:</p>
-<pre><code class="language-bash">pwd
-</code></pre>
-<p>The output was:</p>
-<pre><code class="language-text">/home/ubuntu/devops-lab
-</code></pre>
-<p><code>pwd</code> means <strong>print working directory</strong>. It tells you where commands will operate unless you supply another path.</p>
-<p>To create a similar workspace from your home directory:</p>
-<pre><code class="language-bash">mkdir -p ~/devops-lab
-cd ~/devops-lab
-pwd
-</code></pre>
-<p>Here is what each command does:</p>
-<ul>
-<li><code>mkdir -p</code> creates the directory if it does not already exist.</li>
-<li><code>~</code> refers to your user's home directory.</li>
-<li><code>cd</code> changes your current directory.</li>
-<li><code>pwd</code> confirms your location.</li>
-</ul>
-<p>That final check is useful. Before creating or editing files, I want to know exactly where I am.</p>
-<h2>2. Create a file and inspect it</h2>
-<p>For a small practice example, create a README:</p>
-<pre><code class="language-bash">printf '# My DevOps Lab\n\nLearning Linux and Git through practice.\n' &gt; README.md
-cat README.md
-ls -l
-</code></pre>
-<p><code>printf</code> writes the text, while <code>&gt;</code> redirects that output into a file. Be careful: <code>&gt;</code> replaces an existing file's contents.</p>
-<p><code>cat</code> displays the file, and <code>ls -l</code> lists directory contents with details such as permissions, owner, and size.</p>
-<p>To add another line without replacing the file:</p>
-<pre><code class="language-bash">printf '\nFirst topic: Linux and Git fundamentals.\n' &gt;&gt; README.md
-cat README.md
-</code></pre>
-<p>The difference between <code>&gt;</code> and <code>&gt;&gt;</code> is small to type but important to understand: one replaces content; the other appends it.</p>
-<h2>3. Start tracking the project with Git</h2>
-<p>Git records versions of a project's tracked files. GitHub hosts repositories remotely so they can be shared and used for collaboration.</p>
-<p>From inside the practice directory:</p>
-<pre><code class="language-bash">git init
-git status
-</code></pre>
-<p><code>git init</code> creates a Git repository in the directory. It does not upload anything to GitHub.</p>
-<p><code>git status</code> shows the repository's current state. At this point, a new README will normally appear as an untracked file.</p>
-<p>Before creating your first commit, configure your commit identity if you have not already done so:</p>
-<pre><code class="language-bash">git config user.name "Your Name"
-git config user.email "YOUR_GITHUB_NOREPLY_EMAIL"
-</code></pre>
-<p>Replace those values with your own details. You can use the no-reply address provided in your GitHub email settings.</p>
-<p>These commands set the identity for this repository. They do not sign you in to GitHub.</p>
-<h2>4. Understand staging and committing</h2>
-<p>This was one of the most useful distinctions for me.</p>
-<p>A file can exist in my project without being included in the next commit. Staging lets me choose which changes to record.</p>
-<pre><code class="language-bash">git add README.md
-git diff --staged
-git commit -m "Add initial DevOps lab notes"
-git status
-</code></pre>
-<p>The sequence matters:</p>
-<ol>
-<li><code>git add README.md</code> stages the file's current contents.</li>
-<li><code>git diff --staged</code> lets me review what the next commit will contain.</li>
-<li><code>git commit</code> records the staged changes in the local repository.</li>
-<li><code>git status</code> shows whether any changes remain.</li>
-</ol>
-<p>If I edit the file again after staging it, I need to stage the new changes too if I want them in that commit.</p>
-<p>A commit message should explain the change. “Add initial DevOps lab notes” tells me more than “update.”</p>
-<h2>5. Connect the local repository to GitHub</h2>
-<p>For this practice workflow, first create an <strong>empty GitHub repository</strong>, without adding a README, license, or .gitignore through GitHub. That keeps the initial push straightforward.</p>
-<p>Then replace the placeholder URL below with your repository URL:</p>
-<pre><code class="language-bash">git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git remote -v
-git push -u origin main
-</code></pre>
-<p>Here is what these commands mean:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>git branch -M main</code></td>
-<td>Rename the current branch to <code>main</code></td>
-</tr>
-<tr>
-<td><code>git remote add origin ...</code></td>
-<td>Store the remote repository URL under the name <code>origin</code></td>
-</tr>
-<tr>
-<td><code>git remote -v</code></td>
-<td>Show the configured remote URLs</td>
-</tr>
-<tr>
-<td><code>git push -u origin main</code></td>
-<td>Push the branch and set its upstream tracking relationship</td>
-</tr>
-</tbody></table>
-<p>Authentication must be configured separately. Use a supported GitHub authentication method, such as an HTTPS credential manager or SSH. Never put tokens or private keys in your project files.</p>
-<p>If <code>origin</code> already exists, inspect it with <code>git remote -v</code> before changing anything. If the remote repository already contains commits, its history may need to be integrated before you can push.</p>
-<h2>6. The difference between commit and push</h2>
-<p>My simplest explanation is:</p>
-<blockquote>
-<p>A commit records staged changes locally. A push sends local commits to a remote repository.</p>
-</blockquote>
-<p>That means a successful commit does not automatically update GitHub.</p>
-<p>For another practice change:</p>
-<pre><code class="language-bash">printf '\nKey lesson: commit is local; push updates the remote.\n' &gt;&gt; README.md
-git diff
-git add README.md
-git diff --staged
-git commit -m "Document the difference between commit and push"
-git push
-</code></pre>
-<p>After the upstream is configured, <code>git push</code> can usually use that tracking relationship without repeating the remote and branch names.</p>
-<p>The workflow is:</p>
-<p><strong>Edit → Review → Stage → Review staged changes → Commit → Push</strong></p>
-<h2>7. Verify the result</h2>
-<p>A command finishing without an obvious error is a starting point. I also want to check the result.</p>
-<pre><code class="language-bash">git status
-git log --oneline -5
-git remote -v
-</code></pre>
-<p>These checks answer different questions:</p>
-<ul>
-<li><strong>Status:</strong> Do I have uncommitted changes?</li>
-<li><strong>Log:</strong> Which commits exist locally?</li>
-<li><strong>Remote:</strong> Which repository am I connected to?</li>
-</ul>
-<p>Finally, open the repository on GitHub and check that the expected file and latest commit appear.</p>
-<p>A clean working tree means there are no outstanding changes relative to the current commit. By itself, it does not prove that every commit has been pushed.</p>
-<h2>What this lab is teaching me</h2>
-<p>The biggest lesson is to connect every action with its purpose.</p>
-<p>Before running a command, I try to answer:</p>
-<ul>
-<li>Where am I running it?</li>
-<li>What will it change?</li>
-<li>How will I verify the result?</li>
-<li>What does the output tell me?</li>
-</ul>
-<p>I also want to build good habits early: review changes before committing, write useful commit messages, and keep credentials out of version control.</p>
-<p>A README is a useful place to record the lab's purpose, commands, results, and lessons. That makes it easier to return later and explain what I actually learned.</p>
-<h2>What comes next</h2>
-<p>My next goal is to build on this foundation with a small application, then gradually introduce a web server, scripting, containers, and a CI/CD pipeline.</p>
-<p>For this stage, the milestone is clear: work confidently in a Linux directory, inspect a file change, record it with Git, and understand how that commit reaches GitHub.</p>
-<p>I am documenting the process as I learn, one practical step at a time.</p>
-]]></content:encoded></item><item><title><![CDATA[Writing a Custom IAM Policy from Scratch]]></title><description><![CDATA[On Day 1 I used an AWS managed policy (ReadOnlyAccess). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3…]]></description><link>https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/writing-a-custom-iam-policy-from-scratch</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 30 Oct 2026 20:48:22 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a30d9c19-0b7d-4523-8d78-a177bb14eb30.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>On Day 1 I used an AWS managed policy (<code>ReadOnlyAccess</code>). It works, but it's broad. Today I wrote my own policy that allows exactly one thing: reading one S3 bucket and nothing else. That's least privilege in practice.</p>
-<h2>Anatomy of an IAM policy</h2>
-<pre><code class="language-json">{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "ReadOneBucketOnly",
-      "Effect": "Allow",
-      "Action": ["s3:GetObject", "s3:ListBucket"],
-      "Resource": [
-        "arn:aws:s3:::robin-120days-demo",
-        "arn:aws:s3:::robin-120days-demo/*"
-      ]
-    }
-  ]
-}
-</code></pre>
-<ul>
-<li><strong>Version:</strong> always <code>2012-10-17</code>, the current policy language version.</li>
-<li><strong>Statement:</strong> one or more permission rules.</li>
-<li><strong>Sid:</strong> an optional label so humans can tell statements apart.</li>
-<li><strong>Effect:</strong> <code>Allow</code> or <code>Deny</code>.</li>
-<li><strong>Action:</strong> the API calls the rule covers, written as <code>service:Action</code>.</li>
-<li><strong>Resource:</strong> the ARN of what the actions apply to.</li>
-<li><strong>Condition (optional):</strong> extra rules such as source IP, MFA required or a time window.</li>
-</ul>
-<h2>Why two Resource lines?</h2>
-<p>Bucket-level actions like <code>s3:ListBucket</code> apply to the bucket ARN. Object-level actions like <code>s3:GetObject</code> apply to the objects inside it, which is why the second ARN ends in <code>/*</code>. Missing one of the two is a very common reason a "correct" policy still gets denied.</p>
-<h2>What I did hands-on today</h2>
-<ul>
-<li>Created a customer managed policy called <code>ReadDemoBucketOnly</code> using the JSON editor.</li>
-<li>Created a user group <code>DemoBucketReaders</code> and attached only that policy.</li>
-<li>Tested it in the <strong>Policy Simulator</strong>:<ul>
-<li><code>s3:GetObject</code> on <code>robin-120days-demo/*</code> was <strong>Allowed</strong> (explicit allow).</li>
-<li><code>s3:PutObject</code> and <code>s3:DeleteObject</code> on the same bucket were <strong>Denied</strong> (implicit deny).</li>
-<li><code>s3:GetObject</code> on a different bucket was <strong>Denied</strong>, which shows the policy is scoped by resource.</li>
-</ul>
-</li>
-</ul>
-<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/39821615-b704-478a-9374-3abd4b22fcdb.png" alt="" style="display:block;margin:0 auto" />
-
-<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/5ee067ea-b36d-4882-9ad0-218afc05f314.png" alt="" style="display:block;margin:0 auto" />
-
-<h2>Common mistakes to avoid</h2>
-<ol>
-<li><code>"Action": "*"</code> or <code>"Resource": "*"</code> on a statement that doesn't need it.</li>
-<li>Forgetting the bucket ARN versus the object ARN (<code>/*</code>).</li>
-<li>Copying a policy from the internet without reading every line.</li>
-<li>Testing in production first instead of using the Policy Simulator.</li>
-</ol>
-<img src="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/623354d9-7a0b-4e08-a793-0fb6436b4f2e.png" alt="" style="display:block;margin:0 auto" />
-
-<h2>3 habits I'm keeping</h2>
-<ol>
-<li>Start with no permissions and add one action at a time.</li>
-<li>Scope the Resource to a specific ARN, not a wildcard.</li>
-<li>Test every new policy in the Policy Simulator before attaching it to real users.</li>
-</ol>
-<p>Tomorrow (Day 3): IAM roles and how services like EC2 get temporary credentials.</p>
 ]]></content:encoded></item></channel></rss>
