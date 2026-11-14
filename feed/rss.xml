@@ -1,4 +1,174 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 13 Nov 2026 14:37:21 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Organizations: Multiple Accounts, OUs and Service Control Policies]]></title><description><![CDATA[So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the…]]></description><link>https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Organizations]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 13 Nov 2026 14:37:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/85b59680-73ea-4bdd-911d-e3a934c22353.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the structure around it: <strong>AWS Organizations</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 14 Nov 2026 12:12:26 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS IAM Identity Center: Single Sign-On Across Your AWS Accounts]]></title><description><![CDATA[Yesterday I set up an organization with several accounts. Now the next question: how do people get into those accounts without a pile of IAM users and…]]></description><link>https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS IAM]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 14 Nov 2026 12:12:17 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b85b72d-6a82-4b42-8837-c9cca89d8564.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Yesterday I set up an organization with several accounts. Now the next question: how do <strong>people</strong> get into those accounts without a pile of IAM users and long-term access keys? The answer is <strong>AWS IAM Identity Center</strong>.</p>
+<h2>What it does</h2>
+<ul>
+<li>It is the AWS service for <strong>workforce single sign-on</strong> across the accounts in your organization and supported applications.</li>
+<li>People sign in once at the <strong>AWS access portal</strong> and pick the account and role they need.</li>
+<li>Access is given through <strong>temporary credentials</strong>, so there are no long-term keys to lose.</li>
+</ul>
+<h2>The building blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Identity source</strong></td>
+<td>Where users and groups live</td>
+<td>Built-in directory, Active Directory or an external identity provider</td>
+</tr>
+<tr>
+<td><strong>Permission set</strong></td>
+<td>A template of permissions</td>
+<td>Identity Center creates a role from it in each assigned account</td>
+</tr>
+<tr>
+<td><strong>Assignment</strong></td>
+<td>Links a user or group to an account with a permission set</td>
+<td>Assign groups, not single users</td>
+</tr>
+<tr>
+<td><strong>Access portal</strong></td>
+<td>The sign-in page for your users</td>
+<td>One URL for all accounts</td>
+</tr>
+</tbody></table>
+<h2>How it fits with Organizations</h2>
+<ul>
+<li>Enable it in the <strong>management account</strong> with AWS Organizations turned on.</li>
+<li>Choose the <strong>home Region</strong> carefully, because it is hard to change later.</li>
+<li>Roles created from permission sets show up in each account with names starting <code>AWSReservedSSO_</code>.</li>
+<li>Session length is set per permission set.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>IAM Identity Center</strong> in the management account and choose <strong>Enable</strong>.</li>
+<li>Under <strong>Groups</strong>, create a group named <code>ReadOnly</code>, then create a user and add them to it.</li>
+<li>Under <strong>Permission sets</strong>, create one that uses the AWS managed <strong>ViewOnlyAccess</strong> or <strong>ReadOnlyAccess</strong> policy.</li>
+<li>Under <strong>AWS accounts</strong>, select an account, choose <strong>Assign users or groups</strong>, and pick the group and the permission set.</li>
+<li>Open the <strong>access portal URL</strong>, sign in as the user, and choose the account and role.</li>
+<li>Optional: run <code>aws configure sso</code>, then <code>aws sso login</code>, and check with <code>aws sts get-caller-identity</code>.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Creating IAM users for every person instead of using Identity Center.</li>
+<li>Assigning permission sets to single users, which gets hard to manage.</li>
+<li>Giving broad access when a read-only permission set is enough.</li>
+<li>Forgetting MFA for the people who sign in.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Use Identity Center for people and IAM roles for workloads.</li>
+<li>Define access once in a permission set and assign it to groups.</li>
+<li>Prefer temporary credentials over long-term keys.</li>
+<li>Keep MFA on for every user.</li>
+</ul>
+<p>Tomorrow I'll look at what happens when something goes wrong in your accounts, starting with how to be notified.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Screen Flow Launch Cheat Sheet: Quick Actions, Lightning Pages and Admin II Interview Q&A]]></title><description><![CDATA[A Screen Flow only helps if users can find it. Admin II interviews ask where you would launch one, how it knows which record it is on, and who is allowed…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-screen-flow-launch-cheat-sheet-quick-actions-lightning-pages-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-screen-flow-launch-cheat-sheet-quick-actions-lightning-pages-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 14 Nov 2026 12:09:47 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/76c209cb-b179-4ff2-b1d2-874e8b355206.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>A Screen Flow only helps if users can find it. Admin II interviews ask where you would launch one, how it knows which record it is on, and who is allowed to run it.</em></p>
+<hr />
+<h2>The 4 Ways to Launch a Screen Flow</h2>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>How</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Quick action</strong></td>
+<td>Action of type Flow on an object</td>
+<td>Shows as a button on the record page</td>
+</tr>
+<tr>
+<td><strong>Lightning page</strong></td>
+<td>The Flow component</td>
+<td>Runs inline on the page</td>
+</tr>
+<tr>
+<td><strong>URL or button</strong></td>
+<td><code>/flow/FlowApiName</code></td>
+<td>Good for links and custom buttons</td>
+</tr>
+<tr>
+<td><strong>Utility bar</strong></td>
+<td>Flow utility item</td>
+<td>Always available in the app</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. Why must the flow be active?</h3>
+<p>Users can only run an <strong>active</strong> flow. Activate it before you add it to a page, an action or a link.</p>
+<blockquote>
+<p><strong>Tip:</strong> Test with Debug first, then activate.</p>
+</blockquote>
+<h3>2. How do you add a quick action?</h3>
+<p>In Object Manager, create an action of type <strong>Flow</strong>, pick the flow and give it a short label. Then add it to the <strong>page layout</strong> so the button appears.</p>
+<blockquote>
+<p><strong>Tip:</strong> Keep the label short so it fits on the button.</p>
+</blockquote>
+<h3>3. How do you embed the flow on a page?</h3>
+<p>In the Lightning App Builder, drag the <strong>Flow</strong> component onto the page and choose the flow.</p>
+<blockquote>
+<p><strong>Tip:</strong> One flow per section keeps the page clean.</p>
+</blockquote>
+<h3>4. How does the flow get the current record?</h3>
+<p>Create a <strong>Text variable named <code>recordId</code></strong> and tick <strong>Available for input</strong>. Salesforce passes the record Id in when the flow runs from a record page.</p>
+<blockquote>
+<p><strong>Tip:</strong> The variable name must match exactly.</p>
+</blockquote>
+<h3>5. Who can run it?</h3>
+<p>Users need access to the flow, for example the <strong>Run Flows</strong> permission, or access given through a profile or permission set.</p>
+<blockquote>
+<p><strong>Tip:</strong> Test as a real user, not only as an admin.</p>
+</blockquote>
+<h3>6. What happens when the flow finishes?</h3>
+<p>Show a <strong>confirmation screen</strong>, or use the flow's finish setting to restart it or send the user elsewhere.</p>
+<blockquote>
+<p><strong>Tip:</strong> End with a clear message so the user knows it worked.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Let reps log a call from the Account page."</strong></p>
+<ol>
+<li>Build the <strong>Screen Flow</strong> with a <code>recordId</code> variable</li>
+<li><strong>Activate</strong> it</li>
+<li>Create a <strong>Flow quick action</strong> on Account</li>
+<li>Add it to the <strong>page layout</strong> and test as a rep</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open yesterday's Screen Flow and add a Text variable <code>recordId</code>, available for input.</li>
+<li>Use <code>{!recordId}</code> as the <code>WhatId</code> when it creates the Task.</li>
+<li><strong>Save</strong> and <strong>Activate</strong> the flow.</li>
+<li>In Object Manager, create a <strong>Flow</strong> quick action on Account and add it to the page layout.</li>
+<li>Open an Account, run the action, and check that the Task is linked to that Account.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Run from a record</strong> = Quick action</li>
+<li><strong>Embed inline</strong> = Flow component</li>
+<li><strong>Link to it</strong> = <code>/flow/ApiName</code></li>
+<li><strong>Know the record</strong> = <code>recordId</code></li>
+<li><strong>Must be</strong> = Active</li>
+<li><strong>Access</strong> = Run Flows</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Activate before you place it.</li>
+<li>Use <code>recordId</code> for record context.</li>
+<li>Pick the launch spot that suits the user.</li>
+<li>Test as a real user.</li>
+</ul>
+<p><strong>Next up:</strong> Flow error handling and fault paths in Screen Flows.</p>
+<p><em>Part of #120DaysOfSalesforce. Where do your users launch Screen Flows? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Organizations: Multiple Accounts, OUs and Service Control Policies]]></title><description><![CDATA[So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the…]]></description><link>https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Organizations]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 13 Nov 2026 14:37:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/85b59680-73ea-4bdd-911d-e3a934c22353.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the structure around it: <strong>AWS Organizations</strong>.</p>
 <h2>Why more than one account</h2>
 <ul>
 <li>An AWS account is a strong boundary for <strong>security, cost and blast radius</strong>.</li>
@@ -1496,190 +1666,4 @@ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
 <hr />
 <p><strong>Which picklist is hardest to maintain? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 28 done, 2 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Case Escalation & Entitlements Cheat Sheet: Milestones, Business Hours, and Admin Interview Q&A (Day 27/30)]]></title><description><![CDATA[Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview. It reassigns or…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-case-escalation-entitlements-cheat-sheet-milestones-business-hours-and-admin-interview-q-a-day-27-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 14:35:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ef1d9da1-d63a-4368-bbc2-0d78192e6f45.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Make sure no customer waits longer than promised. Escalation rules and entitlements come up in almost every Service Cloud admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Escalation</strong></td>
-<td>Acts on open cases</td>
-<td>One active rule</td>
-</tr>
-<tr>
-<td><strong>Business Hours</strong></td>
-<td>Working time clock</td>
-<td>Set them first</td>
-</tr>
-<tr>
-<td><strong>Entitlement</strong></td>
-<td>Support level owed</td>
-<td>Link to account</td>
-</tr>
-<tr>
-<td><strong>Milestone</strong></td>
-<td>Timed required step</td>
-<td>Warn and violate</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is an escalation rule?</h3>
-<p>It <strong>reassigns or notifies</strong> when a case stays open too long.</p>
-<blockquote>
-<p><strong>Tip:</strong> Built for missed deadlines.</p>
-</blockquote>
-<h3>2. Assignment or escalation?</h3>
-<p><strong>Assignment routes new cases.</strong> Escalation acts on open ones.</p>
-<blockquote>
-<p><strong>Tip:</strong> They work together.</p>
-</blockquote>
-<h3>3. How many can be active?</h3>
-<p>Only <strong>one escalation rule</strong> is active at a time.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use rule entries for variety.</p>
-</blockquote>
-<h3>4. Why set business hours?</h3>
-<p>Timers can count <strong>only working hours</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add holidays too.</p>
-</blockquote>
-<h3>5. What is an entitlement?</h3>
-<p>It defines the <strong>support a customer is owed</strong>, like response time.</p>
-<blockquote>
-<p><strong>Tip:</strong> Link it to the account.</p>
-</blockquote>
-<h3>6. What is a milestone?</h3>
-<p>A <strong>required step with a time limit</strong>, such as first response.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add warning and violation actions.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Premium cases need a reply within an hour. How?"</strong></p>
-<ol>
-<li><strong>Create</strong> a Premium entitlement</li>
-<li><strong>Add</strong> a first response milestone</li>
-<li><strong>Set</strong> warning and violation actions</li>
-<li><strong>Test</strong> with a sample case</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Assign</strong> = routes new cases</li>
-<li><strong>Escalate</strong> = acts on open cases</li>
-<li><strong>Active</strong> = one rule</li>
-<li><strong>Clock</strong> = business hours</li>
-<li><strong>Entitlement</strong> = support level</li>
-<li><strong>Milestone</strong> = time target</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Assign first, escalate later</li>
-<li>Set business hours before timers</li>
-<li>Link entitlements to accounts</li>
-<li>Warn before the violation</li>
-</ul>
-<hr />
-<p><strong>What is your case SLA? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 27 done, 3 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Field History & Audit Trail Cheat Sheet: Limits, Retention, and Admin Interview Q&A (Day 26/30)]]></title><description><![CDATA[Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview. It records the old and new values of selected…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-field-history-audit-trail-cheat-sheet-limits-retention-and-admin-interview-q-a-day-26-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 01 Nov 2026 17:53:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/106222a6-ae4f-417a-83d5-2aa14a45688d.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Prove who changed what, and when. Field History and the audit trails come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Field History</strong></td>
-<td>Old and new values</td>
-<td>20 fields each</td>
-</tr>
-<tr>
-<td><strong>Setup Trail</strong></td>
-<td>Logs admin changes</td>
-<td>Last 180 days</td>
-</tr>
-<tr>
-<td><strong>Field Audit</strong></td>
-<td>Paid long retention</td>
-<td>Up to 10 years</td>
-</tr>
-<tr>
-<td><strong>Login History</strong></td>
-<td>Who logged in</td>
-<td>Last 6 months</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is Field History?</h3>
-<p>It records the <strong>old and new values</strong> of selected fields.</p>
-<blockquote>
-<p><strong>Tip:</strong> Turn it on per object.</p>
-</blockquote>
-<h3>2. How many fields can you track?</h3>
-<p><strong>Up to 20 fields</strong> on each object.</p>
-<blockquote>
-<p><strong>Tip:</strong> Pick fields that matter.</p>
-</blockquote>
-<h3>3. How long is history kept?</h3>
-<p><strong>18 months in the UI</strong> and 24 months through the API.</p>
-<blockquote>
-<p><strong>Tip:</strong> Export what you must keep.</p>
-</blockquote>
-<h3>4. What is Setup Audit Trail?</h3>
-<p>It logs <strong>setup changes</strong> and who made them for 180 days.</p>
-<blockquote>
-<p><strong>Tip:</strong> Download the CSV to keep it.</p>
-</blockquote>
-<h3>5. Need longer retention?</h3>
-<p><strong>Field Audit Trail</strong> is an add-on: up to 60 fields and 10 years.</p>
-<blockquote>
-<p><strong>Tip:</strong> Ask about licensing.</p>
-</blockquote>
-<h3>6. Which fields cannot be tracked?</h3>
-<p><strong>Formula and roll-up summary fields.</strong></p>
-<blockquote>
-<p><strong>Tip:</strong> Track the source fields.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Auditors ask who changed Amount, and when. How?"</strong></p>
-<ol>
-<li><strong>Enable</strong> history on Opportunity</li>
-<li><strong>Select</strong> the Amount field</li>
-<li><strong>Show</strong> the History related list</li>
-<li><strong>Check</strong> Setup Audit Trail</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Fields</strong> = 20 per object</li>
-<li><strong>UI</strong> = 18 months</li>
-<li><strong>API</strong> = 24 months</li>
-<li><strong>Setup trail</strong> = 180 days</li>
-<li><strong>Add-on</strong> = 60 fields</li>
-<li><strong>Formulas</strong> = not tracked</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Track only fields that matter</li>
-<li>Export before data ages out</li>
-<li>Setup Audit Trail covers admin changes</li>
-<li>Use Field Audit Trail for compliance</li>
-</ul>
-<hr />
-<p><strong>Which field do you audit most? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 26 done, 4 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
