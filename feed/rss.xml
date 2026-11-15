@@ -1,4 +1,181 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 14 Nov 2026 12:12:26 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS IAM Identity Center: Single Sign-On Across Your AWS Accounts]]></title><description><![CDATA[Yesterday I set up an organization with several accounts. Now the next question: how do people get into those accounts without a pile of IAM users and…]]></description><link>https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS IAM]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 14 Nov 2026 12:12:17 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b85b72d-6a82-4b42-8837-c9cca89d8564.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Yesterday I set up an organization with several accounts. Now the next question: how do <strong>people</strong> get into those accounts without a pile of IAM users and long-term access keys? The answer is <strong>AWS IAM Identity Center</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Nov 2026 16:33:07 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS CloudWatch Alarms and SNS: Get Notified When Something Goes Wrong]]></title><description><![CDATA[In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon Cloudwatch]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 15 Nov 2026 16:32:58 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4465a3bf-e20f-476d-aae3-452e04c3f0ab.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong, <strong>who finds out, and how fast?</strong> The basic answer on AWS is a <strong>CloudWatch alarm</strong> that sends a message through <strong>Amazon SNS</strong>.</p>
+<h2>What each service does</h2>
+<ul>
+<li><strong>Amazon CloudWatch</strong> collects metrics, such as CPU use or estimated charges, and can watch them with alarms.</li>
+<li><strong>CloudWatch alarm</strong> compares a metric to a threshold and moves between three states: <strong>OK</strong>, <strong>ALARM</strong> and <strong>INSUFFICIENT_DATA</strong>.</li>
+<li><strong>Amazon SNS</strong> (Simple Notification Service) sends a message to everyone subscribed to a <strong>topic</strong>, by email, SMS or other targets.</li>
+</ul>
+<h2>The building blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Metric</strong></td>
+<td>A number measured over time</td>
+<td>Example: CPUUtilization or EstimatedCharges</td>
+</tr>
+<tr>
+<td><strong>Alarm</strong></td>
+<td>A rule on one metric</td>
+<td>Threshold, period and number of periods</td>
+</tr>
+<tr>
+<td><strong>SNS topic</strong></td>
+<td>A channel for messages</td>
+<td>Alarms publish to it</td>
+</tr>
+<tr>
+<td><strong>Subscription</strong></td>
+<td>Who receives the topic</td>
+<td>An email subscription must be confirmed</td>
+</tr>
+<tr>
+<td><strong>Alarm action</strong></td>
+<td>What the alarm does on a state change</td>
+<td>Often: publish to an SNS topic</td>
+</tr>
+</tbody></table>
+<h2>Why a topic and not a direct email</h2>
+<ul>
+<li>One topic can notify a whole team, and you can add people without touching the alarm.</li>
+<li>The same topic can be reused by many alarms.</li>
+<li>Later you can add other targets, such as a chat tool or a Lambda function.</li>
+</ul>
+<h2>Hands-on: a billing alert in your own account</h2>
+<ol>
+<li>Sign in with a user that can open the Billing console, and turn on <strong>Receive CloudWatch billing alerts</strong> in Billing preferences.</li>
+<li>Switch the Region to <strong>US East (N. Virginia)</strong>, because billing metrics are only published there.</li>
+<li>Open <strong>SNS</strong>, create a <strong>Standard</strong> topic named <code>billing-alerts</code>, and add an <strong>Email</strong> subscription with your address.</li>
+<li>Open the email and choose <strong>Confirm subscription</strong>. Until you do, nothing is delivered.</li>
+<li>Open <strong>CloudWatch</strong>, then <strong>Alarms</strong>, then <strong>Create alarm</strong>. Select the metric <strong>Billing &gt; Total Estimated Charge</strong> and set a threshold such as 5 USD.</li>
+<li>For the alarm action choose <strong>In alarm</strong>, send to the <code>billing-alerts</code> topic, and create the alarm.</li>
+<li>Test the notification path with the CLI: <code>aws cloudwatch set-alarm-state --alarm-name &lt;your-alarm&gt; --state-value ALARM --state-reason "test"</code> and check that the email arrives.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Forgetting to confirm the email subscription.</li>
+<li>Creating the billing alarm in a Region other than US East (N. Virginia).</li>
+<li>Setting the threshold so high that the alarm never fires.</li>
+<li>Sending alerts to one personal inbox that nobody else watches.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>An alarm watches a metric, SNS delivers the message.</li>
+<li>Use a topic so you can add people and targets later.</li>
+<li>Confirm subscriptions and test the path on purpose.</li>
+<li>Start with a billing alarm in every new account.</li>
+</ul>
+<p>Tomorrow I'll look at how to see who did what in your account, with AWS CloudTrail.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Fault Paths Cheat Sheet: Handling Errors in Screen Flows and Admin II Interview Q&A]]></title><description><![CDATA[Things go wrong, even in a good Screen Flow: a required field is empty, a record is locked, a validation rule fires. Admin II interviews ask how you handle…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-fault-paths-cheat-sheet-handling-errors-in-screen-flows-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-fault-paths-cheat-sheet-handling-errors-in-screen-flows-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 15 Nov 2026 16:30:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/36c68ff7-2a3f-4f9e-8ec0-d8c6fe0d1f6f.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Things go wrong, even in a good Screen Flow: a required field is empty, a record is locked, a validation rule fires. Admin II interviews ask how you handle it so the user sees a clear message instead of a scary error.</em></p>
+<hr />
+<h2>What Happens Without a Fault Path</h2>
+<p>If an element fails and you did nothing about it, the user sees a generic <strong>unhandled fault</strong> error and Salesforce emails the details to the admin. A <strong>fault path</strong> lets you decide what happens instead.</p>
+<table>
+<thead>
+<tr>
+<th>Idea</th>
+<th>What it means</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Fault connector</strong></td>
+<td>A second path out of an element that can fail</td>
+<td>Drawn as a red dashed line</td>
+</tr>
+<tr>
+<td><strong>Fault message</strong></td>
+<td>The text of the error</td>
+<td><code>{!$Flow.FaultMessage}</code></td>
+</tr>
+<tr>
+<td><strong>Fault screen</strong></td>
+<td>A screen that explains the problem</td>
+<td>Shown instead of the crash</td>
+</tr>
+<tr>
+<td><strong>Debug</strong></td>
+<td>Run the flow with test data</td>
+<td>Use it to trigger a failure on purpose</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a fault path?</h3>
+<p>It is the path a flow takes when an element fails. You add it from the element with the <strong>Fault</strong> connector.</p>
+<blockquote>
+<p><strong>Tip:</strong> Think of it as the "if this fails" branch.</p>
+</blockquote>
+<h3>2. Which elements can have one?</h3>
+<p>Elements that can fail, such as <strong>Create, Update, Get and Delete Records</strong>, <strong>actions</strong> and <strong>subflows</strong>. Screen elements do not get one.</p>
+<blockquote>
+<p><strong>Tip:</strong> Put it on every element that changes data.</p>
+</blockquote>
+<h3>3. How do you show the error to the user?</h3>
+<p>Send the fault connector to a <strong>Screen</strong> and add a Display Text component with <code>{!$Flow.FaultMessage}</code>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add a friendly sentence above it, such as "We could not save your call."</p>
+</blockquote>
+<h3>4. Should users see the raw message?</h3>
+<p>Usually not. Raw messages can be technical. Show a plain message to the user and keep the detail for the admin.</p>
+<blockquote>
+<p><strong>Tip:</strong> Say what to do next, for example "Contact your admin."</p>
+</blockquote>
+<h3>5. How does the admin find out?</h3>
+<p>Salesforce sends a <strong>flow error email</strong> for unhandled faults. In your own fault path you can also send an email or create a record that logs the error.</p>
+<blockquote>
+<p><strong>Tip:</strong> A log record is easier to search than a pile of emails.</p>
+</blockquote>
+<h3>6. How do you test it?</h3>
+<p>Use <strong>Debug</strong> and cause a failure on purpose, such as leaving a required field empty, then check that the fault screen appears.</p>
+<blockquote>
+<p><strong>Tip:</strong> A fault path you never tested is a guess.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"The call log flow sometimes fails and reps just see an error."</strong></p>
+<ol>
+<li>Open the Screen Flow and find the <strong>Create Records</strong> element for the Task</li>
+<li>Add a <strong>Fault</strong> connector from it to a new screen</li>
+<li>Show a friendly message plus <code>{!$Flow.FaultMessage}</code></li>
+<li>Debug with a failing case, then <strong>activate</strong> the new version</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open yesterday's Screen Flow in Flow Builder.</li>
+<li>On the <strong>Create Records</strong> element that creates the Task, choose <strong>Add Fault Path</strong>.</li>
+<li>Add a <strong>Screen</strong> after it named <code>Something went wrong</code>.</li>
+<li>In that screen add Display Text: <code>We could not save your call. Details: {!$Flow.FaultMessage}</code></li>
+<li>Run <strong>Debug</strong> and leave the Task <strong>Subject</strong> empty so the create fails.</li>
+<li>Check that the fault screen appears, then <strong>Save</strong> and <strong>Activate</strong> the new version.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Second path out</strong> = Fault connector</li>
+<li><strong>Error text</strong> = <code>{!$Flow.FaultMessage}</code></li>
+<li><strong>Show it</strong> = Fault screen</li>
+<li><strong>Screens</strong> = no fault path</li>
+<li><strong>Test it</strong> = Debug a failure</li>
+<li><strong>Unhandled</strong> = Error email to admin</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Add a fault path to every element that changes data.</li>
+<li>Show a friendly message, not a crash.</li>
+<li>Keep the technical detail for the admin.</li>
+<li>Test the failure on purpose.</li>
+</ul>
+<p><strong>Next up:</strong> Flow decisions and loops, the two elements behind most real flows.</p>
+<p><em>Part of #120DaysOfSalesforce. How do your flows handle errors? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS IAM Identity Center: Single Sign-On Across Your AWS Accounts]]></title><description><![CDATA[Yesterday I set up an organization with several accounts. Now the next question: how do people get into those accounts without a pile of IAM users and…]]></description><link>https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS IAM]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 14 Nov 2026 12:12:17 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b85b72d-6a82-4b42-8837-c9cca89d8564.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Yesterday I set up an organization with several accounts. Now the next question: how do <strong>people</strong> get into those accounts without a pile of IAM users and long-term access keys? The answer is <strong>AWS IAM Identity Center</strong>.</p>
 <h2>What it does</h2>
 <ul>
 <li>It is the AWS service for <strong>workforce single sign-on</strong> across the accounts in your organization and supported applications.</li>
@@ -1480,190 +1657,4 @@ curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
 <hr />
 <p><strong>Which day helped you most? Tell me in the comments!</strong></p>
 <p><em>Following my 30-day daily blogging journey. Day 30 done, 0 to go. Thank you for reading.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Files & Attachments Cheat Sheet: Libraries, Sharing, Versions, and Admin Interview Q&A (Day 29/30)]]></title><description><![CDATA[Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview. Files are modern: versions, sharing and…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-files-attachments-cheat-sheet-libraries-sharing-versions-and-admin-interview-q-a-day-29-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 03 Nov 2026 18:11:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/79ec348c-4480-49b0-ba6e-c638f85212b5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Store it once, share it safely, keep every version. Files and attachments come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Files</strong></td>
-<td>Modern and versioned</td>
-<td>Up to 2 GB</td>
-</tr>
-<tr>
-<td><strong>Attachments</strong></td>
-<td>Legacy and basic</td>
-<td>Up to 25 MB</td>
-</tr>
-<tr>
-<td><strong>Libraries</strong></td>
-<td>Shared team folders</td>
-<td>Member roles</td>
-</tr>
-<tr>
-<td><strong>Sharing</strong></td>
-<td>Links to records</td>
-<td>Viewer or Collab</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. Files or Attachments?</h3>
-<p><strong>Files are modern</strong>: versions, sharing and preview.</p>
-<blockquote>
-<p><strong>Tip:</strong> Migrate old attachments.</p>
-</blockquote>
-<h3>2. What are the size limits?</h3>
-<p><strong>Up to 2 GB per file.</strong> Legacy attachments allow 25 MB.</p>
-<blockquote>
-<p><strong>Tip:</strong> Check your org limits.</p>
-</blockquote>
-<h3>3. How are files shared?</h3>
-<p>Through <strong>links to records</strong>, people, groups or libraries.</p>
-<blockquote>
-<p><strong>Tip:</strong> One file, many records.</p>
-</blockquote>
-<h3>4. Viewer or Collaborator?</h3>
-<p><strong>Viewer can view and download.</strong> Collaborator can also edit.</p>
-<blockquote>
-<p><strong>Tip:</strong> Default to Viewer.</p>
-</blockquote>
-<h3>5. What is a library?</h3>
-<p>A <strong>shared folder</strong> for files, with member roles and permissions.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use it for team content.</p>
-</blockquote>
-<h3>6. Uploading a new version?</h3>
-<p>The file <strong>keeps its history</strong> and the same links.</p>
-<blockquote>
-<p><strong>Tip:</strong> No need to re-share.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Reps must attach signed contracts to Opportunities. How?"</strong></p>
-<ol>
-<li><strong>Add</strong> Files to the page layout</li>
-<li><strong>Store</strong> contracts in a library</li>
-<li><strong>Set</strong> members to Viewer</li>
-<li><strong>Test</strong> upload and preview</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Files</strong> = modern</li>
-<li><strong>Attachments</strong> = legacy</li>
-<li><strong>Limit</strong> = 2 GB per file</li>
-<li><strong>Share</strong> = record links</li>
-<li><strong>Viewer</strong> = view only</li>
-<li><strong>Version</strong> = keeps history</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Use Files, not Attachments</li>
-<li>Share through records and libraries</li>
-<li>Give Viewer unless edit is needed</li>
-<li>Upload versions, do not duplicate</li>
-</ul>
-<hr />
-<p><strong>Where do your files live? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 29 done, 1 to go.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Picklists & Global Value Sets Cheat Sheet: Dependencies, Restrictions, and Admin Interview Q&A (Day 28/30)]]></title><description><![CDATA[One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview. A shared list of values…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-picklists-global-value-sets-cheat-sheet-dependencies-restrictions-and-admin-interview-q-a-day-28-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 02 Nov 2026 20:05:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b65504d9-0be5-4557-9244-c265f4badd36.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>One clean list of values, used everywhere. Picklists, global value sets and dependencies come up in almost every admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Picklist</strong></td>
-<td>One value from a list</td>
-<td>Admin controlled</td>
-</tr>
-<tr>
-<td><strong>Value Set</strong></td>
-<td>Shared by many fields</td>
-<td>Edit it once</td>
-</tr>
-<tr>
-<td><strong>Dependent</strong></td>
-<td>Values follow a field</td>
-<td>Needs a controller</td>
-</tr>
-<tr>
-<td><strong>Restricted</strong></td>
-<td>Blocks unlisted values</td>
-<td>Cleaner data</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a global value set?</h3>
-<p>A <strong>shared list of values</strong> reused by many picklists.</p>
-<blockquote>
-<p><strong>Tip:</strong> Edit once, update everywhere.</p>
-</blockquote>
-<h3>2. What is a dependent picklist?</h3>
-<p>Its values change based on a <strong>controlling field</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Plan the mapping first.</p>
-</blockquote>
-<h3>3. What can be a controller?</h3>
-<p>A standard or custom <strong>picklist, or a checkbox</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Multi-select cannot control.</p>
-</blockquote>
-<h3>4. What does Restrict do?</h3>
-<p>It <strong>blocks values outside the list</strong>, even through the API.</p>
-<blockquote>
-<p><strong>Tip:</strong> Turn it on for clean data.</p>
-</blockquote>
-<h3>5. How do record types help?</h3>
-<p>Each record type can show <strong>only a subset of values</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Set it per record type.</p>
-</blockquote>
-<h3>6. Retiring a value?</h3>
-<p>Existing records keep it, <strong>new records cannot use it</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Deactivate, do not delete.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Sales and Support need the same Region list. How?"</strong></p>
-<ol>
-<li><strong>Create</strong> a global value set</li>
-<li><strong>Attach</strong> it to both fields</li>
-<li><strong>Restrict</strong> the picklist</li>
-<li><strong>Limit</strong> values per record type</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Shared</strong> = global value set</li>
-<li><strong>Depends</strong> = controlling field</li>
-<li><strong>Controller</strong> = picklist or checkbox</li>
-<li><strong>Restrict</strong> = blocks new values</li>
-<li><strong>Subset</strong> = record types</li>
-<li><strong>Retire</strong> = deactivate</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Reuse lists with global value sets</li>
-<li>Pick the controlling field first</li>
-<li>Restrict to keep data clean</li>
-<li>Deactivate instead of deleting</li>
-</ul>
-<hr />
-<p><strong>Which picklist is hardest to maintain? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 28 done, 2 to go.</em></p>
 ]]></content:encoded></item></channel></rss>
