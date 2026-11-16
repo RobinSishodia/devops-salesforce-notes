@@ -1,4 +1,199 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 15 Nov 2026 16:33:07 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS CloudWatch Alarms and SNS: Get Notified When Something Goes Wrong]]></title><description><![CDATA[In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon Cloudwatch]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 15 Nov 2026 16:32:58 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4465a3bf-e20f-476d-aae3-452e04c3f0ab.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong, <strong>who finds out, and how fast?</strong> The basic answer on AWS is a <strong>CloudWatch alarm</strong> that sends a message through <strong>Amazon SNS</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 16 Nov 2026 14:14:51 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS CloudTrail: See Who Did What in Your AWS Account]]></title><description><![CDATA[Last time I set up an alarm to be told when something goes wrong. The next question is different: who did what in my account? When a setting changes or a…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS CloudTrail]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 16 Nov 2026 14:14:40 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0c66f0ed-3ff5-4935-b281-5905b8f1f828.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Last time I set up an alarm to be told when something goes wrong. The next question is different: <strong>who did what in my account?</strong> When a setting changes or a resource disappears, the answer comes from <strong>AWS CloudTrail</strong>.</p>
+<h2>What CloudTrail does</h2>
+<ul>
+<li>It records <strong>API activity</strong> in your account: who made the call, what they did, when, and from where.</li>
+<li>That includes actions in the console, the CLI, SDKs and other AWS services.</li>
+<li>It is the first place to look after a surprise change or a security question.</li>
+</ul>
+<h2>The building blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Event</strong></td>
+<td>One recorded API call</td>
+<td>Shows user, action, time, source IP</td>
+</tr>
+<tr>
+<td><strong>Event history</strong></td>
+<td>A searchable view of recent events</td>
+<td>Management events, last 90 days, per Region</td>
+</tr>
+<tr>
+<td><strong>Trail</strong></td>
+<td>A setting that delivers events to an S3 bucket</td>
+<td>Keeps history longer than 90 days</td>
+</tr>
+<tr>
+<td><strong>Management events</strong></td>
+<td>Actions on resources</td>
+<td>Examples: CreateTopic, RunInstances, DeleteBucket</td>
+</tr>
+<tr>
+<td><strong>Data events</strong></td>
+<td>Actions on the data inside resources</td>
+<td>Examples: S3 object reads, Lambda invokes. Off by default</td>
+</tr>
+</tbody></table>
+<h2>Event history or a trail?</h2>
+<ul>
+<li><strong>Event history</strong> is on by default, needs no setup and covers the last 90 days of management events.</li>
+<li>A <strong>trail</strong> stores events in S3 so you can keep them, search them later and share them across the organization.</li>
+<li>A trail can apply to <strong>all Regions</strong>, so activity in a Region you never use still gets recorded.</li>
+</ul>
+<h2>Hands-on: find who did something</h2>
+<ol>
+<li>Open <strong>CloudTrail</strong>, then <strong>Event history</strong>.</li>
+<li>Filter by <strong>Event name</strong> and search for <code>CreateTopic</code>. That is the SNS topic from my last post.</li>
+<li>Open the event and read the <strong>user name</strong>, <strong>event time</strong> and <strong>source IP address</strong>.</li>
+<li>Create a trail: choose <strong>Create trail</strong>, name it <code>management-events</code>, let it create a new S3 bucket, and keep <strong>Management events</strong> selected.</li>
+<li>Turn on <strong>Apply trail to all Regions</strong>.</li>
+<li>Check it from the CLI: <code>aws cloudtrail lookup-events --lookup-attributes AttributeKey=EventName,AttributeValue=CreateTopic --max-results 5</code></li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Treating Event history as permanent when it only keeps 90 days.</li>
+<li>Creating a trail for one Region only.</li>
+<li>Turning on data events everywhere without thinking about cost.</li>
+<li>Leaving the log bucket open to more people than needed.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>CloudTrail answers who did what, when and from where.</li>
+<li>Event history is free and quick, a trail keeps the history.</li>
+<li>Use a trail that covers all Regions.</li>
+<li>Protect the bucket that holds the logs.</li>
+</ul>
+<p>Tomorrow I'll look at AWS Config, which tracks how your resources looked over time.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Decisions and Loops Cheat Sheet: Branching, Looping and Admin II Interview Q&A]]></title><description><![CDATA[Almost every real flow is built from two elements: a Decision that chooses a path and a Loop that works through a list. Admin II interviews love them…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-decisions-and-loops-cheat-sheet-branching-looping-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-decisions-and-loops-cheat-sheet-branching-looping-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 16 Nov 2026 14:12:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/68f3f894-0a91-4f36-bcbf-009cb2157e96.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Almost every real flow is built from two elements: a Decision that chooses a path and a Loop that works through a list. Admin II interviews love them, especially the rule about what never goes inside a loop.</em></p>
+<hr />
+<h2>The Two Elements at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Decision</strong></td>
+<td>Sends the flow down one path</td>
+<td>Outcomes are checked in order, first match wins</td>
+</tr>
+<tr>
+<td><strong>Default outcome</strong></td>
+<td>The path when no outcome matches</td>
+<td>Always plan for it</td>
+</tr>
+<tr>
+<td><strong>Loop</strong></td>
+<td>Goes through a collection one item at a time</td>
+<td>Has a For Each path and an After Last Item path</td>
+</tr>
+<tr>
+<td><strong>Assignment</strong></td>
+<td>Changes variable values</td>
+<td>Use it inside the loop to build a collection</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. How does a Decision pick a path?</h3>
+<p>It checks its outcomes <strong>from top to bottom</strong> and takes the first one whose conditions are met. If none match, the <strong>Default outcome</strong> runs.</p>
+<blockquote>
+<p><strong>Tip:</strong> Put the most specific outcome first.</p>
+</blockquote>
+<h3>2. Can an outcome have several conditions?</h3>
+<p>Yes. Combine them with <strong>AND</strong>, <strong>OR</strong> or a <strong>custom logic</strong> such as <code>1 AND (2 OR 3)</code>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name outcomes clearly, for example "Has open tasks".</p>
+</blockquote>
+<h3>3. What does a Loop need?</h3>
+<p>A <strong>collection variable</strong> to loop over. The loop gives you one record at a time as the <strong>current item</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name the loop after what it holds, such as <code>Loop_Tasks</code>.</p>
+</blockquote>
+<h3>4. What are the two paths out of a Loop?</h3>
+<p><strong>For Each Item</strong> runs once per record. <strong>After Last Item</strong> runs once when the loop is done.</p>
+<blockquote>
+<p><strong>Tip:</strong> Do the saving after the last item, not during the loop.</p>
+</blockquote>
+<h3>5. What should you never put inside a loop?</h3>
+<p><strong>Create, Update, Delete or Get Records</strong> elements. They run once per item and can hit governor limits.</p>
+<blockquote>
+<p><strong>Tip:</strong> Collect changes in a collection, then save once after the loop.</p>
+</blockquote>
+<h3>6. How do you change records in a loop the right way?</h3>
+<p>Use an <strong>Assignment</strong> to set the field on the current item, then <strong>add the item to a second collection</strong>. After the loop, run one <strong>Update Records</strong> on that collection.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check the collection is not empty before the update.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Close all open Tasks on an Account when the rep clicks a button."</strong></p>
+<ol>
+<li><strong>Get Records</strong> for open Tasks on the Account, storing all records</li>
+<li>A <strong>Decision</strong> checks that at least one Task was found</li>
+<li>A <strong>Loop</strong> goes through the Tasks, with an <strong>Assignment</strong> that sets Status to Completed and adds the Task to a collection</li>
+<li>After the last item, one <strong>Update Records</strong> saves the collection</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a Screen Flow with a Text variable <code>recordId</code>, available for input.</li>
+<li>Add <strong>Get Records</strong> on Task where <strong>WhatId</strong> equals <code>{!recordId}</code> and <strong>IsClosed</strong> is False. Store <strong>all records</strong>.</li>
+<li>Add a <strong>Decision</strong> with an outcome "Found tasks" where the Get Records result <strong>Is Null</strong> equals False.</li>
+<li>Create a record collection variable <code>TasksToUpdate</code> for Task.</li>
+<li>Add a <strong>Loop</strong> over the Get Records result. Inside it, add an <strong>Assignment</strong> that sets <code>{!Loop_Tasks.Status}</code> to <code>Completed</code>, then adds <code>{!Loop_Tasks}</code> to <code>{!TasksToUpdate}</code>.</li>
+<li>After the last item, add <strong>Update Records</strong> using <code>{!TasksToUpdate}</code>, and a closing screen.</li>
+<li>Run <strong>Debug</strong> on an Account with open Tasks and check the Tasks are completed.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Pick a path</strong> = Decision</li>
+<li><strong>Order</strong> = Top to bottom, first match</li>
+<li><strong>No match</strong> = Default outcome</li>
+<li><strong>One at a time</strong> = Loop</li>
+<li><strong>Save once</strong> = After Last Item</li>
+<li><strong>Never in a loop</strong> = Records elements</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>A Decision takes the first matching outcome.</li>
+<li>A Loop works on one record at a time.</li>
+<li>Collect changes in a collection inside the loop.</li>
+<li>Save once after the last item.</li>
+</ul>
+<p><strong>Next up:</strong> Flow resources: variables, constants and formulas.</p>
+<p><em>Part of #120DaysOfSalesforce. Which do you use more, Decisions or Loops? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[I built a GitOps pipeline from scratch (Jenkins, ArgoCD, Terraform, EKS), and what broke]]></title><description><![CDATA[I wanted one project where a git push ends up as a running pod with no manual steps, then the same thing on real AWS. Here is what I built and what went…]]></description><link>https://sishodiarobin.hashnode.dev/i-built-a-gitops-pipeline-from-scratch-jenkins-argocd-terraform-eks-and-what-broke</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/i-built-a-gitops-pipeline-from-scratch-jenkins-argocd-terraform-eks-and-what-broke</guid><category><![CDATA[Devops]]></category><category><![CDATA[Kubernetes]]></category><category><![CDATA[Terraform]]></category><category><![CDATA[AWS]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 16 Nov 2026 04:22:03 GMT</pubDate><content:encoded><![CDATA[<p>I wanted one project where a <code>git push</code> ends up as a running pod with no manual steps, then the same thing on real AWS. Here is what I built and what went wrong.</p>
+<h2>The flow</h2>
+<ol>
+<li>I push a change to GitHub.</li>
+<li>Jenkins notices it by polling (every 2 minutes), builds a Docker image and pushes it to Docker Hub.</li>
+<li>Jenkins commits the new image tag into <code>k8s/deployment.yaml</code>.</li>
+<li>ArgoCD sees the manifest change and syncs it to Kubernetes.</li>
+</ol>
+<p>I proved it by changing the page heading and watching the new text appear without touching anything after the push. Repo: <a href="https://github.com/RobinSishodia/aws-eks-gitops-argocd">https://github.com/RobinSishodia/aws-eks-gitops-argocd</a></p>
+<h2>Terraform and EKS</h2>
+<p>I rebuilt the cluster on AWS with Terraform: a VPC with public and private subnets and a NAT gateway, plus an EKS cluster with a managed node group. ArgoCD ran on it with the app Synced and Healthy. Then I destroyed all 56 resources, verified nothing was left, and deleted the access key.</p>
+<h2>What went wrong</h2>
+<ol>
+<li><strong>Jenkins rebuilt its own commits.</strong> The pipeline pushes a commit, so auto-triggering would loop forever. I added a guard that skips any build whose latest commit says <code>[skip ci]</code>. Jenkins core does not honour that tag by itself. I also once put that exact text in my own commit message and skipped a build I wanted.</li>
+<li><strong>AWS Free plan instance types.</strong> <code>t3.medium</code> was rejected as not free-tier eligible. I queried the eligible types and switched to <code>c7i-flex.large</code>.</li>
+<li><strong>Nodes that never joined.</strong> The EKS Terraform module does not install vpc-cni, kube-proxy or CoreDNS by default, so the nodes had no networking and the node group hung for hours. Declaring the add-ons fixed it. I also added a 25-minute create timeout so a stuck build fails fast.</li>
+</ol>
+<h2>What I would do next</h2>
+<p>A real GitHub webhook instead of polling (it needs Jenkins reachable from the internet), then monitoring with Prometheus and Grafana.</p>
+]]></content:encoded></item><item><title><![CDATA[AWS CloudWatch Alarms and SNS: Get Notified When Something Goes Wrong]]></title><description><![CDATA[In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon Cloudwatch]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 15 Nov 2026 16:32:58 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4465a3bf-e20f-476d-aae3-452e04c3f0ab.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong, <strong>who finds out, and how fast?</strong> The basic answer on AWS is a <strong>CloudWatch alarm</strong> that sends a message through <strong>Amazon SNS</strong>.</p>
 <h2>What each service does</h2>
 <ul>
 <li><strong>Amazon CloudWatch</strong> collects metrics, such as CPU use or estimated charges, and can watch them with alarms.</li>
@@ -1374,287 +1569,4 @@
 <li>Do real work with IAM users and roles, not root.</li>
 </ul>
 <p>Tomorrow I'll look at what comes next once the front door is locked.</p>
-]]></content:encoded></item><item><title><![CDATA[IAM Roles and Temporary Credentials for EC2]]></title><description><![CDATA[On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and…]]></description><link>https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/iam-roles-and-temporary-credentials-for-ec2</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 08:24:48 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c1fe1f46-8de5-4d5f-a434-071e901466b2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>On Day 2 I wrote a least-privilege policy for one S3 bucket. The next question is who gets to use it. For people, that's a user or group. For servers and apps, it should be a <strong>role</strong>, so nothing long-lived ever sits on the machine.</p>
-<h2>Users vs roles</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>IAM user</th>
-<th>IAM role</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>For</strong></td>
-<td>A person</td>
-<td>A service, an app or a person who needs temporary access</td>
-</tr>
-<tr>
-<td><strong>Credentials</strong></td>
-<td>Long-term (password, access keys)</td>
-<td>Temporary, issued on demand</td>
-</tr>
-<tr>
-<td><strong>Rotation</strong></td>
-<td>You do it</td>
-<td>Automatic</td>
-</tr>
-<tr>
-<td><strong>Typical use</strong></td>
-<td>Console and CLI sign-in</td>
-<td>EC2, Lambda, cross-account access</td>
-</tr>
-</tbody></table>
-<h2>Two policies on every role</h2>
-<ul>
-<li><strong>Trust policy:</strong> who is allowed to assume the role (for example <code>ec2.amazonaws.com</code>).</li>
-<li><strong>Permissions policy:</strong> what the role can do once assumed (for example the Day 2 S3 read policy).</li>
-</ul>
-<p>A trust policy for EC2 looks like this:</p>
-<pre><code class="language-json">{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": { "Service": "ec2.amazonaws.com" },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-</code></pre>
-<h2>How EC2 gets credentials</h2>
-<ol>
-<li>The role is attached to the instance through an <strong>instance profile</strong> (the console creates it for you when you make an EC2 role).</li>
-<li>Software on the instance asks the <strong>instance metadata service</strong> for credentials.</li>
-<li><strong>STS</strong> (Security Token Service) issues a temporary access key, secret key and session token.</li>
-<li>AWS refreshes them automatically before they expire, so nothing is stored on disk.</li>
-</ol>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Create a role: trusted entity <strong>AWS service, EC2</strong>.</li>
-<li>Attach the <code>ReadDemoBucketOnly</code> policy from Day 2 (or any least-privilege S3 read policy).</li>
-<li>Launch a small EC2 instance and attach the role under <strong>Actions, Security, Modify IAM role</strong>.</li>
-<li>Connect to the instance and run:</li>
-</ol>
-<pre><code class="language-bash">aws sts get-caller-identity
-aws s3 ls s3://your-demo-bucket
-aws s3 ls s3://some-other-bucket   # should be denied
-</code></pre>
-<ol start="5">
-<li>To see the temporary credentials the instance receives (IMDSv2):</li>
-</ol>
-<pre><code class="language-bash">TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" \
-  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
-curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \
-  http://169.254.169.254/latest/meta-data/iam/security-credentials/
-</code></pre>
-<p><code>get-caller-identity</code> should show an <strong>assumed-role</strong> ARN instead of a user, which proves the instance is using the role. Don't paste the credentials from the metadata call anywhere.</p>
-<h2>Common mistakes to avoid</h2>
-<ol>
-<li>Putting access keys in code, config files or an AMI "just for now".</li>
-<li>Making the trust policy too wide, for example trusting a whole account when one role is enough.</li>
-<li>Attaching <code>AdministratorAccess</code> to a role so the app "just works".</li>
-<li>Forgetting the role is attached to the instance but the app still uses old keys from a config file.</li>
-</ol>
-<h2>3 habits I'm keeping</h2>
-<ol>
-<li>Workloads get roles, people get users or federated sign-in, never the other way round.</li>
-<li>Keep trust and permissions separate and check both when access fails.</li>
-<li>Run <code>aws sts get-caller-identity</code> first whenever something is denied.</li>
-</ol>
-<p>Tomorrow (Day 4): protecting the root account and turning on MFA.</p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Variables & Resources Cheat Sheet: Constants, Formulas, Collections and Admin II Interview Q&A (Day 1/120)]]></title><description><![CDATA[Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-variables-resources-cheat-sheet-constants-formulas-collections-and-admin-ii-interview-q-a-day-1-120</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 05 Nov 2026 07:37:28 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c32c2d2a-aa56-4236-a810-15453c5ed41e.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Variables, constants, formulas and collections are the building blocks of every Flow. Admin II interviews ask about them to see if you can build, not just click.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Resource</th>
-<th>What it holds</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Variable</strong></td>
-<td>A value</td>
-<td>Changes via Assignment</td>
-</tr>
-<tr>
-<td><strong>Constant</strong></td>
-<td>A fixed value</td>
-<td>Never changes</td>
-</tr>
-<tr>
-<td><strong>Formula</strong></td>
-<td>A calculated value</td>
-<td>Read-only, calculated live</td>
-</tr>
-<tr>
-<td><strong>Collection</strong></td>
-<td>A list of values or records</td>
-<td>Allow multiple values</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. Variable, Constant or Formula?</h3>
-<p><strong>Variables change through Assignment.</strong> Constants never change. Formulas calculate when they are used.</p>
-<blockquote>
-<p><strong>Tip:</strong> Need to change it? Use a variable.</p>
-</blockquote>
-<h3>2. What is a record variable?</h3>
-<p>One variable that <strong>holds a whole record</strong>. Read its fields as <code>{!recVar.Field}</code>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Fill it with Get Records.</p>
-</blockquote>
-<h3>3. What is a collection variable?</h3>
-<p>A variable with <strong>Allow multiple values</strong> turned on. It holds a list you can loop over.</p>
-<blockquote>
-<p><strong>Tip:</strong> Name it plural, like <code>contactList</code>.</p>
-</blockquote>
-<h3>4. What do the input and output settings do?</h3>
-<p><strong>Input lets a caller pass values in</strong> (a subflow, Apex or a URL). <strong>Output returns values</strong> to the caller.</p>
-<blockquote>
-<p><strong>Tip:</strong> Open only what you need.</p>
-</blockquote>
-<h3>5. What is $Record?</h3>
-<p>The <strong>record that triggered</strong> a record-triggered flow. <code>$Record__Prior</code> holds the old values on updates.</p>
-<blockquote>
-<p><strong>Tip:</strong> Compare old to new.</p>
-</blockquote>
-<h3>6. Text Template or Formula?</h3>
-<p><strong>Text Template builds readable text</strong> with merge fields. A Formula returns a calculated value.</p>
-<blockquote>
-<p><strong>Tip:</strong> Emails and screen messages: use a template.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A screen flow must show a 10% discount on an Opportunity."</strong></p>
-<ol>
-<li><strong>Get Records</strong> into an Opportunity variable</li>
-<li><strong>Formula:</strong> Amount x 0.1</li>
-<li><strong>Text Template:</strong> build the message</li>
-<li><strong>Show</strong> it on a screen, then <strong>Debug</strong></li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> and add a <strong>Get Records</strong> element for one Opportunity into a record variable.</li>
-<li>Add a <strong>Formula</strong> resource of type Currency: <code>{!oppRecord.Amount} * 0.1</code>.</li>
-<li>Add a <strong>Text Template</strong> that says "Discount: {!discountFormula}".</li>
-<li>Show the template in a <strong>Display Text</strong> component on a screen.</li>
-<li>Run <strong>Debug</strong> and check the value against the Opportunity amount.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Change</strong> = variable</li>
-<li><strong>Fixed</strong> = constant</li>
-<li><strong>Calculate</strong> = formula</li>
-<li><strong>Message</strong> = text template</li>
-<li><strong>List</strong> = collection</li>
-<li><strong>Trigger record</strong> = $Record</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Pick the right resource type.</li>
-<li>Use a Formula for any calculation.</li>
-<li>Open input and output with care.</li>
-<li>Name every resource clearly.</li>
-</ul>
-<p><strong>Next up, Day 2:</strong> Decision and Assignment elements.</p>
-<p><em>Part of #120DaysOfSalesforce. Which resource do you use most? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Admin Interview Final Checklist: Security, Automation, Data, and Scenario Answers (Day 30/30)]]></title><description><![CDATA[30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview. Start with OWD, then open…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-admin-interview-final-checklist-security-automation-data-and-scenario-answers-day-30-30</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[crm]]></category><category><![CDATA[interview questions]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 04 Nov 2026 10:19:34 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/f340500a-5089-42ad-a5b9-b331e38beed1.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>30 days, 30 topics, one cheat sheet to finish. This is the checklist I would run through before any Salesforce admin interview.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it is</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Security</strong></td>
-<td>OWD, roles, sharing</td>
-<td>Open up access</td>
-</tr>
-<tr>
-<td><strong>Automation</strong></td>
-<td>Flow and approvals</td>
-<td>Lightest tool</td>
-</tr>
-<tr>
-<td><strong>Data</strong></td>
-<td>Import, clean, back up</td>
-<td>Prevent first</td>
-</tr>
-<tr>
-<td><strong>Delivery</strong></td>
-<td>Sandbox to production</td>
-<td>Test first</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. Where do you start on access?</h3>
-<p>Start with <strong>OWD</strong>, then open up with roles, sharing rules and permission sets.</p>
-<blockquote>
-<p><strong>Tip:</strong> Open up, never lock down.</p>
-</blockquote>
-<h3>2. Flow or validation rule?</h3>
-<p><strong>Validation blocks bad data.</strong> Flow automates the actions.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use the lightest tool.</p>
-</blockquote>
-<h3>3. How do you ship changes?</h3>
-<p>Build in a <strong>sandbox</strong>, then deploy with change sets.</p>
-<blockquote>
-<p><strong>Tip:</strong> Test before production.</p>
-</blockquote>
-<h3>4. How do you keep data clean?</h3>
-<p>Use <strong>duplicate rules</strong>, restricted picklists and validation rules.</p>
-<blockquote>
-<p><strong>Tip:</strong> Prevent first, then clean.</p>
-</blockquote>
-<h3>5. How do you protect data?</h3>
-<p>Schedule <strong>data exports</strong> and know what the Recycle Bin keeps.</p>
-<blockquote>
-<p><strong>Tip:</strong> Back up before big changes.</p>
-</blockquote>
-<h3>6. How do you answer scenarios?</h3>
-<p><strong>State the goal, name the tool, give the steps, mention a test.</strong></p>
-<blockquote>
-<p><strong>Tip:</strong> Keep it under a minute.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A new sales team joins. What do you set up?"</strong></p>
-<ol>
-<li><strong>Add</strong> roles and permission sets</li>
-<li><strong>Set</strong> record types and layouts</li>
-<li><strong>Build</strong> flows and validations</li>
-<li><strong>Test</strong> in a sandbox first</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Access</strong> = OWD first</li>
-<li><strong>Rules</strong> = validation blocks</li>
-<li><strong>Automation</strong> = Flow</li>
-<li><strong>Release</strong> = sandbox first</li>
-<li><strong>Data</strong> = prevent duplicates</li>
-<li><strong>Answer</strong> = goal, tool, steps</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Start with the goal</li>
-<li>Use the lightest tool</li>
-<li>Test before production</li>
-<li>Explain it in four steps</li>
-</ul>
-<hr />
-<p><strong>Which day helped you most? Tell me in the comments!</strong></p>
-<p><em>Following my 30-day daily blogging journey. Day 30 done, 0 to go. Thank you for reading.</em></p>
 ]]></content:encoded></item></channel></rss>
