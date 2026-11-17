@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Mon, 16 Nov 2026 14:14:51 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS CloudTrail: See Who Did What in Your AWS Account]]></title><description><![CDATA[Last time I set up an alarm to be told when something goes wrong. The next question is different: who did what in my account? When a setting changes or a…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS CloudTrail]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 16 Nov 2026 14:14:40 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0c66f0ed-3ff5-4935-b281-5905b8f1f828.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Last time I set up an alarm to be told when something goes wrong. The next question is different: <strong>who did what in my account?</strong> When a setting changes or a resource disappears, the answer comes from <strong>AWS CloudTrail</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 17 Nov 2026 16:07:55 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Config: Track Resource Changes and Check Compliance]]></title><description><![CDATA[CloudTrail tells me who made a change. The next question is different: what did the resource look like before, and does it follow my rules? That is the job…]]></description><link>https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Config]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 17 Nov 2026 16:07:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/495683c3-d27b-4606-89d1-9bb43b9efdf2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>CloudTrail tells me who made a change. The next question is different: <strong>what did the resource look like before, and does it follow my rules?</strong> That is the job of <strong>AWS Config</strong>.</p>
+<h2>What AWS Config does</h2>
+<ul>
+<li>It <strong>records the configuration</strong> of supported AWS resources and keeps a history of how each one changed.</li>
+<li>It checks those configurations against <strong>rules</strong> and reports each resource as <strong>compliant</strong> or <strong>non-compliant</strong>.</li>
+<li>It works <strong>per Region</strong>, so you set it up in each Region you use.</li>
+</ul>
+<h2>CloudTrail and Config together</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Who made this API call, and when?</td>
+<td><strong>CloudTrail</strong></td>
+</tr>
+<tr>
+<td>What did this resource look like last week?</td>
+<td><strong>Config</strong></td>
+</tr>
+<tr>
+<td>Is this resource following our rule?</td>
+<td><strong>Config</strong></td>
+</tr>
+</tbody></table>
+<h2>The building blocks</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Configuration recorder</strong></td>
+<td>Records resource settings</td>
+<td>Choose all resources or specific types</td>
+</tr>
+<tr>
+<td><strong>Configuration item</strong></td>
+<td>A snapshot of one resource at a point in time</td>
+<td>Builds the resource timeline</td>
+</tr>
+<tr>
+<td><strong>Config rule</strong></td>
+<td>A check on a resource setting</td>
+<td>AWS managed rules or your own</td>
+</tr>
+<tr>
+<td><strong>Compliance status</strong></td>
+<td>Result of a rule</td>
+<td>COMPLIANT or NON_COMPLIANT</td>
+</tr>
+<tr>
+<td><strong>Remediation</strong></td>
+<td>An action to fix a non-compliant resource</td>
+<td>Can run an SSM Automation document</td>
+</tr>
+</tbody></table>
+<h2>Examples of managed rules</h2>
+<ul>
+<li><code>s3-bucket-public-read-prohibited</code> flags buckets that allow public reads.</li>
+<li><code>restricted-ssh</code> flags security groups that allow SSH from anywhere.</li>
+<li><code>encrypted-volumes</code> flags EBS volumes that are not encrypted.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>AWS Config</strong> and choose <strong>Set up</strong> (or <strong>Get started</strong>).</li>
+<li>Record <strong>specific resource types</strong> such as S3 buckets and security groups, to keep it small.</li>
+<li>Let it create an S3 bucket for the delivery channel and the service-linked role.</li>
+<li>Add the managed rule <code>s3-bucket-public-read-prohibited</code>, then add <code>restricted-ssh</code>.</li>
+<li>Wait for the first evaluation, then open <strong>Rules</strong> and read the compliance status.</li>
+<li>Open <strong>Resources</strong>, pick a security group and read its <strong>resource timeline</strong>.</li>
+<li>Check from the CLI: <code>aws configservice describe-compliance-by-config-rule</code></li>
+<li>When you finish practising, stop the recorder: <code>aws configservice stop-configuration-recorder --configuration-recorder-name default</code></li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Setting up Config in one Region and expecting it everywhere.</li>
+<li>Recording every resource type for a small practice account without checking the cost.</li>
+<li>Adding rules but never looking at the non-compliant list.</li>
+<li>Forgetting to stop the recorder after practice.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Config records how resources change and checks them against rules.</li>
+<li>CloudTrail answers who, Config answers what and whether it is compliant.</li>
+<li>Start with a few managed rules and review the results.</li>
+<li>Watch the cost, because it depends on what you record and evaluate.</li>
+</ul>
+<p>Tomorrow I'll look at AWS Systems Manager and how it manages instances without opening SSH.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Resources Cheat Sheet: Variables, Constants, Formulas and Admin II Interview Q&A]]></title><description><![CDATA[Every flow needs places to keep and calculate values. Admin II interviews ask which resource to use and why: a variable, a constant, a formula or a text…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-resources-cheat-sheet-variables-constants-formulas-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-resources-cheat-sheet-variables-constants-formulas-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 17 Nov 2026 16:04:52 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/86b4b87d-b84d-4da4-a1df-2c410720757e.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Every flow needs places to keep and calculate values. Admin II interviews ask which resource to use and why: a variable, a constant, a formula or a text template.</em></p>
+<hr />
+<h2>The Four Resources at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>What it holds</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Variable</strong></td>
+<td>A value that can change while the flow runs</td>
+<td>Single value, record or collection</td>
+</tr>
+<tr>
+<td><strong>Constant</strong></td>
+<td>A fixed value</td>
+<td>Cannot be changed by the flow</td>
+</tr>
+<tr>
+<td><strong>Formula</strong></td>
+<td>A calculated value</td>
+<td>Read-only, recalculated each time you use it</td>
+</tr>
+<tr>
+<td><strong>Text template</strong></td>
+<td>Formatted text with merge fields</td>
+<td>Good for messages and email bodies</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a variable?</h3>
+<p>A named container for a value. Choose its <strong>data type</strong> (Text, Number, Currency, Boolean, Date, Date/Time or Record) and whether it holds <strong>one value or a collection</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name it for what it holds, such as <code>TasksToUpdate</code>.</p>
+</blockquote>
+<h3>2. What do "Available for input" and "Available for output" mean?</h3>
+<p><strong>Input</strong> lets a value be passed into the flow, for example <code>recordId</code> from a record page. <strong>Output</strong> lets a value be passed out to a parent flow or another caller.</p>
+<blockquote>
+<p><strong>Tip:</strong> Tick only what you need.</p>
+</blockquote>
+<h3>3. When do you use a constant?</h3>
+<p>When a value never changes during the flow, such as a default Task subject. Change it in one place instead of searching every element.</p>
+<blockquote>
+<p><strong>Tip:</strong> A constant cannot be updated by an Assignment.</p>
+</blockquote>
+<h3>4. What is a formula resource?</h3>
+<p>A value calculated from other values, such as a due date of today plus 7 days. It is <strong>read-only</strong> and works out the answer each time the flow uses it.</p>
+<blockquote>
+<p><strong>Tip:</strong> Pick the formula's data type to match where you will use it.</p>
+</blockquote>
+<h3>5. When do you use a text template?</h3>
+<p>When you need a longer message that mixes text and merge fields, such as a confirmation screen or an email body.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use rich text for formatting, plain text for simple messages.</p>
+</blockquote>
+<h3>6. How do you refer to a resource?</h3>
+<p>Wrap its name in curly brackets with an exclamation mark, such as <code>{!recordId}</code>. Global values work the same way, for example <code>{!$Flow.CurrentDate}</code> and <code>{!$User.Id}</code>.</p>
+<blockquote>
+<p><strong>Tip:</strong> The resource picker avoids typing mistakes.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Create a follow-up Task due 7 days from today, with the same subject every time."</strong></p>
+<ol>
+<li>Create a <strong>constant</strong> <code>Default_Subject</code> with the value Follow up call</li>
+<li>Create a <strong>formula</strong> <code>DueDate</code> of type Date: <code>{!$Flow.CurrentDate} + 7</code></li>
+<li>Use both in the <strong>Create Records</strong> element for the Task</li>
+<li>Show a <strong>text template</strong> on the confirmation screen</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open your Screen Flow from this series in Flow Builder.</li>
+<li>Choose <strong>New Resource</strong>, then <strong>Constant</strong>. Name it <code>Default_Subject</code>, type <strong>Text</strong>, value <code>Follow up call</code>.</li>
+<li>Add a <strong>Formula</strong> named <code>DueDate</code>, data type <strong>Date</strong>, with <code>{!$Flow.CurrentDate} + 7</code>.</li>
+<li>In the <strong>Create Records</strong> element for the Task, set <strong>Subject</strong> to <code>{!Default_Subject}</code> and <strong>ActivityDate</strong> to <code>{!DueDate}</code>.</li>
+<li>Add a <strong>Text Template</strong> named <code>ConfirmMessage</code>: <code>Follow-up created for {!DueDate}.</code></li>
+<li>Show <code>{!ConfirmMessage}</code> on the last screen, then <strong>Debug</strong> and check the Task.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Changes at runtime</strong> = Variable</li>
+<li><strong>Never changes</strong> = Constant</li>
+<li><strong>Calculated, read-only</strong> = Formula</li>
+<li><strong>Message with merge fields</strong> = Text template</li>
+<li><strong>Today's date</strong> = <code>{!$Flow.CurrentDate}</code></li>
+<li><strong>Refer to anything</strong> = <code>{!Name}</code></li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Use a variable when the value changes, a constant when it does not.</li>
+<li>A formula calculates and cannot be assigned to.</li>
+<li>A text template builds readable messages.</li>
+<li>Clear names make flows easy to maintain.</li>
+</ul>
+<p><strong>Next up:</strong> the Get Records element: filters, sort order and how many records to store.</p>
+<p><em>Part of #120DaysOfSalesforce. Which resource do you forget to use? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS CloudTrail: See Who Did What in Your AWS Account]]></title><description><![CDATA[Last time I set up an alarm to be told when something goes wrong. The next question is different: who did what in my account? When a setting changes or a…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS CloudTrail]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 16 Nov 2026 14:14:40 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0c66f0ed-3ff5-4935-b281-5905b8f1f828.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Last time I set up an alarm to be told when something goes wrong. The next question is different: <strong>who did what in my account?</strong> When a setting changes or a resource disappears, the answer comes from <strong>AWS CloudTrail</strong>.</p>
 <h2>What CloudTrail does</h2>
 <ul>
 <li>It records <strong>API activity</strong> in your account: who made the call, what they did, when, and from where.</li>
@@ -1410,163 +1608,4 @@
 </ul>
 <p>Tomorrow I'll go one step further into securing access to the account.</p>
 <p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Decision and Assignment Elements Cheat Sheet: Outcomes, Operators and Admin II Interview Q&A]]></title><description><![CDATA[Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-decision-and-assignment-elements-cheat-sheet-outcomes-operators-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Nov 2026 16:14:39 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/37320372-06a2-4897-9e7f-f13110315cea.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Decisions send a flow down the right path. Assignments change values along the way. Admin II interviews ask about both because almost every real Flow uses them.</em></p>
-<hr />
-<h2>The 2 Elements</h2>
-<table>
-<thead>
-<tr>
-<th>Element</th>
-<th>What it does</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Decision</strong></td>
-<td>Routes the flow into one path</td>
-<td>Outcomes are checked top to bottom, the first match wins</td>
-</tr>
-<tr>
-<td><strong>Assignment</strong></td>
-<td>Sets or changes values</td>
-<td>Changes variables, not the database</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. How does a Decision pick a path?</h3>
-<p>It checks its <strong>outcomes from top to bottom</strong>. The first outcome whose conditions are met runs. If none match, the <strong>Default Outcome</strong> runs.</p>
-<blockquote>
-<p><strong>Tip:</strong> Put the most specific outcome first.</p>
-</blockquote>
-<h3>2. How can outcome conditions be combined?</h3>
-<p>Choose <strong>All Conditions Are Met (AND)</strong>, <strong>Any Condition Is Met (OR)</strong>, <strong>Custom Logic</strong> such as <code>1 AND (2 OR 3)</code>, or <strong>Always (No Conditions Required)</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use custom logic for mixed AND and OR.</p>
-</blockquote>
-<h3>3. What does an Assignment do?</h3>
-<p>It <strong>sets values</strong> on variables, including fields of a record variable such as <code>{!caseRecord.Status}</code>. Operators include <strong>Equals</strong>, <strong>Add</strong> and <strong>Subtract</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Equals overwrites, Add accumulates.</p>
-</blockquote>
-<h3>4. Does an Assignment save to the database?</h3>
-<p><strong>No.</strong> It only changes values in the flow. Use <strong>Update Records</strong> to save, except for <code>$Record</code> in a before-save record-triggered flow, which saves automatically.</p>
-<blockquote>
-<p><strong>Tip:</strong> Assignment edits, Update Records saves.</p>
-</blockquote>
-<h3>5. How do you build up a collection?</h3>
-<p>Use an Assignment on a <strong>collection variable</strong> with the <strong>Add</strong> operator to put each record in the list. Then use <strong>one Update Records</strong> after the loop.</p>
-<blockquote>
-<p><strong>Tip:</strong> Never put DML inside a loop.</p>
-</blockquote>
-<h3>6. What should the Default Outcome do?</h3>
-<p>Handle everything <strong>no outcome matched</strong>. Rename it so the path is clear, and leave it connected to something, even a simple end.</p>
-<blockquote>
-<p><strong>Tip:</strong> Plan the "none of the above" case.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A record-triggered flow must escalate high-priority Cases from Premium accounts."</strong></p>
-<ol>
-<li><strong>Decision:</strong> Priority equals High AND account type is Premium</li>
-<li><strong>Assignment:</strong> set Escalated to true and Status to Escalated on <code>{!caseRecord}</code></li>
-<li><strong>Assignment:</strong> add the record to a collection</li>
-<li><strong>One Update Records</strong> after the loop, then <strong>Debug</strong></li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> with a <strong>Get Records</strong> for one Case into a record variable.</li>
-<li>Add a <strong>Decision</strong> with an outcome <code>High Priority</code> where Priority equals High, and leave the Default Outcome as <code>Other</code>.</li>
-<li>On the <code>High Priority</code> path, add an <strong>Assignment</strong> that sets <code>{!caseRecord.Status}</code> to Escalated.</li>
-<li>Add an <strong>Update Records</strong> element that saves <code>{!caseRecord}</code>.</li>
-<li>Run <strong>Debug</strong> with a High priority Case and then a Low priority Case, and compare the paths.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Choose a path</strong> = Decision</li>
-<li><strong>Change a value</strong> = Assignment</li>
-<li><strong>Order of outcomes</strong> = top to bottom</li>
-<li><strong>None matched</strong> = Default Outcome</li>
-<li><strong>Save changes</strong> = Update Records</li>
-<li><strong>Add to a list</strong> = Assignment on a collection</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Decisions route, Assignments change values.</li>
-<li>The first matching outcome wins.</li>
-<li>Assignments do not save to the database.</li>
-<li>Keep DML outside loops.</li>
-</ul>
-<p><strong>Next up:</strong> the Get Records element and how filters and sort order work.</p>
-<p><em>Part of #120DaysOfSalesforce. Which element do you use most? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Protect the AWS Root Account and Turn on MFA]]></title><description><![CDATA[Every AWS account starts with one identity that can do everything: the root user. IAM policies cannot restrict it, so if someone gets in, there is no…]]></description><link>https://sishodiarobin.hashnode.dev/protect-the-aws-root-account-and-turn-on-mfa</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/protect-the-aws-root-account-and-turn-on-mfa</guid><category><![CDATA[AWS]]></category><category><![CDATA[IAM]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 06 Nov 2026 16:12:08 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/332adbcb-b6c2-4f76-8a3a-2d8fb4c371c5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Every AWS account starts with one identity that can do everything: the <strong>root user</strong>. IAM policies cannot restrict it, so if someone gets in, there is no safety net. Before building anything else, lock it down.</p>
-<h2>What the root user is (and is not)</h2>
-<ul>
-<li>It is the email address you signed up with, and it has <strong>unrestricted access</strong> to the whole account, including billing and closing the account.</li>
-<li>It is <strong>not</strong> an IAM user, so you cannot limit it with a policy.</li>
-<li>You should almost never sign in with it. Daily work belongs to IAM identities (Day 1) and roles (Day 3).</li>
-</ul>
-<h2>The root account checklist</h2>
-<table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Why it matters</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Turn on <strong>MFA</strong> for the root user</td>
-<td>A stolen password alone is no longer enough</td>
-</tr>
-<tr>
-<td>Use a <strong>long, unique password</strong> in a password manager</td>
-<td>Root should not share a password with anything else</td>
-</tr>
-<tr>
-<td><strong>Delete root access keys</strong> (or never create them)</td>
-<td>A leaked key would have full power with no MFA prompt</td>
-</tr>
-<tr>
-<td>Use a <strong>shared mailbox or alias</strong> you control</td>
-<td>You keep recovery access if one person leaves</td>
-</tr>
-<tr>
-<td>Keep alternate contacts and billing alerts up to date</td>
-<td>You hear about problems early</td>
-</tr>
-</tbody></table>
-<h2>Choosing an MFA type</h2>
-<ul>
-<li><strong>Passkey or security key (FIDO2):</strong> phishing-resistant, the strongest everyday option.</li>
-<li><strong>Authenticator app (TOTP):</strong> free, quick to set up, and fine for most learners.</li>
-<li><strong>Hardware TOTP token:</strong> a physical code generator, mostly for strict environments.</li>
-</ul>
-<p>You can register more than one MFA device on the same user, so add a second one as a backup.</p>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Sign in as the root user, open the account menu and choose <strong>Security credentials</strong>.</li>
-<li>Under <strong>Multi-factor authentication (MFA)</strong>, choose <strong>Assign MFA device</strong>.</li>
-<li>Give it a clear name, pick <strong>Authenticator app</strong> or <strong>Passkey or security key</strong>, and follow the prompts.</li>
-<li>Under <strong>Access keys</strong>, confirm there are none. If there are, delete them.</li>
-<li>Sign out and sign in again to confirm the MFA prompt appears.</li>
-<li>Create an IAM admin identity for daily use and stop using root.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Using root for everyday tasks "just this once".</li>
-<li>Keeping root access keys in a script or a laptop folder.</li>
-<li>Registering MFA on a single phone with no backup device.</li>
-<li>Using a personal inbox that only one person can read.</li>
-</ul>
-<h2>What only root can do</h2>
-<p>A short list of tasks still needs root, such as changing the account name or email, closing the account and restoring IAM permissions if you lock yourself out. That is the only reason to sign in as root.</p>
-<h2>Key takeaways</h2>
-<ul>
-<li>The root user is unrestricted, so protect it before anything else.</li>
-<li>Turn on MFA, remove access keys and keep a backup MFA device.</li>
-<li>Do real work with IAM users and roles, not root.</li>
-</ul>
-<p>Tomorrow I'll look at what comes next once the front door is locked.</p>
 ]]></content:encoded></item></channel></rss>
