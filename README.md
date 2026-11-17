@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 73
+Total posts in this repo: 75
 
-## 📚 Salesforce (36 in this repo)
+## 📚 Salesforce (37 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 37 | 2026-11-17 | [Salesforce Flow Resources Cheat Sheet: Variables, Constants, Formulas and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-resources-cheat-sheet-variables-constants-formulas-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/37-2026-11-17-salesforce-flow-resources-cheat-sheet-variables-constants-formulas-and-admin-ii-interview-q-a.md) |
 | 36 | 2026-11-16 | [Salesforce Flow Decisions and Loops Cheat Sheet: Branching, Looping and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-decisions-and-loops-cheat-sheet-branching-looping-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/36-2026-11-16-salesforce-flow-decisions-and-loops-cheat-sheet-branching-looping-and-admin-ii-interview-q-a.md) |
 | 35 | 2026-11-15 | [Salesforce Flow Fault Paths Cheat Sheet: Handling Errors in Screen Flows and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-fault-paths-cheat-sheet-handling-errors-in-screen-flows-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/35-2026-11-15-salesforce-flow-fault-paths-cheat-sheet-handling-errors-in-screen-flows-and-admin-ii-interview-q-a.md) |
 | 34 | 2026-11-14 | [Salesforce Screen Flow Launch Cheat Sheet: Quick Actions, Lightning Pages and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-screen-flow-launch-cheat-sheet-quick-actions-lightning-pages-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/34-2026-11-14-salesforce-screen-flow-launch-cheat-sheet-quick-actions-lightning-pages-and-admin-ii-interview-q-a.md) |
@@ -56,10 +57,11 @@ Total posts in this repo: 73
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (36 in this repo)
+## 📚 DevOps & AWS (37 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 51 | 2026-11-17 | [AWS Config: Track Resource Changes and Check Compliance](https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance) | `AWS` `AWS Config` `Cloud Computing` `Devops` | [Markdown](posts/devops/51-2026-11-17-aws-config-track-resource-changes-and-check-compliance.md) |
 | 50 | 2026-11-16 | [AWS CloudTrail: See Who Did What in Your AWS Account](https://sishodiarobin.hashnode.dev/aws-cloudtrail-see-who-did-what-in-your-aws-account) | `AWS` `AWS CloudTrail` `Cloud Computing` `Devops` | [Markdown](posts/devops/50-2026-11-16-aws-cloudtrail-see-who-did-what-in-your-aws-account.md) |
 | 49 | 2026-11-16 | [I built a GitOps pipeline from scratch (Jenkins, ArgoCD, Terraform, EKS), and what broke](https://sishodiarobin.hashnode.dev/i-built-a-gitops-pipeline-from-scratch-jenkins-argocd-terraform-eks-and-what-broke) | `Devops` `Kubernetes` `Terraform` `AWS` | [Markdown](posts/devops/49-2026-11-16-i-built-a-gitops-pipeline-from-scratch-jenkins-argocd-terraform-eks-and-what-broke.md) |
 | 48 | 2026-11-15 | [AWS CloudWatch Alarms and SNS: Get Notified When Something Goes Wrong](https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong) | `AWS` `Amazon Cloudwatch` `Cloud Computing` `Devops` | [Markdown](posts/devops/48-2026-11-15-aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong.md) |
