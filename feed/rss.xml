@@ -1,4 +1,376 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 17 Nov 2026 16:07:55 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Config: Track Resource Changes and Check Compliance]]></title><description><![CDATA[CloudTrail tells me who made a change. The next question is different: what did the resource look like before, and does it follow my rules? That is the job…]]></description><link>https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Config]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 17 Nov 2026 16:07:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/495683c3-d27b-4606-89d1-9bb43b9efdf2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>CloudTrail tells me who made a change. The next question is different: <strong>what did the resource look like before, and does it follow my rules?</strong> That is the job of <strong>AWS Config</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Nov 2026 17:12:47 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Secrets Manager and Parameter Store: Keep Secrets Out of Your Code]]></title><description><![CDATA[Systems Manager gave me a way into instances without SSH. The next question is where an application should keep its database password and settings so they…]]></description><link>https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code</guid><category><![CDATA[AWS]]></category><category><![CDATA[Secrets Manager]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 19 Nov 2026 17:07:19 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/dcbe97b9-a87e-4f57-9bab-dff221ac0920.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Systems Manager gave me a way into instances without SSH. The next question is where an application should keep its <strong>database password and settings</strong> so they never end up in code. AWS has two good answers: <strong>Secrets Manager</strong> and <strong>Parameter Store</strong>.</p>
+<h2>The two services</h2>
+<ul>
+<li><strong>AWS Secrets Manager</strong> stores secrets such as database credentials and API keys, encrypts them with <strong>AWS KMS</strong>, and can <strong>rotate</strong> them automatically.</li>
+<li><strong>Systems Manager Parameter Store</strong> stores configuration values and secrets in a <strong>path-style hierarchy</strong>, such as <code>/myapp/prod/db-host</code>.</li>
+<li>Both are accessed with an API call and controlled with <strong>IAM permissions</strong>.</li>
+</ul>
+<h2>How they compare</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Secrets Manager</th>
+<th>Parameter Store</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Best for</strong></td>
+<td>Credentials that need rotation</td>
+<td>App settings and simple secrets</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>Built in, using Lambda</td>
+<td>Not built in</td>
+</tr>
+<tr>
+<td><strong>Encryption</strong></td>
+<td>Always, with KMS</td>
+<td>Only for the <strong>SecureString</strong> type</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Billed per secret per month, plus API calls</td>
+<td>Standard parameters are free; Advanced parameters cost extra</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>Larger values</td>
+<td>Standard parameters are up to 4 KB</td>
+</tr>
+</tbody></table>
+<p>Check the current pricing page before you rely on these numbers.</p>
+<h2>Parameter types</h2>
+<ul>
+<li><strong>String</strong> for plain text such as a hostname</li>
+<li><strong>StringList</strong> for comma-separated values</li>
+<li><strong>SecureString</strong> for values encrypted with KMS</li>
+</ul>
+<h2>Access with IAM</h2>
+<ul>
+<li>The caller needs permission such as <code>secretsmanager:GetSecretValue</code> or <code>ssm:GetParameter</code>.</li>
+<li>For encrypted values it also needs permission to use the KMS key, such as <code>kms:Decrypt</code>.</li>
+<li>Give an application role only the paths or secrets it needs.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<p>Use a fake value only. Never put a real password in a practice exercise.</p>
+<ol>
+<li>Store a plain parameter: <code>aws ssm put-parameter --name /demo/app/db-host --value mydb.example.internal --type String</code></li>
+<li>Store an encrypted one: <code>aws ssm put-parameter --name /demo/app/db-password --value FakePassw0rd --type SecureString</code></li>
+<li>Read it back: <code>aws ssm get-parameter --name /demo/app/db-password --with-decryption</code></li>
+<li>List by path: <code>aws ssm get-parameters-by-path --path /demo/app --with-decryption</code></li>
+<li>Create a secret: <code>aws secretsmanager create-secret --name demo/db-credentials --secret-string '{"username":"admin","password":"FakePassw0rd"}'</code></li>
+<li>Read it: <code>aws secretsmanager get-secret-value --secret-id demo/db-credentials</code></li>
+<li>In the console, open the secret and look at the <strong>Rotation</strong> settings.</li>
+<li>Clean up: <code>aws ssm delete-parameter --name /demo/app/db-host</code>, the same for <code>/demo/app/db-password</code>, and <code>aws secretsmanager delete-secret --secret-id demo/db-credentials --force-delete-without-recovery</code></li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Hardcoding passwords in code, in environment files or in a repository.</li>
+<li>Storing a secret as a plain <strong>String</strong> parameter.</li>
+<li>Giving a role access to every secret instead of the ones it needs.</li>
+<li>Printing secret values in logs or in screenshots.</li>
+<li>Forgetting to delete practice secrets, which keep costing money.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Keep secrets out of code, and fetch them at runtime.</li>
+<li>Use Secrets Manager when you need rotation, and Parameter Store for settings and simple secrets.</li>
+<li>Use SecureString for anything sensitive in Parameter Store.</li>
+<li>Limit access by path or secret name, and clean up after practice.</li>
+</ul>
+<p>Tomorrow I'll look at AWS KMS and how the encryption keys behind these services work.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Create and Update Records Cheat Sheet: Writing Data Back and Admin II Interview Q&A]]></title><description><![CDATA[Reading data is half of a flow. The other half is writing it back. Admin II interviews ask how Create Records and Update Records differ, and how to write…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-create-and-update-records-cheat-sheet-writing-data-back-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-create-and-update-records-cheat-sheet-writing-data-back-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 19 Nov 2026 17:05:29 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/f8e4dff5-32dc-4a61-873d-20b6dda13bc9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Reading data is half of a flow. The other half is writing it back. Admin II interviews ask how Create Records and Update Records differ, and how to write many records without hitting limits.</em></p>
+<hr />
+<h2>Create and Update at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Create Records</strong></td>
+<td>Inserts new records</td>
+<td>Can store the new record Id in a variable</td>
+</tr>
+<tr>
+<td><strong>Update Records</strong></td>
+<td>Changes existing records</td>
+<td>Find them by conditions, or use a record or collection</td>
+</tr>
+<tr>
+<td><strong>Record variable</strong></td>
+<td>Holds one record's field values</td>
+<td>Write it with one element</td>
+</tr>
+<tr>
+<td><strong>Record collection</strong></td>
+<td>Holds many records</td>
+<td>Write them all with one element</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. How do you set the fields in Create Records?</h3>
+<p>You can set fields <strong>one by one</strong> with values or resources, or use <strong>all values from a record variable</strong> that you built earlier.</p>
+<blockquote>
+<p><strong>Tip:</strong> Required fields and validation rules still apply when the record is created.</p>
+</blockquote>
+<h3>2. How do you get the Id of the new record?</h3>
+<p>Choose to <strong>store the Id</strong> of the new record in a variable. Then use that Id in later elements, such as linking a child record.</p>
+<blockquote>
+<p><strong>Tip:</strong> Create the parent first, then the children.</p>
+</blockquote>
+<h3>3. How can Update Records find the records to change?</h3>
+<p>Two ways: <strong>specify conditions</strong> and set fields directly, or <strong>use the Ids and values from a record variable or collection</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> With conditions you do not need a Get Records first, but check your filter carefully.</p>
+</blockquote>
+<h3>4. When do you use a record variable?</h3>
+<p>When you need to change a record you already hold, such as the one from Get Records. Assign the new field values to the variable, then update with it.</p>
+<blockquote>
+<p><strong>Tip:</strong> The values in the variable are what get written, so check what it holds first.</p>
+</blockquote>
+<h3>5. How do you create or update many records?</h3>
+<p>Add each record to a <strong>collection variable</strong> with an <strong>Assignment</strong> inside the loop. After the loop, use <strong>one</strong> Create Records or Update Records on the whole collection.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never put Create, Update or Delete inside the loop.</p>
+</blockquote>
+<h3>6. What if the save fails?</h3>
+<p>Add a <strong>fault path</strong> to the element. Show a clear message or log the error, so the user is not left with a vague failure.</p>
+<blockquote>
+<p><strong>Tip:</strong> Validation rules and required fields are the usual cause.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"After the rep reviews the open Opportunity, create a follow-up Task and note it on the Opportunity."</strong></p>
+<ol>
+<li><strong>Create Records</strong> for the Task, storing the new Task Id</li>
+<li><strong>Assignment</strong>: set the Opportunity variable's <strong>NextStep</strong> to a short note</li>
+<li><strong>Update Records</strong> using the Opportunity record variable</li>
+<li>Add <strong>fault paths</strong> to both, then show a confirmation screen</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open your Screen Flow from this series and keep the Get Records element for the open Opportunity.</li>
+<li>Add <strong>Create Records</strong> for <strong>Task</strong>. Set <strong>Subject</strong> to <code>{!Default_Subject}</code> and <strong>ActivityDate</strong> to <code>{!DueDate}</code>. Link it with <strong>WhatId</strong> set to the Opportunity Id.</li>
+<li>Choose to <strong>store the Id</strong> of the new Task in a variable named <code>NewTaskId</code>.</li>
+<li>Add an <strong>Assignment</strong> that sets <code>{!Get_Open_Opportunity.NextStep}</code> to <code>Follow-up task created</code>.</li>
+<li>Add <strong>Update Records</strong> using the <strong>Ids and all values from the record variable</strong> <code>{!Get_Open_Opportunity}</code>.</li>
+<li>Add <strong>fault paths</strong> to both elements that lead to a screen with <code>{!$Flow.FaultMessage}</code>.</li>
+<li><strong>Debug</strong>, then open the Opportunity to check the Next Step and the new Task.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Create Records</strong> = new records, can store the new Id</li>
+<li><strong>Update Records</strong> = by conditions, or by record or collection</li>
+<li><strong>Record variable</strong> = one record, <strong>collection</strong> = many</li>
+<li><strong>Loop</strong> = Assignment adds to a collection</li>
+<li><strong>After the loop</strong> = one Create or Update</li>
+<li><strong>Fault path</strong> on every element that saves</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Build records in variables, then write them with one element.</li>
+<li>Store the Id of a new record when later steps need it.</li>
+<li>Never run Create, Update or Delete inside a loop.</li>
+<li>Add a fault path so errors are readable.</li>
+</ul>
+<p><strong>Next up:</strong> the Delete Records element and the Roll Back Records element: when to use each and how to stay safe.</p>
+<p><em>Part of #120DaysOfSalesforce. Do you update by conditions or by record variable? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Systems Manager: Manage Your Instances Without Opening SSH]]></title><description><![CDATA[Config shows what changed and whether it follows the rules. The next question is how to actually manage the instances without opening SSH to the world…]]></description><link>https://sishodiarobin.hashnode.dev/aws-systems-manager-manage-your-instances-without-opening-ssh</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-systems-manager-manage-your-instances-without-opening-ssh</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Systems Manager]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 18 Nov 2026 14:25:38 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4f94d4e8-c49f-4196-a3f5-64b2513ea64f.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Config shows what changed and whether it follows the rules. The next question is how to actually <strong>manage</strong> the instances without opening SSH to the world. That is where <strong>AWS Systems Manager</strong> comes in.</p>
+<h2>What it does</h2>
+<ul>
+<li>Systems Manager is a set of tools to <strong>view and manage</strong> your AWS resources and nodes from one place.</li>
+<li>A <strong>managed node</strong> is an instance (or server) that runs the <strong>SSM Agent</strong> and can reach Systems Manager.</li>
+<li>You can connect, run commands and patch <strong>without opening inbound port 22</strong> and without key pairs.</li>
+</ul>
+<h2>The tools to know first</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+<th>Example use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Session Manager</strong></td>
+<td>Opens a shell from the console or CLI</td>
+<td>Log in with no SSH and no bastion host</td>
+</tr>
+<tr>
+<td><strong>Run Command</strong></td>
+<td>Runs a command on one or many nodes</td>
+<td>Run <code>uptime</code> on a group of instances</td>
+</tr>
+<tr>
+<td><strong>Patch Manager</strong></td>
+<td>Scans and installs patches</td>
+<td>Patch on a schedule</td>
+</tr>
+<tr>
+<td><strong>Parameter Store</strong></td>
+<td>Stores configuration values and secrets</td>
+<td>Keep a database name or a secure string</td>
+</tr>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Runs runbooks for common tasks</td>
+<td>Stop an instance, create an AMI</td>
+</tr>
+</tbody></table>
+<h2>What an instance needs to become a managed node</h2>
+<ul>
+<li>The <strong>SSM Agent</strong> installed and running (it comes pre-installed on many Amazon-provided AMIs, including Amazon Linux 2023).</li>
+<li>An <strong>instance profile</strong> with an IAM role, for example the AWS managed policy <code>AmazonSSMManagedInstanceCore</code>.</li>
+<li>A network path to the Systems Manager endpoints, such as a public route or <strong>VPC endpoints</strong>.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>IAM</strong>, create a role for <strong>EC2</strong>, and attach <code>AmazonSSMManagedInstanceCore</code>.</li>
+<li>Launch a small <strong>Amazon Linux 2023</strong> instance and choose that role as the <strong>IAM instance profile</strong>.</li>
+<li>In the security group, <strong>remove all inbound rules</strong>. You will not use SSH.</li>
+<li>Open <strong>Systems Manager</strong>, then <strong>Fleet Manager</strong> or <strong>Session Manager</strong>, and wait until the instance shows as a managed node.</li>
+<li>In <strong>Session Manager</strong>, choose <strong>Start session</strong>, pick the instance, and run <code>whoami</code>.</li>
+<li>Open <strong>Run Command</strong>, choose the document <code>AWS-RunShellScript</code>, enter <code>uptime</code> and run it on the instance.</li>
+<li>Check from the CLI: <code>aws ssm describe-instance-information</code></li>
+<li>When you finish practising, terminate the instance and delete the role.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Forgetting to attach the instance profile, so the node never appears.</li>
+<li>Using an instance with no route to the Systems Manager endpoints.</li>
+<li>Leaving port 22 open even though Session Manager makes it unnecessary.</li>
+<li>Giving the instance role more permissions than it needs.</li>
+<li>Leaving practice instances running.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Systems Manager manages nodes without SSH or key pairs.</li>
+<li>An instance needs the agent, an instance profile and network access.</li>
+<li>Session Manager is for access, Run Command for tasks, Patch Manager for updates.</li>
+<li>Clean up practice instances when you finish.</li>
+</ul>
+<p>Tomorrow I'll look at AWS Secrets Manager and Parameter Store, and how to keep secrets out of your code.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order and Admin II Interview Q&A]]></title><description><![CDATA[Almost every flow starts by reading data. The Get Records element is where that happens, and Admin II interviews love to ask how to set it up and what…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 18 Nov 2026 14:24:05 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/64d2b98b-9942-47ce-b22d-1934f6f1dcf6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Almost every flow starts by reading data. The Get Records element is where that happens, and Admin II interviews love to ask how to set it up and what happens when nothing comes back.</em></p>
+<hr />
+<h2>Get Records at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Object</strong></td>
+<td>Which object to query</td>
+<td>One object per element</td>
+</tr>
+<tr>
+<td><strong>Filter conditions</strong></td>
+<td>Which records to find</td>
+<td>AND, OR or custom logic</td>
+</tr>
+<tr>
+<td><strong>Sort order</strong></td>
+<td>Which record comes first</td>
+<td>Pick a field and direction</td>
+</tr>
+<tr>
+<td><strong>How many records</strong></td>
+<td>Only the first, or all matching</td>
+<td>First record = one record variable; all = a collection</td>
+</tr>
+<tr>
+<td><strong>Which fields to store</strong></td>
+<td>What the flow keeps</td>
+<td>Choose only the fields you need</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What does Get Records do?</h3>
+<p>It finds records in your org that match your conditions and stores them in the flow, so later elements can use them.</p>
+<blockquote>
+<p><strong>Tip:</strong> One element queries one object.</p>
+</blockquote>
+<h3>2. How do you filter the results?</h3>
+<p>Add <strong>filter conditions</strong> on fields. Choose <strong>All Conditions Are Met (AND)</strong>, <strong>Any Condition Is Met (OR)</strong> or <strong>Custom Condition Logic</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Filter as tightly as you can, so you do not read records you do not need.</p>
+</blockquote>
+<h3>3. First record or all records?</h3>
+<p>Choose <strong>Only the first record</strong> when you expect one result, such as the Account for a recordId. Choose <strong>All records</strong> when you need a list, which is stored in a <strong>collection</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add a sort order so "first" is the one you mean, such as the newest.</p>
+</blockquote>
+<h3>4. Which fields should you store?</h3>
+<p>You can store all fields, or choose only the ones you need. Choosing fields is better for performance and keeps the flow lean.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fields you do not store are empty later. Store what you will use.</p>
+</blockquote>
+<h3>5. What if no record is found?</h3>
+<p>The result is empty (null). Add a <strong>Decision</strong> with the condition "Is Null" for that record or collection, and handle the empty case instead of letting the flow fail later.</p>
+<blockquote>
+<p><strong>Tip:</strong> Always plan for zero results.</p>
+</blockquote>
+<h3>6. Why not put Get Records inside a loop?</h3>
+<p>Each Get Records is a query, and a flow has limits on queries in one transaction. Query <strong>before</strong> the loop, and loop over the collection.</p>
+<blockquote>
+<p><strong>Tip:</strong> Same idea for Create, Update and Delete: do them after the loop.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A rep opens an Account and the flow must show the most recent open Opportunity."</strong></p>
+<ol>
+<li>Add <strong>Get Records</strong> on <strong>Opportunity</strong></li>
+<li>Filter: <strong>AccountId equals {!recordId}</strong> AND <strong>IsClosed equals False</strong></li>
+<li>Sort by <strong>CloseDate</strong>, then store <strong>only the first record</strong></li>
+<li>Add a <strong>Decision</strong> to check if the result is null, then show a screen with the Opportunity name and amount</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open your Screen Flow from this series in Flow Builder.</li>
+<li>Add a <strong>Get Records</strong> element, label it <code>Get Open Opportunity</code>, object <strong>Opportunity</strong>.</li>
+<li>Set conditions with <strong>All Conditions Are Met (AND)</strong>: <code>AccountId</code> equals <code>{!recordId}</code> and <code>IsClosed</code> equals <code>False</code>.</li>
+<li>Sort by <code>CloseDate</code> ascending and choose <strong>Only the first record</strong>. Store only the fields <strong>Name</strong> and <strong>Amount</strong>.</li>
+<li>Add a <strong>Decision</strong> named <code>Found?</code> with the outcome <code>Is Null</code> for <code>{!Get_Open_Opportunity}</code> set to <strong>True</strong>, and a default outcome for found.</li>
+<li>Add one screen for each path, showing <code>{!Get_Open_Opportunity.Name}</code> on the found path and a short message on the empty path.</li>
+<li><strong>Debug</strong> the flow with an Account that has an open Opportunity, then with one that does not.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>One object</strong> per Get Records element</li>
+<li><strong>Filters</strong>: AND, OR or custom logic</li>
+<li><strong>Sort</strong> so the first record is the one you want</li>
+<li><strong>First record</strong> = record variable, <strong>all records</strong> = collection</li>
+<li><strong>Store only the fields you need</strong></li>
+<li><strong>No result</strong> = null, so check with a Decision</li>
+<li><strong>Never inside a loop</strong></li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Get Records reads data into the flow, so set it up carefully.</li>
+<li>Tight filters and chosen fields keep flows fast.</li>
+<li>Always handle the case where nothing is found.</li>
+<li>Query before a loop, not inside it.</li>
+</ul>
+<p><strong>Next up:</strong> the Create Records and Update Records elements: record variables, collections and what each one writes.</p>
+<p><em>Part of #120DaysOfSalesforce. How do you handle the "no records found" case? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Config: Track Resource Changes and Check Compliance]]></title><description><![CDATA[CloudTrail tells me who made a change. The next question is different: what did the resource look like before, and does it follow my rules? That is the job…]]></description><link>https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Config]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 17 Nov 2026 16:07:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/495683c3-d27b-4606-89d1-9bb43b9efdf2.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>CloudTrail tells me who made a change. The next question is different: <strong>what did the resource look like before, and does it follow my rules?</strong> That is the job of <strong>AWS Config</strong>.</p>
 <h2>What AWS Config does</h2>
 <ul>
 <li>It <strong>records the configuration</strong> of supported AWS resources and keeps a history of how each one changed.</li>
@@ -1284,328 +1656,5 @@
 <li>Set log retention.</li>
 </ul>
 <p>Tomorrow I'll look at how to use tags to keep resources organized and costs traceable.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Create, Update and Delete Records Cheat Sheet: Fault Paths and Admin II Interview Q&A]]></title><description><![CDATA[Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-create-update-and-delete-records-cheat-sheet-fault-paths-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Nov 2026 17:54:09 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/7e7c2a4b-9c75-45d2-9a0a-70a0dd57f738.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Create Records, Update Records and Delete Records are how a Flow changes data. Admin II interviews ask about them because small choices here decide whether a Flow is safe, fast and bulk-ready.</em></p>
-<hr />
-<h2>The 3 Data Elements</h2>
-<table>
-<thead>
-<tr>
-<th>Element</th>
-<th>What it does</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Create Records</strong></td>
-<td>Adds new records</td>
-<td>Can store the new record Id</td>
-</tr>
-<tr>
-<td><strong>Update Records</strong></td>
-<td>Changes existing records</td>
-<td>Filter, or pass a record or collection</td>
-</tr>
-<tr>
-<td><strong>Delete Records</strong></td>
-<td>Removes records</td>
-<td>Use filters or a collection, and be careful</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. How does Create Records set field values?</h3>
-<p>Either <strong>set the fields one by one</strong>, or <strong>use all values from a record variable or collection</strong> you built earlier. Choose <strong>Create multiple records</strong> when you pass a collection.</p>
-<blockquote>
-<p><strong>Tip:</strong> Build a collection, then create once.</p>
-</blockquote>
-<h3>2. How can Update Records pick what to change?</h3>
-<p>Two ways: <strong>specify conditions and set fields individually</strong>, or <strong>use the Ids and all field values from a record or collection</strong>. The first changes every record that matches the filter.</p>
-<blockquote>
-<p><strong>Tip:</strong> Check the filter before you run it.</p>
-</blockquote>
-<h3>3. Why store the new record Id?</h3>
-<p>After Create Records you can <strong>store the Id</strong> in a variable. Use it to create related records, such as a Task linked to the new Case.</p>
-<blockquote>
-<p><strong>Tip:</strong> Store the Id, then relate children to it.</p>
-</blockquote>
-<h3>4. How do you make a Flow bulk-safe?</h3>
-<p>Do the work on a <strong>collection</strong>: add records to it in the loop with an Assignment, and run <strong>one Create, Update or Delete Records</strong> after the loop.</p>
-<blockquote>
-<p><strong>Tip:</strong> DML belongs outside the loop.</p>
-</blockquote>
-<h3>5. What is a fault path?</h3>
-<p>A <strong>fault connector</strong> that runs when a data element fails, for example on a validation rule error. Use it to show a message or log the error.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add a fault path to every data element.</p>
-</blockquote>
-<h3>6. Update Records or an Assignment on $Record?</h3>
-<p>In a <strong>before-save</strong> record-triggered flow, an Assignment on <code>$Record</code> changes the record with no extra DML. In an <strong>after-save</strong> flow, use <strong>Update Records</strong> to change the triggering record or related records.</p>
-<blockquote>
-<p><strong>Tip:</strong> Before-save is faster for same-record updates.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"When a Case is closed, create a follow-up Task and mark the related Contact as contacted."</strong></p>
-<ol>
-<li><strong>Record-triggered flow</strong> on Case, after save, when Status changes to Closed</li>
-<li><strong>Create Records:</strong> a Task, with <code>WhatId</code> set to the Case Id</li>
-<li><strong>Update Records:</strong> set the Contact's <code>Last_Contacted__c</code> field</li>
-<li><strong>Fault path</strong> on both elements, then <strong>Debug</strong></li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> with a text input for a Case subject.</li>
-<li>Add <strong>Create Records</strong> for Case, set Subject from the input, and store the new Id in a variable.</li>
-<li>Add <strong>Update Records</strong> that sets the same Case's Priority to High using that Id.</li>
-<li>Add a <strong>fault path</strong> from each element to a screen that shows <code>{!$Flow.FaultMessage}</code>.</li>
-<li>Run <strong>Debug</strong> and check the new Case in your org.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Add</strong> = Create Records</li>
-<li><strong>Change</strong> = Update Records</li>
-<li><strong>Remove</strong> = Delete Records</li>
-<li><strong>Many at once</strong> = collection, one element after the loop</li>
-<li><strong>Failure</strong> = fault path</li>
-<li><strong>Same record, before save</strong> = Assignment on $Record</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Work on collections, then save once.</li>
-<li>Store the Id to build related records.</li>
-<li>Add a fault path to every data element.</li>
-<li>Be careful with filters on Update and Delete.</li>
-</ul>
-<p><strong>Next up:</strong> the Loop element and how to process collections safely.</p>
-<p><em>Part of #120DaysOfSalesforce. Which data element do you use most? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS CloudTrail Basics: Who Did What, When and From Where]]></title><description><![CDATA[This week I locked the root account and set a budget. Now the question that comes after both: when something changes in the account, how do I find out who…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudtrail-basics-who-did-what-when-and-from-where</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudtrail-basics-who-did-what-when-and-from-where</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloudtrail]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 08 Nov 2026 17:51:43 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/c3b0a5a9-5204-4c65-854d-bd46e48e5e69.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>This week I locked the root account and set a budget. Now the question that comes after both: when something changes in the account, how do I find out <strong>who did it, what they did and when</strong>? That is <strong>AWS CloudTrail</strong>.</p>
-<h2>What CloudTrail records</h2>
-<ul>
-<li>CloudTrail logs <strong>API activity</strong> in your account, whether it came from the console, the CLI, an SDK or another AWS service.</li>
-<li>Each event says <strong>who</strong> (the identity), <strong>what</strong> (the API call), <strong>when</strong>, and <strong>where from</strong> (the source IP address).</li>
-<li>It is the audit trail you open when a resource disappears or a setting changes.</li>
-</ul>
-<h2>Event types</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>What it covers</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Management events</strong></td>
-<td>Control-plane actions, such as creating a role or launching an instance</td>
-<td>Recorded by default</td>
-</tr>
-<tr>
-<td><strong>Data events</strong></td>
-<td>Object-level actions, such as S3 object reads or Lambda invokes</td>
-<td>Off by default, extra cost</td>
-</tr>
-<tr>
-<td><strong>Insights events</strong></td>
-<td>Unusual API activity</td>
-<td>Optional</td>
-</tr>
-</tbody></table>
-<h2>Event history vs a trail</h2>
-<ul>
-<li><strong>Event history</strong> is on by default and lets you look up recent management events (the last 90 days) in the console, with no setup.</li>
-<li>A <strong>trail</strong> delivers events to an <strong>S3 bucket</strong> (and optionally CloudWatch Logs) so you keep them longer and can search them with other tools.</li>
-<li>A <strong>multi-Region trail</strong> records activity in all Regions, so nothing slips through in a Region you do not use.</li>
-</ul>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Open <strong>CloudTrail</strong> and choose <strong>Event history</strong>.</li>
-<li>Filter by <strong>Event name</strong> <code>ConsoleLogin</code> and open one event to see who signed in and from which IP address.</li>
-<li>Filter by <strong>User name</strong> <code>root</code> to check whether root has been used, tying back to the root account checklist.</li>
-<li>Choose <strong>Create trail</strong>, name it, and create or choose an <strong>S3 bucket</strong> for the logs.</li>
-<li>Enable a <strong>multi-Region trail</strong> and <strong>log file validation</strong>, then create it.</li>
-<li>After a few minutes, open the S3 bucket and find the delivered log files.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Relying on event history only, then needing events older than 90 days.</li>
-<li>Creating a trail in one Region and missing activity elsewhere.</li>
-<li>Leaving the log bucket open. Keep it private.</li>
-<li>Turning on data events everywhere without checking the cost.</li>
-</ul>
-<h2>Key takeaways</h2>
-<ul>
-<li>CloudTrail answers who, what, when and from where.</li>
-<li>Event history is free to browse, a trail keeps the records.</li>
-<li>Use a multi-Region trail and keep the bucket private.</li>
-<li>Check root activity regularly.</li>
-</ul>
-<p>Tomorrow I'll look at how to see what is happening inside your resources, not just who changed them.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order, Null Checks and Admin II Interview Q&A]]></title><description><![CDATA[Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-null-checks-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Nov 2026 17:20:59 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/6b2a561e-132c-4284-8ff1-b002709dc391.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Get Records is how a Flow reads data. Admin II interviews ask about its filters, sort order and null checks because a badly built one is the most common cause of slow or broken Flows.</em></p>
-<hr />
-<h2>The 4 Settings That Matter</h2>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>What it controls</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Filter conditions</strong></td>
-<td>Which records come back</td>
-<td>AND, OR or custom logic</td>
-</tr>
-<tr>
-<td><strong>Sort order</strong></td>
-<td>Which record is "first"</td>
-<td>Set it whenever you need one record</td>
-</tr>
-<tr>
-<td><strong>How many records</strong></td>
-<td>One or many</td>
-<td>Only the first record, or all records</td>
-</tr>
-<tr>
-<td><strong>Store fields</strong></td>
-<td>What data is kept</td>
-<td>Choose only the fields you need</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. How do you filter a Get Records?</h3>
-<p>Add <strong>filter conditions</strong> on the object's fields, such as <code>Status Equals Open</code>. Combine them with <strong>All Conditions Are Met (AND)</strong>, <strong>Any Condition Is Met (OR)</strong> or <strong>Custom Condition Logic</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Filter in Get Records, not after it.</p>
-</blockquote>
-<h3>2. Why does sort order matter?</h3>
-<p>With <strong>Only the first record</strong>, Salesforce returns the first match <strong>in your sort order</strong>. Without a sort, which record you get is not guaranteed.</p>
-<blockquote>
-<p><strong>Tip:</strong> Sort by CreatedDate descending for "latest".</p>
-</blockquote>
-<h3>3. One record or all records?</h3>
-<p><strong>Only the first record</strong> stores a single record variable. <strong>All records</strong> stores a <strong>collection</strong> you can loop over.</p>
-<blockquote>
-<p><strong>Tip:</strong> Match the choice to the variable you need.</p>
-</blockquote>
-<h3>4. Which fields should you store?</h3>
-<p>Choose <strong>only the fields you need</strong> instead of all fields. Fewer fields means less data to carry through the Flow.</p>
-<blockquote>
-<p><strong>Tip:</strong> Name the fields you will actually read.</p>
-</blockquote>
-<h3>5. What if no record is found?</h3>
-<p>The variable is <strong>empty (null)</strong>. Add a <strong>Decision</strong> after the Get Records that checks whether the variable <strong>Is Null</strong>, and handle that path.</p>
-<blockquote>
-<p><strong>Tip:</strong> Always plan the "found nothing" path.</p>
-</blockquote>
-<h3>6. Why keep Get Records out of loops?</h3>
-<p>Each Get Records is a <strong>SOQL query</strong>, and a transaction has a limit on queries. A query inside a loop can hit that limit on bulk data.</p>
-<blockquote>
-<p><strong>Tip:</strong> Query once before the loop, then loop the collection.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"A flow must find the most recent open Case for a Contact and show its subject."</strong></p>
-<ol>
-<li><strong>Get Records</strong> on Case: <code>ContactId Equals the Contact</code> AND <code>Status Does Not Equal Closed</code></li>
-<li><strong>Sort</strong> by CreatedDate descending, <strong>Only the first record</strong></li>
-<li><strong>Decision:</strong> is the Case variable <strong>Is Null</strong>?</li>
-<li><strong>Display</strong> the Subject, or a "No open cases" message</li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> and add a <strong>Get Records</strong> element on Case, returning <strong>Only the first record</strong>.</li>
-<li>Add a filter <code>Status Does Not Equal Closed</code> and sort by <code>CreatedDate</code> descending.</li>
-<li>Choose <strong>Choose fields and let Salesforce do the rest</strong> and pick Subject and Status.</li>
-<li>Add a <strong>Decision</strong> that checks the Case variable <strong>Is Null</strong> and a screen for each path.</li>
-<li>Run <strong>Debug</strong> with a Contact who has open cases and one who has none.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Read data</strong> = Get Records</li>
-<li><strong>Narrow it down</strong> = filter conditions</li>
-<li><strong>Pick the first</strong> = sort order</li>
-<li><strong>A list</strong> = All records (collection)</li>
-<li><strong>Nothing found</strong> = Is Null Decision</li>
-<li><strong>Efficiency</strong> = store only needed fields, no queries in loops</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Filter and sort inside Get Records.</li>
-<li>Always handle the nothing-found path.</li>
-<li>Store only the fields you need.</li>
-<li>Query once, then loop.</li>
-</ul>
-<p><strong>Next up:</strong> Update Records and Create Records, and how they save changes.</p>
-<p><em>Part of #120DaysOfSalesforce. Which Get Records setting trips you up? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS Budgets and Billing Alerts: Set a Spending Limit Before You Build]]></title><description><![CDATA[Yesterday I locked down the root account and noted "keep billing alerts up to date". Today is the other half of the front door: making sure a forgotten…]]></description><link>https://sishodiarobin.hashnode.dev/aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-budgets-and-billing-alerts-set-a-spending-limit-before-you-build</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloudcost]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[cloudsecurity]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 07 Nov 2026 17:18:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e57520eb-ece5-4ada-9cef-6db17a101324.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Yesterday I locked down the root account and noted "keep billing alerts up to date". Today is the other half of the front door: making sure a forgotten resource never turns into a surprise bill. <strong>AWS Budgets</strong> does that.</p>
-<h2>What AWS Budgets does</h2>
-<ul>
-<li>You set a <strong>spending limit</strong> (or a usage limit) and AWS compares your actual and forecasted spend against it.</li>
-<li>When a threshold is crossed, it <strong>emails you</strong> (and can notify an SNS topic).</li>
-<li>Spend data is not instant. Billing data can lag, so treat alerts as an early warning, not a live meter.</li>
-</ul>
-<h2>Types of budget</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Tracks</th>
-<th>Good for</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Cost budget</strong></td>
-<td>Dollars spent</td>
-<td>Almost every learner</td>
-</tr>
-<tr>
-<td><strong>Usage budget</strong></td>
-<td>Units used, such as hours or GB</td>
-<td>Watching a specific service</td>
-</tr>
-<tr>
-<td><strong>Savings Plans / Reservation budgets</strong></td>
-<td>Coverage and utilization</td>
-<td>Later, when you commit to spend</td>
-</tr>
-</tbody></table>
-<h2>Two templates to start with</h2>
-<ul>
-<li><strong>Zero spend budget:</strong> alerts you as soon as your spend goes above the free tier. Ideal for a learning account.</li>
-<li><strong>Monthly cost budget:</strong> you choose a monthly amount, and the console sets alerts at <strong>85% of actual spend</strong>, <strong>100% of actual spend</strong> and <strong>100% of forecasted spend</strong>.</li>
-</ul>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Sign in and open <strong>Billing and Cost Management</strong>, then <strong>Budgets</strong>.</li>
-<li>Choose <strong>Create budget</strong> and pick a <strong>template</strong>, such as <strong>Zero spend budget</strong> or <strong>Monthly cost budget</strong>.</li>
-<li>Name it, set the amount (for example 10 USD) and add the <strong>email addresses</strong> to alert.</li>
-<li>Review the thresholds and create the budget.</li>
-<li>Optionally, as the root user, turn on <strong>IAM user and role access to Billing information</strong> so your admin identity can see costs without using root.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Creating a budget but typing the email address wrongly.</li>
-<li>Setting only an actual-spend alert, so you hear about a problem after the money is gone.</li>
-<li>Forgetting that some services keep charging until you delete the resource.</li>
-<li>Using root every time to check the bill instead of enabling billing access for IAM.</li>
-</ul>
-<h2>Worth knowing next</h2>
-<p><strong>Cost Explorer</strong> shows where your spend comes from, and <strong>Cost Anomaly Detection</strong> can flag unusual spikes. Budgets tells you <em>that</em> spend is rising. Those two help explain <em>why</em>.</p>
-<h2>Key takeaways</h2>
-<ul>
-<li>Create a budget before you create any real resources.</li>
-<li>Alert on <strong>forecasted</strong> spend as well as actual spend.</li>
-<li>Give billing access to an IAM admin, not just root.</li>
-<li>Delete what you stop using.</li>
-</ul>
-<p>Tomorrow I'll go one step further into securing access to the account.</p>
 <p><em>Part of #120DaysOfAWS.</em></p>
 ]]></content:encoded></item></channel></rss>
