@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 79
+Total posts in this repo: 81
 
-## 📚 Salesforce (39 in this repo)
+## 📚 Salesforce (40 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 40 | 2026-11-20 | [Salesforce Flow Delete and Roll Back Records Cheat Sheet: Removing Data Safely and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-delete-and-roll-back-records-cheat-sheet-removing-data-safely-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/40-2026-11-20-salesforce-flow-delete-and-roll-back-records-cheat-sheet-removing-data-safely-and-admin-ii-interview-q-a.md) |
 | 39 | 2026-11-19 | [Salesforce Flow Create and Update Records Cheat Sheet: Writing Data Back and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-create-and-update-records-cheat-sheet-writing-data-back-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/39-2026-11-19-salesforce-flow-create-and-update-records-cheat-sheet-writing-data-back-and-admin-ii-interview-q-a.md) |
 | 38 | 2026-11-18 | [Salesforce Flow Get Records Cheat Sheet: Filters, Sort Order and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-get-records-cheat-sheet-filters-sort-order-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/38-2026-11-18-salesforce-flow-get-records-cheat-sheet-filters-sort-order-and-admin-ii-interview-q-a.md) |
 | 37 | 2026-11-17 | [Salesforce Flow Resources Cheat Sheet: Variables, Constants, Formulas and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-resources-cheat-sheet-variables-constants-formulas-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/37-2026-11-17-salesforce-flow-resources-cheat-sheet-variables-constants-formulas-and-admin-ii-interview-q-a.md) |
@@ -59,10 +60,11 @@ Total posts in this repo: 79
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (39 in this repo)
+## 📚 DevOps & AWS (40 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 54 | 2026-11-20 | [AWS KMS: How Encryption Keys Protect Your Data in AWS](https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws) | `AWS` `Aws kms` `Cloud Computing` `Devops` | [Markdown](posts/devops/54-2026-11-20-aws-kms-how-encryption-keys-protect-your-data-in-aws.md) |
 | 53 | 2026-11-19 | [AWS Secrets Manager and Parameter Store: Keep Secrets Out of Your Code](https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code) | `AWS` `Secrets Manager` `Cloud Computing` `Devops` | [Markdown](posts/devops/53-2026-11-19-aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code.md) |
 | 52 | 2026-11-18 | [AWS Systems Manager: Manage Your Instances Without Opening SSH](https://sishodiarobin.hashnode.dev/aws-systems-manager-manage-your-instances-without-opening-ssh) | `AWS` `AWS Systems Manager` `Cloud Computing` `Devops` | [Markdown](posts/devops/52-2026-11-18-aws-systems-manager-manage-your-instances-without-opening-ssh.md) |
 | 51 | 2026-11-17 | [AWS Config: Track Resource Changes and Check Compliance](https://sishodiarobin.hashnode.dev/aws-config-track-resource-changes-and-check-compliance) | `AWS` `AWS Config` `Cloud Computing` `Devops` | [Markdown](posts/devops/51-2026-11-17-aws-config-track-resource-changes-and-check-compliance.md) |
