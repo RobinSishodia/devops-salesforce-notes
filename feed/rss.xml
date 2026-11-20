@@ -1,4 +1,176 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Thu, 19 Nov 2026 17:12:47 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Secrets Manager and Parameter Store: Keep Secrets Out of Your Code]]></title><description><![CDATA[Systems Manager gave me a way into instances without SSH. The next question is where an application should keep its database password and settings so they…]]></description><link>https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code</guid><category><![CDATA[AWS]]></category><category><![CDATA[Secrets Manager]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 19 Nov 2026 17:07:19 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/dcbe97b9-a87e-4f57-9bab-dff221ac0920.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Systems Manager gave me a way into instances without SSH. The next question is where an application should keep its <strong>database password and settings</strong> so they never end up in code. AWS has two good answers: <strong>Secrets Manager</strong> and <strong>Parameter Store</strong>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Nov 2026 16:23:01 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS KMS: How Encryption Keys Protect Your Data in AWS]]></title><description><![CDATA[Secrets Manager and Parameter Store both lean on one thing underneath: AWS KMS, the Key Management Service. KMS creates and controls the encryption keys…]]></description><link>https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[Aws kms]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Nov 2026 16:22:49 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2594b291-6f48-4412-97d1-677fa75e3830.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Secrets Manager and Parameter Store both lean on one thing underneath: <strong>AWS KMS</strong>, the Key Management Service. KMS creates and controls the encryption keys that many AWS services use to protect your data.</p>
+<h2>What KMS does</h2>
+<ul>
+<li>It creates and manages <strong>KMS keys</strong>, and these keys never leave the service in plain form.</li>
+<li>Other services, such as S3, EBS and Secrets Manager, call KMS to encrypt and decrypt data for you.</li>
+<li>Every use of a key can be controlled with permissions and recorded in <strong>CloudTrail</strong>.</li>
+<li>Keys are <strong>Regional</strong>. A key lives in the Region where you create it.</li>
+</ul>
+<h2>Types of keys</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Who manages it</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AWS owned key</strong></td>
+<td>AWS</td>
+<td>Used by some services behind the scenes, and you do not see it</td>
+</tr>
+<tr>
+<td><strong>AWS managed key</strong></td>
+<td>AWS, in your account</td>
+<td>Named like <code>aws/s3</code>, rotated automatically, and you cannot change its policy</td>
+</tr>
+<tr>
+<td><strong>Customer managed key</strong></td>
+<td>You</td>
+<td>You control the key policy, aliases, rotation and deletion</td>
+</tr>
+</tbody></table>
+<h2>Key concepts</h2>
+<ul>
+<li><strong>Key policy</strong>: the main access control for a key. IAM policies can only grant access if the key policy allows it.</li>
+<li><strong>Alias</strong>: a friendly name such as <code>alias/demo-key</code>, which points to a key.</li>
+<li><strong>Symmetric key</strong>: one key for both encrypt and decrypt. It is the default type.</li>
+<li><strong>Envelope encryption</strong>: KMS encrypts a small <strong>data key</strong>, and the data key encrypts the large data. The direct Encrypt call is limited to 4 KB.</li>
+<li><strong>Key rotation</strong>: for customer managed keys you can turn on automatic rotation.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Create a key: <code>aws kms create-key --description "demo key"</code> and note the <code>KeyId</code>.</li>
+<li>Add an alias: <code>aws kms create-alias --alias-name alias/demo-key --target-key-id &lt;KeyId&gt;</code></li>
+<li>Make a file: <code>echo "hello kms" &gt; hello.txt</code></li>
+<li>Encrypt it: <code>aws kms encrypt --key-id alias/demo-key --plaintext fileb://hello.txt --query CiphertextBlob --output text | base64 --decode &gt; hello.enc</code></li>
+<li>Decrypt it: <code>aws kms decrypt --ciphertext-blob fileb://hello.enc --query Plaintext --output text | base64 --decode</code></li>
+<li>Turn on rotation: <code>aws kms enable-key-rotation --key-id &lt;KeyId&gt;</code></li>
+<li>In the console, open the key and read its <strong>key policy</strong>.</li>
+<li>Clean up: <code>aws kms delete-alias --alias-name alias/demo-key</code>, then <code>aws kms schedule-key-deletion --key-id &lt;KeyId&gt; --pending-window-in-days 7</code></li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Scheduling a key for deletion while data still depends on it. Once the key is gone, that data cannot be decrypted.</li>
+<li>Using a broad permission such as <code>kms:*</code> when a role only needs to encrypt and decrypt.</li>
+<li>Forgetting that the key policy must allow access, even when the IAM policy does.</li>
+<li>Trying to encrypt large files directly instead of using envelope encryption.</li>
+<li>Leaving practice keys behind. A customer managed key is billed per month, plus requests.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>KMS creates and controls the keys that protect your data across AWS.</li>
+<li>The key policy decides who can use a key, so write it carefully.</li>
+<li>Use customer managed keys when you need control over policy, rotation and deletion.</li>
+<li>Plan before you delete a key, and clean up practice keys.</li>
+</ul>
+<p>Tomorrow I'll look at AWS Backup and how to protect your data with scheduled backups.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Delete and Roll Back Records Cheat Sheet: Removing Data Safely and Admin II Interview Q&A]]></title><description><![CDATA[After Get, Create and Update comes the last of the data elements: Delete Records. It pairs with Roll Back Records, which undoes saves when something goes…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-delete-and-roll-back-records-cheat-sheet-removing-data-safely-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-delete-and-roll-back-records-cheat-sheet-removing-data-safely-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Nov 2026 16:21:32 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ddca9442-e244-4d91-bc29-11eed0a890bf.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>After Get, Create and Update comes the last of the data elements: Delete Records. It pairs with Roll Back Records, which undoes saves when something goes wrong. Admin II interviews love this pair.</em></p>
+<hr />
+<h2>Delete and Roll Back at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Delete Records</strong></td>
+<td>Deletes records</td>
+<td>By conditions, or by a record or collection</td>
+</tr>
+<tr>
+<td><strong>Roll Back Records</strong></td>
+<td>Undoes pending record changes in the transaction</td>
+<td>Used on a fault path after a failed save</td>
+</tr>
+<tr>
+<td><strong>Fault path</strong></td>
+<td>Where the flow goes when an element fails</td>
+<td>Add it to elements that save or delete</td>
+</tr>
+<tr>
+<td><strong>Transaction</strong></td>
+<td>A group of changes saved together</td>
+<td>A screen or Pause ends it</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. How does Delete Records find the records?</h3>
+<p>Two ways: <strong>specify conditions</strong> and delete every record that matches, or <strong>use the Ids stored in a record variable or collection</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> With conditions, test the filter first. A loose filter deletes more than you expect.</p>
+</blockquote>
+<h3>2. Where do deleted records go?</h3>
+<p>Deleted records can usually be restored from the <strong>Recycle Bin</strong> for a limited time. Deleting a parent record can also affect its child records, depending on the relationship.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check the relationship type before you delete a parent.</p>
+</blockquote>
+<h3>3. Should you delete inside a loop?</h3>
+<p>No. Collect the records in a <strong>collection variable</strong> with an <strong>Assignment</strong>, then use <strong>one</strong> Delete Records after the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> The same rule applies to Create and Update.</p>
+</blockquote>
+<h3>4. What does Roll Back Records do?</h3>
+<p>It <strong>reverses the record changes</strong> made earlier in the current transaction, so the data goes back to how it was before those changes.</p>
+<blockquote>
+<p><strong>Tip:</strong> It undoes record changes only, so plan what else the flow has already done.</p>
+</blockquote>
+<h3>5. When do you use it?</h3>
+<p>When the flow does <strong>several saves in a row</strong> and a later one fails. Put Roll Back Records on the <strong>fault path</strong> so a half-finished set of changes does not stay in the org.</p>
+<blockquote>
+<p><strong>Tip:</strong> Then show the user a clear message with <code>{!$Flow.FaultMessage}</code>.</p>
+</blockquote>
+<h3>6. What is a transaction in a flow?</h3>
+<p>The group of changes that are saved together. In a Screen Flow, changes are saved when the flow reaches a <strong>screen</strong> or a <strong>Pause</strong>, so rolling back only reaches back to that point.</p>
+<blockquote>
+<p><strong>Tip:</strong> Put related saves together, with no screen between them.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"The flow creates a follow-up Task and then updates the Opportunity. If the update fails, the Task must not stay behind."</strong></p>
+<ol>
+<li><strong>Create Records</strong> for the Task, then <strong>Update Records</strong> for the Opportunity, with no screen between them</li>
+<li>Add a <strong>fault path</strong> to the Update Records element</li>
+<li>On the fault path, add <strong>Roll Back Records</strong></li>
+<li>Then show a screen with <code>{!$Flow.FaultMessage}</code></li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open your Screen Flow from this series with the Create Records (Task) and Update Records (Opportunity) elements.</li>
+<li>Make sure there is <strong>no screen</strong> between the Create and the Update.</li>
+<li>On the <strong>fault path</strong> of Update Records, add a <strong>Roll Back Records</strong> element named <code>Undo Changes</code>.</li>
+<li>After it, add a screen that shows <code>{!$Flow.FaultMessage}</code>.</li>
+<li>To test, add a validation rule on Opportunity that always fails for your test record, or temporarily set a required field to blank, then <strong>Debug</strong> the flow.</li>
+<li>Check that no new Task was left behind, then remove your test rule.</li>
+<li>Optional: add <strong>Delete Records</strong> on <strong>Task</strong> with the condition <strong>Id equals</strong> <code>{!NewTaskId}</code> to remove a test Task you created.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Delete Records</strong> = by conditions, or by record or collection</li>
+<li><strong>Recycle Bin</strong> can restore deleted records for a limited time</li>
+<li><strong>Never delete inside a loop</strong></li>
+<li><strong>Roll Back Records</strong> = undo record changes in this transaction</li>
+<li><strong>Use it on a fault path</strong></li>
+<li><strong>A screen or Pause ends the transaction</strong></li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Test the conditions before you delete records.</li>
+<li>Collect records in a collection, then delete once after the loop.</li>
+<li>Roll Back Records keeps a failed multi-step save from leaving partial data.</li>
+<li>Keep related saves together, with no screen between them.</li>
+</ul>
+<p><strong>Next up:</strong> subflows, and how to call one flow from another.</p>
+<p><em>Part of #120DaysOfSalesforce. Do you use Roll Back Records? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Secrets Manager and Parameter Store: Keep Secrets Out of Your Code]]></title><description><![CDATA[Systems Manager gave me a way into instances without SSH. The next question is where an application should keep its database password and settings so they…]]></description><link>https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code</guid><category><![CDATA[AWS]]></category><category><![CDATA[Secrets Manager]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Thu, 19 Nov 2026 17:07:19 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/dcbe97b9-a87e-4f57-9bab-dff221ac0920.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Systems Manager gave me a way into instances without SSH. The next question is where an application should keep its <strong>database password and settings</strong> so they never end up in code. AWS has two good answers: <strong>Secrets Manager</strong> and <strong>Parameter Store</strong>.</p>
 <h2>The two services</h2>
 <ul>
 <li><strong>AWS Secrets Manager</strong> stores secrets such as database credentials and API keys, encrypts them with <strong>AWS KMS</strong>, and can <strong>rotate</strong> them automatically.</li>
@@ -1492,169 +1664,5 @@
 <li>Keep tag names consistent.</li>
 </ul>
 <p>Tomorrow I'll look at how to see all of this from a single place: AWS Organizations and account structure.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Loop Element Cheat Sheet: Bulk-Safe Collections and Admin II Interview Q&A]]></title><description><![CDATA[The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-loop-element-cheat-sheet-bulk-safe-collections-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 09 Nov 2026 16:13:57 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/3e82fdc6-ae52-48f3-bf49-8404cc951deb.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>The Loop element lets a Flow work through a collection one record at a time. Admin II interviews ask about it because loops are where Flows either stay bulk-safe or hit governor limits.</em></p>
-<hr />
-<h2>The 4 Loop Pieces</h2>
-<table>
-<thead>
-<tr>
-<th>Piece</th>
-<th>What it does</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Collection variable</strong></td>
-<td>Holds the records to process</td>
-<td>Often from Get Records</td>
-</tr>
-<tr>
-<td><strong>Loop element</strong></td>
-<td>Hands you one item at a time</td>
-<td>Exposes the current item variable</td>
-</tr>
-<tr>
-<td><strong>Assignment inside</strong></td>
-<td>Changes the current item or builds an output collection</td>
-<td>No DML here</td>
-</tr>
-<tr>
-<td><strong>Data element after</strong></td>
-<td>Saves the output collection once</td>
-<td>One Update Records outside the loop</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What does the Loop element do?</h3>
-<p>It goes through a <strong>collection</strong> and gives you <strong>one item at a time</strong> as a loop variable. It has two paths: <strong>For Each Item</strong> runs for every item, and <strong>After Last Item</strong> runs once at the end.</p>
-<blockquote>
-<p><strong>Tip:</strong> Put the save step on After Last Item.</p>
-</blockquote>
-<h3>2. Why not put Update Records inside the loop?</h3>
-<p>Each pass would run <strong>one DML</strong> call. With many records you hit <strong>governor limits</strong> and the Flow fails. Instead, add each changed item to a <strong>second collection</strong>, then update that collection <strong>once</strong> after the loop.</p>
-<blockquote>
-<p><strong>Tip:</strong> Never put DML or Get Records inside a loop.</p>
-</blockquote>
-<h3>3. How do you change a field on the current item?</h3>
-<p>Use an <strong>Assignment</strong> inside the loop to set the field on the <strong>loop variable</strong>, then <strong>add the loop variable to an output collection</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Loop variable in, output collection out.</p>
-</blockquote>
-<h3>4. Can you loop in reverse?</h3>
-<p>Yes. The Loop element has a direction setting: <strong>first to last</strong> or <strong>last to first</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use reverse when order matters.</p>
-</blockquote>
-<h3>5. When can you skip the loop?</h3>
-<p>Often a Flow does not need one. <strong>Update Records with conditions</strong> can change every matching record in a single element, and a <strong>before-save</strong> flow can set fields on the triggering record directly.</p>
-<blockquote>
-<p><strong>Tip:</strong> No loop is the safest loop.</p>
-</blockquote>
-<h3>6. How do you debug a loop?</h3>
-<p>Run <strong>Debug</strong> and watch the loop variable change on each pass. Use the Flow's <strong>fault path</strong> and, for large data, test with a small set first.</p>
-<blockquote>
-<p><strong>Tip:</strong> Test with 2 records, then 200.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Set every open Opportunity on an Account to Needs Review when the Account is marked At Risk."</strong></p>
-<ol>
-<li><strong>Record-triggered flow</strong> on Account, after save, when <code>At_Risk__c</code> becomes true</li>
-<li><strong>Get Records:</strong> open Opportunities where <code>AccountId</code> equals the Account Id</li>
-<li><strong>Loop</strong> through them, with an <strong>Assignment</strong> setting <code>StageName</code> and adding each to an output collection</li>
-<li><strong>Update Records</strong> on the output collection, once, after the loop</li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> and add <strong>Get Records</strong> for a few Contacts into a collection.</li>
-<li>Add a <strong>Loop</strong> over that collection.</li>
-<li>Inside the loop, add an <strong>Assignment</strong> that sets the current Contact's Description, then adds it to a new collection.</li>
-<li>After the last item, add <strong>Update Records</strong> using the new collection.</li>
-<li>Run <strong>Debug</strong> and check the Contacts in your org.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Loop</strong> = one item at a time</li>
-<li><strong>For Each Item</strong> = runs per record</li>
-<li><strong>After Last Item</strong> = runs once at the end</li>
-<li><strong>Output collection</strong> = what you save</li>
-<li><strong>DML</strong> = outside the loop</li>
-<li><strong>Often no loop</strong> = Update Records with conditions</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Loop through a collection, build an output collection, save once.</li>
-<li>Never put DML or Get Records inside a loop.</li>
-<li>Skip the loop when one element can do the job.</li>
-<li>Test with small data first.</li>
-</ul>
-<p><strong>Next up:</strong> Flow formulas and how they replace small pieces of logic.</p>
-<p><em>Part of #120DaysOfSalesforce. Do you try to avoid loops, or use them often? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS CloudWatch Basics: Metrics, Logs and Alarms for Your Resources]]></title><description><![CDATA[Last time I looked at who changed things with CloudTrail. The next question is different: what is happening inside my resources right now? That is Amazon…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudwatch-basics-metrics-logs-and-alarms-for-your-resources</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudwatch-basics-metrics-logs-and-alarms-for-your-resources</guid><category><![CDATA[AWS]]></category><category><![CDATA[#CloudWatch]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[monitoring]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 09 Nov 2026 16:12:16 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/daf81834-3965-479b-b034-7650726588c5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Last time I looked at <strong>who</strong> changed things with CloudTrail. The next question is different: <strong>what is happening inside my resources right now</strong>? That is <strong>Amazon CloudWatch</strong>.</p>
-<h2>What CloudWatch does</h2>
-<ul>
-<li><strong>Metrics:</strong> numbers over time, such as EC2 CPU utilization or S3 request counts.</li>
-<li><strong>Logs:</strong> log data from your applications and services, stored in log groups.</li>
-<li><strong>Alarms:</strong> watch a metric and do something when it crosses a threshold.</li>
-<li><strong>Dashboards:</strong> put the graphs you care about on one page.</li>
-</ul>
-<h2>CloudTrail vs CloudWatch</h2>
-<table>
-<thead>
-<tr>
-<th>Question</th>
-<th>Service</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Who made this change?</td>
-<td><strong>CloudTrail</strong></td>
-</tr>
-<tr>
-<td>Is this resource healthy and busy?</td>
-<td><strong>CloudWatch</strong></td>
-</tr>
-</tbody></table>
-<h2>How an alarm works</h2>
-<ul>
-<li>An alarm watches <strong>one metric</strong> over a <strong>period</strong> (for example, 5 minutes).</li>
-<li>Its state is <strong>OK</strong>, <strong>ALARM</strong> or <strong>INSUFFICIENT_DATA</strong>.</li>
-<li>When the state changes, it can send a message to an <strong>SNS topic</strong>, which can email you.</li>
-<li>The <strong>threshold</strong> and the number of <strong>periods</strong> to evaluate decide how sensitive it is.</li>
-</ul>
-<h2>Good to know</h2>
-<ul>
-<li>EC2 sends basic metrics every <strong>5 minutes</strong> by default, and <strong>detailed monitoring</strong> gives 1-minute data (extra cost).</li>
-<li>EC2 does <strong>not</strong> report memory or disk usage by default. You need the <strong>CloudWatch agent</strong> for those.</li>
-<li>Logs stay forever unless you set a <strong>retention</strong> period, so set one.</li>
-</ul>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Open <strong>CloudWatch</strong> and browse <strong>All metrics</strong> for EC2 or S3.</li>
-<li>Choose <strong>Alarms</strong>, then <strong>Create alarm</strong>.</li>
-<li>Pick a metric, such as <strong>EC2 CPUUtilization</strong> for one instance.</li>
-<li>Set a threshold, for example greater than 70% for 2 periods.</li>
-<li>Create or choose an <strong>SNS topic</strong> with your email, and confirm the subscription email.</li>
-<li>Save the alarm and check that it shows <strong>OK</strong> or <strong>INSUFFICIENT_DATA</strong> at first.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Creating alarms with no action, so nobody is told.</li>
-<li>Forgetting to confirm the SNS email subscription.</li>
-<li>Expecting memory metrics without the CloudWatch agent.</li>
-<li>Leaving log groups on never-expire retention.</li>
-</ul>
-<h2>Key takeaways</h2>
-<ul>
-<li>CloudTrail tells you who changed it, CloudWatch tells you how it is doing.</li>
-<li>Metrics feed alarms, alarms feed SNS, SNS reaches you.</li>
-<li>Install the agent for memory and disk.</li>
-<li>Set log retention.</li>
-</ul>
-<p>Tomorrow I'll look at how to use tags to keep resources organized and costs traceable.</p>
 <p><em>Part of #120DaysOfAWS.</em></p>
 ]]></content:encoded></item></channel></rss>
