@@ -1,4 +1,186 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 20 Nov 2026 16:23:01 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS KMS: How Encryption Keys Protect Your Data in AWS]]></title><description><![CDATA[Secrets Manager and Parameter Store both lean on one thing underneath: AWS KMS, the Key Management Service. KMS creates and controls the encryption keys…]]></description><link>https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[Aws kms]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Nov 2026 16:22:49 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2594b291-6f48-4412-97d1-677fa75e3830.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Secrets Manager and Parameter Store both lean on one thing underneath: <strong>AWS KMS</strong>, the Key Management Service. KMS creates and controls the encryption keys that many AWS services use to protect your data.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Nov 2026 18:26:14 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Backup: Schedule and Protect Your Data Across AWS Services]]></title><description><![CDATA[KMS protects your data from being read. AWS Backup protects it from being lost. It is one place to schedule, run and keep backups for many AWS services…]]></description><link>https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services</guid><category><![CDATA[AWS]]></category><category><![CDATA[aws backup]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 21 Nov 2026 18:25:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b6571ddc-5013-483a-9ff6-c57f1c4c2450.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>KMS protects your data from being read. <strong>AWS Backup</strong> protects it from being lost. It is one place to schedule, run and keep backups for many AWS services, instead of setting up each service on its own.</p>
+<h2>What AWS Backup does</h2>
+<ul>
+<li>It gives you a central place to manage backups across services such as <strong>EBS</strong>, <strong>RDS</strong>, <strong>DynamoDB</strong>, <strong>EFS</strong> and <strong>S3</strong>.</li>
+<li>You describe what you want in a <strong>backup plan</strong>, and AWS Backup runs it on a schedule.</li>
+<li>Backups are stored in a <strong>backup vault</strong>, which can be encrypted with a <strong>KMS</strong> key.</li>
+<li>Every backup job is tracked, so you can see what ran and what failed.</li>
+</ul>
+<h2>Key concepts</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Backup plan</strong></td>
+<td>The rules: schedule, lifecycle and which vault to use</td>
+</tr>
+<tr>
+<td><strong>Backup rule</strong></td>
+<td>One schedule inside a plan, such as daily at 05:00 UTC</td>
+</tr>
+<tr>
+<td><strong>Resource assignment</strong></td>
+<td>Which resources the plan covers, by ID or by <strong>tag</strong></td>
+</tr>
+<tr>
+<td><strong>Backup vault</strong></td>
+<td>The container that stores recovery points</td>
+</tr>
+<tr>
+<td><strong>Recovery point</strong></td>
+<td>One saved backup that you can restore from</td>
+</tr>
+<tr>
+<td><strong>Lifecycle</strong></td>
+<td>When a backup moves to cold storage or expires</td>
+</tr>
+</tbody></table>
+<h2>Good to know</h2>
+<ul>
+<li>Assign resources by <strong>tag</strong>, for example <code>Backup = daily</code>, so new resources are picked up automatically.</li>
+<li>Set a <strong>retention</strong> period so old backups do not pile up and cost money.</li>
+<li>A restore creates a <strong>new</strong> resource from the recovery point. It does not overwrite the old one.</li>
+<li><strong>Vault Lock</strong> can stop backups from being deleted too early.</li>
+<li><strong>Cross-Region</strong> and <strong>cross-account</strong> copies help with disaster recovery.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>AWS Backup</strong> in the console and choose <strong>Create backup plan</strong>.</li>
+<li>Pick <strong>Build a new plan</strong> and name it <code>demo-daily</code>.</li>
+<li>Add a rule: <strong>Daily</strong>, with retention of <strong>7 days</strong> (keep it short to limit cost).</li>
+<li>Use the <strong>Default</strong> backup vault.</li>
+<li>Create the plan, then choose <strong>Assign resources</strong>.</li>
+<li>Select <strong>Include specific resource types</strong>, pick one small resource such as an <strong>EBS volume</strong>, or assign by tag <code>Backup = daily</code>.</li>
+<li>Choose <strong>On-demand backup</strong> for the same resource to test it now, and wait for the job to finish under <strong>Jobs</strong>.</li>
+<li>Open the <strong>recovery point</strong> and look at the <strong>Restore</strong> option.</li>
+<li>Clean up: delete the recovery point, the resource assignment and the backup plan.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Making a backup plan but forgetting to assign resources, so nothing is backed up.</li>
+<li>Never testing a restore. A backup you cannot restore is not a backup.</li>
+<li>Keeping backups forever and paying for storage you do not need.</li>
+<li>Keeping backups only in one Region and one account.</li>
+<li>Forgetting that a backup vault key in KMS must stay available.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>AWS Backup gives one place to schedule and track backups across services.</li>
+<li>A plan holds the rules, a vault holds the recovery points.</li>
+<li>Assign resources by tag so new ones are covered.</li>
+<li>Test a restore, and set retention to control cost.</li>
+</ul>
+<p>Tomorrow I'll recap the AWS security and operations topics from this series.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Subflows Cheat Sheet: Reusing Logic Across Flows and Admin II Interview Q&A]]></title><description><![CDATA[Flows can get big fast. A subflow lets you build a piece of logic once and call it from other flows. Admin II interviews ask about it often. A flow that…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-subflows-cheat-sheet-reusing-logic-across-flows-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-subflows-cheat-sheet-reusing-logic-across-flows-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 21 Nov 2026 18:23:41 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/af192ad7-38b3-46fd-8cca-655fe87d1cf9.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Flows can get big fast. A subflow lets you build a piece of logic once and call it from other flows. Admin II interviews ask about it often.</em></p>
+<hr />
+<h2>Subflows at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Subflow element</strong></td>
+<td>Calls another flow from a flow</td>
+<td>The called flow must be <strong>active</strong></td>
+</tr>
+<tr>
+<td><strong>Input variable</strong></td>
+<td>Sends a value into the subflow</td>
+<td>Tick <strong>Available for input</strong></td>
+</tr>
+<tr>
+<td><strong>Output variable</strong></td>
+<td>Sends a value back</td>
+<td>Tick <strong>Available for output</strong></td>
+</tr>
+<tr>
+<td><strong>Flow type</strong></td>
+<td>Which flows can be called</td>
+<td>Autolaunched flows and Screen Flows can be subflows</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a subflow?</h3>
+<p>A flow that another flow calls with the <strong>Subflow</strong> element. The parent flow pauses at that element, the subflow runs, and then the parent carries on.</p>
+<blockquote>
+<p><strong>Tip:</strong> Think of it like a function you can reuse.</p>
+</blockquote>
+<h3>2. Why use one?</h3>
+<p>To <strong>reuse</strong> the same logic in many flows, to keep a big flow <strong>readable</strong>, and to change the logic in <strong>one</strong> place.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name subflows clearly, for example <code>Sub - Create Follow-Up Task</code>.</p>
+</blockquote>
+<h3>3. How do you pass values in and out?</h3>
+<p>Create variables in the subflow and tick <strong>Available for input</strong> or <strong>Available for output</strong>. In the Subflow element you then set each input and can store each output.</p>
+<blockquote>
+<p><strong>Tip:</strong> Pass only what the subflow needs.</p>
+</blockquote>
+<h3>4. Which flows can you call?</h3>
+<p><strong>Autolaunched flows</strong> and <strong>Screen Flows</strong>. The flow you call must be <strong>active</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Keep a version active before you call it from a parent.</p>
+</blockquote>
+<h3>5. How do errors behave?</h3>
+<p>If the subflow fails, the error comes back to the parent. Add a <strong>fault path</strong> on the Subflow element, so the parent can show a message or roll back.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fault paths work on the Subflow element too.</p>
+</blockquote>
+<h3>6. Do subflows share limits with the parent?</h3>
+<p>Yes. A subflow that runs in the same transaction uses the <strong>same governor limits</strong> as the parent flow.</p>
+<blockquote>
+<p><strong>Tip:</strong> Do not hide a Get Records inside a loop by putting it in a subflow.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Three flows all create a follow-up Task in the same way. How do you stop copying the same elements?"</strong></p>
+<ol>
+<li>Build one <strong>Autolaunched Flow</strong> that creates the Task</li>
+<li>Add input variables for <strong>Subject</strong> and <strong>Related Id</strong></li>
+<li>Activate it</li>
+<li>In each parent flow, add a <strong>Subflow</strong> element and set the inputs</li>
+<li>Add a <strong>fault path</strong> on the Subflow element</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create an <strong>Autolaunched Flow</strong> named <code>Sub - Create Follow-Up Task</code>.</li>
+<li>Add a text variable <code>TaskSubject</code> and tick <strong>Available for input</strong>.</li>
+<li>Add a text variable <code>RelatedId</code> and tick <strong>Available for input</strong>.</li>
+<li>Add <strong>Create Records</strong> for <strong>Task</strong> with Subject = <code>{!TaskSubject}</code> and WhatId = <code>{!RelatedId}</code>.</li>
+<li>Save and <strong>Activate</strong> it.</li>
+<li>Open your Screen Flow from this series and add a <strong>Subflow</strong> element.</li>
+<li>Pick <code>Sub - Create Follow-Up Task</code> and set the two inputs.</li>
+<li>Add a fault path to the Subflow element, then <strong>Debug</strong> and check the new Task.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Subflow element</strong> = call another flow</li>
+<li><strong>Called flow</strong> = must be active</li>
+<li><strong>Input / Output</strong> = Available for input / output</li>
+<li><strong>Fault path</strong> = add it on the Subflow element</li>
+<li><strong>Limits</strong> = shared with the parent in the same transaction</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Build repeated logic once and call it as a subflow.</li>
+<li>Give subflows clear names and pass only what they need.</li>
+<li>Activate the subflow before you call it.</li>
+<li>Add a fault path on the Subflow element.</li>
+</ul>
+<p><strong>Next up:</strong> a quick recap of the Flow series so far, and what to practice for the exam.</p>
+<p><em>Part of #120DaysOfSalesforce. Do you reuse flows with subflows? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS KMS: How Encryption Keys Protect Your Data in AWS]]></title><description><![CDATA[Secrets Manager and Parameter Store both lean on one thing underneath: AWS KMS, the Key Management Service. KMS creates and controls the encryption keys…]]></description><link>https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws</guid><category><![CDATA[AWS]]></category><category><![CDATA[Aws kms]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 20 Nov 2026 16:22:49 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/2594b291-6f48-4412-97d1-677fa75e3830.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Secrets Manager and Parameter Store both lean on one thing underneath: <strong>AWS KMS</strong>, the Key Management Service. KMS creates and controls the encryption keys that many AWS services use to protect your data.</p>
 <h2>What KMS does</h2>
 <ul>
 <li>It creates and manages <strong>KMS keys</strong>, and these keys never leave the service in plain form.</li>
@@ -1484,185 +1666,4 @@
 </code></pre>
 <p>Code and setup: <a href="https://github.com/RobinSishodia/repo-health-report">https://github.com/RobinSishodia/repo-health-report</a></p>
 <p>Feedback and issues welcome. If it's useful to you, a star helps.</p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Formulas Cheat Sheet: Dates, Booleans and Admin II Interview Q&A]]></title><description><![CDATA[A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-formulas-cheat-sheet-dates-booleans-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[flow]]></category><category><![CDATA[120daysofsalesforce]]></category><category><![CDATA[Salesforce Admin]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Nov 2026 18:51:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/8591c7ed-e97f-4cb9-bfef-3ca046bd8a76.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>A Flow formula calculates a value from your data and variables, so you can skip extra Decision and Assignment elements. Admin II interviews ask about them because formulas keep Flows small, readable and easy to maintain.</em></p>
-<hr />
-<h2>Formula Basics</h2>
-<table>
-<thead>
-<tr>
-<th>Piece</th>
-<th>What it does</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Formula resource</strong></td>
-<td>Returns one calculated value</td>
-<td>Created under New Resource</td>
-</tr>
-<tr>
-<td><strong>Data type</strong></td>
-<td>Text, Number, Currency, Date, Date/Time or Boolean</td>
-<td>Pick the type the formula returns</td>
-</tr>
-<tr>
-<td><strong>Functions</strong></td>
-<td>IF, AND, OR, TEXT, TODAY, BLANKVALUE and more</td>
-<td>Same style as validation rule formulas</td>
-</tr>
-<tr>
-<td><strong>Where you use it</strong></td>
-<td>Decision conditions, Assignments, Screen text, Get Records filters</td>
-<td>Reference it like a variable</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a formula resource in a Flow?</h3>
-<p>A <strong>resource</strong> that calculates <strong>one value</strong> from fields, variables and functions, then returns it. Reference it anywhere you would use a variable.</p>
-<blockquote>
-<p><strong>Tip:</strong> One formula, used in many places.</p>
-</blockquote>
-<h3>2. Why use a formula instead of Decision and Assignment elements?</h3>
-<p>A formula can do the same logic in <strong>one resource</strong>, such as a calculated date or a yes/no flag. The Flow canvas stays <strong>short and readable</strong>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Fewer elements, fewer places to break.</p>
-</blockquote>
-<h3>3. How do you handle blank values?</h3>
-<p>Use <strong>BLANKVALUE</strong> or <strong>ISBLANK</strong> (or <strong>ISNULL</strong> checks in conditions) so a missing field does not break the result. Empty values in math can lead to unexpected results.</p>
-<blockquote>
-<p><strong>Tip:</strong> Always plan for blank.</p>
-</blockquote>
-<h3>4. Can a formula return a Boolean?</h3>
-<p>Yes. A <strong>Boolean formula</strong> returns true or false, which is handy as a single condition in a <strong>Decision</strong>, for example whether an Opportunity amount is over a limit and the stage is open.</p>
-<blockquote>
-<p><strong>Tip:</strong> Boolean formula in, simple Decision out.</p>
-</blockquote>
-<h3>5. How do you use dates in a formula?</h3>
-<p>Use <strong>TODAY()</strong> or <strong>NOW()</strong> and add or subtract days, for example <code>TODAY() + 7</code> for a follow-up date. Pick <strong>Date</strong> or <strong>Date/Time</strong> to match the field you set.</p>
-<blockquote>
-<p><strong>Tip:</strong> Match the formula type to the field type.</p>
-</blockquote>
-<h3>6. Where are the limits?</h3>
-<p>A formula returns <strong>one value</strong>, it cannot change records, and it <strong>cannot query other records</strong> directly. Use Get Records for data, then use the formula to work with it.</p>
-<blockquote>
-<p><strong>Tip:</strong> Get Records finds, formulas calculate.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Create a follow-up Task due in 7 days, or 2 days if the Opportunity is over 100,000."</strong></p>
-<ol>
-<li><strong>Record-triggered flow</strong> on Opportunity, after save, when Stage becomes Negotiation</li>
-<li><strong>Formula (Date):</strong> <code>IF({!$Record.Amount} &gt; 100000, TODAY() + 2, TODAY() + 7)</code></li>
-<li><strong>Create Records:</strong> a Task with <code>ActivityDate</code> set to the formula</li>
-<li><strong>Fault path</strong>, then <strong>Debug</strong></li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> with a Number input for an amount.</li>
-<li>Add a <strong>Formula resource</strong> of type Text that returns <code>IF({!Amount} &gt; 1000, "High", "Normal")</code>.</li>
-<li>Add a <strong>Screen</strong> that displays the formula result.</li>
-<li>Add a second <strong>Formula</strong> of type Date that returns <code>TODAY() + 7</code> and show that too.</li>
-<li>Run <strong>Debug</strong> with a few amounts and check the results.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Formula</strong> = one calculated value</li>
-<li><strong>Boolean formula</strong> = single true or false condition</li>
-<li><strong>Date formula</strong> = TODAY() plus or minus days</li>
-<li><strong>Blank safe</strong> = BLANKVALUE or ISBLANK</li>
-<li><strong>Cannot</strong> = change records or query data</li>
-<li><strong>Pair with</strong> = Get Records for data</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Use a formula to replace small Decision and Assignment chains.</li>
-<li>Match the formula data type to what it feeds.</li>
-<li>Plan for blank values.</li>
-<li>Get Records finds data, formulas calculate on it.</li>
-</ul>
-<p><strong>Next up:</strong> Flow screens and user input.</p>
-<p><em>Part of #120DaysOfSalesforce. What is the most useful Flow formula you have written? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS Tagging Strategy: Name, Owner and Environment Tags for Every Resource]]></title><description><![CDATA[By now I have IAM, a budget, CloudTrail and CloudWatch. One more habit makes all of them easier to use: tags. When the bill rises or something looks odd…]]></description><link>https://sishodiarobin.hashnode.dev/aws-tagging-strategy-name-owner-and-environment-tags-for-every-resource</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-tagging-strategy-name-owner-and-environment-tags-for-every-resource</guid><category><![CDATA[AWS]]></category><category><![CDATA[tagging]]></category><category><![CDATA[120daysofaws]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 10 Nov 2026 18:49:12 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/663c873f-a882-420e-b81b-74b8731154b3.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>By now I have IAM, a budget, CloudTrail and CloudWatch. One more habit makes all of them easier to use: <strong>tags</strong>. When the bill rises or something looks odd, tags tell you <strong>what the resource is, who owns it and what it is for</strong>.</p>
-<h2>What tags are</h2>
-<ul>
-<li>A tag is a <strong>key and value pair</strong> attached to a resource, such as <code>Environment = dev</code>.</li>
-<li>Most AWS resources support tags, and you can have up to <strong>50 tags per resource</strong>.</li>
-<li>Tags are labels for people and tools. They do not change how the resource works.</li>
-</ul>
-<h2>A simple starting set</h2>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Example value</th>
-<th>Why</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Name</strong></td>
-<td><code>web-server-1</code></td>
-<td>Shows in the console list</td>
-</tr>
-<tr>
-<td><strong>Environment</strong></td>
-<td><code>dev</code>, <code>test</code>, <code>prod</code></td>
-<td>Separate workloads</td>
-</tr>
-<tr>
-<td><strong>Owner</strong></td>
-<td><code>robin</code></td>
-<td>Who to ask</td>
-</tr>
-<tr>
-<td><strong>Project</strong></td>
-<td><code>blog-site</code></td>
-<td>Group related resources</td>
-</tr>
-<tr>
-<td><strong>CostCenter</strong></td>
-<td><code>learning</code></td>
-<td>Split the bill</td>
-</tr>
-</tbody></table>
-<h2>What tags are used for</h2>
-<ul>
-<li><strong>Cost allocation:</strong> activate <strong>cost allocation tags</strong> in Billing, then filter Cost Explorer by tag.</li>
-<li><strong>Access control:</strong> IAM policies can allow or deny actions based on tags (ABAC).</li>
-<li><strong>Automation:</strong> scripts can find resources by tag, such as all <code>Environment = dev</code> instances to stop at night.</li>
-<li><strong>Search:</strong> Tag Editor and Resource Groups find resources across Regions.</li>
-</ul>
-<h2>Good to know</h2>
-<ul>
-<li>Tag keys and values are <strong>case sensitive</strong>, so <code>Owner</code> and <code>owner</code> are different.</li>
-<li>Tags are <strong>not retroactive</strong> in Cost Explorer. Cost allocation tags only show costs from the time you activate them.</li>
-<li><strong>Tag policies</strong> in AWS Organizations help keep names consistent.</li>
-<li>Do not put secrets or personal data in tags.</li>
-</ul>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Open <strong>EC2</strong> or <strong>S3</strong> and select a resource you created.</li>
-<li>Add the tags <strong>Name</strong>, <strong>Environment</strong>, <strong>Owner</strong> and <strong>Project</strong>.</li>
-<li>Open <strong>Resource Groups &amp; Tag Editor</strong> and use <strong>Tag Editor</strong> to search by <code>Environment = dev</code> across Regions.</li>
-<li>Open <strong>Billing</strong> and <strong>Cost allocation tags</strong>, then activate <code>Project</code>.</li>
-<li>After a day, filter <strong>Cost Explorer</strong> by the <code>Project</code> tag.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Inconsistent keys, such as <code>env</code>, <code>Env</code> and <code>Environment</code>.</li>
-<li>Tagging only some resources, so reports have gaps.</li>
-<li>Forgetting to activate cost allocation tags.</li>
-<li>Storing sensitive data in tag values.</li>
-</ul>
-<h2>Key takeaways</h2>
-<ul>
-<li>Tags answer what, who and why for every resource.</li>
-<li>Pick a small standard set and use it everywhere.</li>
-<li>Activate cost allocation tags to see costs by tag.</li>
-<li>Keep tag names consistent.</li>
-</ul>
-<p>Tomorrow I'll look at how to see all of this from a single place: AWS Organizations and account structure.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
 ]]></content:encoded></item></channel></rss>
