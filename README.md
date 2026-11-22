@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 83
+Total posts in this repo: 85
 
-## 📚 Salesforce (41 in this repo)
+## 📚 Salesforce (42 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 42 | 2026-11-22 | [Salesforce Flow Recap: Rapid-Fire Interview Q&A from Screen Flows to Subflows](https://sishodiarobin.hashnode.dev/salesforce-flow-recap-rapid-fire-interview-q-a-from-screen-flows-to-subflows) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/42-2026-11-22-salesforce-flow-recap-rapid-fire-interview-q-a-from-screen-flows-to-subflows.md) |
 | 41 | 2026-11-21 | [Salesforce Flow Subflows Cheat Sheet: Reusing Logic Across Flows and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-subflows-cheat-sheet-reusing-logic-across-flows-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/41-2026-11-21-salesforce-flow-subflows-cheat-sheet-reusing-logic-across-flows-and-admin-ii-interview-q-a.md) |
 | 40 | 2026-11-20 | [Salesforce Flow Delete and Roll Back Records Cheat Sheet: Removing Data Safely and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-delete-and-roll-back-records-cheat-sheet-removing-data-safely-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/40-2026-11-20-salesforce-flow-delete-and-roll-back-records-cheat-sheet-removing-data-safely-and-admin-ii-interview-q-a.md) |
 | 39 | 2026-11-19 | [Salesforce Flow Create and Update Records Cheat Sheet: Writing Data Back and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-create-and-update-records-cheat-sheet-writing-data-back-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/39-2026-11-19-salesforce-flow-create-and-update-records-cheat-sheet-writing-data-back-and-admin-ii-interview-q-a.md) |
@@ -61,10 +62,11 @@ Total posts in this repo: 83
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (41 in this repo)
+## 📚 DevOps & AWS (42 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 56 | 2026-11-22 | [AWS Security and Operations Recap: How IAM, CloudTrail, Config, KMS and Backup Fit Together](https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together) | `AWS` `cloud security` `Cloud Computing` `Devops` | [Markdown](posts/devops/56-2026-11-22-aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together.md) |
 | 55 | 2026-11-21 | [AWS Backup: Schedule and Protect Your Data Across AWS Services](https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services) | `AWS` `aws backup` `Cloud Computing` `Devops` | [Markdown](posts/devops/55-2026-11-21-aws-backup-schedule-and-protect-your-data-across-aws-services.md) |
 | 54 | 2026-11-20 | [AWS KMS: How Encryption Keys Protect Your Data in AWS](https://sishodiarobin.hashnode.dev/aws-kms-how-encryption-keys-protect-your-data-in-aws) | `AWS` `Aws kms` `Cloud Computing` `Devops` | [Markdown](posts/devops/54-2026-11-20-aws-kms-how-encryption-keys-protect-your-data-in-aws.md) |
 | 53 | 2026-11-19 | [AWS Secrets Manager and Parameter Store: Keep Secrets Out of Your Code](https://sishodiarobin.hashnode.dev/aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code) | `AWS` `Secrets Manager` `Cloud Computing` `Devops` | [Markdown](posts/devops/53-2026-11-19-aws-secrets-manager-and-parameter-store-keep-secrets-out-of-your-code.md) |
