@@ -1,4 +1,204 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sat, 21 Nov 2026 18:26:14 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Backup: Schedule and Protect Your Data Across AWS Services]]></title><description><![CDATA[KMS protects your data from being read. AWS Backup protects it from being lost. It is one place to schedule, run and keep backups for many AWS services…]]></description><link>https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services</guid><category><![CDATA[AWS]]></category><category><![CDATA[aws backup]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 21 Nov 2026 18:25:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b6571ddc-5013-483a-9ff6-c57f1c4c2450.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>KMS protects your data from being read. <strong>AWS Backup</strong> protects it from being lost. It is one place to schedule, run and keep backups for many AWS services, instead of setting up each service on its own.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Nov 2026 15:16:21 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Security and Operations Recap: How IAM, CloudTrail, Config, KMS and Backup Fit Together]]></title><description><![CDATA[How to decide between Salesforce Flow and Apex for automation: what Flow handles well, when Apex is the better choice, and how to combine them.]]></description><link>https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 22 Nov 2026 15:16:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fdb0868b-38c8-47ac-9187-f11ead1b0f44.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Over the last few posts I covered the services that keep an AWS account safe and tidy. Today is a recap: what each one does, and how they fit together.</p>
+<h2>The series at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What it answers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>IAM Identity Center</strong></td>
+<td>Who can sign in, and to which accounts and roles</td>
+</tr>
+<tr>
+<td><strong>CloudWatch Alarms + SNS</strong></td>
+<td>Is something wrong right now, and who gets told</td>
+</tr>
+<tr>
+<td><strong>CloudTrail</strong></td>
+<td>Who did what, and when</td>
+</tr>
+<tr>
+<td><strong>AWS Config</strong></td>
+<td>What does the setup look like, and does it follow the rules</td>
+</tr>
+<tr>
+<td><strong>Systems Manager</strong></td>
+<td>How do I manage and patch my instances without logging in one by one</td>
+</tr>
+<tr>
+<td><strong>Secrets Manager and Parameter Store</strong></td>
+<td>Where do passwords and settings live, outside the code</td>
+</tr>
+<tr>
+<td><strong>AWS KMS</strong></td>
+<td>Who holds the keys that protect the data</td>
+</tr>
+<tr>
+<td><strong>AWS Backup</strong></td>
+<td>Can I get the data back if it is lost</td>
+</tr>
+</tbody></table>
+<h2>How they fit together</h2>
+<ul>
+<li><strong>Access:</strong> IAM Identity Center gives people the right access, and CloudTrail records what they do.</li>
+<li><strong>Visibility:</strong> CloudWatch Alarms tell you when something looks wrong, and SNS sends the message.</li>
+<li><strong>Rules:</strong> AWS Config checks resources against rules, so drift gets noticed.</li>
+<li><strong>Operations:</strong> Systems Manager lets you run commands and patch at scale.</li>
+<li><strong>Secrets and keys:</strong> Secrets Manager and Parameter Store keep values out of the code, and KMS protects them.</li>
+<li><strong>Recovery:</strong> AWS Backup keeps recovery points, which can be encrypted with KMS.</li>
+</ul>
+<h2>Quick questions to ask yourself</h2>
+<ol>
+<li>Who can access this account, and is it least privilege?</li>
+<li>If something changes, will I see it in CloudTrail?</li>
+<li>Will an alarm tell me before a user does?</li>
+<li>Are my secrets out of the code, and is the key policy tight?</li>
+<li>Have I tested a restore?</li>
+</ol>
+<h2>Hands-on: a simple self-check in your own account</h2>
+<ol>
+<li>In <strong>CloudTrail</strong>, confirm a trail or event history shows recent activity.</li>
+<li>In <strong>AWS Config</strong>, check whether recording is on and look at one rule.</li>
+<li>In <strong>CloudWatch</strong>, list your alarms and see who gets the SNS message.</li>
+<li>In <strong>Secrets Manager</strong> or <strong>Parameter Store</strong>, make sure no secret sits in plain text in your code.</li>
+<li>In <strong>KMS</strong>, read one key policy.</li>
+<li>In <strong>AWS Backup</strong>, check that a plan exists and that its resources are assigned.</li>
+<li>Write down one gap and fix it this week.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Turning services on once and never looking at them again.</li>
+<li>Alarms that send to an inbox nobody reads.</li>
+<li>Secrets in code or in plain environment values.</li>
+<li>Backups that were never restored.</li>
+<li>Leaving practice resources behind and paying for them.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>These services work as a set: access, visibility, rules, operations, secrets and recovery.</li>
+<li>Least privilege and logging come first.</li>
+<li>Keep secrets and keys out of the code.</li>
+<li>Test your alarms and your restores.</li>
+</ul>
+<p>Tomorrow I'll start a new AWS topic.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Recap: Rapid-Fire Interview Q&A from Screen Flows to Subflows]]></title><description><![CDATA[Eight posts into the Flow series, it is time to pull it together. Here is a rapid-fire recap you can use to revise before an Admin II interview. Add a…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-recap-rapid-fire-interview-q-a-from-screen-flows-to-subflows</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-recap-rapid-fire-interview-q-a-from-screen-flows-to-subflows</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 22 Nov 2026 15:05:24 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/339c800e-6cf8-472c-8826-33c5077fafd4.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Eight posts into the Flow series, it is time to pull it together. Here is a rapid-fire recap you can use to revise before an Admin II interview.</em></p>
+<hr />
+<h2>The Flow Series at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>The one thing to remember</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Screen Flow launch</strong></td>
+<td>A Screen Flow needs a way to start: a button, a Lightning page or a utility bar</td>
+</tr>
+<tr>
+<td><strong>Fault paths</strong></td>
+<td>Add them to elements that save or delete, and show <code>{!$Flow.FaultMessage}</code></td>
+</tr>
+<tr>
+<td><strong>Decisions and Loops</strong></td>
+<td>Decisions pick a path. Loops go through a collection one record at a time</td>
+</tr>
+<tr>
+<td><strong>Flow resources</strong></td>
+<td>Variables, collections, formulas and constants hold your data</td>
+</tr>
+<tr>
+<td><strong>Get Records</strong></td>
+<td>Query once, store the result, and check it is not empty</td>
+</tr>
+<tr>
+<td><strong>Create and Update Records</strong></td>
+<td>Use a collection and save once, never inside a loop</td>
+</tr>
+<tr>
+<td><strong>Delete and Roll Back</strong></td>
+<td>Test conditions before deleting, and roll back failed multi-step saves</td>
+</tr>
+<tr>
+<td><strong>Subflows</strong></td>
+<td>Build once, call from many flows, and activate it first</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Rapid-Fire Q&amp;A</h2>
+<h3>1. A flow fails halfway. What do you do?</h3>
+<p>Add a <strong>fault path</strong> to the element that can fail, show the message, and use <strong>Roll Back Records</strong> if earlier saves should not stay.</p>
+<blockquote>
+<p><strong>Tip:</strong> Fault paths on every save and delete.</p>
+</blockquote>
+<h3>2. Where do you keep a list of records?</h3>
+<p>In a <strong>collection variable</strong>. Build it with an <strong>Assignment</strong> inside the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> Collect first, save after.</p>
+</blockquote>
+<h3>3. How do you avoid hitting limits?</h3>
+<p>Never put <strong>Get Records</strong>, <strong>Create</strong>, <strong>Update</strong> or <strong>Delete</strong> inside a loop. Use one element after the loop.</p>
+<blockquote>
+<p><strong>Tip:</strong> One query, one save.</p>
+</blockquote>
+<h3>4. How do you reuse logic?</h3>
+<p>Put it in an <strong>Autolaunched Flow</strong> and call it with a <strong>Subflow</strong> element. Use <strong>Available for input</strong> and <strong>Available for output</strong> for values.</p>
+<blockquote>
+<p><strong>Tip:</strong> Name subflows clearly.</p>
+</blockquote>
+<h3>5. How do you know a Get Records found nothing?</h3>
+<p>Add a <strong>Decision</strong> after it and check whether the record variable or collection <strong>is empty</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Plan the empty case.</p>
+</blockquote>
+<h3>6. How do you test a flow?</h3>
+<p>Use <strong>Debug</strong> in Flow Builder. Test the happy path, the empty case and a forced failure.</p>
+<blockquote>
+<p><strong>Tip:</strong> Test the fault path too.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A Screen Flow updates an Opportunity and creates a Task. How do you make it safe and tidy?"</strong></p>
+<ol>
+<li>Keep the Create and Update together, with no screen between them</li>
+<li>Add a <strong>fault path</strong> to the Update</li>
+<li>Add <strong>Roll Back Records</strong> on the fault path</li>
+<li>Move repeated Task logic into a <strong>subflow</strong></li>
+<li>Show the fault message to the user</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Open your Screen Flow from this series.</li>
+<li>Check that every Create, Update and Delete element has a <strong>fault path</strong>.</li>
+<li>Check that no <strong>Get Records</strong> or save element sits inside a loop.</li>
+<li>Move any repeated elements into a <strong>subflow</strong> and activate it.</li>
+<li>Run <strong>Debug</strong> with an empty result and with a forced failure.</li>
+<li>Write down one thing you would explain differently in an interview.</li>
+</ol>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Start a Screen Flow</strong> = button, page or utility bar</li>
+<li><strong>Errors</strong> = fault paths plus Roll Back Records</li>
+<li><strong>Lists</strong> = collections, saved once</li>
+<li><strong>Reuse</strong> = subflows</li>
+<li><strong>Empty result</strong> = check with a Decision</li>
+<li><strong>Test</strong> = Debug, including failures</li>
+</ul>
+<h2>Key Takeaways</h2>
+<ul>
+<li>Plan for errors and empty results in every flow.</li>
+<li>Never query or save inside a loop.</li>
+<li>Reuse logic with subflows.</li>
+<li>Test the failure paths, not only the happy path.</li>
+</ul>
+<p><strong>Next up:</strong> a new topic in the Admin II series. Tell me what you would like to see.</p>
+<p><em>Part of #120DaysOfSalesforce. Which Flow topic do you find hardest? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Backup: Schedule and Protect Your Data Across AWS Services]]></title><description><![CDATA[KMS protects your data from being read. AWS Backup protects it from being lost. It is one place to schedule, run and keep backups for many AWS services…]]></description><link>https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services</guid><category><![CDATA[AWS]]></category><category><![CDATA[aws backup]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 21 Nov 2026 18:25:56 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b6571ddc-5013-483a-9ff6-c57f1c4c2450.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>KMS protects your data from being read. <strong>AWS Backup</strong> protects it from being lost. It is one place to schedule, run and keep backups for many AWS services, instead of setting up each service on its own.</p>
 <h2>What AWS Backup does</h2>
 <ul>
 <li>It gives you a central place to manage backups across services such as <strong>EBS</strong>, <strong>RDS</strong>, <strong>DynamoDB</strong>, <strong>EFS</strong> and <strong>S3</strong>.</li>
@@ -1550,120 +1750,4 @@
 </ul>
 <p>Tomorrow I'll look at how people and tools sign in across these accounts.</p>
 <p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Screens Cheat Sheet: User Input, Validation and Admin II Interview Q&A]]></title><description><![CDATA[Screens are how a Flow talks to the user. Admin II interviews ask about them because input, validation and navigation decide whether a Screen Flow is easy…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-screens-cheat-sheet-user-input-validation-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-screens-cheat-sheet-user-input-validation-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 13 Nov 2026 14:35:26 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/a4c64a51-3c86-4942-bf10-2883f4fe65ab.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Screens are how a Flow talks to the user. Admin II interviews ask about them because input, validation and navigation decide whether a Screen Flow is easy to use and safe to trust.</em></p>
-<hr />
-<h2>The 4 Building Blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Block</th>
-<th>What it does</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Input components</strong></td>
-<td>Collect text, numbers, dates and more</td>
-<td>The value is stored for later elements</td>
-</tr>
-<tr>
-<td><strong>Choice components</strong></td>
-<td>Radio buttons, picklists, checkboxes</td>
-<td>Fed by a choice or a choice set</td>
-</tr>
-<tr>
-<td><strong>Display components</strong></td>
-<td>Show text, sections and messages</td>
-<td>Guide the user</td>
-</tr>
-<tr>
-<td><strong>Validation</strong></td>
-<td>Required, or a formula with an error message</td>
-<td>Stops bad data early</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a Screen element?</h3>
-<p>The element that <strong>shows a user interface</strong> and collects input. Screens only work in <strong>Screen Flows</strong>, not in record-triggered or autolaunched flows.</p>
-<blockquote>
-<p><strong>Tip:</strong> Use a Screen whenever a person has to type or choose something.</p>
-</blockquote>
-<h3>2. How do you use what the user entered?</h3>
-<p>Each screen component keeps its value. Reference it with the component's API name, for example <code>{!Subject.value}</code>, in later elements such as Create Records.</p>
-<blockquote>
-<p><strong>Tip:</strong> Give components clear API names. You will type them a lot.</p>
-</blockquote>
-<h3>3. How do you validate input?</h3>
-<p>Mark a field <strong>Required</strong>, or open its <strong>Validate Input</strong> setting and add a formula with an <strong>error message</strong>. The user cannot continue until the formula is true.</p>
-<blockquote>
-<p><strong>Tip:</strong> Stop bad data at the screen, not after it is saved.</p>
-</blockquote>
-<h3>4. Can you hide components?</h3>
-<p>Yes. Set <strong>Component Visibility</strong> conditions on a field or a section, so it only appears when an earlier answer calls for it.</p>
-<blockquote>
-<p><strong>Tip:</strong> Show only what the user needs for this case.</p>
-</blockquote>
-<h3>5. Where do choices come from?</h3>
-<p>Create a <strong>Choice</strong> resource for a fixed option, or a <strong>Record Choice Set</strong> or <strong>Picklist Choice Set</strong> to load options from records or from a field's picklist values.</p>
-<blockquote>
-<p><strong>Tip:</strong> Build a choice set once and reuse it across screens.</p>
-</blockquote>
-<h3>6. How does the user move through the flow?</h3>
-<p>With the <strong>Next, Previous and Finish</strong> buttons. You choose which of them each screen shows, and whether the user can go back.</p>
-<blockquote>
-<p><strong>Tip:</strong> Check the Back button on every screen. Going back can change data you already saved.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Let sales reps log a call from a Screen Flow."</strong></p>
-<ol>
-<li><strong>Screen:</strong> Subject (text), Priority (picklist), Due Date (date)</li>
-<li><strong>Create Records:</strong> a Task, with fields from the screen inputs</li>
-<li><strong>Confirmation screen</strong> that shows the new Task Id</li>
-<li><strong>Fault path</strong> on Create Records, then <strong>Debug</strong></li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Create a <strong>Screen Flow</strong> and add a <strong>Screen</strong> with a Text input named <code>Subject</code>.</li>
-<li>Add a <strong>Picklist</strong> choice for Priority and a <strong>Date</strong> input for Due Date.</li>
-<li>Make Subject <strong>Required</strong>, and add a Validate formula so the date cannot be in the past.</li>
-<li>Add <strong>Create Records</strong> for Task and map the three inputs.</li>
-<li>Add a confirmation screen, run <strong>Debug</strong>, then add the flow to a Lightning page.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Show UI</strong> = Screen</li>
-<li><strong>Read input</strong> = <code>{!Name.value}</code></li>
-<li><strong>Block bad data</strong> = Validate Input</li>
-<li><strong>Hide fields</strong> = Component Visibility</li>
-<li><strong>Pick from a list</strong> = Choice or choice set</li>
-<li><strong>Save the data</strong> = Create Records after the screen</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Screens belong to Screen Flows.</li>
-<li>Validate on the screen.</li>
-<li>Reuse choice sets.</li>
-<li>Save once, after the user is done.</li>
-</ul>
-<p><strong>Next up:</strong> running a Screen Flow from buttons, Lightning pages and quick actions.</p>
-<p><em>Part of #120DaysOfSalesforce. Which Screen component do you use most? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[I built a tiny GitHub repo auditor, and it found my own mess]]></title><description><![CDATA[Just shipped repo-health-report: a tiny, dependency-free Python tool that audits your GitHub repos through the REST API. It flags missing licenses…]]></description><link>https://sishodiarobin.hashnode.dev/i-built-a-tiny-github-repo-auditor-and-it-found-my-own-mess</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/i-built-a-tiny-github-repo-auditor-and-it-found-my-own-mess</guid><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 11 Nov 2026 13:49:37 GMT</pubDate><content:encoded><![CDATA[<p>Just shipped <strong>repo-health-report</strong>: a tiny, dependency-free Python tool that audits your GitHub repos through the REST API.</p>
-<p>It flags missing licenses, descriptions, topics and READMEs, plus pull requests that have gone stale. It also runs as a scheduled GitHub Action and writes the results to the job summary.</p>
-<p>On my own account it found 15 repos without a license. I fixed 12 of them in an afternoon.</p>
-<h2>What it checks</h2>
-<ul>
-<li>Missing license</li>
-<li>Missing description or topics</li>
-<li>Missing README</li>
-<li>Open pull requests with no activity for 30+ days</li>
-</ul>
-<h2>Try it</h2>
-<pre><code class="language-bash">python repo_health_report.py &lt;github-username&gt;
-</code></pre>
-<p>Code and setup: <a href="https://github.com/RobinSishodia/repo-health-report">https://github.com/RobinSishodia/repo-health-report</a></p>
-<p>Feedback and issues welcome. If it's useful to you, a star helps.</p>
 ]]></content:encoded></item></channel></rss>
