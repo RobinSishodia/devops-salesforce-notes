@@ -1,4 +1,197 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Sun, 22 Nov 2026 15:16:21 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[AWS Security and Operations Recap: How IAM, CloudTrail, Config, KMS and Backup Fit Together]]></title><description><![CDATA[How to decide between Salesforce Flow and Apex for automation: what Flow handles well, when Apex is the better choice, and how to combine them.]]></description><link>https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 22 Nov 2026 15:16:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fdb0868b-38c8-47ac-9187-f11ead1b0f44.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Over the last few posts I covered the services that keep an AWS account safe and tidy. Today is a recap: what each one does, and how they fit together.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 24 Nov 2026 18:15:09 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Amazon S3 Versioning and Lifecycle Rules: Protect Your Data and Control Storage Cost]]></title><description><![CDATA[Amazon S3 can keep every version of an object and move or delete old data on a schedule. Two features do that: versioning and lifecycle rules. Together…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon S3]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Nov 2026 18:14:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b751d7ba-8913-443d-aae7-dc84550da37e.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Amazon S3 can keep every version of an object and move or delete old data on a schedule. Two features do that: <strong>versioning</strong> and <strong>lifecycle rules</strong>. Together they protect you from overwrites and keep storage costs down.</p>
+<h2>What they do</h2>
+<ul>
+<li><strong>Versioning</strong> keeps every version of an object in a bucket, so an overwrite or delete does not destroy the old data.</li>
+<li><strong>Lifecycle rules</strong> move objects to cheaper storage classes or delete them after a number of days.</li>
+<li>You can combine them: keep recent versions in standard storage and expire old ones.</li>
+</ul>
+<h2>Key concepts</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Versioning</strong></td>
+<td>Setting on a bucket: Enabled or Suspended</td>
+</tr>
+<tr>
+<td><strong>Version ID</strong></td>
+<td>A unique ID for each version of an object</td>
+</tr>
+<tr>
+<td><strong>Delete marker</strong></td>
+<td>What S3 adds when you delete a versioned object. The old versions stay</td>
+</tr>
+<tr>
+<td><strong>Current vs noncurrent</strong></td>
+<td>The latest version is current, older ones are noncurrent</td>
+</tr>
+<tr>
+<td><strong>Lifecycle rule</strong></td>
+<td>Rules for transitions and expiration, by prefix or tag</td>
+</tr>
+<tr>
+<td><strong>Storage class</strong></td>
+<td>For example Standard, Standard-IA, Glacier Instant Retrieval</td>
+</tr>
+</tbody></table>
+<h2>Good to know</h2>
+<ul>
+<li>Once enabled, versioning can only be <strong>suspended</strong>, never fully turned off.</li>
+<li>A normal delete only adds a <strong>delete marker</strong>. To remove data for good, delete a <strong>specific version</strong>.</li>
+<li>Every version is stored and billed, so add a rule to <strong>expire noncurrent versions</strong>.</li>
+<li>Lifecycle rules can also <strong>abort incomplete multipart uploads</strong>, which saves money.</li>
+<li>Some storage classes have <strong>minimum storage durations</strong> and retrieval costs, so check them before moving data.</li>
+<li><strong>MFA Delete</strong> adds extra protection for permanent deletes.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>S3</strong> and create a bucket such as <code>demo-versioning-&lt;your-name&gt;</code>.</li>
+<li>Keep <strong>Block all public access</strong> on.</li>
+<li>Open the bucket's <strong>Properties</strong> tab and turn on <strong>Bucket Versioning</strong>.</li>
+<li>Upload a small text file called <code>notes.txt</code>.</li>
+<li>Edit it locally and upload it again. Turn on <strong>Show versions</strong> and see two versions.</li>
+<li>Delete the object and look at the <strong>delete marker</strong>.</li>
+<li>Delete the marker and see that the old version comes back.</li>
+<li>Open <strong>Management &gt; Create lifecycle rule</strong>, apply it to all objects, and set noncurrent versions to expire after <strong>7 days</strong>.</li>
+<li>Clean up: delete all versions, then delete the bucket.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Turning on versioning and forgetting that every version costs storage.</li>
+<li>Thinking a delete removes the data when it only adds a delete marker.</li>
+<li>Making a lifecycle rule that is too broad and moves or deletes the wrong objects.</li>
+<li>Moving small objects to a colder class where the minimum size and duration cost more.</li>
+<li>Leaving test buckets and versions behind.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Versioning protects against overwrites and accidental deletes.</li>
+<li>Lifecycle rules control cost by moving and expiring data.</li>
+<li>Expire noncurrent versions, or storage keeps growing.</li>
+<li>Test a lifecycle rule on a small prefix first.</li>
+</ul>
+<p>Tomorrow I'll start a new AWS topic.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Scheduled Flows: Run Automation on a Schedule, with Admin II Interview Q&A]]></title><description><![CDATA[Not every automation starts from a record change. A Scheduled Flow runs at a set time, on a set frequency, over a batch of records. Admin II interviews…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-scheduled-flows-run-automation-on-a-schedule-with-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-scheduled-flows-run-automation-on-a-schedule-with-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Nov 2026 18:11:37 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/11d26c13-c2b9-4f7a-83a5-daa66c3d5c64.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Not every automation starts from a record change. A Scheduled Flow runs at a set time, on a set frequency, over a batch of records. Admin II interviews love it for cleanup and reminder jobs.</em></p>
+<hr />
+<h2>Scheduled Flows at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Start element</strong></td>
+<td>Sets the first run date, time and frequency</td>
+<td>Once, Daily or Weekly</td>
+</tr>
+<tr>
+<td><strong>Object + filters</strong></td>
+<td>Pick which records the flow runs on</td>
+<td>Filter so it only touches what it needs</td>
+</tr>
+<tr>
+<td><strong>Run as</strong></td>
+<td>Scheduled flows run as the <strong>Automated Process</strong> user</td>
+<td>Set owner fields explicitly</td>
+</tr>
+<tr>
+<td><strong>Batch size</strong></td>
+<td>Records are processed in batches of up to 200</td>
+<td>Plan for volume</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Scheduled Flow?</h3>
+<p>An <strong>autolaunched flow</strong> that starts at a time you choose and repeats <strong>Once, Daily or Weekly</strong>. You can also pick an object and filters, and the flow runs once for each matching record.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use it when nothing changes on a record but time passes.</p>
+</blockquote>
+<h3>2. When do you use it instead of a record-triggered flow?</h3>
+<p>When the trigger is <strong>time</strong>, such as "every night, find Opportunities with no activity for 30 days", and not a save.</p>
+<blockquote>
+<p><strong>Tip:</strong> If a record save starts it, use record-triggered. If a clock starts it, use scheduled.</p>
+</blockquote>
+<h3>3. Who does the flow run as?</h3>
+<p>The <strong>Automated Process</strong> user, not you. So fields like <strong>Owner</strong> or <strong>Created By</strong> may not be what you expect unless you set them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Set the owner explicitly when you create records.</p>
+</blockquote>
+<h3>4. How do you avoid running on too many records?</h3>
+<p>Add <strong>filters</strong> on the Start element, such as Stage, Last Activity Date or Status. Then handle records in a <strong>collection</strong> and save once, as you would in any flow.</p>
+<blockquote>
+<p><strong>Tip:</strong> Filter first. Do not Get Records inside a loop.</p>
+</blockquote>
+<h3>5. How do you test it?</h3>
+<p>Use <strong>Debug</strong> on the flow, or set the start time a few minutes ahead in a <strong>sandbox</strong>. You can also check <strong>Paused and Failed Flow Interviews</strong> in Setup.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never test a scheduled flow first in production.</p>
+</blockquote>
+<h3>6. What are the limits to remember?</h3>
+<p>It follows the usual <strong>governor limits</strong>, and each batch of records runs as its own transaction. Very large volumes may need a different tool.</p>
+<blockquote>
+<p><strong>Tip:</strong> For huge data jobs, ask if Batch Apex fits better.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"Every night, create a follow-up Task for Opportunities that have had no activity for 30 days. How do you build it?"</strong></p>
+<ol>
+<li>Create a <strong>Schedule-Triggered Flow</strong> that runs <strong>Daily</strong></li>
+<li>Pick <strong>Opportunity</strong> and filter on <strong>Is Closed = False</strong> and <strong>Last Activity Date</strong> older than 30 days</li>
+<li>Add an <strong>Assignment</strong> that builds a Task and adds it to a <strong>collection</strong></li>
+<li>Use one <strong>Create Records</strong> on the collection, with the owner set</li>
+<li>Add a <strong>fault path</strong> and test in a sandbox</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Go to <strong>Setup &gt; Flows &gt; New Flow</strong> and choose <strong>Schedule-Triggered Flow</strong>.</li>
+<li>Set the start to a few minutes from now, with frequency <strong>Once</strong>.</li>
+<li>Choose the <strong>Opportunity</strong> object and add the filter <strong>Is Closed = False</strong>.</li>
+<li>Add an <strong>Assignment</strong> that sets a Task record variable (Subject = <code>Check in</code>, WhatId = <code>{!$Record.Id}</code>).</li>
+<li>Add the Task to a collection variable.</li>
+<li>After the Assignment, add <strong>Create Records</strong> using the collection.</li>
+<li>Add a fault path to Create Records.</li>
+<li>Save, <strong>Activate</strong>, wait for the time, then check the new Tasks.</li>
+</ol>
+<hr />
+<h2>Common Mistakes</h2>
+<ul>
+<li>Forgetting the filters, so the flow runs on every record.</li>
+<li>Putting a <strong>Create Records</strong> inside a loop.</li>
+<li>Forgetting that the flow runs as the <strong>Automated Process</strong> user.</li>
+<li>Testing a scheduled flow in production first.</li>
+<li>Leaving a <strong>Daily</strong> flow running after the test.</li>
+</ul>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Trigger</strong> = a time, not a save</li>
+<li><strong>Frequency</strong> = Once, Daily, Weekly</li>
+<li><strong>Runs as</strong> = Automated Process</li>
+<li><strong>Filter</strong> = on the Start element</li>
+<li><strong>Save</strong> = one collection, one Create</li>
+<li><strong>Test</strong> = sandbox or Debug</li>
+</ul>
+<hr />
+<h2>Key Takeaways</h2>
+<ul>
+<li>Use a Scheduled Flow when time, not a record save, starts the work.</li>
+<li>Filter on the Start element so it only touches the records you need.</li>
+<li>Set the owner yourself, because it runs as the Automated Process user.</li>
+<li>Test in a sandbox and keep saves outside the loop.</li>
+</ul>
+<p><strong>Next up:</strong> a new topic in the Admin II series.</p>
+<p><em>Part of #120DaysOfSalesforce. Which scheduled job would you automate first? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[AWS Security and Operations Recap: How IAM, CloudTrail, Config, KMS and Backup Fit Together]]></title><description><![CDATA[How to decide between Salesforce Flow and Apex for automation: what Flow handles well, when Apex is the better choice, and how to combine them.]]></description><link>https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together</guid><category><![CDATA[AWS]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 22 Nov 2026 15:16:07 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fdb0868b-38c8-47ac-9187-f11ead1b0f44.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Over the last few posts I covered the services that keep an AWS account safe and tidy. Today is a recap: what each one does, and how they fit together.</p>
 <h2>The series at a glance</h2>
 <table>
 <thead>
@@ -1562,192 +1755,5 @@
 <li>Keep MFA on for every user.</li>
 </ul>
 <p>Tomorrow I'll look at what happens when something goes wrong in your accounts, starting with how to be notified.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Screen Flow Launch Cheat Sheet: Quick Actions, Lightning Pages and Admin II Interview Q&A]]></title><description><![CDATA[A Screen Flow only helps if users can find it. Admin II interviews ask where you would launch one, how it knows which record it is on, and who is allowed…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-screen-flow-launch-cheat-sheet-quick-actions-lightning-pages-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-screen-flow-launch-cheat-sheet-quick-actions-lightning-pages-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 14 Nov 2026 12:09:47 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/76c209cb-b179-4ff2-b1d2-874e8b355206.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>A Screen Flow only helps if users can find it. Admin II interviews ask where you would launch one, how it knows which record it is on, and who is allowed to run it.</em></p>
-<hr />
-<h2>The 4 Ways to Launch a Screen Flow</h2>
-<table>
-<thead>
-<tr>
-<th>Where</th>
-<th>How</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Quick action</strong></td>
-<td>Action of type Flow on an object</td>
-<td>Shows as a button on the record page</td>
-</tr>
-<tr>
-<td><strong>Lightning page</strong></td>
-<td>The Flow component</td>
-<td>Runs inline on the page</td>
-</tr>
-<tr>
-<td><strong>URL or button</strong></td>
-<td><code>/flow/FlowApiName</code></td>
-<td>Good for links and custom buttons</td>
-</tr>
-<tr>
-<td><strong>Utility bar</strong></td>
-<td>Flow utility item</td>
-<td>Always available in the app</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. Why must the flow be active?</h3>
-<p>Users can only run an <strong>active</strong> flow. Activate it before you add it to a page, an action or a link.</p>
-<blockquote>
-<p><strong>Tip:</strong> Test with Debug first, then activate.</p>
-</blockquote>
-<h3>2. How do you add a quick action?</h3>
-<p>In Object Manager, create an action of type <strong>Flow</strong>, pick the flow and give it a short label. Then add it to the <strong>page layout</strong> so the button appears.</p>
-<blockquote>
-<p><strong>Tip:</strong> Keep the label short so it fits on the button.</p>
-</blockquote>
-<h3>3. How do you embed the flow on a page?</h3>
-<p>In the Lightning App Builder, drag the <strong>Flow</strong> component onto the page and choose the flow.</p>
-<blockquote>
-<p><strong>Tip:</strong> One flow per section keeps the page clean.</p>
-</blockquote>
-<h3>4. How does the flow get the current record?</h3>
-<p>Create a <strong>Text variable named <code>recordId</code></strong> and tick <strong>Available for input</strong>. Salesforce passes the record Id in when the flow runs from a record page.</p>
-<blockquote>
-<p><strong>Tip:</strong> The variable name must match exactly.</p>
-</blockquote>
-<h3>5. Who can run it?</h3>
-<p>Users need access to the flow, for example the <strong>Run Flows</strong> permission, or access given through a profile or permission set.</p>
-<blockquote>
-<p><strong>Tip:</strong> Test as a real user, not only as an admin.</p>
-</blockquote>
-<h3>6. What happens when the flow finishes?</h3>
-<p>Show a <strong>confirmation screen</strong>, or use the flow's finish setting to restart it or send the user elsewhere.</p>
-<blockquote>
-<p><strong>Tip:</strong> End with a clear message so the user knows it worked.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"Let reps log a call from the Account page."</strong></p>
-<ol>
-<li>Build the <strong>Screen Flow</strong> with a <code>recordId</code> variable</li>
-<li><strong>Activate</strong> it</li>
-<li>Create a <strong>Flow quick action</strong> on Account</li>
-<li>Add it to the <strong>page layout</strong> and test as a rep</li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Open yesterday's Screen Flow and add a Text variable <code>recordId</code>, available for input.</li>
-<li>Use <code>{!recordId}</code> as the <code>WhatId</code> when it creates the Task.</li>
-<li><strong>Save</strong> and <strong>Activate</strong> the flow.</li>
-<li>In Object Manager, create a <strong>Flow</strong> quick action on Account and add it to the page layout.</li>
-<li>Open an Account, run the action, and check that the Task is linked to that Account.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Run from a record</strong> = Quick action</li>
-<li><strong>Embed inline</strong> = Flow component</li>
-<li><strong>Link to it</strong> = <code>/flow/ApiName</code></li>
-<li><strong>Know the record</strong> = <code>recordId</code></li>
-<li><strong>Must be</strong> = Active</li>
-<li><strong>Access</strong> = Run Flows</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Activate before you place it.</li>
-<li>Use <code>recordId</code> for record context.</li>
-<li>Pick the launch spot that suits the user.</li>
-<li>Test as a real user.</li>
-</ul>
-<p><strong>Next up:</strong> Flow error handling and fault paths in Screen Flows.</p>
-<p><em>Part of #120DaysOfSalesforce. Where do your users launch Screen Flows? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS Organizations: Multiple Accounts, OUs and Service Control Policies]]></title><description><![CDATA[So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the…]]></description><link>https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-organizations-multiple-accounts-ous-and-service-control-policies</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS Organizations]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 13 Nov 2026 14:37:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/85b59680-73ea-4bdd-911d-e3a934c22353.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>So far I have secured root, set a budget, turned on CloudTrail and CloudWatch, and added tags. All of that sits in one account. The next step is the structure around it: <strong>AWS Organizations</strong>.</p>
-<h2>Why more than one account</h2>
-<ul>
-<li>An AWS account is a strong boundary for <strong>security, cost and blast radius</strong>.</li>
-<li>A mistake in a sandbox account cannot touch production.</li>
-<li>Each account has its own root user, IAM and limits, so teams can work separately.</li>
-</ul>
-<h2>The building blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Term</th>
-<th>What it is</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Organization</strong></td>
-<td>The group of accounts you manage together</td>
-<td>Created from one account</td>
-</tr>
-<tr>
-<td><strong>Management account</strong></td>
-<td>The account that creates the organization and pays the bill</td>
-<td>SCPs do not apply to it</td>
-</tr>
-<tr>
-<td><strong>Member accounts</strong></td>
-<td>Every other account in the organization</td>
-<td>One per workload or team</td>
-</tr>
-<tr>
-<td><strong>OU</strong></td>
-<td>An organizational unit that groups accounts</td>
-<td>Policies on an OU apply to its accounts</td>
-</tr>
-<tr>
-<td><strong>SCP</strong></td>
-<td>A service control policy</td>
-<td>Sets the maximum permissions, never grants them</td>
-</tr>
-</tbody></table>
-<h2>Consolidated billing</h2>
-<ul>
-<li>All member accounts roll up to <strong>one bill</strong> on the management account.</li>
-<li>Usage across accounts can count together for <strong>volume discounts</strong>.</li>
-<li>Tags still let you split cost by project or owner.</li>
-</ul>
-<h2>How SCPs behave</h2>
-<ul>
-<li>An SCP is a <strong>guardrail</strong>: an action must be allowed by the SCP <strong>and</strong> by the identity's own IAM policy.</li>
-<li>They apply to IAM users and roles in member accounts, including the account root user.</li>
-<li>They do not apply to the <strong>management account</strong>, so keep workloads out of it.</li>
-<li>Use <strong>all features</strong> mode to turn SCPs on.</li>
-</ul>
-<h2>A simple starting structure</h2>
-<ul>
-<li><strong>Security</strong> OU: logging and audit accounts</li>
-<li><strong>Workloads</strong> OU: production and non-production accounts</li>
-<li><strong>Sandbox</strong> OU: learning and experiments, with tighter SCPs</li>
-</ul>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Open <strong>AWS Organizations</strong> and choose <strong>Create an organization</strong>.</li>
-<li>Check that <strong>MFA is on for the management account root user</strong>.</li>
-<li>Create an OU named <strong>Sandbox</strong>.</li>
-<li>Choose <strong>Add an AWS account</strong>, then <strong>Create an AWS account</strong>, and give it a unique email address and a name. Move it into the Sandbox OU.</li>
-<li>Open <strong>Policies</strong>, enable service control policies, and attach a deny policy to the Sandbox OU, for example one that stops the account leaving the organization.</li>
-<li>Sign in to the management account and <strong>assume the OrganizationAccountAccessRole</strong> in the new account to check it works.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Running workloads in the management account.</li>
-<li>Using SCPs as if they grant permissions. They only limit.</li>
-<li>Reusing one email address for several accounts. Each account needs a unique one.</li>
-<li>Attaching SCPs to the organization root before testing on a Sandbox OU.</li>
-</ul>
-<h2>Key takeaways</h2>
-<ul>
-<li>Use separate accounts as security and cost boundaries.</li>
-<li>Group accounts into OUs and attach policy once.</li>
-<li>SCPs set the maximum, IAM still grants.</li>
-<li>Keep the management account for administration only.</li>
-</ul>
-<p>Tomorrow I'll look at how people and tools sign in across these accounts.</p>
 <p><em>Part of #120DaysOfAWS.</em></p>
 ]]></content:encoded></item></channel></rss>
