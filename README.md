@@ -13,12 +13,13 @@ Posts are written on Hashnode. A **GitHub Actions** workflow ([`sync-blog.yml`](
 2. Turns each post from HTML into Markdown and saves it under [`posts/salesforce/`](posts/salesforce/) or [`posts/devops/`](posts/devops/) (DevOps & AWS), numbered by publish order within each series
 3. Rebuilds this README index and commits only when something changed
 
-Total posts in this repo: 87
+Total posts in this repo: 89
 
-## 📚 Salesforce (43 in this repo)
+## 📚 Salesforce (44 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 44 | 2026-11-25 | [Salesforce Scheduled Paths: Run Part of a Flow Later, with Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-scheduled-paths-run-part-of-a-flow-later-with-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/44-2026-11-25-salesforce-scheduled-paths-run-part-of-a-flow-later-with-admin-ii-interview-q-a.md) |
 | 43 | 2026-11-24 | [Salesforce Scheduled Flows: Run Automation on a Schedule, with Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-scheduled-flows-run-automation-on-a-schedule-with-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/43-2026-11-24-salesforce-scheduled-flows-run-automation-on-a-schedule-with-admin-ii-interview-q-a.md) |
 | 42 | 2026-11-22 | [Salesforce Flow Recap: Rapid-Fire Interview Q&A from Screen Flows to Subflows](https://sishodiarobin.hashnode.dev/salesforce-flow-recap-rapid-fire-interview-q-a-from-screen-flows-to-subflows) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/42-2026-11-22-salesforce-flow-recap-rapid-fire-interview-q-a-from-screen-flows-to-subflows.md) |
 | 41 | 2026-11-21 | [Salesforce Flow Subflows Cheat Sheet: Reusing Logic Across Flows and Admin II Interview Q&A](https://sishodiarobin.hashnode.dev/salesforce-flow-subflows-cheat-sheet-reusing-logic-across-flows-and-admin-ii-interview-q-a) | `Salesforce` `Salesforce Flow` `Salesforce Admin` `trailblazer` | [Markdown](posts/salesforce/41-2026-11-21-salesforce-flow-subflows-cheat-sheet-reusing-logic-across-flows-and-admin-ii-interview-q-a.md) |
@@ -63,10 +64,11 @@ Total posts in this repo: 87
 | 2 | 2026-10-06 | [Salesforce Sandbox Types Explained: Developer, Developer Pro, Partial Copy and Full](https://sishodiarobin.hashnode.dev/salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full) | `Salesforce` `Salesforce Admin` `Devops` `Testing` | [Markdown](posts/salesforce/02-2026-10-06-salesforce-sandbox-types-explained-developer-developer-pro-partial-copy-and-full.md) |
 | 1 | 2026-10-04 | [The Salesforce Security Model Explained: OWD, Roles, Sharing Rules and More](https://sishodiarobin.hashnode.dev/the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more) | `Salesforce` `Salesforce Admin` `Security` `crm` | [Markdown](posts/salesforce/01-2026-10-04-the-salesforce-security-model-explained-owd-roles-sharing-rules-and-more.md) |
 
-## 📚 DevOps & AWS (43 in this repo)
+## 📚 DevOps & AWS (44 in this repo)
 
 | # | Date | Title | Tags | Source |
 |---|------|-------|------|--------|
+| 58 | 2026-11-25 | [Amazon S3 Bucket Policies and Block Public Access: Keep Your Buckets Private](https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private) | `AWS` `Amazon S3` `cloud security` `Devops` | [Markdown](posts/devops/58-2026-11-25-amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private.md) |
 | 57 | 2026-11-24 | [Amazon S3 Versioning and Lifecycle Rules: Protect Your Data and Control Storage Cost](https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost) | `AWS` `Amazon S3` `Cloud Computing` `Devops` | [Markdown](posts/devops/57-2026-11-24-amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost.md) |
 | 56 | 2026-11-22 | [AWS Security and Operations Recap: How IAM, CloudTrail, Config, KMS and Backup Fit Together](https://sishodiarobin.hashnode.dev/aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together) | `AWS` `cloud security` `Cloud Computing` `Devops` | [Markdown](posts/devops/56-2026-11-22-aws-security-and-operations-recap-how-iam-cloudtrail-config-kms-and-backup-fit-together.md) |
 | 55 | 2026-11-21 | [AWS Backup: Schedule and Protect Your Data Across AWS Services](https://sishodiarobin.hashnode.dev/aws-backup-schedule-and-protect-your-data-across-aws-services) | `AWS` `aws backup` `Cloud Computing` `Devops` | [Markdown](posts/devops/55-2026-11-21-aws-backup-schedule-and-protect-your-data-across-aws-services.md) |
