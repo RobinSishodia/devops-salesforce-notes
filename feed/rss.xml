@@ -1,4 +1,196 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Tue, 24 Nov 2026 18:15:09 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Amazon S3 Versioning and Lifecycle Rules: Protect Your Data and Control Storage Cost]]></title><description><![CDATA[Amazon S3 can keep every version of an object and move or delete old data on a schedule. Two features do that: versioning and lifecycle rules. Together…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon S3]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Nov 2026 18:14:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b751d7ba-8913-443d-aae7-dc84550da37e.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Amazon S3 can keep every version of an object and move or delete old data on a schedule. Two features do that: <strong>versioning</strong> and <strong>lifecycle rules</strong>. Together they protect you from overwrites and keep storage costs down.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 25 Nov 2026 09:20:09 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Amazon S3 Bucket Policies and Block Public Access: Keep Your Buckets Private]]></title><description><![CDATA[An S3 bucket should never be public by accident. Two features control who can reach your data: Block Public Access and bucket policies. Together they keep…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon S3]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 25 Nov 2026 09:19:52 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fd45dc0b-3712-48a1-b689-f6df18bedcc6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>An S3 bucket should never be public by accident. Two features control who can reach your data: <strong>Block Public Access</strong> and <strong>bucket policies</strong>. Together they keep a bucket private and say exactly who else may use it.</p>
+<h2>What they do</h2>
+<ul>
+<li><strong>Block Public Access</strong> is a safety switch that stops buckets and objects from becoming public, even if a policy or ACL tries to allow it.</li>
+<li>A <strong>bucket policy</strong> is a JSON resource policy that says which principals can do which actions on the bucket.</li>
+<li>You can set Block Public Access on the <strong>account</strong> and on each <strong>bucket</strong>.</li>
+</ul>
+<h2>Key concepts</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Block Public Access</strong></td>
+<td>Four settings that block public ACLs and public policies</td>
+</tr>
+<tr>
+<td><strong>Bucket policy</strong></td>
+<td>JSON policy attached to the bucket</td>
+</tr>
+<tr>
+<td><strong>Principal</strong></td>
+<td>Who the policy applies to, such as an account, role or service</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>What they may do, such as <code>s3:GetObject</code></td>
+</tr>
+<tr>
+<td><strong>Resource</strong></td>
+<td>The bucket or objects the rule covers</td>
+</tr>
+<tr>
+<td><strong>Condition</strong></td>
+<td>Extra limits, such as requiring HTTPS</td>
+</tr>
+</tbody></table>
+<h2>Good to know</h2>
+<ul>
+<li><strong>Block all public access</strong> is on by default for new buckets. Leave it on unless you really need a public site.</li>
+<li>An <strong>explicit Deny</strong> always beats an Allow.</li>
+<li>Use <code>aws:SecureTransport</code> in a condition to <strong>deny HTTP</strong> requests.</li>
+<li>The bucket ARN covers the bucket, and <code>bucket/*</code> covers the objects inside it.</li>
+<li>For public websites, put <strong>CloudFront</strong> in front and keep the bucket private.</li>
+<li><strong>IAM Access Analyzer for S3</strong> can show buckets that are shared outside your account.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>S3</strong> and create a bucket such as <code>demo-policy-&lt;your-name&gt;</code>.</li>
+<li>Keep <strong>Block all public access</strong> turned on.</li>
+<li>Open the bucket's <strong>Permissions</strong> tab and look at the Block Public Access settings.</li>
+<li>Choose <strong>Bucket policy</strong> and add a statement that <strong>denies</strong> requests that do not use HTTPS, using the condition <code>aws:SecureTransport = false</code>.</li>
+<li>Save the policy.</li>
+<li>Try to add a policy that allows <code>Principal: "*"</code> and read the error, because Block Public Access stops it.</li>
+<li>Open <strong>Access Analyzer for S3</strong> and check that nothing is public.</li>
+<li>Clean up: delete the policy and the bucket.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Turning off Block Public Access to fix an unrelated error.</li>
+<li>Using <code>Principal: "*"</code> with an Allow and forgetting what it exposes.</li>
+<li>Mixing up the bucket ARN and the object ARN (<code>bucket/*</code>).</li>
+<li>Making a bucket public to host a website instead of using CloudFront.</li>
+<li>Forgetting the explicit Deny always wins when debugging access.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Keep Block Public Access on for accounts and buckets.</li>
+<li>Use a bucket policy to say exactly who can do what.</li>
+<li>Deny HTTP with <code>aws:SecureTransport</code>.</li>
+<li>Check shared buckets with Access Analyzer.</li>
+</ul>
+<p>Tomorrow I'll start a new AWS topic.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Scheduled Paths: Run Part of a Flow Later, with Admin II Interview Q&A]]></title><description><![CDATA[Sometimes a flow should not finish everything on the spot. It may need to act later, after a delay or when a condition is met. Scheduled Paths and the Wait…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-scheduled-paths-run-part-of-a-flow-later-with-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-scheduled-paths-run-part-of-a-flow-later-with-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 25 Nov 2026 09:16:42 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/f17b28c2-e55c-4d99-a952-8293c14936ce.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Sometimes a flow should not finish everything on the spot. It may need to act later, after a delay or when a condition is met. Scheduled Paths and the Wait element do that, and Admin II interviews ask about both.</em></p>
+<hr />
+<h2>Scheduled Paths and Wait at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it does</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Scheduled Path</strong></td>
+<td>Runs part of a record-triggered flow at a set time after the trigger</td>
+<td>Offset from the record or a date field</td>
+</tr>
+<tr>
+<td><strong>Run Immediately path</strong></td>
+<td>The normal path that runs right away</td>
+<td>Always there, the scheduled paths are extra</td>
+</tr>
+<tr>
+<td><strong>Wait element</strong></td>
+<td>Pauses a flow until a time or event</td>
+<td>Resumes later as a new transaction</td>
+</tr>
+<tr>
+<td><strong>Paused interview</strong></td>
+<td>The saved state of a waiting flow</td>
+<td>Find it in Paused and Failed Flow Interviews</td>
+</tr>
+</tbody></table>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is a Scheduled Path?</h3>
+<p>An extra path on a <strong>record-triggered flow</strong> that runs later, for example <strong>3 days after</strong> the record is created, or <strong>1 day before</strong> a date field.</p>
+<blockquote>
+<p><strong>Tip:</strong> The record-triggered flow still starts on a save. Only the path runs later.</p>
+</blockquote>
+<h3>2. When do you use it?</h3>
+<p>For follow-ups that depend on time after a change, such as a reminder Task 3 days after a Case is opened, without building a separate Scheduled Flow.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use Scheduled Flow for a batch on a clock. Use a Scheduled Path for time after a record event.</p>
+</blockquote>
+<h3>3. What happens if the record changes before the path runs?</h3>
+<p>The path runs with the <strong>latest</strong> record values. If the record no longer meets the entry conditions, the scheduled path is <strong>cancelled</strong>.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check the entry conditions, they decide if the path still runs.</p>
+</blockquote>
+<h3>4. What does the Wait element do?</h3>
+<p>It <strong>pauses</strong> the flow until a set time passes or an event happens. The paused interview is saved and <strong>resumes</strong> later.</p>
+<blockquote>
+<p><strong>Tip:</strong> Treat the resume as a new transaction.</p>
+</blockquote>
+<h3>5. Who does a scheduled path run as?</h3>
+<p>Like other automation that runs later, it runs as the <strong>Automated Process</strong> user, so set owners explicitly.</p>
+<blockquote>
+<p><strong>Tip:</strong> Never rely on the running user for ownership.</p>
+</blockquote>
+<h3>6. How do you check a waiting or failed flow?</h3>
+<p>Open <strong>Paused and Failed Flow Interviews</strong> in Setup. You can see waiting interviews and resume or delete them.</p>
+<blockquote>
+<p><strong>Tip:</strong> Check it when a scheduled follow-up did not happen.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"When a Case is opened, create a reminder Task if the Case is still open 3 days later. How do you build it?"</strong></p>
+<ol>
+<li>Create a <strong>record-triggered flow</strong> on Case when a record is <strong>created</strong></li>
+<li>Add a <strong>Scheduled Path</strong> set to <strong>3 days after</strong> the trigger</li>
+<li>In the path, add a <strong>Decision</strong> that checks <strong>Status is not Closed</strong></li>
+<li>Add <strong>Create Records</strong> for the Task, with the owner set</li>
+<li>Add a <strong>fault path</strong> and test in a sandbox</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Go to <strong>Setup &gt; Flows &gt; New Flow</strong> and pick <strong>Record-Triggered Flow</strong>.</li>
+<li>Choose <strong>Case</strong> and trigger on <strong>A record is created</strong>.</li>
+<li>Under the Start element, choose <strong>Add Scheduled Paths</strong>.</li>
+<li>Name it <code>Check After 3 Days</code> and set it to <strong>3 Days After</strong> the Case is created. For a quick test use a few minutes if your org allows it.</li>
+<li>In the scheduled path, add a <strong>Decision</strong> that checks Status is not <strong>Closed</strong>.</li>
+<li>Add <strong>Create Records</strong> for a Task with Subject = <code>Follow up on open Case</code> and WhatId = <code>{!$Record.Id}</code>.</li>
+<li>Add a fault path, then <strong>Save</strong> and <strong>Activate</strong>.</li>
+<li>Create a test Case, then check <strong>Paused and Failed Flow Interviews</strong> to see the waiting path.</li>
+</ol>
+<hr />
+<h2>Common Mistakes</h2>
+<ul>
+<li>Expecting the scheduled path to run right away.</li>
+<li>Forgetting the entry conditions, so the path is cancelled.</li>
+<li>Not checking the record status again inside the path.</li>
+<li>Forgetting that scheduled paths run as the <strong>Automated Process</strong> user.</li>
+<li>Leaving test flows active after the demo.</li>
+</ul>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>Scheduled Path</strong> = runs later after the trigger</li>
+<li><strong>Immediate path</strong> = runs right away</li>
+<li><strong>Wait</strong> = pause until a time or event</li>
+<li><strong>Entry conditions</strong> = can cancel a path</li>
+<li><strong>Runs as</strong> = Automated Process</li>
+<li><strong>Check</strong> = Paused and Failed Flow Interviews</li>
+</ul>
+<hr />
+<h2>Key Takeaways</h2>
+<ul>
+<li>Use a Scheduled Path for follow-ups that happen after a record event.</li>
+<li>The path uses the latest data, and entry conditions can cancel it.</li>
+<li>Check the record again before you act.</li>
+<li>Set owners yourself and test in a sandbox.</li>
+</ul>
+<p><strong>Next up:</strong> a new topic in the Admin II series.</p>
+<p><em>Part of #120DaysOfSalesforce. Where would you use a scheduled path? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Amazon S3 Versioning and Lifecycle Rules: Protect Your Data and Control Storage Cost]]></title><description><![CDATA[Amazon S3 can keep every version of an object and move or delete old data on a schedule. Two features do that: versioning and lifecycle rules. Together…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-s3-versioning-and-lifecycle-rules-protect-your-data-and-control-storage-cost</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon S3]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Tue, 24 Nov 2026 18:14:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/b751d7ba-8913-443d-aae7-dc84550da37e.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Amazon S3 can keep every version of an object and move or delete old data on a schedule. Two features do that: <strong>versioning</strong> and <strong>lifecycle rules</strong>. Together they protect you from overwrites and keep storage costs down.</p>
 <h2>What they do</h2>
 <ul>
 <li><strong>Versioning</strong> keeps every version of an object in a bucket, so an overwrite or delete does not destroy the old data.</li>
@@ -1583,177 +1775,5 @@
 <li>Start with a billing alarm in every new account.</li>
 </ul>
 <p>Tomorrow I'll look at how to see who did what in your account, with AWS CloudTrail.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
-]]></content:encoded></item><item><title><![CDATA[Salesforce Flow Fault Paths Cheat Sheet: Handling Errors in Screen Flows and Admin II Interview Q&A]]></title><description><![CDATA[Things go wrong, even in a good Screen Flow: a required field is empty, a record is locked, a validation rule fires. Admin II interviews ask how you handle…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-flow-fault-paths-cheat-sheet-handling-errors-in-screen-flows-and-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-flow-fault-paths-cheat-sheet-handling-errors-in-screen-flows-and-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 15 Nov 2026 16:30:55 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/36c68ff7-2a3f-4f9e-8ec0-d8c6fe0d1f6f.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>Things go wrong, even in a good Screen Flow: a required field is empty, a record is locked, a validation rule fires. Admin II interviews ask how you handle it so the user sees a clear message instead of a scary error.</em></p>
-<hr />
-<h2>What Happens Without a Fault Path</h2>
-<p>If an element fails and you did nothing about it, the user sees a generic <strong>unhandled fault</strong> error and Salesforce emails the details to the admin. A <strong>fault path</strong> lets you decide what happens instead.</p>
-<table>
-<thead>
-<tr>
-<th>Idea</th>
-<th>What it means</th>
-<th>Key point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Fault connector</strong></td>
-<td>A second path out of an element that can fail</td>
-<td>Drawn as a red dashed line</td>
-</tr>
-<tr>
-<td><strong>Fault message</strong></td>
-<td>The text of the error</td>
-<td><code>{!$Flow.FaultMessage}</code></td>
-</tr>
-<tr>
-<td><strong>Fault screen</strong></td>
-<td>A screen that explains the problem</td>
-<td>Shown instead of the crash</td>
-</tr>
-<tr>
-<td><strong>Debug</strong></td>
-<td>Run the flow with test data</td>
-<td>Use it to trigger a failure on purpose</td>
-</tr>
-</tbody></table>
-<hr />
-<h2>Interview Q&amp;A</h2>
-<h3>1. What is a fault path?</h3>
-<p>It is the path a flow takes when an element fails. You add it from the element with the <strong>Fault</strong> connector.</p>
-<blockquote>
-<p><strong>Tip:</strong> Think of it as the "if this fails" branch.</p>
-</blockquote>
-<h3>2. Which elements can have one?</h3>
-<p>Elements that can fail, such as <strong>Create, Update, Get and Delete Records</strong>, <strong>actions</strong> and <strong>subflows</strong>. Screen elements do not get one.</p>
-<blockquote>
-<p><strong>Tip:</strong> Put it on every element that changes data.</p>
-</blockquote>
-<h3>3. How do you show the error to the user?</h3>
-<p>Send the fault connector to a <strong>Screen</strong> and add a Display Text component with <code>{!$Flow.FaultMessage}</code>.</p>
-<blockquote>
-<p><strong>Tip:</strong> Add a friendly sentence above it, such as "We could not save your call."</p>
-</blockquote>
-<h3>4. Should users see the raw message?</h3>
-<p>Usually not. Raw messages can be technical. Show a plain message to the user and keep the detail for the admin.</p>
-<blockquote>
-<p><strong>Tip:</strong> Say what to do next, for example "Contact your admin."</p>
-</blockquote>
-<h3>5. How does the admin find out?</h3>
-<p>Salesforce sends a <strong>flow error email</strong> for unhandled faults. In your own fault path you can also send an email or create a record that logs the error.</p>
-<blockquote>
-<p><strong>Tip:</strong> A log record is easier to search than a pile of emails.</p>
-</blockquote>
-<h3>6. How do you test it?</h3>
-<p>Use <strong>Debug</strong> and cause a failure on purpose, such as leaving a required field empty, then check that the fault screen appears.</p>
-<blockquote>
-<p><strong>Tip:</strong> A fault path you never tested is a guess.</p>
-</blockquote>
-<hr />
-<h2>Scenario Question</h2>
-<p><strong>"The call log flow sometimes fails and reps just see an error."</strong></p>
-<ol>
-<li>Open the Screen Flow and find the <strong>Create Records</strong> element for the Task</li>
-<li>Add a <strong>Fault</strong> connector from it to a new screen</li>
-<li>Show a friendly message plus <code>{!$Flow.FaultMessage}</code></li>
-<li>Debug with a failing case, then <strong>activate</strong> the new version</li>
-</ol>
-<hr />
-<h2>Hands-On: Try It in Your Own Org</h2>
-<ol>
-<li>Open yesterday's Screen Flow in Flow Builder.</li>
-<li>On the <strong>Create Records</strong> element that creates the Task, choose <strong>Add Fault Path</strong>.</li>
-<li>Add a <strong>Screen</strong> after it named <code>Something went wrong</code>.</li>
-<li>In that screen add Display Text: <code>We could not save your call. Details: {!$Flow.FaultMessage}</code></li>
-<li>Run <strong>Debug</strong> and leave the Task <strong>Subject</strong> empty so the create fails.</li>
-<li>Check that the fault screen appears, then <strong>Save</strong> and <strong>Activate</strong> the new version.</li>
-</ol>
-<hr />
-<h2>Quick Cheat Sheet</h2>
-<ul>
-<li><strong>Second path out</strong> = Fault connector</li>
-<li><strong>Error text</strong> = <code>{!$Flow.FaultMessage}</code></li>
-<li><strong>Show it</strong> = Fault screen</li>
-<li><strong>Screens</strong> = no fault path</li>
-<li><strong>Test it</strong> = Debug a failure</li>
-<li><strong>Unhandled</strong> = Error email to admin</li>
-</ul>
-<h2>Key Takeaways</h2>
-<ul>
-<li>Add a fault path to every element that changes data.</li>
-<li>Show a friendly message, not a crash.</li>
-<li>Keep the technical detail for the admin.</li>
-<li>Test the failure on purpose.</li>
-</ul>
-<p><strong>Next up:</strong> Flow decisions and loops, the two elements behind most real flows.</p>
-<p><em>Part of #120DaysOfSalesforce. How do your flows handle errors? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[AWS IAM Identity Center: Single Sign-On Across Your AWS Accounts]]></title><description><![CDATA[Yesterday I set up an organization with several accounts. Now the next question: how do people get into those accounts without a pile of IAM users and…]]></description><link>https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-iam-identity-center-single-sign-on-across-your-aws-accounts</guid><category><![CDATA[AWS]]></category><category><![CDATA[AWS IAM]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sat, 14 Nov 2026 12:12:17 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/0b85b72d-6a82-4b42-8837-c9cca89d8564.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Yesterday I set up an organization with several accounts. Now the next question: how do <strong>people</strong> get into those accounts without a pile of IAM users and long-term access keys? The answer is <strong>AWS IAM Identity Center</strong>.</p>
-<h2>What it does</h2>
-<ul>
-<li>It is the AWS service for <strong>workforce single sign-on</strong> across the accounts in your organization and supported applications.</li>
-<li>People sign in once at the <strong>AWS access portal</strong> and pick the account and role they need.</li>
-<li>Access is given through <strong>temporary credentials</strong>, so there are no long-term keys to lose.</li>
-</ul>
-<h2>The building blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Term</th>
-<th>What it is</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Identity source</strong></td>
-<td>Where users and groups live</td>
-<td>Built-in directory, Active Directory or an external identity provider</td>
-</tr>
-<tr>
-<td><strong>Permission set</strong></td>
-<td>A template of permissions</td>
-<td>Identity Center creates a role from it in each assigned account</td>
-</tr>
-<tr>
-<td><strong>Assignment</strong></td>
-<td>Links a user or group to an account with a permission set</td>
-<td>Assign groups, not single users</td>
-</tr>
-<tr>
-<td><strong>Access portal</strong></td>
-<td>The sign-in page for your users</td>
-<td>One URL for all accounts</td>
-</tr>
-</tbody></table>
-<h2>How it fits with Organizations</h2>
-<ul>
-<li>Enable it in the <strong>management account</strong> with AWS Organizations turned on.</li>
-<li>Choose the <strong>home Region</strong> carefully, because it is hard to change later.</li>
-<li>Roles created from permission sets show up in each account with names starting <code>AWSReservedSSO_</code>.</li>
-<li>Session length is set per permission set.</li>
-</ul>
-<h2>Hands-on: try it in your own account</h2>
-<ol>
-<li>Open <strong>IAM Identity Center</strong> in the management account and choose <strong>Enable</strong>.</li>
-<li>Under <strong>Groups</strong>, create a group named <code>ReadOnly</code>, then create a user and add them to it.</li>
-<li>Under <strong>Permission sets</strong>, create one that uses the AWS managed <strong>ViewOnlyAccess</strong> or <strong>ReadOnlyAccess</strong> policy.</li>
-<li>Under <strong>AWS accounts</strong>, select an account, choose <strong>Assign users or groups</strong>, and pick the group and the permission set.</li>
-<li>Open the <strong>access portal URL</strong>, sign in as the user, and choose the account and role.</li>
-<li>Optional: run <code>aws configure sso</code>, then <code>aws sso login</code>, and check with <code>aws sts get-caller-identity</code>.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Creating IAM users for every person instead of using Identity Center.</li>
-<li>Assigning permission sets to single users, which gets hard to manage.</li>
-<li>Giving broad access when a read-only permission set is enough.</li>
-<li>Forgetting MFA for the people who sign in.</li>
-</ul>
-<h2>Key takeaways</h2>
-<ul>
-<li>Use Identity Center for people and IAM roles for workloads.</li>
-<li>Define access once in a permission set and assign it to groups.</li>
-<li>Prefer temporary credentials over long-term keys.</li>
-<li>Keep MFA on for every user.</li>
-</ul>
-<p>Tomorrow I'll look at what happens when something goes wrong in your accounts, starting with how to be notified.</p>
 <p><em>Part of #120DaysOfAWS.</em></p>
 ]]></content:encoded></item></channel></rss>
