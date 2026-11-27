@@ -1,4 +1,212 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Wed, 25 Nov 2026 09:20:09 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Amazon S3 Bucket Policies and Block Public Access: Keep Your Buckets Private]]></title><description><![CDATA[An S3 bucket should never be public by accident. Two features control who can reach your data: Block Public Access and bucket policies. Together they keep…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon S3]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 25 Nov 2026 09:19:52 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fd45dc0b-3712-48a1-b689-f6df18bedcc6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>An S3 bucket should never be public by accident. Two features control who can reach your data: <strong>Block Public Access</strong> and <strong>bucket policies</strong>. Together they keep a bucket private and say exactly who else may use it.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Robin Sishodia | DevOps & Salesforce Notes]]></title><description><![CDATA[Hands-on guides on AWS, Kubernetes, Docker, Terraform, CI/CD and Salesforce DevOps by Robin Sishodia, AWS DevOps Professional and certified Salesforce Admin.]]></description><link>https://sishodiarobin.hashnode.dev</link><generator>RSS for Node</generator><lastBuildDate>Fri, 27 Nov 2026 03:26:36 GMT</lastBuildDate><atom:link href="https://sishodiarobin.hashnode.dev/rss.xml" rel="self" type="application/rss+xml"/><language><![CDATA[en]]></language><ttl>60</ttl><item><title><![CDATA[Amazon Route 53 Basics: DNS Records, Alias Records and Routing Policies]]></title><description><![CDATA[Amazon Route 53 is the AWS DNS service. It turns names like app.example.com into IP addresses or AWS resources, and it can also send users to different…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-route-53-basics-dns-records-alias-records-and-routing-policies</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-route-53-basics-dns-records-alias-records-and-routing-policies</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon Route 53]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 27 Nov 2026 03:26:24 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/ed564bbe-b6e8-48d9-b3ee-6f7e7f235cc5.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>Amazon Route 53 is the AWS DNS service. It turns names like <code>app.example.com</code> into IP addresses or AWS resources, and it can also send users to different places by rule. It is a global service and sits in front of many of the services in this series.</p>
+<h2>What it does</h2>
+<ul>
+<li><strong>Registers domains</strong> and hosts <strong>DNS zones</strong> for them.</li>
+<li>Answers DNS queries with the <strong>records</strong> you create.</li>
+<li>Can <strong>check the health</strong> of endpoints and stop sending traffic to unhealthy ones.</li>
+<li>Supports <strong>routing policies</strong> such as simple, weighted, latency-based and failover.</li>
+</ul>
+<h2>Key concepts</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Hosted zone</strong></td>
+<td>The container for a domain's DNS records</td>
+</tr>
+<tr>
+<td><strong>Record</strong></td>
+<td>One DNS entry, such as A, AAAA, CNAME or MX</td>
+</tr>
+<tr>
+<td><strong>Alias record</strong></td>
+<td>A Route 53 record that points to an AWS resource, with no extra charge for queries</td>
+</tr>
+<tr>
+<td><strong>TTL</strong></td>
+<td>How long resolvers cache an answer</td>
+</tr>
+<tr>
+<td><strong>Routing policy</strong></td>
+<td>The rule that decides which answer is returned</td>
+</tr>
+<tr>
+<td><strong>Health check</strong></td>
+<td>A probe that marks an endpoint healthy or unhealthy</td>
+</tr>
+</tbody></table>
+<h2>Good to know</h2>
+<ul>
+<li>Use an <strong>alias record</strong> for the root of a domain, such as <code>example.com</code>, because a CNAME is not allowed there.</li>
+<li>A <strong>low TTL</strong> makes changes spread faster, but causes more queries.</li>
+<li><strong>Simple</strong> routing returns one value or a set of values.</li>
+<li><strong>Weighted</strong> routing splits traffic, which helps with canary releases.</li>
+<li><strong>Failover</strong> routing sends traffic to a backup when the primary health check fails.</li>
+<li><strong>Latency-based</strong> routing picks the Region with the lowest latency for the user.</li>
+<li>A <strong>private hosted zone</strong> answers names only inside your VPCs.</li>
+</ul>
+<h2>Hands-on: try it in your own account</h2>
+<ol>
+<li>Open <strong>Route 53</strong> and choose <strong>Hosted zones</strong>. Use a domain you own, or create a <strong>private hosted zone</strong> for a practice name such as <code>demo.internal</code> linked to a VPC.</li>
+<li>Choose <strong>Create record</strong>.</li>
+<li>Create an <strong>A record</strong> named <code>app</code> with a test IP address and a TTL of <strong>60 seconds</strong>.</li>
+<li>Open the record and test it with the <strong>Test record</strong> button, or query it with <code>dig</code> or <code>nslookup</code>.</li>
+<li>Create a second record with a <strong>weighted</strong> policy and a different weight to see how answers are split.</li>
+<li>Change the value and watch the answer update after the TTL.</li>
+<li>Clean up: delete the records and the practice hosted zone, because hosted zones have a monthly charge.</li>
+</ol>
+<h2>Common mistakes</h2>
+<ul>
+<li>Using a CNAME at the root of a domain instead of an alias record.</li>
+<li>Leaving a very high TTL and waiting hours for a change.</li>
+<li>Forgetting that a hosted zone has a monthly cost.</li>
+<li>Creating records in a public zone when the name should stay private.</li>
+<li>Setting up failover without a health check.</li>
+</ul>
+<h2>Key takeaways</h2>
+<ul>
+<li>Route 53 turns names into answers and can route by policy.</li>
+<li>Use alias records for AWS resources and the domain root.</li>
+<li>Pick the TTL to match how often you change records.</li>
+<li>Add health checks to failover routing and clean up practice zones.</li>
+</ul>
+<p>Tomorrow I'll start a new AWS topic.</p>
+<p><em>Part of #120DaysOfAWS.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Salesforce Order of Execution: Where Flows Run When a Record Is Saved, with Admin II Interview Q&A]]></title><description><![CDATA["What runs first when a record is saved?" is a classic Admin II question. Knowing where flows, validation rules and triggers sit in the order of execution…]]></description><link>https://sishodiarobin.hashnode.dev/salesforce-order-of-execution-where-flows-run-when-a-record-is-saved-with-admin-ii-interview-q-a</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/salesforce-order-of-execution-where-flows-run-when-a-record-is-saved-with-admin-ii-interview-q-a</guid><category><![CDATA[Salesforce]]></category><category><![CDATA[Salesforce Flow]]></category><category><![CDATA[Salesforce Admin]]></category><category><![CDATA[trailblazer]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Fri, 27 Nov 2026 03:24:10 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/e0fd7067-c627-4620-85f9-fce8701fa5ed.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p><em>"What runs first when a record is saved?" is a classic Admin II question. Knowing where flows, validation rules and triggers sit in the order of execution helps you debug automation that behaves in surprising ways.</em></p>
+<hr />
+<h2>Order of Execution at a Glance</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What runs</th>
+<th>Key point</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1</strong></td>
+<td><strong>Before-save</strong> record-triggered flows</td>
+<td>Fast field updates on the same record</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Before triggers (Apex)</td>
+<td>Run after before-save flows</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>System and <strong>custom validation rules</strong></td>
+<td>Run after the before-save changes</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Record is saved, <strong>not yet committed</strong></td>
+<td>Rollback is still possible</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>After triggers (Apex)</td>
+<td>The record has an Id now</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Workflow rules, then <strong>after-save flows</strong></td>
+<td>Flows can change the record again</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Commit</strong> to the database</td>
+<td>Post-commit work such as emails</td>
+</tr>
+</tbody></table>
+<p><em>This is a simplified view. Check the Salesforce Developer Guide for the full, current order.</em></p>
+<hr />
+<h2>Interview Q&amp;A</h2>
+<h3>1. What is the order of execution?</h3>
+<p>The fixed sequence Salesforce follows when a record is saved: before-save automation, validation, the save itself, after-save automation, then the commit.</p>
+<blockquote>
+<p><strong>Tip:</strong> Remember the shape: before-save, validate, save, after-save, commit.</p>
+</blockquote>
+<h3>2. Where do before-save flows run?</h3>
+<p>At the <strong>start</strong>, before before triggers and before validation rules. They update fields on the triggering record without an extra save.</p>
+<blockquote>
+<p><strong>Tip:</strong> Use them for fast field updates on the same record.</p>
+</blockquote>
+<h3>3. Do validation rules see before-save flow changes?</h3>
+<p>Yes. Validation rules run <strong>after</strong> before-save flows, so a flow can set a value that a validation rule then checks.</p>
+<blockquote>
+<p><strong>Tip:</strong> If a rule fails unexpectedly, check what a before-save flow changed.</p>
+</blockquote>
+<h3>4. When do after-save flows run?</h3>
+<p>After the record is saved but before the commit. They are used to create or update <strong>related</strong> records, send emails and call actions.</p>
+<blockquote>
+<p><strong>Tip:</strong> After-save flows can update the same record, but that causes an extra save.</p>
+</blockquote>
+<h3>5. What if an after-save flow updates the record again?</h3>
+<p>The update can fire automation again, and validation runs again. Salesforce caps the repeat so it cannot loop forever.</p>
+<blockquote>
+<p><strong>Tip:</strong> Add entry conditions so the flow only runs when needed.</p>
+</blockquote>
+<h3>6. How do you control the order of several flows?</h3>
+<p>In <strong>Flow Trigger Explorer</strong> you can see the flows on an object and set the <strong>trigger order</strong> of record-triggered flows.</p>
+<blockquote>
+<p><strong>Tip:</strong> Do not depend on the order, combine related logic where you can.</p>
+</blockquote>
+<hr />
+<h2>Scenario Question</h2>
+<p><strong>"A validation rule blocks a save even though the user entered a valid value. How do you find out why?"</strong></p>
+<ol>
+<li>Check for a <strong>before-save flow</strong> that changes the field first</li>
+<li>Open <strong>Flow Trigger Explorer</strong> to list the flows on the object</li>
+<li>Run the flow in <strong>Debug</strong> with the same record</li>
+<li>Check <strong>debug logs</strong> for the order of what ran</li>
+<li>Fix the flow's entry conditions, or the validation rule, and test in a sandbox</li>
+</ol>
+<hr />
+<h2>Hands-On: Try It in Your Own Org</h2>
+<ol>
+<li>Create a text field <code>Order Test</code> on Account.</li>
+<li>Create a <strong>before-save</strong> record-triggered flow on Account (create or update) that sets <code>Order Test</code> to <code>Before-save</code>.</li>
+<li>Create a <strong>validation rule</strong> on Account that blocks the save when <code>Order Test</code> equals <code>Before-save</code>, with a clear message.</li>
+<li>Create or update an Account and see that the validation rule fires, which shows the flow ran first.</li>
+<li>Open <strong>Setup &gt; Flow Trigger Explorer</strong>, pick Account, and look at the flows listed.</li>
+<li>Turn on a <strong>debug log</strong> for your user and save again to see the order.</li>
+<li>Clean up: delete the validation rule, deactivate the flow and delete the field.</li>
+</ol>
+<hr />
+<h2>Common Mistakes</h2>
+<ul>
+<li>Assuming validation rules run before flows.</li>
+<li>Updating the same record in an after-save flow when a before-save flow would do.</li>
+<li>Building several flows on one object that depend on an order.</li>
+<li>Skipping entry conditions, so a flow runs on every save.</li>
+<li>Debugging in production instead of a sandbox.</li>
+</ul>
+<hr />
+<h2>Quick Cheat Sheet</h2>
+<ul>
+<li><strong>First</strong> = before-save flows</li>
+<li><strong>Then</strong> = before triggers, validation rules</li>
+<li><strong>Save</strong> = record saved, not committed</li>
+<li><strong>After</strong> = after triggers, after-save flows</li>
+<li><strong>Last</strong> = commit</li>
+<li><strong>Tool</strong> = Flow Trigger Explorer and debug logs</li>
+</ul>
+<hr />
+<h2>Key Takeaways</h2>
+<ul>
+<li>Before-save flows run before validation rules.</li>
+<li>After-save flows run after the save but before the commit.</li>
+<li>Use entry conditions and a clear design instead of relying on order.</li>
+<li>Use Flow Trigger Explorer and debug logs when automation surprises you.</li>
+</ul>
+<p><strong>Next up:</strong> a new topic in the Admin II series.</p>
+<p><em>Part of #120DaysOfSalesforce. What was your trickiest order of execution bug? Tell me below.</em></p>
+]]></content:encoded></item><item><title><![CDATA[Amazon S3 Bucket Policies and Block Public Access: Keep Your Buckets Private]]></title><description><![CDATA[An S3 bucket should never be public by accident. Two features control who can reach your data: Block Public Access and bucket policies. Together they keep…]]></description><link>https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/amazon-s3-bucket-policies-and-block-public-access-keep-your-buckets-private</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon S3]]></category><category><![CDATA[cloud security]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Wed, 25 Nov 2026 09:19:52 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/fd45dc0b-3712-48a1-b689-f6df18bedcc6.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>An S3 bucket should never be public by accident. Two features control who can reach your data: <strong>Block Public Access</strong> and <strong>bucket policies</strong>. Together they keep a bucket private and say exactly who else may use it.</p>
 <h2>What they do</h2>
 <ul>
 <li><strong>Block Public Access</strong> is a safety switch that stops buckets and objects from becoming public, even if a policy or ACL tries to allow it.</li>
@@ -1683,97 +1891,4 @@
 </ul>
 <p><strong>Next up:</strong> Flow resources: variables, constants and formulas.</p>
 <p><em>Part of #120DaysOfSalesforce. Which do you use more, Decisions or Loops? Tell me below.</em></p>
-]]></content:encoded></item><item><title><![CDATA[I built a GitOps pipeline from scratch (Jenkins, ArgoCD, Terraform, EKS), and what broke]]></title><description><![CDATA[I wanted one project where a git push ends up as a running pod with no manual steps, then the same thing on real AWS. Here is what I built and what went…]]></description><link>https://sishodiarobin.hashnode.dev/i-built-a-gitops-pipeline-from-scratch-jenkins-argocd-terraform-eks-and-what-broke</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/i-built-a-gitops-pipeline-from-scratch-jenkins-argocd-terraform-eks-and-what-broke</guid><category><![CDATA[Devops]]></category><category><![CDATA[Kubernetes]]></category><category><![CDATA[Terraform]]></category><category><![CDATA[AWS]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Mon, 16 Nov 2026 04:22:03 GMT</pubDate><content:encoded><![CDATA[<p>I wanted one project where a <code>git push</code> ends up as a running pod with no manual steps, then the same thing on real AWS. Here is what I built and what went wrong.</p>
-<h2>The flow</h2>
-<ol>
-<li>I push a change to GitHub.</li>
-<li>Jenkins notices it by polling (every 2 minutes), builds a Docker image and pushes it to Docker Hub.</li>
-<li>Jenkins commits the new image tag into <code>k8s/deployment.yaml</code>.</li>
-<li>ArgoCD sees the manifest change and syncs it to Kubernetes.</li>
-</ol>
-<p>I proved it by changing the page heading and watching the new text appear without touching anything after the push. Repo: <a href="https://github.com/RobinSishodia/aws-eks-gitops-argocd">https://github.com/RobinSishodia/aws-eks-gitops-argocd</a></p>
-<h2>Terraform and EKS</h2>
-<p>I rebuilt the cluster on AWS with Terraform: a VPC with public and private subnets and a NAT gateway, plus an EKS cluster with a managed node group. ArgoCD ran on it with the app Synced and Healthy. Then I destroyed all 56 resources, verified nothing was left, and deleted the access key.</p>
-<h2>What went wrong</h2>
-<ol>
-<li><strong>Jenkins rebuilt its own commits.</strong> The pipeline pushes a commit, so auto-triggering would loop forever. I added a guard that skips any build whose latest commit says <code>[skip ci]</code>. Jenkins core does not honour that tag by itself. I also once put that exact text in my own commit message and skipped a build I wanted.</li>
-<li><strong>AWS Free plan instance types.</strong> <code>t3.medium</code> was rejected as not free-tier eligible. I queried the eligible types and switched to <code>c7i-flex.large</code>.</li>
-<li><strong>Nodes that never joined.</strong> The EKS Terraform module does not install vpc-cni, kube-proxy or CoreDNS by default, so the nodes had no networking and the node group hung for hours. Declaring the add-ons fixed it. I also added a 25-minute create timeout so a stuck build fails fast.</li>
-</ol>
-<h2>What I would do next</h2>
-<p>A real GitHub webhook instead of polling (it needs Jenkins reachable from the internet), then monitoring with Prometheus and Grafana.</p>
-]]></content:encoded></item><item><title><![CDATA[AWS CloudWatch Alarms and SNS: Get Notified When Something Goes Wrong]]></title><description><![CDATA[In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong…]]></description><link>https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</link><guid isPermaLink="true">https://sishodiarobin.hashnode.dev/aws-cloudwatch-alarms-and-sns-get-notified-when-something-goes-wrong</guid><category><![CDATA[AWS]]></category><category><![CDATA[Amazon Cloudwatch]]></category><category><![CDATA[Cloud Computing]]></category><category><![CDATA[Devops]]></category><dc:creator><![CDATA[Robin Sishodia]]></dc:creator><pubDate>Sun, 15 Nov 2026 16:32:58 GMT</pubDate><enclosure url="https://cdn.hashnode.com/uploads/covers/6693dc4e158429a5c6ab492f/4465a3bf-e20f-476d-aae3-452e04c3f0ab.png" length="0" type="image/jpeg"/><content:encoded><![CDATA[<p>In the last two posts I set up several accounts and a way for people to sign in. Now the question every real environment hits: when something goes wrong, <strong>who finds out, and how fast?</strong> The basic answer on AWS is a <strong>CloudWatch alarm</strong> that sends a message through <strong>Amazon SNS</strong>.</p>
-<h2>What each service does</h2>
-<ul>
-<li><strong>Amazon CloudWatch</strong> collects metrics, such as CPU use or estimated charges, and can watch them with alarms.</li>
-<li><strong>CloudWatch alarm</strong> compares a metric to a threshold and moves between three states: <strong>OK</strong>, <strong>ALARM</strong> and <strong>INSUFFICIENT_DATA</strong>.</li>
-<li><strong>Amazon SNS</strong> (Simple Notification Service) sends a message to everyone subscribed to a <strong>topic</strong>, by email, SMS or other targets.</li>
-</ul>
-<h2>The building blocks</h2>
-<table>
-<thead>
-<tr>
-<th>Term</th>
-<th>What it is</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Metric</strong></td>
-<td>A number measured over time</td>
-<td>Example: CPUUtilization or EstimatedCharges</td>
-</tr>
-<tr>
-<td><strong>Alarm</strong></td>
-<td>A rule on one metric</td>
-<td>Threshold, period and number of periods</td>
-</tr>
-<tr>
-<td><strong>SNS topic</strong></td>
-<td>A channel for messages</td>
-<td>Alarms publish to it</td>
-</tr>
-<tr>
-<td><strong>Subscription</strong></td>
-<td>Who receives the topic</td>
-<td>An email subscription must be confirmed</td>
-</tr>
-<tr>
-<td><strong>Alarm action</strong></td>
-<td>What the alarm does on a state change</td>
-<td>Often: publish to an SNS topic</td>
-</tr>
-</tbody></table>
-<h2>Why a topic and not a direct email</h2>
-<ul>
-<li>One topic can notify a whole team, and you can add people without touching the alarm.</li>
-<li>The same topic can be reused by many alarms.</li>
-<li>Later you can add other targets, such as a chat tool or a Lambda function.</li>
-</ul>
-<h2>Hands-on: a billing alert in your own account</h2>
-<ol>
-<li>Sign in with a user that can open the Billing console, and turn on <strong>Receive CloudWatch billing alerts</strong> in Billing preferences.</li>
-<li>Switch the Region to <strong>US East (N. Virginia)</strong>, because billing metrics are only published there.</li>
-<li>Open <strong>SNS</strong>, create a <strong>Standard</strong> topic named <code>billing-alerts</code>, and add an <strong>Email</strong> subscription with your address.</li>
-<li>Open the email and choose <strong>Confirm subscription</strong>. Until you do, nothing is delivered.</li>
-<li>Open <strong>CloudWatch</strong>, then <strong>Alarms</strong>, then <strong>Create alarm</strong>. Select the metric <strong>Billing &gt; Total Estimated Charge</strong> and set a threshold such as 5 USD.</li>
-<li>For the alarm action choose <strong>In alarm</strong>, send to the <code>billing-alerts</code> topic, and create the alarm.</li>
-<li>Test the notification path with the CLI: <code>aws cloudwatch set-alarm-state --alarm-name &lt;your-alarm&gt; --state-value ALARM --state-reason "test"</code> and check that the email arrives.</li>
-</ol>
-<h2>Common mistakes</h2>
-<ul>
-<li>Forgetting to confirm the email subscription.</li>
-<li>Creating the billing alarm in a Region other than US East (N. Virginia).</li>
-<li>Setting the threshold so high that the alarm never fires.</li>
-<li>Sending alerts to one personal inbox that nobody else watches.</li>
-</ul>
-<h2>Key takeaways</h2>
-<ul>
-<li>An alarm watches a metric, SNS delivers the message.</li>
-<li>Use a topic so you can add people and targets later.</li>
-<li>Confirm subscriptions and test the path on purpose.</li>
-<li>Start with a billing alarm in every new account.</li>
-</ul>
-<p>Tomorrow I'll look at how to see who did what in your account, with AWS CloudTrail.</p>
-<p><em>Part of #120DaysOfAWS.</em></p>
 ]]></content:encoded></item></channel></rss>
